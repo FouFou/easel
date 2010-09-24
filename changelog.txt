@@ -1,0 +1,9 @@
+﻿Changelog
+
+1.0.2
+Some changes to which filters handle post_type or not.
+
+1.0.1 
+Changed Theme URI and Author URI to respective places as appropriate.
+
+1.0 - Release

@@ -1,0 +1,84 @@
+/* Base theme design */
+
+body {
+	background: #000 url('images/background-wolfbw.jpg') top center no-repeat;
+}
+
+blockquote {
+	color: #005;
+}
+
+h2, blockquote p:first-letter, .comment-author {
+	text-shadow: 1px 1px 1px #777;
+	-moz-text-shadow: 1px 1px 1px #777;
+	-khtml-text-shadow: 1px 1px 1px #777;
+	-webkit-text-shadow: 1px 1px 1px #777;
+}
+
+h1, .menu a {
+	text-shadow: 2px 2px 2px #111;
+	-moz-text-shadow: 2px 2px 2px #111;
+	-khtml-text-shadow: 2px 2px 2px #111;
+	-webkit-text-shadow: 2px 2px 2px #111;
+}
+
+#menubar-wrapper {
+	width: 966px;
+	margin: 0 auto;
+	background-color: #333;
+}
+
+/* curved corners */
+#content-wrapper, .type-post, .type-page, .sidebar .widget, .wp-caption,
+.comment .comment-content, blockquote, .type-attachment  {
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.wp-caption, .entry img {
+	-moz-box-shadow: 2px 2px 2px #555;
+	-webkit-box-shadow: 2px 2px 2px #555;
+	-khtml-box-shadow: 2px 2px 2px #555;
+	box-shadow: 2px 2px 2px #555;
+}
+
+.wp-caption img, img.wp-smiley {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-khtml-box-shadow: none;
+	box-shadow: none;
+}
+
+#content-wrapper, .wp-caption {
+	background: url('images/whitetrans.png') repeat;
+	border: solid 1px #bbb;
+	margin: 0 auto;
+}
+
+.type-post, .type-page, .sidebar .widget, .type-attachment {
+	background: url('images/whitetrans.png') repeat;
+	border: solid 1px #bbb;
+	margin-bottom: 10px;
+}
+
+.comment .comment-content, blockquote {
+	background: url('images/whitetranslow.png') repeat;
+}
+
+.type-post, .type-page, .wp-caption {
+	padding: 5px;
+}
+
+.sidebar .widget {
+	padding: 0px 5px 2px;
+}
+
+.post-text {
+	border-bottom: dotted 1px #ddd;
+}
+
+.comment-author {
+	text-transform: capitalize;
+}

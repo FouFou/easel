@@ -1,0 +1,19 @@
+<div id="sidebar-left">
+	<div class="sidebar-head"></div>
+		<div class="sidebar">
+		<?php 
+			do_action('easel-sidebar-left');
+			if ( !dynamic_sidebar('sidebar-left-sidebar') ) { ?>
+			<div style="margin: 0 auto; padding: 5px; width: 180px; background: #eee; height: 300px;border: dotted 1px #ccc;">
+				<?php _e('There are currently no widgets assigned to the left-sidebar, place some!','easel'); ?><br />
+				<br />
+				<?php _e('Once you add widgets to this sidebar, this default information will go away.','easel'); ?><br />
+				<br />
+				<?php _e('Widgets can be added by going to your dashboard (wp-admin) -> Appearance -> Widgets, drag a widget you want to see into one of the appropriate sidebars.','easel'); ?><br />
+				<br />
+			</div>
+			<?php }
+		?>
+		</div>
+	<div class="sidebar-foot"></div>
+</div>
