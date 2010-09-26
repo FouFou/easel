@@ -1,5 +1,8 @@
 ﻿Changelog
 
+1.0.8
+Added a saftey catch for wordpress bug with site_name not being part of the current_site object
+
 1.0.7
 Modified the behavior of the footer a little so it clears floats.
 Added automated copyright info & example text on changing the name via text

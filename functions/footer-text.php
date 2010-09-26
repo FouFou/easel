@@ -25,10 +25,15 @@ if (!function_exists('easel_footer_text')) {
 
 if (!function_exists('easel_hosted_on')) {
 	function easel_hosted_on() {
-		global $current_site;
+		$current_site = get_current_site();
+		if (!isset($current_site->site_name)) {
+			$site_name = ucfirst( $current_site->domain );
+		} else {
+			$site_name = $current_site->site_name;
+		}
 		if(is_multisite()) {
 			$output = "<span class=\"footer-pipe\">-</span> ";
-			$output .= __('Hosted on','easel') . ' <a href="http://'. $current_site->domain. $current_site->path. '">'. $current_site->site_name. '</a> ';
+			$output .= __('Hosted on','easel') . ' <a href="http://'. $current_site->domain. $current_site->path. '">'. $site_name. '</a> ';
 			return apply_filters('easel_hosted_on', $output);
 		}
 	}
