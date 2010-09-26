@@ -246,23 +246,6 @@
 					</td>
 				</tr>
 			</table>
-
-			<table class="widefat">
-				<thead>
-					<tr>
-						<th colspan="3"><?php _e('Sidebars','easel'); ?></th>
-					</tr>
-				</thead>
-				<tr class="alternate">
-					<th scope="row"><label for="enable_sidebar_css"><?php _e('Enable main Sidebar CSS for all sidebars','easel'); ?></label></th>
-					<td>
-						<input id="enable_sidebar_css" name="enable_sidebar_css" type="checkbox" value="1" <?php checked(true, $easel_options['enable_sidebar_css']); ?> />
-					</td>
-					<td>
-						<?php _e('Uses default CSS styling of the sidebars for all sidebar areas. If disabled it will use the .sidebar-basic user-made styling and only Sidebar-left and Sidebar-right will use .sidebar styling.','easel'); ?><br />
-					</td>
-				</tr>
-			</table>
 			
 			<table class="widefat">
 				<thead>

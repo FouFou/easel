@@ -1,7 +1,7 @@
 		<?php get_template_part('layout', 'foot'); ?>
 		<div id="footer">
 			<?php do_action('easel-footer'); ?>
-			<?php easel_get_sidebar('footer-area'); ?>
+			<?php easel_get_sidebar('footer'); ?>
 			<?php if (!easel_themeinfo('disable_footer_text')) easel_footer_text(); ?>
 		</div>
 	</div> <!-- // #page -->

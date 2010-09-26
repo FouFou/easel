@@ -102,7 +102,7 @@ if (!function_exists('easel_register_sidebars')) {
 function easel_get_sidebar($location = '') {
 	if (empty($location)) { get_sidebar(); return; }
 	if (is_active_sidebar('sidebar-'.$location)) { ?>
-		<div id="sidebar-<?php echo $location; ?>" class="sidebar-basic<?php if (easel_themeinfo('enable_sidebar_css')) { ?> sidebar<?php } ?>">
+		<div id="sidebar-<?php echo $location; ?>" class="sidebar">
 			<?php dynamic_sidebar('sidebar-'.$location); ?>
 		</div>
 	<?php }
@@ -123,7 +123,6 @@ function easel_load_options() {
 			// This section is added
 			'disable_jquery_menu_code' => false,
 			'disable_scroll_to_top' => false,
-			'enable_sidebar_css' => false,
 			'enable_avatar_trick' => true,
 			'disable_default_design' => false,
 			'disable_comment_note' => false,
