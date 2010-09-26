@@ -6,7 +6,7 @@ Description: A parent theme with many different roles and capabilities, a framew
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
 Tags: Dark, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License, v3 (or newer)
 License URI: http://www.opensource.org/licenses/gpl-3.0.html
 */
@@ -744,27 +744,27 @@ textarea#comment {
 
 /* Footer */
 
-#footer-area {
+#footer {
 	color: #fff;
 	text-align: center;
 }
 
-#footer-area p.footer-text {
+#footer p.footer-text {
 	text-align: right;
 	color: #ccc;
 	margin-right: 20px;
 	font-size: 11px;
 }
 
-#footer-area .footer-pipe {
+#footer .footer-pipe {
 	padding: 0 2px;
 }
 
-#footer-area p.footer-text a {
+#footer p.footer-text a {
 	color: #fff;
 }
 
-#footer-area p.footer-text a:hover {
+#footer p.footer-text a:hover {
 	color: #f00;
 }
 
@@ -775,6 +775,7 @@ textarea#comment {
 	text-align: right;
 	font-size: 11px;
 }
+
 #page-foot p {
 	margin-right: 40px;
 }

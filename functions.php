@@ -85,7 +85,7 @@ if (!function_exists('easel_register_sidebars')) {
 					__('Menubar', 'easel'),
 					__('Over Blog', 'easel'),
 					__('Under Blog', 'easel'),
-					__('Footer Area', 'easel')
+					__('Footer', 'easel')
 					) as $sidebartitle) {
 			register_sidebar(array(
 						'name'=> $sidebartitle,
@@ -164,23 +164,18 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '1.0.6',
-			'themepath' => get_template_directory(), // easel_themeinfo('themepath')
-			'themeurl' => get_template_directory_uri(), // easel_themeinfo('themeurl')
-			'stylepath' => get_stylesheet_directory(), // easel_themeinfo('stylepath')
-			'styleurl' => get_stylesheet_directory_uri(), // easel_themeinfo('styleurl')
-			'home' => trailingslashit(home_url()),  // easel_themeinfo('home')
-			'siteurl' => trailingslashit(site_url()) // easel_themeinfo('siteurl')
+			'version' => '1.0.7',
+			'themepath' => get_template_directory(),
+			'themeurl' => get_template_directory_uri(), 
+			'stylepath' => get_stylesheet_directory(), 
+			'styleurl' => get_stylesheet_directory_uri(),
+			'uploadpath' => $easel_coreinfo['basedir'],
+			'uploadurl' => $easel_coreinfo['baseurl'],
+			'home' => untrailingslashit(home_url()),  
+			'siteurl' => untrailingslashit(site_url()) 
 		);
 		$easel_themeinfo = array_merge($easel_coreinfo, $easel_addinfo);		
 		$easel_themeinfo = array_merge($easel_themeinfo, $easel_options);
-		if (is_multisite()) {
-			$easel_themeinfo['basedir'] = trailingslashit( ABSPATH . $easel_themeinfo['upload_path']);
-			$easel_themeinfo['baseurl'] = trailingslashit( easel_themeinfo('home') . 'files');
-		} else {
-			$easel_themeinfo['basedir'] = trailingslashit( ABSPATH );
-			$easel_themeinfo['baseurl'] = trailingslashit( easel_themeinfo('home') );
-		}
 	}
 	if ($whichinfo && $whichinfo !== 'reset')
 		if (isset($easel_themeinfo[$whichinfo])) 

@@ -17,8 +17,8 @@
 			<?php } ?>
 			<strong>Upload Path</strong>:(path) <?php echo easel_themeinfo('path'); ?><br />
 			<strong>Upload Path Sub Dir</strong>:(subdir) <?php echo easel_themeinfo('subdir'); ?><br />
-			<strong>Upload Path Base Dir</strong>:(basedir) <?php echo easel_themeinfo('basedir'); ?><br />
-			<strong>Upload Base URL</strong>:(baseurl) <?php echo easel_themeinfo('baseurl'); ?><br />
+			<strong>Upload Path Base Dir</strong>:(uploadpath) <?php echo easel_themeinfo('uploadpath'); ?><br />
+			<strong>Upload Base URL</strong>:(uploadurl) <?php echo easel_themeinfo('uploadurl'); ?><br />
 			<br />
 			<?php var_dump(easel_themeinfo()); ?>
 			</td>

@@ -1,5 +1,14 @@
 ﻿Changelog
 
+1.0.7
+Modified the behavior of the footer a little so it clears floats.
+Added automated copyright info & example text on changing the name via text
+Added for multisite a hosted on <networkname>
+Added a new body class page-<pageslugname> which will better suit some peoples custom css for individual pages
+Removed sidebar-basic and going for straight .sidebar in all the sidebars, removed associated option
+
+1.0.3 - 1.0.6 Various code adjustments and test code that culminated in 1.0.7
+
 1.0.2
 Some changes to which filters handle post_type or not.
 
