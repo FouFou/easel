@@ -1,5 +1,8 @@
 ﻿Changelog
 
+1.0.9
+Added another catch for get_current_site() which doesn't exist unless it's multisite
+
 1.0.8
 Added a saftey catch for wordpress bug with site_name not being part of the current_site object
 
