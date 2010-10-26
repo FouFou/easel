@@ -1,5 +1,8 @@
 ﻿Changelog
 
+1.1.0
+Added a generic page template - template.php
+
 1.0.9
 Added another catch for get_current_site() which doesn't exist unless it's multisite
 
