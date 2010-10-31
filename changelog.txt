@@ -1,5 +1,10 @@
 ﻿Changelog
 
+1.1.1
+Added page's to the searchs in the pre_get_posts 
+blocked off the 'pages' from having the 'posted in' message in the post (displaypost.php)
+blocked off the post calendar from displaying in archive/searchs for pages
+
 1.1.0
 Added a generic page template - template.php
 

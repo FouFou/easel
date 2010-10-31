@@ -48,7 +48,7 @@ if (!function_exists('easel_display_post_calendar')) {
 	function easel_display_post_calendar() {
 		global $post, $wp_query;
 		if (is_page()) return;
-		if (easel_themeinfo('enable_post_calendar')) { 
+		if (easel_themeinfo('enable_post_calendar') && ($post->post_type !== 'page')) { 
 			$post_calendar = "<div class=\"post-calendar-date\"><div class=\"calendar-date\"><span>".get_the_time('M')."</span>".get_the_time('d')."</div></div>\r\n";
 			echo apply_filters('easel_display_post_calendar', $post_calendar);
 		}
@@ -79,7 +79,7 @@ if (!function_exists('easel_display_post_category')) {
 	function easel_display_post_category() {
 		global $post;
 		$post_category = '';
-		if (!easel_themeinfo('disable_categories_in_posts') && !is_attachment()) {
+		if (!easel_themeinfo('disable_categories_in_posts') && !is_attachment() && ($post->post_type !== 'page')) {
 			if ($post->post_type == 'post') {
 				$post_cats = get_the_category_list(', ', 'multiple');
 			} else {
