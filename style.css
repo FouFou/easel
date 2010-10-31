@@ -132,6 +132,10 @@ input, textarea {
 	background: #eee;
 }
 
+.wp-caption-text {
+	text-align: center;
+}
+
 
 /* CLEAR FLOATS */
 
@@ -402,6 +406,8 @@ h4, h4 a {
 	margin-bottom: 10px; 
 }
 
+.sticky {}
+
 .entry {
 	padding: 5px;
 }
@@ -519,6 +525,8 @@ a.post-edit-link {
 .comment .comment .comment {
 	margin-left: 20px;
 }
+
+.bypostauthor {}
 
 .comment-avatar {
 	width: 64px;
