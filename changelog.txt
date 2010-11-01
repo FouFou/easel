@@ -1,5 +1,11 @@
 ﻿Changelog
 
+1.1.2
+Moved the wp_list_pages() out of the content area and into the display_post area so that it can properly be under the clear float for the content area
+added css element .post-extras and made it clear:both; on it so that it resets the clearing at that point as well.
+changed bloginfo('wpurl') to echo site_url() 
+changed bloginfo('template_directory') to echo get_template_directory_uri()
+
 1.1.1
 Added page's to the searchs in the pre_get_posts 
 blocked off the 'pages' from having the 'posted in' message in the post (displaypost.php)

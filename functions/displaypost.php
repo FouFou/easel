@@ -139,7 +139,6 @@ if (!function_exists('easel_display_the_content')) {
 			the_content(__('&darr; Read the rest of this entry...','easel'));
 			do_action('easel-display-the-content-after');
 		}
-		wp_link_pages(array('before' => '<div class="linkpages"><span class="linkpages-pagetext">Pages:</span> ', 'after' => '</div>', 'next_or_number' => 'number'));
 	}
 }
 
@@ -172,6 +171,7 @@ if (!function_exists('easel_display_post')) {
 					<?php easel_display_the_content(); ?>
 					<div class="clear"></div>
 				</div>
+				<?php wp_link_pages(array('before' => '<div class="linkpages"><span class="linkpages-pagetext">Pages:</span> ', 'after' => '</div>', 'next_or_number' => 'number')); ?>
 				<div class="clear"></div>
 				<?php if (!is_page()) { ?>
 				<div class="post-extras">
