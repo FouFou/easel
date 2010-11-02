@@ -25,17 +25,18 @@ if (is_child_theme()) {
 	get_template_part('child', 'widgets');
 }
 
-// These autoload
-foreach (glob(easel_themeinfo('themepath') . "/functions/*.php") as $funcfile) {
-	@require_once($funcfile);
-}
-
-// load up the addons that it finds
+// load up the addons that it finds, loads before functions just in case we want to rewrite a function
 if (is_dir(easel_themeinfo('themepath') . '/addons')) {
 	foreach (glob(easel_themeinfo('themepath') . "/addons/*.php") as $addonfile) {
 		@require_once($addonfile);
 	}
 }
+
+// These autoload
+foreach (glob(easel_themeinfo('themepath') . "/functions/*.php") as $funcfile) {
+	@require_once($funcfile);
+}
+
 
 // Load all the widgets.
 foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {

@@ -7,7 +7,7 @@ To display comments on the home page, the home page post count must ALSO be set 
 Adding new blog template so that when you disable the blog on the home page there's a template available
 that you can associate to a page.
 Changing the way the addons load, doing it auto-load like the functions directory does.
-
+TODO: Addon CSS enqueuing, add to the addon's PHP file and not load via a group load.
 
 1.1.2
 Moved the wp_list_pages() out of the content area and into the display_post area so that it can properly be under the clear float for the content area
