@@ -24,6 +24,7 @@ function easel_menubar() {
 				<?php if (easel_themeinfo('enable_rss_in_menubar')) { ?>
 					<a href="<?php bloginfo('rss2_url') ?>" title="RSS Feed" class="menunav-rss">RSS</a>
 				<?php } ?>
+				<?php do_action('easel-menubar-mini-navigation'); ?>
 			</div>
 			<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu', 'theme_location' => 'Primary' ) ); ?>
 			<?php do_action('easel-menubar-after'); ?>
