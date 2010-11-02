@@ -153,7 +153,11 @@ function easel_load_options() {
 			'avatar_directory' => 'none',
 			'enable_debug_footer_code' => false,
 			'disable_blog_on_homepage' => false,
-			'enable_comments_on_homepage' => false
+			'enable_comments_on_homepage' => false,
+			'enable_addon_comics' => false,
+			'enable_addon_membersonly' => false,
+			'enable_addon_showcase' => false,
+			'enable_addon_playingnow' => false
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}

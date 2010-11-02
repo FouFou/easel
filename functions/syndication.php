@@ -5,7 +5,6 @@
  * 
  */
 
-
 //Insert the comic image into the RSS feed
 if (!function_exists('easel_thumbnail_feed')) {
 	function easel_thumbnail_feed() { 

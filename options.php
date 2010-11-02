@@ -113,6 +113,7 @@ function easel_admin_options() { ?>
 		  <?php
 		  	$tab_info = array(
 		  		'general' => __('General', 'easel'),
+				'addons' => __('Addons', 'easel'),
 				'debug' => __('Debug', 'easel') 
 		  	);
 

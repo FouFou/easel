@@ -9,7 +9,7 @@
  * 
  */
 // Temporarily disable from being used.
-// return;
+return;
 
 add_action('init', 'easel_comics_init');
 
