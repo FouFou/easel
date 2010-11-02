@@ -6,9 +6,10 @@ New general option, disable blog on home page and display comments on home page.
 To display comments on the home page, the home page post count must ALSO be set to 1.
 Adding new blog template so that when you disable the blog on the home page there's a template available
 that you can associate to a page.
-Changing the way the addons load, doing it auto-load like the functions directory does.
+Changing the way the addons load, they only load if they are enabled, that way optimizing their usage.
 added comicpress light addon for easel, including the members only, playing now and showcase addons to the repository
 Added new action location 'easel-menubar-mini-navigation' for mini navigation for comicpress light for easel
+Addons now have their own tab in the easel -> options area.
 
 1.1.2
 Moved the wp_list_pages() out of the content area and into the display_post area so that it can properly be under the clear float for the content area

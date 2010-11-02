@@ -29,7 +29,7 @@ h1, .menu a {
 }
 
 /* curved corners */
-#content-wrapper, .type-post, .type-page, .sidebar .widget, .wp-caption,
+#content-wrapper, .type-post, .type-page, .type-music, .type-comic, .type-showcase, .sidebar .widget, .wp-caption,
 .comment .comment-content, blockquote, .type-attachment  {
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
@@ -57,17 +57,22 @@ h1, .menu a {
 	margin: 0 auto;
 }
 
-.type-post, .type-page, .sidebar .widget, .type-attachment {
+.type-post, .type-page, .type-comic, .type-music, .type-showcase, .sidebar .widget, .type-attachment {
 	background: url('images/whitetrans.png') repeat;
 	border: solid 1px #bbb;
 	margin-bottom: 10px;
+}
+
+.sidebar .widget_easel_classic_bookmark {
+	background: none;
+	border: none;
 }
 
 .comment .comment-content, blockquote {
 	background: url('images/whitetranslow.png') repeat;
 }
 
-.type-post, .type-page, .wp-caption {
+.type-post, .type-page, .type-music, .type-showcase, .type-comic, .wp-caption {
 	padding: 5px;
 }
 
@@ -81,4 +86,46 @@ h1, .menu a {
 
 .comment-author {
 	text-transform: capitalize;
+}
+
+#comic-wrap {
+	width: 970px;
+	background: #fff;
+	margin: 5px auto;
+	-moz-box-shadow: 2px 2px 2px #555;
+	-webkit-box-shadow: 2px 2px 2px #555;
+	-khtml-box-shadow: 2px 2px 2px #555;
+	box-shadow: 2px 2px 2px #555;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#comic {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#blogheader {
+	width: 80%;
+	border-top: solid 1px #333;
+	margin: 15px auto;
+	-moz-box-shadow: 2px 2px 2px #999;
+	-webkit-box-shadow: 2px 2px 2px #999;
+	-khtml-box-shadow: 2px 2px 2px #999;
+	box-shadow: 2px 2px 2px #999;
+}
+
+form#searchform {
+	margin: 0 auto;
+	width: 164px;
+}
+
+.sidebar .widget_search {
+	padding: 3px 0;
+}
+
+.members-post {
+	background: #d1ddd1;
 }

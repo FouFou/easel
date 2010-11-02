@@ -48,7 +48,7 @@ if (!function_exists('easel_display_post_calendar')) {
 	function easel_display_post_calendar() {
 		global $post, $wp_query;
 		if (is_page()) return;
-		if (easel_themeinfo('enable_post_calendar') && ($post->post_type !== 'page')) { 
+		if (easel_themeinfo('enable_post_calendar') && (($post->post_type == 'post') || ($post->post_type == 'comic'))) { 
 			$post_calendar = "<div class=\"post-calendar-date\"><div class=\"calendar-date\"><span>".get_the_time('M')."</span>".get_the_time('d')."</div></div>\r\n";
 			echo apply_filters('easel_display_post_calendar', $post_calendar);
 		}

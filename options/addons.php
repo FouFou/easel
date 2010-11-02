@@ -46,6 +46,11 @@
 						<?php _e('This is the Comics post type, how it works is when you add a comic, you put the comic in the "featured image" section of the comic post type.  Whatever image is in the featured image section will be used as the comic.  There is standard navigation first next previous and last and a latest comics widget that goes with this.  This is a very basic rudimentary comic system.','easel'); ?>
 					</td>
 				</tr>
+				<tr style="background: #fcffc7">
+					<td scope="row" colspan="3">
+						Remember with custom post types, you will need to go to settings -> permalinks and click "save" to enable them to work properly and reinitilize the permalink structure.
+					</td>
+				</tr>
 			</table>
 
 		</div>

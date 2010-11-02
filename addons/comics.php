@@ -46,6 +46,32 @@ function easel_comics_init() {
 				'supports' => array( 'title', 'editor', 'excerpt', 'author', 'comments', 'thumbnail', 'custom-fields' ),
 				'description' => 'Post type for Comics'
 				));	
+				
+		$labels = array(
+			'name' => _x( 'Chapters', 'taxonomy general name' ),
+			'singular_name' => _x( 'Chapter', 'taxonomy singular name' ),
+			'search_items' =>  __( 'Search Chapters' ),
+			'popular_items' => __( 'Popular Chapters' ),
+			'all_items' => __( 'All Chapters' ),
+			'parent_item' => __( 'Parent Chapter' ),
+			'parent_item_colon' => __( 'Parent Chapter:' ),
+			'edit_item' => __( 'Edit Chapters' ), 
+			'update_item' => __( 'Update Chapters' ),
+			'add_new_item' => __( 'Add New Chapter' ),
+			'new_item_name' => __( 'New Chapter Name' ),
+			); 	
+
+	register_taxonomy('chapters', 'comic', array(
+				'hierarchical' => true,
+				'public' => true,
+				'labels' => $labels,
+				'show_ui' => true,
+				'query_var' => true,
+				'show_tagcloud' => false,
+				'rewrite' => array( 'slug' => 'chapter' ),
+				));
+				
+	register_taxonomy_for_object_type('chapters', 'comic');
 }
 
 // Navigation
@@ -190,13 +216,13 @@ if (!function_exists('easel_comics_display_comic_navigation')) {
 	function easel_comics_display_comic_navigation() {
 		global $post, $wp_query;
 		$first_comic = easel_comics_get_first_comic_permalink();
-		$first_text = __('&lsaquo;&lsaquo; First','comicpress');
+		$first_text = __('&lsaquo;&lsaquo; First','easel');
 		$last_comic = easel_comics_get_last_comic_permalink();
-		$last_text = __('Last &rsaquo;&rsaquo;','comicpress'); 
+		$last_text = __('Last &rsaquo;&rsaquo;','easel'); 
 		$next_comic = easel_comics_get_next_comic_permalink();
-		$next_text = __('Next &rsaquo;','comicpress');
+		$next_text = __('Next &rsaquo;','easel');
 		$prev_comic = easel_comics_get_previous_comic_permalink();
-		$prev_text = __('&lsaquo; Prev','comicpress');
+		$prev_text = __('&lsaquo; Prev','easel');
 		?>
 		<div id="default-nav-wrapper">
 			<div class="default-nav">
@@ -212,6 +238,20 @@ if (!function_exists('easel_comics_display_comic_navigation')) {
 }
 
 // Injections
+
+add_filter('easel_display_post_category', 'easel_comics_display_comic_chapters');
+
+// TODO: Make this actually output a chapter set that the comic is in, instead of the post-type
+function easel_comics_display_comic_chapters($post_category) {
+	global $post;
+	if ($post->post_type == 'comic') {
+		$before = '<div class="comic-chapter">Chapter: ';
+		$sep = ', '; 
+		$after = '</div>';
+		$post_category = get_the_term_list( $post->ID, 'chapters', $before, $sep, $after );
+	}
+	return apply_filters('easel_comics_display_comic_chapters', $post_category);
+}
 
 // Injected with a poison.
 add_action('easel-post-foot', 'easel_comics_display_edit_link');
