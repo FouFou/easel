@@ -8,6 +8,8 @@
  *
  * 
  */
+// Temporarily disable from being used.
+// return;
 
 add_action('init', 'easel_comics_init');
 
@@ -341,5 +343,50 @@ function easel_comics_inject_thumbnail_into_archive_posts() {
 		echo '<p>'.str_replace('alt=', 'class="aligncenter" alt=', easel_comics_display_comic('thumbnail')).'</p>';
 	}
 }
+
+// Widgets
+
+class easel_latest_comics_widget extends WP_Widget {
+	
+	function easel_latest_comics_widget($skip_widget_init = false) {
+		if (!$skip_widget_init) {
+			$widget_ops = array('classname' => __CLASS__, 'description' => __('Display a list of the latest comics','easel') );
+			$this->WP_Widget(__CLASS__, __('Latest Comics','easel'), $widget_ops);
+		}
+	}
+	
+	function widget($args, $instance) {
+		global $post;
+		extract($args, EXTR_SKIP); 
+		Protect();
+		echo $before_widget;
+		$title = empty($instance['title']) ? __('Latest Comics','easel') : apply_filters('widget_title', $instance['title']); 
+		if ( !empty( $title ) ) { echo $before_title . $title . $after_title; }; 
+		$latestmusic = get_posts('numberposts=5&post_type=comic'); ?>
+		<ul>
+		<?php foreach($latestmusic as $post) : ?>
+			<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+			<?php endforeach; ?>
+		</ul>
+		<?php
+		UnProtect();
+		echo $after_widget;
+	}
+	
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		$instance['title'] = strip_tags($new_instance['title']);
+		return $instance;
+	}
+	
+	function form($instance) {
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
+		$title = strip_tags($instance['title']);
+		?>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','easel'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
+		<?php
+	}
+}
+register_widget('easel_latest_comics_widget');
 
 ?>
