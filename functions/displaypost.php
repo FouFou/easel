@@ -115,7 +115,11 @@ if (!function_exists('easel_display_comment_link')) {
 
 if (!function_exists('easel_display_blog_navigation')) {
 	function easel_display_blog_navigation() {
-		global $post;
+		global $post, $wp_query;
+		if (easel_themeinfo('enable_comments_on_homepage') && (easel_themeinfo('home_post_count') == '1')) {
+			$temp_single = $wp_query -> is_single;
+			$wp_query -> is_single = true;
+		}
 		if (is_single() && !is_page() && !is_archive() && !is_search() && ($post->post_type !== 'comic')) { ?>
 			<div class="blognav">
 				<?php previous_post_link('<span class="blognav-prev">%link</span>',__('&lsaquo; Prev','easel'), false); ?>
@@ -123,6 +127,9 @@ if (!function_exists('easel_display_blog_navigation')) {
 			</div>
 			<div class="clear"></div>
 		<?php }
+		if (easel_themeinfo('enable_comments_on_homepage') && (easel_themeinfo('home_post_count') == '1')) {
+			$wp_query -> is_single = $temp_single;
+		}
 	}
 }
 
@@ -192,8 +199,9 @@ if (!function_exists('easel_display_post')) {
 			if ($post->comment_status == 'open') {
 				comments_template('', true);
 			}
-		} else
+		} else {
 			comments_template('', true);
+		}
 	}
 }
 

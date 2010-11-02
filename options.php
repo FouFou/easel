@@ -82,7 +82,9 @@ function easel_admin_options() { ?>
 			'disable_default_menubar',
 			'enable_search_in_menubar',
 			'enable_rss_in_menubar',
-			'enable_debug_footer_code'
+			'enable_debug_footer_code',
+			'disable_blog_on_homepage',
+			'enable_comments_on_homepage'
 				) as $key) {
 					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );

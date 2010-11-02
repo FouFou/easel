@@ -143,14 +143,12 @@ function easel_load_options() {
 			'enable_search_in_menubar' => false,
 			'enable_rss_in_menubar' => true,
 			'avatar_directory' => 'none',
-			'enable_debug_footer_code' => false
-			
-			// TODO
-			
+			'enable_debug_footer_code' => false,
+			'disable_blog_on_homepage' => false,
+			'enable_comments_on_homepage' => false
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
-
 		add_option('easel-options', $easel_options, '', false);
 	}
 	return $easel_options;

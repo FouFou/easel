@@ -28,6 +28,15 @@
 						<?php _e('How many blog posts you would like displayed on the index page at one time.','easel'); ?>
 					</td>
 				</tr>
+				<tr class="alternate">
+					<th scope="row"><label for="disable_blog_on_homepage"><?php _e('Disable Blog on Home Page','easel'); ?></label></th>
+					<td>
+						<input id="disable_blog_on_homepage" name="disable_blog_on_homepage" type="checkbox" value="1" <?php checked(true, $easel_options['disable_blog_on_homepage']); ?> />
+					</td>
+					<td>
+						<?php _e('Enabling this option, will DISABLE the blog from appearing on the home page.  This will let you design specific scenerios that allow you to create seperate sections and pages for blog posts.','easel'); ?>
+					</td>
+				</tr>
 			</table>
 			
 			<table class="widefat">
@@ -226,6 +235,15 @@
 					</td>
 					<td>
 						<?php _e('Checkmark this if you want the comment form to not use javascript to appear directly under who is being replied to. (increases pageviews/hits)','easel'); ?>
+					</td>
+				</tr>
+				<tr class="alternate">
+					<th scope="row"><label for="enable_comments_on_homepage"><?php _e('Enable Comments on Home Page','easel'); ?></label></th>
+					<td>
+						<input id="enable_comments_on_homepage" name="enable_comments_on_homepage" type="checkbox" value="1" <?php checked(true, $easel_options['enable_comments_on_homepage']); ?> />
+					</td>
+					<td>
+						<?php _e('Checkmarking this option will make it so that the post(s) on the home page will also display the comments under them, This will ONLY work if you have it set to only display 1 post on the home page.  The post count and this must be set to work.','easel'); ?>
 					</td>
 				</tr>
 			</table>
