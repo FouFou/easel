@@ -30,6 +30,13 @@ foreach (glob(easel_themeinfo('themepath') . "/functions/*.php") as $funcfile) {
 	@require_once($funcfile);
 }
 
+// load up the addons that it finds
+if (is_dir(easel_themeinfo('themepath') . '/addons')) {
+	foreach (glob(easel_themeinfo('themepath') . "/addons/*.php") as $addonfile) {
+		@require_once($addonfile);
+	}
+}
+
 // Load all the widgets.
 foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
 	@require_once($widgefile);
