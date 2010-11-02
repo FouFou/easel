@@ -2,7 +2,10 @@
 
 1.1.3
 Adding addon control to Easel
-New general option, disable blog on home page and display comments on home page.
+New general option, disable blog on home page and display comments on home page.  
+To display comments on the home page, the home page post count must ALSO be set to 1.
+Adding new blog template so that when you disable the blog on the home page there's a template available
+that you can associate to a page.
 
 
 1.1.2

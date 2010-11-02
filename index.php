@@ -3,7 +3,7 @@
 if (!easel_themeinfo('disable_blog_on_homepage')) {
 	Protect();
 	$blog_query = array(
-			'posts_per_page' => (int)easel_themeinfo('home_post_count'), 
+			'posts_per_page' => (int)easel_themeinfo('home_post_count'),
 			'paged' => get_query_var('paged')
 			);
 	$posts = &query_posts($blog_query);

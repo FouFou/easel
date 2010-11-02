@@ -162,7 +162,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '1.1.2',
+			'version' => '1.1.3',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -221,7 +221,8 @@ function easel_include_custom_post_types( $query ) {
 		$operator = 'and';
 		
 		$post_types = get_post_types( $args , $output , $operator );
-		$post_types = array_merge( $post_types , array( 'post', 'page' ) );
+		$post_types = array_merge( $post_types , array( 'post') );
+		if (is_search() || is_archive()) $post_types = array_merge( $post_types, array( 'page' ) );
 		
 		// Set all the custom post types to be able to be seen by the feed.
 		
