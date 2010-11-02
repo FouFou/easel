@@ -57,7 +57,21 @@ function easel_admin_options() { ?>
 	}
 	$easel_options = get_option('easel-options');
 	if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-options') ) {
-
+		
+		if ($_REQUEST['action'] == 'easel_save_addons') {
+			foreach (array(
+				'enable_addon_comics',
+				'enable_addon_membersonly',
+				'enable_addon_showcase',
+				'enable_addon_playingnow'
+			) as $key) {
+				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
+				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
+			}
+			$tab = 'addons';
+			update_option('easel-options', $easel_options);
+		}
+		
 		if ($_REQUEST['action'] == 'easel_save_general') {
 
 			foreach (array(

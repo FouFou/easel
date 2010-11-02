@@ -8,8 +8,6 @@
  *
  * 
  */
-// Temporarily disable from being used.
-return;
 
 add_action('init', 'easel_comics_init');
 

@@ -27,9 +27,14 @@ if (is_child_theme()) {
 
 // load up the addons that it finds, loads before functions just in case we want to rewrite a function
 if (is_dir(easel_themeinfo('themepath') . '/addons')) {
-	foreach (glob(easel_themeinfo('themepath') . "/addons/*.php") as $addonfile) {
-		@require_once($addonfile);
-	}
+	if (easel_themeinfo('enable_addon_comics')) 
+		@require_once(easel_themeinfo('themepath') . '/addons/comics.php');
+	if (easel_themeinfo('enable_addon_membersonly'))
+		@require_once(easel_themeinfo('themepath') . '/addons/membersonly.php');
+	if (easel_themeinfo('enable_addon_playingnow'))
+		@require_once(easel_themeinfo('themepath') . '/addons/playingnow.php');
+	if (easel_themeinfo('enable_addon_showcase'))
+		@require_once(easel_themeinfo('themepath') . '/addons/showcase.php');
 }
 
 // These autoload
@@ -233,7 +238,7 @@ function easel_include_custom_post_types( $query ) {
 		$operator = 'and';
 		
 		$post_types = get_post_types( $args , $output , $operator );
-		$post_types = array_merge( $post_types , array( 'post') );
+		$post_types = array_merge( $post_types , array( 'post' ) );
 		if (is_search() || is_archive()) $post_types = array_merge( $post_types, array( 'page' ) );
 		
 		// Set all the custom post types to be able to be seen by the feed.
