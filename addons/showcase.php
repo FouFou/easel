@@ -28,7 +28,7 @@ function comic_list_init() {
 			'query_var' => true,
 			'_edit_link' => 'post.php?post=%d',
 			'capability_type' => 'post',
-			'rewrite' => true,
+			'rewrite' => array( 'slug' => 'showcase', 'with_front' => true ),
 			'hierarchical' => false,
 			'menu_position' => 5,
 			'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'author', 'trackbacks', 'comments', 'thumbnail' )

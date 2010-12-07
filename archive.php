@@ -5,7 +5,6 @@ if (is_category()) {
 	$theCatId = get_term_by( 'slug', $wp_query->query_vars['category_name'], 'category' );
 	$theCatId = $theCatId->term_id;
 }
-
 if (have_posts()) :
 ?>
 	<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>

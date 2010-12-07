@@ -179,7 +179,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '1.1.3',
+			'version' => '1.1.5',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -226,10 +226,9 @@ function easel_debug_page_foot_code() { ?>
 add_filter( 'pre_get_posts' , 'easel_include_custom_post_types' );
 
 function easel_include_custom_post_types( $query ) {
-	global $wp_query;
 	
 	/* Don't break admin or preview pages. This is also a good place to exclude feed with !is_feed() if desired. */
-	if ( !is_preview() && !is_admin() && !is_singular() ) {
+	if ( !$query->is_preview && !$query->is_admin && !$query->is_singular ) {
 		$args = array(
 				'public' => true,
 				'_builtin' => false
@@ -239,19 +238,21 @@ function easel_include_custom_post_types( $query ) {
 		
 		$post_types = get_post_types( $args , $output , $operator );
 		$post_types = array_merge( $post_types , array( 'post' ) );
-		if (is_search() || is_archive()) $post_types = array_merge( $post_types, array( 'page' ) );
+		if ($query->is_search || $query->is_archive) $post_types = array_merge( $post_types, array( 'page' ) );
 		
 		// Set all the custom post types to be able to be seen by the feed.
 		$my_post_type = get_query_var('post_type');
 		if ($query->is_feed) {	
 			if (empty($my_post_type)) $query->set( 'post_type' , $post_types );
-		} else {
-			if (is_home()) $post_types = array_diff( $post_types, array ( 'comic' ) );
+		}  else {
+			// if its a comic post type, dont show it in the blog loop but show all others
+			if ($query->is_home) $post_types = array_diff( $post_types, array ( 'comic' ) );
 			if ( empty( $my_post_type ) )
-				$query->set( 'post_type' , $post_types );
+				$query->set( 'post_type' , $post_types ); 
 		}
 	}
 	return $query;
 }
+
 
 ?>
