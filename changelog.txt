@@ -1,4 +1,13 @@
 ﻿Changelog
+1.1.5
+added class .sidebar-no-widgets to handle the sidebar no widgets boxes instead of being static
+changed .pagetitle to .page-title to be uniformative with the rest of the site
+removed the "count" on how many entries are found during search and archive, added extra unnecessary load
+the feed wasnt able to seperate post_types until now ;/ done
+
+1.1.4
+removed the tabindex="4" from the comments.php
+added comic-id-# (# = the_ID()) as part of the #comic-wrap as a class
 
 1.1.3
 Adding addon control to Easel

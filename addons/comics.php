@@ -290,7 +290,7 @@ function easel_comics_display_comic_wrapper() {
 	global $post; 
 	if ($post->post_type == 'comic') {
 		?>
-		<div id="comic-wrap">
+		<div id="comic-wrap" class="comic-id-<?php echo $post->ID; ?>">
 			<div id="comic-head"></div>
 			<div id="comic">
 				<?php echo easel_comics_display_comic(); ?>

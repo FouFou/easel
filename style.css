@@ -25,12 +25,12 @@ body {
 }
 
 a {
-	color: #b00;
+	color: #012876;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #006;
+	color: #b00;
 }
 
 a:focus {
@@ -199,6 +199,10 @@ h4, h4 a {
 
 #header {
 	height: 100px;
+}
+
+#header h1 a {
+	color: #fcff00;
 }
 
 #header .description {
@@ -1189,4 +1193,15 @@ table#wp-calendar td {
 	opacity: 0.1; /* firefox, opera, safari, chrome */
 	-khtml-opacity: 0.1; /* khtml, old safari */
 	-webkit-opacity: 0.1;
+}
+
+.sidebar-no-widgets {
+	margin: 0 auto;
+	padding: 5px;
+	width: 180px;
+	border: dotted 1px #ccc;
+}
+
+.sidebar-no-widgets h2 {
+	color: #000;
 }

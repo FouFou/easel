@@ -242,11 +242,10 @@ function easel_include_custom_post_types( $query ) {
 		if (is_search() || is_archive()) $post_types = array_merge( $post_types, array( 'page' ) );
 		
 		// Set all the custom post types to be able to be seen by the feed.
-		
-		if ($query->is_feed) {
-			$query->set( 'post_type' , $post_types );
+		$my_post_type = get_query_var('post_type');
+		if ($query->is_feed) {	
+			if (empty($my_post_type)) $query->set( 'post_type' , $post_types );
 		} else {
-			$my_post_type = get_query_var( 'post_type' );
 			if (is_home()) $post_types = array_diff( $post_types, array ( 'comic' ) );
 			if ( empty( $my_post_type ) )
 				$query->set( 'post_type' , $post_types );

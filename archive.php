@@ -1,11 +1,6 @@
 <?php
 get_header(); 
 
-// Get the total count no matter what type of archive
-$tmp_search = new WP_Query($query_string.'&show_posts=-1&posts_per_page=-1');
-$count = $tmp_search->post_count;
-if (!$count) $count = "no";
-
 if (is_category()) {
 	$theCatId = get_term_by( 'slug', $wp_query->query_vars['category_name'], 'category' );
 	$theCatId = $theCatId->term_id;
@@ -37,7 +32,6 @@ if (have_posts()) :
 	<?php /* Post Type */ } elseif ($post->post_type !== 'post') { ?>
 		<h2 class="page-title"><?php echo $post->post_type; ?></h2>
 	<?php } ?>
-	<div class="searchresults"><?php printf(_n("%d item.", "%d items.", $count, 'easel'),$count); ?></div>
 	<div class="clear"></div>
 	<?php 
 	while (have_posts()) : the_post();

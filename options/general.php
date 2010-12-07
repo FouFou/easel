@@ -139,7 +139,7 @@
 						<input id="enable_avatar_trick" name="enable_avatar_trick" type="checkbox" value="1" <?php checked(true, $easel_options['enable_avatar_trick']); ?> />
 					</td>
 					<td>
-						<?php _e('With this enabled, the avatar\'s that are displayed will be jquery modified to look like poloroids randomly tilted.','easel'); ?>
+						<?php _e('With this enabled, the avatar\'s that are displayed will be jquery modified to look like polaroids randomly tilted.','easel'); ?>
 					</td>
 				</tr>
 				<?php
