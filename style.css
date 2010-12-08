@@ -25,21 +25,28 @@ body {
 }
 
 a {
-	color: #012876;
 	text-decoration: none;
 }
 
-a:hover {
-	color: #b00;
+a:link {
+	color: #012876;
 }
+	
+	a:visited {
+		color: #014676;
+	}
+	
+	a:hover {
+		color: #f00;
+	}
 
-a:focus {
-	outline: none;
-}
+	a:focus {
+		outline: none;
+	}
 
-a img {
-	border: none;
-}
+	a img {
+		border: none;
+	}
 
 p {
 	margin: 0;
@@ -201,13 +208,9 @@ h4, h4 a {
 	height: 100px;
 }
 
-#header h1 a {
-	color: #fcff00;
-}
-
-#header .description {
-	margin-left: 40px;
-}
+	#header .description {
+		margin-left: 40px;
+	}
 
 /* THE MENU */
 
@@ -761,28 +764,20 @@ textarea#comment {
 /* Footer */
 
 #footer {
-	color: #fff;
 	text-align: center;
 }
 
-#footer p.footer-text {
-	text-align: right;
-	color: #ccc;
-	margin-right: 20px;
-	font-size: 11px;
-}
+	.footer-text {
+		text-align: right;
+		margin-right: 20px;
+		font-size: 11px;
+	}
 
-#footer .footer-pipe {
-	padding: 0 2px;
-}
+	.footer-pipe {
+		padding: 0 2px;
+	}
+.
 
-#footer p.footer-text a {
-	color: #fff;
-}
-
-#footer p.footer-text a:hover {
-	color: #f00;
-}
 
 #page-foot {
 	width: 980px;
@@ -1199,7 +1194,12 @@ table#wp-calendar td {
 	margin: 0 auto;
 	padding: 5px;
 	width: 180px;
-	border: dotted 1px #ccc;
+	border: dotted 1px #aaa;
+	background: #ccc;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 
 .sidebar-no-widgets h2 {
