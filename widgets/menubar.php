@@ -26,8 +26,13 @@ function easel_menubar() {
 				<?php } ?>
 				<?php do_action('easel-menubar-mini-navigation'); ?>
 			</div>
-			<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu', 'theme_location' => 'Primary' ) ); ?>
-			<?php do_action('easel-menubar-after'); ?>
+			<?php
+				// dont mess with the pre_get_posts for the wp_nav_menu()
+				remove_filter( 'pre_get_posts' , 'easel_include_custom_post_types' );
+				wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu', 'theme_location' => 'Primary' ) );
+				add_filter( 'pre_get_posts' , 'easel_include_custom_post_types' );
+				do_action('easel-menubar-after'); 
+			?>
 			<div class="clear"></div>
 		</div>
 	<?php } 
