@@ -6,7 +6,7 @@ function easel_options_setup() {
 	$options_title = __('Options','easel');
 	if (!function_exists('comiceasel_pluginfo')) {
 		$admin_title = __('Easel Options', 'easel');
-		$pagehook = add_menu_page($admin_title, __('Easel', 'easel'), 'edit_theme_options', 'easel-options', 'easel_admin_options', easel_themeinfo('themeurl') . '/images/easel.png', 3);
+		$pagehook = add_menu_page($admin_title, __('Easel', 'easel'), 'edit_theme_options', 'easel-options', 'easel_admin_options', easel_themeinfo('themeurl') . '/images/easel.png', 58);
 		$pagehook = add_submenu_page('easel-options', $admin_title, $options_title, 'edit_theme_options', 'easel-options', 'easel_admin_options');
 	} else {
 		$pagehook = add_submenu_page('themes.php', $options_title, $options_title, 'edit_theme_options', 'easel-options', 'easel_admin_options');
@@ -58,12 +58,26 @@ function easel_admin_options() { ?>
 	$easel_options = get_option('easel-options');
 	if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-options') ) {
 		
+		if ($_REQUEST['action'] == 'easel_save_debug') {
+			foreach (array(
+				'enable_debug_footer_code'
+			) as $key) {
+				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
+				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
+			}
+			$tab = 'debug';
+			update_option('easel-options', $easel_options);
+		}
+		
+		
 		if ($_REQUEST['action'] == 'easel_save_addons') {
 			foreach (array(
 				'enable_addon_comics',
 				'enable_addon_membersonly',
 				'enable_addon_showcase',
-				'enable_addon_playingnow'
+				'enable_addon_showcase_slider',
+				'enable_addon_playingnow',
+				'enable_addon_commpress'
 			) as $key) {
 				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
@@ -96,7 +110,6 @@ function easel_admin_options() { ?>
 			'disable_default_menubar',
 			'enable_search_in_menubar',
 			'enable_rss_in_menubar',
-			'enable_debug_footer_code',
 			'disable_blog_on_homepage',
 			'enable_comments_on_homepage'
 				) as $key) {
@@ -106,7 +119,9 @@ function easel_admin_options() { ?>
 
 			foreach (array(
 				'avatar_directory',
-				'home_post_count'
+				'home_post_count',
+				'copyright_name',
+				'copyright_url'
 						) as $key) {
 							if (isset($_REQUEST[$key])) 
 								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);

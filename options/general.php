@@ -25,7 +25,7 @@
 						<input type="text" size="2" name="home_post_count" id="home_post_count" value="<?php echo $easel_options['home_post_count']; ?>" />
 					</td>
 					<td>
-						<?php _e('How many blog posts you would like displayed on the index page at one time.','easel'); ?>
+						<?php _e('How many blog posts you would like displayed on the index page at one time.  This is different then the one in the wp-admin - settings, the one in the settings will control how many show up on search and archive pages.','easel'); ?>
 					</td>
 				</tr>
 				<tr class="alternate">
@@ -289,6 +289,22 @@
 						<?php _e('When this link is clicked on long pages it will scroll back to the top.','easel'); ?>
 					</td>
 				</tr>
+				<tr class="alternate">
+					<th scope="row"><label for="copyright_name"><?php _e('&copy; Copyright Name','easel'); ?></label>
+						<input type="text" size="20" name="copyright_name" id="copyright_name" value="<?php echo  $easel_options['copyright_name']; ?>" /><br />
+					</th>
+					<td colspan="2">
+						<?php _e('Set the name to which this site is &copy; Copyright to, leave blank to have the site name.','easel'); ?>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="copyright_url"><?php _e('Copyright Holder URL','easel'); ?></label>
+						<input type="text" size="30" name="copyright_url" id="copyright_url" value="<?php echo  $easel_options['copyright_url']; ?>" /><br />
+					</th>
+					<td colspan="2">
+						<?php _e('Set the URL to the owner of the &copy; Copyright if different then this website, leave blank for sites link.','easel'); ?>
+					</td>
+				</tr>
 			</table>
 			
 			<table class="widefat">
@@ -307,24 +323,7 @@
 					</td>
 				</tr>
 			</table>
-
-			<table class="widefat">
-				<thead>
-					<tr>
-						<th colspan="3"><?php _e('Debug','easel'); ?></th>
-					</tr>
-				</thead>			
-				<tr class="alternate">
-					<th scope="row"><label for="enable_debug_footer_code"><?php _e('Enable the debug page load/memory usage at the bottom of each page?','easel'); ?></label></th>
-					<td>
-						<input id="enable_debug_footer_code" name="enable_debug_footer_code" type="checkbox" value="1" <?php checked(true, $easel_options['enable_debug_footer_code']); ?> />		
-					</td>
-					<td>
-						<?php _e('If enabled will show information on how many queries, memory is used as well as how fast the page loads.','easel'); ?>
-					</td>
-				</tr>
-			</table>
-
+			
 		</div>
 
 		<div class="easel-options-save">

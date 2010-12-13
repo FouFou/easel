@@ -35,6 +35,8 @@ if (is_dir(easel_themeinfo('themepath') . '/addons')) {
 		@require_once(easel_themeinfo('themepath') . '/addons/playingnow.php');
 	if (easel_themeinfo('enable_addon_showcase'))
 		@require_once(easel_themeinfo('themepath') . '/addons/showcase.php');
+	if (easel_themeinfo('enable_addon_commpress'))
+		@require_once(easel_themeinfo('themepath') . '/addons/commpress.php');
 }
 
 // These autoload
@@ -114,11 +116,13 @@ if (!function_exists('easel_register_sidebars')) {
 
 function easel_get_sidebar($location = '') {
 	if (empty($location)) { get_sidebar(); return; }
-	if (is_active_sidebar('sidebar-'.$location)) { ?>
+	if (is_active_sidebar('sidebar-'.$location)) { 
+		remove_filter( 'pre_get_posts' , 'easel_include_custom_post_types' ); ?>
 		<div id="sidebar-<?php echo $location; ?>" class="sidebar">
 			<?php dynamic_sidebar('sidebar-'.$location); ?>
 		</div>
-	<?php }
+	<?php add_filter( 'pre_get_posts' , 'easel_include_custom_post_types' );
+	}
 }
 
 function easel_is_signup() {
@@ -162,7 +166,11 @@ function easel_load_options() {
 			'enable_addon_comics' => false,
 			'enable_addon_membersonly' => false,
 			'enable_addon_showcase' => false,
-			'enable_addon_playingnow' => false
+			'enable_addon_playingnow' => false,
+			'enable_addon_showcase_slider' => false,
+			'enable_addon_commpress' => false,
+			'copyright_name' => '',
+			'copyright_url' => ''
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
@@ -246,7 +254,7 @@ function easel_include_custom_post_types( $query ) {
 			if (empty($my_post_type)) $query->set( 'post_type' , $post_types );
 		}  else {
 			// if its a comic post type, dont show it in the blog loop but show all others
-			if ($query->is_home) $post_types = array_diff( $post_types, array ( 'comic' ) );
+			if ($query->is_home) $post_types = array_diff( $post_types, array ( 'comic', 'casts' ) );
 			if ( empty( $my_post_type ) )
 				$query->set( 'post_type' , $post_types ); 
 		}

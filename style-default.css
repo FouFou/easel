@@ -15,58 +15,89 @@ h2, blockquote p:first-letter, .comment-author {
 	-webkit-text-shadow: 1px 1px 1px #777;
 }
 
-h1, .menu a {
+h1 {
 	text-shadow: 2px 2px 2px #111;
 	-moz-text-shadow: 2px 2px 2px #111;
 	-khtml-text-shadow: 2px 2px 2px #111;
 	-webkit-text-shadow: 2px 2px 2px #111;
 }
 
-#menubar-wrapper {
-	width: 966px;
-	margin: 0 auto;
-	background-color: #333;
-	clear: both;
-	display: block;
-	margin: 0 auto;
-	text-transform: uppercase;
-	padding: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	text-shadow: 0 -1px 1px #111;
-	background:-moz-linear-gradient(100% 100% 90deg,#000000, #444, #303030 100%);
+#header h1 a:link, #header h1 a:visited {
+	color: #fcff00;
 }
 
-/* curved corners */
-#content-wrapper, .type-post, .type-page, .type-music, .type-comic, .type-showcase, .sidebar .widget, .wp-caption,
-.comment .comment-content, blockquote, .type-attachment  {
+#header h1 a:hover {
+	color: #f00;
+}
+
+#menubar-wrapper {
+	clear: both;
+	margin-bottom: 10px;
+}
+
+	.menu { 
+		padding-left: 3px; 
+	}
+
+	.menunav {
+		padding-right: 5px;
+	}
+
+
+/* curved corners 6px */
+#menubar-wrapper, #content-wrapper, .comment .comment-content, .sidebar .widget {
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+/* curved corners 10px */
+.type-post, .type-page, .type-music, .type-comic, .type-showcase, .type-casts, .wp-caption,
+blockquote, .type-attachment  {
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
 
-.wp-caption, .entry img {
+/* box shadow min */
+.box-shadow-min {
 	-moz-box-shadow: 2px 2px 2px #555;
 	-webkit-box-shadow: 2px 2px 2px #555;
 	-khtml-box-shadow: 2px 2px 2px #555;
 	box-shadow: 2px 2px 2px #555;
 }
 
-.wp-caption img, img.wp-smiley {
+/* box shadow thick */
+#menubar-wrapper, #content-wrapper {
+	-moz-box-shadow: 1px 2px 5px #000;
+	-webkit-box-shadow: 1px 2px 5px #000;
+	-khtml-box-shadow: 1px 2px 5px #000;
+	box-shadow: 1px 2px 5px #000;
+}
+
+.no-box-shadow {
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	-khtml-box-shadow: none;
 	box-shadow: none;
 }
 
+/* text shadow min */
+#menubar-wrapper {
+	text-shadow: 1px 1px 1px #000;
+	-moz-text-shadow: 1px 1px 1px #000;
+	-khtml-text-shadow: 1px 1px 1px #000;
+	-webkit-text-shadow: 1px 1px 1px #000;
+}
+
 #content-wrapper, .wp-caption {
 	background: url('images/whitetrans.png') repeat;
 	border: solid 1px #bbb;
-	margin: 0 auto;
 }
 
-.type-post, .type-page, .type-comic, .type-music, .type-showcase, .sidebar .widget, .type-attachment {
+.type-post, .type-page, .type-comic, .type-music, .type-showcase, .type-casts, .sidebar .widget, .type-attachment {
 	background: url('images/whitetrans.png') repeat;
 	border: solid 1px #bbb;
 	margin-bottom: 10px;
@@ -81,7 +112,7 @@ h1, .menu a {
 	background: url('images/whitetranslow.png') repeat;
 }
 
-.type-post, .type-page, .type-music, .type-showcase, .type-comic, .wp-caption {
+.type-post, .type-page, .type-music, .type-showcase, .type-comic, .type-casts, .wp-caption {
 	padding: 5px;
 }
 
@@ -126,16 +157,94 @@ h1, .menu a {
 	box-shadow: 2px 2px 2px #999;
 }
 
-form#searchform {
-	margin: 0 auto;
-	width: 164px;
-}
-
 .sidebar .widget_search {
 	padding: 3px 0;
 }
 
-.members-post {
+.members-post, .non-members-post {
 	background: #d1ddd1;
+	padding: 5px;
 }
 
+#menubar-wrapper {
+	padding: 2px 0;
+	background: #111;
+	background:-moz-linear-gradient(100% 100% 90deg, #000, #444, #303030 100%);
+    /* IE8 uses -ms-filter for whatever reason... */
+	background: -ms-filter: progid:DXImageTransform.Microsoft.gradient(
+        gradientType=1, startColor=#000, endColoStr=#555
+	);
+        background-image: -webkit-gradient(
+          linear, left top, left bottom, from(rgba(17, 17, 17, 1.0)),
+          to(rgba(117, 117, 117, 3.0))
+        );
+}
+
+.chrome .menu, .safari .menu {
+	margin-top: 2px;
+}
+
+.chrome .menunav, .safari .menunav {
+	margin-top: 4px;
+}
+
+.chrome .searchform button, .safari .searchform button {
+	margin-top: 0px;
+}
+
+.ie button {
+	color: #000;
+}
+
+.menunav-prev a, .menunav-next a {
+	margin: 0 3px;
+}
+
+.menunav-prev a:hover, .menunav-next a:hover, .menunav-rss:hover, .menu ul li a:hover, .menu ul li a.selected{
+	color: #fcff00;
+	background:-moz-linear-gradient(100% 100% 90deg, #303030, #444, #000 100%);
+        background-image: -webkit-gradient(
+          linear, left top, left bottom, from(rgba(17, 17, 17, 1.0)),
+          to(rgba(56, 56, 56, 3.0))
+        );
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.menu ul li ul li a:hover {
+	background: #888;
+	-moz-border-radius: 0;
+	-khtml-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+/* this is the color of the text in the menubar when its on that page */
+.menu .current_page_item a {
+	color: #fcff00 !important;
+}
+
+#footer {
+	color: #fff;
+}
+
+	#footer a {
+		color: #ffcf00;
+	}
+	
+	#footer a:hover {
+		color: #f00;
+	}
+	
+.blognav {
+	margin: 2px auto;
+}
+
+
+/* casts / commpress design */
+
+.casts-show {
+	margin-left: 20px;
+}

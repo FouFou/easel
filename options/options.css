@@ -149,8 +149,12 @@ div.show img {
 }
 
 .easel-options table.widefat {
-	margin-bottom: 10px;
+/*	margin-bottom: 10px; */
 	border-bottom: none;
+}
+
+#easel-general .easel-options table.widefat, #easel-addons .easel-options table.widefat  {
+	margin-bottom: 10px;
 }
 
 .easel-options table.widefat th {

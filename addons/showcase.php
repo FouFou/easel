@@ -209,6 +209,9 @@ function comic_list_init() {
 	register_taxonomy_for_object_type('designer', 'showcase');
 	register_taxonomy_for_object_type('cms', 'showcase');
 	register_taxonomy_for_object_type('twitter', 'showcase');
+	if (easel_themeinfo('enable_addon_showcase_slider')) {
+		wp_enqueue_style('jQuery-Slider', easel_themeinfo('themeurl') . '/js/slide.css');
+	}
 }
 
 add_action('init', 'comic_list_init');
@@ -327,7 +330,7 @@ function showcase_display_language() {
 
 function showcase_display_showcase_link() {
 	global $post;
-	$showcase_link = get_post_meta( $post->ID, 'link', true );
+	$showcase_link = get_post_meta( $post->ID, 'url', true );
 	if (!empty($showcase_link)) {
 		$output = '<div class="url">';
 		$output .= 'URL: <a href="'.$showcase_link.'" target="_blank">'.$showcase_link.'</a>';
@@ -339,7 +342,7 @@ function showcase_display_showcase_link() {
 
 function showcase_display_showcase_rsslink() {
 	global $post;
-	$showcase_rsslink = get_post_meta( $post->ID, 'rsslink', true );
+	$showcase_rsslink = get_post_meta( $post->ID, 'rss', true );
 	if (!empty($showcase_rsslink)) { ?>
 	<div class="rsslink">
 		<h4>Latest RSS Feed</h4>
@@ -422,11 +425,49 @@ function showcase_filter_display_post_calendar($post_calendar) {
 
 add_filter('easel_display_post_category', 'showcase_filter_display_post_category');
 
-
 function showcase_filter_display_post_category($post_category) {
 	global $post;
 	if ($post->post_type == 'showcase') $post_category = '';
 	return $post_category;
+}
+
+if (easel_themeinfo('enable_addon_showcase_slider')) {
+	add_filter('easel-subcontent-wrapper','showcase_filter_display_slider');
+	add_filter('easel_display_post_thumbnail','showcase_remove_post_thumbnail_filter');
+}
+
+function showcase_remove_post_thumbnail_filter($post_thumbnail) {
+	return '';
+}
+
+function showcase_filter_display_slider() {
+	global $wp_query, $post;
+	if (is_home()) {
+	Protect();
+?>
+<div id="slider">
+	<div id="mygallery" class="stepcarousel">
+		<div class="belt">
+			<?php query_posts('showposts=1&posts_per_page=1&orderby=rand&post_type=showcase'); ?>
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<div class="panel">
+					<h2><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+					<?php 
+						$link = get_post_meta( $post->ID, 'url', true );
+						if (empty($link)) $link = get_permalink();
+						echo "<div class=\"post-image\"><center><a href=\"".$link."\" rel=\"bookmark\" title=\"Link to ".get_the_title()."\">".get_the_post_thumbnail($post->ID,'full')."</a></center></div>\r\n";
+					?>
+					<div class="clear"></div>
+					<?php the_excerpt(); ?>
+				</div>
+			<?php endwhile; else: ?>
+			<?php endif; ?>
+		</div>
+	</div>
+</div>
+<?php
+	UnProtect();
+	}
 }
 
 ?>

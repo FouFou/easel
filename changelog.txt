@@ -6,6 +6,11 @@ removed the "count" on how many entries are found during search and archive, add
 the feed wasnt able to seperate post_types until now ;/ done
 added support for custom support type archive loop
 adjusted the colorations, added a:link and a:visited to the main style.css
+added the remove_filter on the sidebars as well as the menubar so they don't get parsed with the wrong info in their loops.
+moved the Easel options to right below appearance so it doesnt conflict with buddypress's positioning
+removed the box-border and shadow on the wp-caption, fixed the alignment so it doesnt get overriden
+moved the debug option for page load to the debug page itself
+added the change to the footer-text to allow proper copyright information
 
 1.1.4
 removed the tabindex="4" from the comments.php

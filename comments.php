@@ -17,7 +17,7 @@ if ( post_password_required() ) { ?>
 	<?php if ( !empty($comments_by_type['comment']) ) : ?>
 		
 		<h3 id="comments"><?php comments_number(__('Discussion &not;','easel'), __('Discussion &not;','easel'), __('Discussion (%) &not;','easel') );?></h3>
-		<div class="commentsrsslink">[ <?php post_comments_feed_link('Comments RSS'); ?> ]</div>
+		<div class="commentsrsslink"><?php post_comments_feed_link('Comments RSS'); ?></div>
 		<ol class="commentlist">
 			<?php if (function_exists('easel_comments_callback')) { 
 				wp_list_comments(array(

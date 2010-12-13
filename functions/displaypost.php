@@ -3,7 +3,7 @@
 if (!function_exists('easel_display_post_title')) {
 	function easel_display_post_title() {
 		global $post, $wp_query;
-		if ((easel_themeinfo('disable_page_titles') && is_page()) || (easel_themeinfo('disable_post_titles') && !is_page())) return;
+		if ((easel_themeinfo('disable_page_titles') && is_page()) || (easel_themeinfo('disable_post_titles') && !is_page()) || (is_page('chat') || is_page('forum'))) return;
 		if (is_page()) {
 			$post_title = "<h2 class=\"page-title\">";
 		} else {
@@ -106,7 +106,7 @@ if (!function_exists('easel_display_comment_link')) {
 		global $post;
 		if ($post->comment_status == 'open' && !is_singular()) { ?>
 			<div class="comment-link">
-				<?php comments_popup_link('<span class="comment-balloon comment-balloon-empty">&nbsp;</span> '.__('Comment ','easel'), '<span class="comment-balloon">1</span> '.__('Comment ','easel'), '<span class="comment-balloon">%</span> '.__('Comments ','easel')); ?>
+				<?php comments_popup_link('<span class="comment-balloon comment-balloon-empty">&nbsp;</span>'.__('Comment&nbsp;','easel'), '<span class="comment-balloon">1</span> '.__('Comment ','easel'), '<span class="comment-balloon">%</span> '.__('Comments ','easel')); ?>
 			</div>
 			<?php
 		}
@@ -124,8 +124,8 @@ if (!function_exists('easel_display_blog_navigation')) {
 			<div class="blognav">
 				<?php previous_post_link('<span class="blognav-prev">%link</span>',__('&lsaquo; Prev','easel'), false); ?>
 				<?php next_post_link('<span class="blognav-next">%link</span>',__('Next &rsaquo;','easel'), false); ?>
+				<div class="clear"></div>
 			</div>
-			<div class="clear"></div>
 		<?php }
 		if (easel_themeinfo('enable_comments_on_homepage') && (easel_themeinfo('home_post_count') == '1')) {
 			$wp_query -> is_single = $temp_single;

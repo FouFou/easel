@@ -75,9 +75,6 @@ hr {
 }
 
 blockquote {
-}
-
-blockquote {
 	margin: 5px;
 	border: 1px dashed #ccc;
 	padding: 0;
@@ -87,10 +84,9 @@ blockquote {
 
 blockquote p:first-letter {
 	float: left;
-	margin: .2em .3em .1em 0;
-	font-family: "Monotype Corsiva", "Apple Chancery", fantasy;
-	font-size: 220%;
-	font-weight: bold; 
+	font-size: 16px;
+	font-weight: 700; 
+	margin: 3px 2px 0;
 }
 
 blockquote p:first-line {
@@ -118,6 +114,7 @@ input, textarea {
 
 .aligncenter {
 	margin: 0 auto;
+	text-align: center;
 	display: block;
 }
 
@@ -137,6 +134,10 @@ input, textarea {
 	text-align: center;
 	padding: 3px;
 	background: #eee;
+}
+
+.type-showcase .wp-caption {
+	margin: 0 5px;
 }
 
 .wp-caption-text {
@@ -180,7 +181,7 @@ h2, h2 a {
 
 h3, h3 a {
 	padding: 0;
-	margin: 0;
+	margin: 5px 0;
 	font-size: 20px;
 	clear: both;
 	letter-spacing: -1px;
@@ -205,11 +206,11 @@ h4, h4 a {
 /* Header */
 
 #header {
-	height: 100px;
+	display: block;
 }
 
 	#header .description {
-		margin-left: 40px;
+		margin-left: 60px;
 	}
 
 /* THE MENU */
@@ -219,7 +220,7 @@ h4, h4 a {
 	clear: both;
 	display: block;
 	margin: 0 auto;
-	background: #555;
+	background: #111;
 	text-transform: uppercase;
 }
 
@@ -243,13 +244,13 @@ h4, h4 a {
 }
 
 .menunav-rss {
-	font-size: 12px;
 	line-height: 26px;
 	padding: 0 5px;
 	float: left;
 	display: inline-block;
 	overflow: hidden;
 	color: #fff;
+	margin: 0 3px;
 }
 
 .menunav-rss:hover {
@@ -329,13 +330,13 @@ h4, h4 a {
 
 .menu ul li a.selected {
 	/*CSS class that's dynamically added to the currently active menu items' LI A element*/
-	background: #111;
+	background: #414141;
 	color: #fff;
 }
 
 .menu ul li a:hover {
 	color: #fff;
-	background: #111; /*background of menu items during onmouseover (hover state)*/
+	background: #414141; /*background of menu items during onmouseover (hover state)*/
 }
 
 /*1st sub level menu*/
@@ -417,6 +418,11 @@ h4, h4 a {
 
 .entry {
 	padding: 5px;
+}
+
+.entry #facebook_like {
+	clear: both;
+	padding-top: 10px;
 }
 
 .post-cat, .post-author {
@@ -761,6 +767,17 @@ textarea#comment {
 	padding: 3px;
 }
 
+.sidebar-no-widgets {
+	margin: 0 auto;
+	padding: 5px;
+	border: dotted 1px #aaa;
+	background: #ccc;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
 /* Footer */
 
 #footer {
@@ -874,12 +891,14 @@ table#wp-calendar td {
 
 /* SEARCH */
 
-#s-search {
+.s-search {
 	height: 16px;
 	width: 140px;
+	float: left;
 }
 
-#search-btn {
+.searchform button {
+	float: left;
 }
 
 .searchresults {
@@ -1190,18 +1209,104 @@ table#wp-calendar td {
 	-webkit-opacity: 0.1;
 }
 
-.sidebar-no-widgets {
-	margin: 0 auto;
-	padding: 5px;
-	width: 180px;
-	border: dotted 1px #aaa;
-	background: #ccc;
-	-moz-border-radius: 10px;
-	-khtml-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
+/* comment form */
+
+#comment, #author, #email, #url, .s-search, .comicpress_control_panel_widget input {
+	padding: 2px;
+	color: #000;
+	font-family: 'Verdana' , sans-serif;
+	font-size: 12px;
+	background: #eee;
+	border: 1px solid #888;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
 }
 
-.sidebar-no-widgets h2 {
+#comment:focus, #comment:hover, #author:hover, #email:hover, #url:hover, #author:focus, #email:focus, #url:focus,
+.comicpress_control_panel_widget #sname:focus, .comicpress_control_panel_widget #sname:hover,
+.comicpress_control_panel_widget #spassword:focus, .comicpress_control_panel_widget #spassword:hover {
+	background: #fff;
+}
+
+.searchform {
+	margin-top: 2px;
+	margin-left: 2px;
+}
+
+.s-search {
+	float: left;
+	margin: 0 3px;
+}
+
+#submit, .searchform button, #comic button, .comicpress_control_panel_widget button {
+	background: #ccc;
 	color: #000;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	background:-moz-linear-gradient(100% 100% 90deg,#aaa, #ccc, #ddd 100%);
+	background-image: -webkit-gradient(
+          linear, left top, left bottom, from(rgba(255, 255, 255, 1.0)),
+          to(rgba(170, 170, 170, 3.0))
+        );
+}
+
+.sidebar .widget_archive select, .comicpress_archive_dropdown_widget select {
+	width: 180px;
+	-moz-border-radius: 10px 0 0 10px;
+	-khtml-border-radius: 10px 0 0 10px;
+	-webkit-border-radius: 10px 0 0 10px;
+	border-radius: 10px 0 0 10px;
+	padding-right: 0;
+	background:-moz-linear-gradient(100% 100% 90deg,#bbb, #ddd, #fff 100%);
+    /* IE8 uses -ms-filter for whatever reason... */
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(
+        gradientType=1, startColor=0, endColoStr=#FFFFFF
+	);
+        background-image: -webkit-gradient(
+          linear, left top, left bottom, from(rgba(255, 255, 255, 1.0)),
+          to(rgba(170, 170, 170, 3.0))
+        );
+}
+
+.commentsrsslink {
+	padding: 3px 5px;
+}
+
+.widget-content option {
+	background: #ddd;
+}
+
+#submit {
+	font-weight: 700;
+}
+
+#submit:hover, .searchform button:hover {
+	color: #f00;
+}
+
+.searchform {
+	float: left;
+}
+
+.ie .searchform button, .ie #submit {
+	display: inline-block;
+	float: left;
+	background: #ccc;
+	color: #000;
+	line-height: 18px;
+	font-size: 16px;
+	border: solid 1px #888;
+}
+
+
+.widget_rss a.rsswidget {
+	display: inline-block;
+}
+
+.widget_rss ul {
+	clear: both;
 }

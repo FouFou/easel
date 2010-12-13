@@ -4,16 +4,16 @@ if (!function_exists('easel_footer_text')) {
 	function easel_footer_text() {
 		$output = "<p class=\"footer-text\">\r\n";
 		$output .= easel_copyright_info();
-		$output .= "<span class=\"footer-pipe\">-</span> ";
-		$output .= __('Powered by','easel') . " <a href=\"http://wordpress.org/\">WordPress</a> " . __('with','easel'). " <a href=\"http://comiceasel.com/\">Easel</a>\r\n";
+		$output .= "<span class=\"footer-pipe\">|</span> ";
+		$output .= __('Powered by','easel') . " <a href=\"http://wordpress.org/\">WordPress</a> " . __('with','easel'). " <a href=\"http://comicpress.net/\">ComicPress</a>\r\n";
 		$output .= easel_hosted_on();
 		$output .= "<span class=\"footer-subscribe\">";
-			$output .= "<span class=\"footer-pipe\">-</span> ";
+			$output .= "<span class=\"footer-pipe\">|</span> ";
 			$output .= "Subscribe: <a href=\"" . get_bloginfo('rss2_url') ."\">RSS</a>\r\n";
 		$output .= "</span>\r\n";
 		if (!easel_themeinfo('disable_scroll_to_top')) { 
 			$output .= "<span class=\"footer-uptotop\">";
-				$output .= "<span class=\"footer-pipe\">-</span> ";
+				$output .= "<span class=\"footer-pipe\">|</span> ";
 				$output .= "<a href=\"#outside\" onclick=\"scrollup(); return false;\">".__('Back to Top &uarr;','easel')."</a>";
 			$output .="</span>\r\n";
 		}
@@ -21,7 +21,6 @@ if (!function_exists('easel_footer_text')) {
 		echo apply_filters('easel_footer_text', $output);
 	}
 }
-
 
 if (!function_exists('easel_hosted_on')) {
 	function easel_hosted_on() {
@@ -32,7 +31,7 @@ if (!function_exists('easel_hosted_on')) {
 			} else {
 				$site_name = $current_site->site_name;
 			}
-			$output = "<span class=\"footer-pipe\">-</span> ";
+			$output = "<span class=\"footer-pipe\">|</span> ";
 			$output .= __('Hosted on','easel') . ' <a href="http://'. $current_site->domain. $current_site->path. '">'. $site_name. '</a> ';
 			return apply_filters('easel_hosted_on', $output);
 		}
@@ -41,7 +40,11 @@ if (!function_exists('easel_hosted_on')) {
 
 if (!function_exists('easel_copyright_info')) {
 	function easel_copyright_info() {
-		$copyright = __('&copy;', 'easel'). easel_copyright_dates() . ' ' . apply_filters('easel_copyright_info_name', '<a href="'.home_url().'">' . get_bloginfo('name') . '</a>') . ' ';
+		$copyright_name = easel_themeinfo('copyright_name');
+		if (empty($copyright_name)) $copyright_name = get_bloginfo('name');
+		$copyright_url = easel_themeinfo('copyright_url');
+		if (empty($copyright_url)) $copyright_url = home_url();
+		$copyright = __('&copy;', 'easel'). easel_copyright_dates() . ' ' . apply_filters('easel_copyright_info_name', '<a href="'.$copyright_url.'">' . $copyright_name . '</a>') . ' ';
 		return apply_filters('easel_copyright_info', $copyright);
 	}
 }
@@ -69,15 +72,5 @@ if (!function_exists('easel_copyright_dates')) {
 		return apply_filters('easel_copyright_dates', $output);
 	}
 }
-
-// Example of how to do copyright information 
-
-// add_filter('easel_copyright_info_name', 'easel_add_copyright_info_name');
-/*
-function easel_add_copyright_info_name() {
-	$output =  'Philip M. Hofer ';
-	return $output;
-}
-*/
 
 ?>
