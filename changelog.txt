@@ -11,6 +11,8 @@ moved the Easel options to right below appearance so it doesnt conflict with bud
 removed the box-border and shadow on the wp-caption, fixed the alignment so it doesnt get overriden
 moved the debug option for page load to the debug page itself
 added the change to the footer-text to allow proper copyright information
+CommPress merged into Easel now as an addon, new custom post tpe for Easel
+
 
 1.1.4
 removed the tabindex="4" from the comments.php
