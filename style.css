@@ -511,7 +511,7 @@ a.post-edit-link {
 	clear: both;
 }
 
-.post-tags {
+.post-tags, .cast-tags {
 	font-size: 12px;
 }
 
@@ -1310,3 +1310,31 @@ table#wp-calendar td {
 .widget_rss ul {
 	clear: both;
 }
+
+#page-foot p {
+	color: #fff;
+	text-align: center;
+}
+
+#default-nav-wrapper, #casts-nav-wrapper {
+	width: 100%;
+}
+
+	.default-nav, .casts-nav {
+		margin: 0 auto;
+		width: 260px;
+	}
+
+	.default-nav-base, .casts-nav-base {
+		display: inline-block;
+		padding: 0 10px;
+	}
+	
+	.casts-nav-first, .casts-nav-prev, .default-nav-first, .default-nav-prev {
+		float: left;
+	}
+	
+	.casts-nav-next, .casts-nav-last, .default-nav-next, .default-nav-last {
+		float: right;
+	}
+	

@@ -18,7 +18,7 @@ class easel_control_panel_widget extends WP_Widget {
 	function easel_show_control_panel() { 
 		global $user_login;
 		if (!is_user_logged_in()) { ?>
-			<form action="<?php bloginfo('url') ?>/wp-login.php" method="post">
+			<form action="<?php echo home_url(); ?>/wp-login.php" method="post">
 			<?php _e('UserName:','easel'); ?><br />
 			<input type="text" name="log" id="sname" value="<?php echo esc_html(stripslashes($user_login), 1) ?>" size="22" /><br /><br />
 			<?php _e('Password:','easel'); ?><br />
@@ -26,16 +26,16 @@ class easel_control_panel_widget extends WP_Widget {
 			<label for="rememberme"><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /> Remember me</label><br />
 			<br />
 			<button type="submit" class="button"><?php _e('Login','easel'); ?></button>
-			<input type="hidden" name="redirect_to" value="<?php bloginfo('url'); ?>"/>
+			<input type="hidden" name="redirect_to" value="<?php echo home_url(); ?>"/>
 			</form>
 			<br />
 			<ul>
 			<?php if (is_multisite()) { ?>
-				<li><a href="<?php bloginfo('url') ?>/wp-signup.php"><?php _e('Register','easel'); ?></a></li>
+				<li><a href="<?php echo home_url(); ?>/wp-signup.php"><?php _e('Register','easel'); ?></a></li>
 			<?php } else { ?>
-				<li><a href="<?php bloginfo('url') ?>/wp-register.php"><?php _e('Register','easel'); ?></a></li>
+				<li><a href="<?php echo home_url(); ?>/wp-register.php"><?php _e('Register','easel'); ?></a></li>
 			<?php } ?>
-			<li><a href="<?php bloginfo('url') ?>/wp-login.php?action=lostpassword"><?php _e('Recover password','easel'); ?></a></li>
+			<li><a href="<?php echo home_url(); ?>/wp-login.php?action=lostpassword"><?php _e('Recover password','easel'); ?></a></li>
 			</ul>
 		<?php } else { ?>
 			<ul>
@@ -43,7 +43,7 @@ class easel_control_panel_widget extends WP_Widget {
 			$uri = wp_nonce_url( site_url("wp-login.php?action=logout$redirect", 'login'), 'log-out' ); ?>
 			<li><a href="<?php echo $uri; ?>"><?php _e('Logout','easel'); ?></a></li>
 			<?php wp_register(); ?>
-			<li><a href="<?php bloginfo('url'); ?>/wp-admin/profile.php"><?php _e('Profile','easel'); ?></a></li>
+			<li><a href="<?php echo home_url(); ?>/wp-admin/profile.php"><?php _e('Profile','easel'); ?></a></li>
 			</ul>
 		<?php } ?>
 		<?php

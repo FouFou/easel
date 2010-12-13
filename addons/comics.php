@@ -95,7 +95,7 @@ function easel_comics_get_last_comic_permalink() {
 }
 
 function easel_comics_get_previous_comic() {
-	return easel_comics_get_adjacent_comic(false, true);
+	return easel_get_adjacent_post_type(false, true, '', 'comic');
 }
 
 function easel_comics_get_previous_comic_permalink() {
@@ -109,7 +109,7 @@ function easel_comics_get_previous_comic_permalink() {
 }
 
 function easel_comics_get_next_comic() {
-	return easel_comics_get_adjacent_comic(false, false);
+	return easel_get_adjacent_post_type(false, false, '', 'comic');
 }
 
 function easel_comics_get_next_comic_permalink() {
@@ -153,64 +153,6 @@ function easel_comics_get_terminal_post_of_chapter($chapterID = 0, $first = true
 	return $terminalPost;
 }
 
-/**
- * Retrieve adjacent post link.
- *
- * Can either be next or previous post link.
- */
-function easel_comics_get_adjacent_comic($in_same_chapter = false, $previous = true, $excluded_chapters = '', $taxonomy = 'comic') {
-	global $post, $wpdb;
-
-	if ( empty( $post ) )
-		return null;
-
-	$current_post_date = $post->post_date;
-
-	$join = '';
-	$posts_in_ex_cats_sql = '';
-	if ( $in_same_chapter || !empty($excluded_chapters) ) {
-		$join = " INNER JOIN $wpdb->term_relationships AS tr ON p.ID = tr.object_id INNER JOIN $wpdb->term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id";
-
-		if ( $in_same_chapter ) {
-			$cat_array = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'ids'));
-			$join .= " AND tt.taxonomy = '".$taxonomy."' AND tt.term_id IN (" . implode(',', $cat_array) . ")";
-		}
-
-		$posts_in_ex_cats_sql = "AND tt.taxonomy = '".$taxonomy."'";
-		if ( !empty($excluded_chapters) ) {
-			$excluded_chapters = array_map('intval', explode(' and ', $excluded_chapters));
-			if ( !empty($cat_array) ) {
-				$excluded_chapters = array_diff($excluded_chapters, $cat_array);
-				$posts_in_ex_cats_sql = '';
-			}
-
-			if ( !empty($excluded_chapters) ) {
-				$posts_in_ex_cats_sql = " AND tt.taxonomy = '".$taxonomy."' AND tt.term_id NOT IN (" . implode($excluded_chapters, ',') . ')';
-			}
-		}
-	}
-
-	$adjacent = $previous ? 'previous' : 'next';
-	$op = $previous ? '<' : '>';
-	$order = $previous ? 'DESC' : 'ASC';
-
-	$join  = apply_filters( "get_{$adjacent}_comic_join", $join, $in_same_chapter, $excluded_chapters );
-	$where = apply_filters( "get_{$adjacent}_comic_where", $wpdb->prepare("WHERE p.post_date $op %s AND p.post_type = %s AND p.post_status = 'publish' $posts_in_ex_cats_sql", $current_post_date, $post->post_type), $in_same_chapter, $excluded_chapters );
-	$sort  = apply_filters( "get_{$adjacent}_comic_sort", "ORDER BY p.post_date $order LIMIT 1" );
-
-	$query = "SELECT p.* FROM $wpdb->posts AS p $join $where $sort";
-	$query_key = 'adjacent_comic_' . md5($query);
-	$result = wp_cache_get($query_key, 'counts');
-	if ( false !== $result )
-		return $result;
-
-	$result = $wpdb->get_row("SELECT p.* FROM $wpdb->posts AS p $join $where $sort");
-	if ( null === $result )
-		$result = '';
-
-	wp_cache_set($query_key, $result, 'counts');
-	return $result;
-}
 
 if (!function_exists('easel_comics_display_comic_navigation')) {
 	function easel_comics_display_comic_navigation() {

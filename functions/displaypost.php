@@ -120,7 +120,7 @@ if (!function_exists('easel_display_blog_navigation')) {
 			$temp_single = $wp_query -> is_single;
 			$wp_query -> is_single = true;
 		}
-		if (is_single() && !is_page() && !is_archive() && !is_search() && ($post->post_type !== 'comic')) { ?>
+		if (is_single() && !is_page() && !is_archive() && !is_search() && ($post->post_type !== 'comic') && ($post->post_type !== 'casts')) { ?>
 			<div class="blognav">
 				<?php previous_post_link('<span class="blognav-prev">%link</span>',__('&lsaquo; Prev','easel'), false); ?>
 				<?php next_post_link('<span class="blognav-next">%link</span>',__('Next &rsaquo;','easel'), false); ?>

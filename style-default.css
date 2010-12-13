@@ -45,7 +45,7 @@ h1 {
 
 
 /* curved corners 6px */
-#menubar-wrapper, #content-wrapper, .comment .comment-content, .sidebar .widget {
+#menubar-wrapper, #content-wrapper, .comment .comment-content, .sidebar .widget, .casts-nav {
 	-moz-border-radius: 6px;
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
@@ -246,5 +246,14 @@ blockquote, .type-attachment  {
 /* casts / commpress design */
 
 .casts-show {
+	font-size: 16px;
 	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.default-nav, .casts-nav {
+	border: solid 1px #aaa;
+	background: #ddd;
+	width: 240px;
+	padding: 4px 2px;
 }
