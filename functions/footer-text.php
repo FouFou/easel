@@ -5,7 +5,7 @@ if (!function_exists('easel_footer_text')) {
 		$output = "<p class=\"footer-text\">\r\n";
 		$output .= easel_copyright_info();
 		$output .= "<span class=\"footer-pipe\">|</span> ";
-		$output .= __('Powered by','easel') . " <a href=\"http://wordpress.org/\">WordPress</a> " . __('with','easel'). " <a href=\"http://comicpress.net/\">ComicPress</a>\r\n";
+		$output .= __('Powered by','easel') . " <a href=\"http://wordpress.org/\">WordPress</a> " . __('with','easel'). " <a href=\"http://frumph.net/easel/\">Easel</a>\r\n";
 		$output .= easel_hosted_on();
 		$output .= "<span class=\"footer-subscribe\">";
 			$output .= "<span class=\"footer-pipe\">|</span> ";

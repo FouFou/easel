@@ -6,6 +6,7 @@ moved back to red links
 added custom image header ability (in testing, locks up sometimes?)If it looks like its locking up, its because its a bug with wordpress
 where /wp-admin/themes.php?page=custom-header&step=1  the URL line is missing the &step=1
 fixed some text-domains which were not easel
+fixed links to frumph.net/easel for the theme_uri in footer and style.css
 
 1.1.5
 added class .sidebar-no-widgets to handle the sidebar no widgets boxes instead of being static
