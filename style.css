@@ -29,11 +29,11 @@ a {
 }
 
 a:link {
-	color: #012876;
+	color: #b00;
 }
 	
 	a:visited {
-		color: #014676;
+		color: #600;
 	}
 	
 	a:hover {
@@ -768,6 +768,7 @@ textarea#comment {
 }
 
 .sidebar-no-widgets {
+	color: #000;
 	margin: 0 auto;
 	padding: 5px;
 	border: dotted 1px #aaa;

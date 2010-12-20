@@ -345,8 +345,8 @@ if (!function_exists('easel_commpress_display_navigation')) {
 				<div class="casts-nav">
 					<div class="casts-nav-base casts-nav-first"><?php if ( get_permalink() != $first_cast ) { ?><a href="<?php echo $first_cast ?>"><?php echo $first_text; ?></a><?php } else { echo $first_text; } ?></div>
 					<div class="casts-nav-base casts-nav-previous"><?php if ($prev_cast) { ?><a href="<?php echo $prev_cast ?>"><?php echo $prev_text; ?></a><?php } else { echo $prev_text; } ?></div>
-					<div class="casts-nav-base casts-nav-next"><?php if ($next_cast) { ?><a href="<?php echo $next_cast ?>"><?php echo $next_text; ?></a><?php } else { echo $next_text; } ?></div>
 					<div class="casts-nav-base casts-nav-last"><?php if ( get_permalink() != $last_cast ) { ?><a href="<?php echo $last_cast ?>"><?php echo $last_text; ?></a><?php } else { echo $last_text; } ?></div>
+					<div class="casts-nav-base casts-nav-next"><?php if ($next_cast) { ?><a href="<?php echo $next_cast ?>"><?php echo $next_text; ?></a><?php } else { echo $next_text; } ?></div>					
 				<div class="clear"></div>
 				</div>
 			</div>

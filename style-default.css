@@ -23,7 +23,7 @@ h1 {
 }
 
 #header h1 a:link, #header h1 a:visited {
-	color: #fcff00;
+	color: #d00;
 }
 
 #header h1 a:hover {
@@ -129,9 +129,9 @@ blockquote, .type-attachment  {
 }
 
 #comic-wrap {
-	width: 970px;
 	background: #fff;
 	margin: 5px auto;
+	padding: 5px;
 	-moz-box-shadow: 2px 2px 2px #555;
 	-webkit-box-shadow: 2px 2px 2px #555;
 	-khtml-box-shadow: 2px 2px 2px #555;
@@ -251,9 +251,16 @@ blockquote, .type-attachment  {
 	margin-bottom: 20px;
 }
 
+
+/* nav wrappers  */
+#default-nav-wrapper {
+	margin: 2px auto;
+}
+
 .default-nav, .casts-nav {
 	border: solid 1px #aaa;
 	background: #ddd;
 	width: 240px;
 	padding: 4px 2px;
 }
+

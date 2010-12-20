@@ -1,4 +1,8 @@
 ﻿Changelog
+1.1.6
+CSS Cleanups
+moved back to red links ;/
+
 1.1.5
 added class .sidebar-no-widgets to handle the sidebar no widgets boxes instead of being static
 changed .pagetitle to .page-title to be uniformative with the rest of the site
@@ -7,7 +11,7 @@ the feed wasnt able to seperate post_types until now ;/ done
 added support for custom support type archive loop
 adjusted the colorations, added a:link and a:visited to the main style.css
 added the remove_filter on the sidebars as well as the menubar so they don't get parsed with the wrong info in their loops.
-moved the Easel options to right below appearance so it doesnt conflict with buddypress's positioning
+moved the Easel options to right above appearance so it doesnt conflict with buddypress's positioning
 removed the box-border and shadow on the wp-caption, fixed the alignment so it doesnt get overriden
 moved the debug option for page load to the debug page itself
 added the change to the footer-text to allow proper copyright information
