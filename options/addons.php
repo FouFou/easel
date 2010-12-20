@@ -9,7 +9,7 @@
 						<th colspan="3"><?php _e('Addons','easel'); ?></th>
 					</tr>
 				</thead>
-				<tr class="alternate">
+				<tr>
 					<th scope="row"><label for="enable_addon_membersonly"><?php _e('Members Only','easel'); ?></label></th>
 					<td>
 						<input id="enable_addon_membersonly" name="enable_addon_membersonly" type="checkbox" value="1" <?php checked(true, $easel_options['enable_addon_membersonly']); ?> />
@@ -18,7 +18,7 @@
 						<?php _e('Enabled the members only shortcode [members]content[/members] - you can configure who is a member in the user editor.  Those with access will be able to see the content.','easel'); ?>
 					</td>
 				</tr>
-				<tr>
+				<tr class="alternate">
 					<th scope="row"><label for="enable_addon_playingnow"><?php _e('Playing Now','easel'); ?></label></th>
 					<td>
 						<input id="enable_addon_playingnow" name="enable_addon_playingnow" type="checkbox" value="1" <?php checked(true, $easel_options['enable_addon_playingnow']); ?> />
@@ -27,7 +27,7 @@
 						<?php _e('The "Music" post type, this post type allows you to seperate music selections and post about music/bands seperate from regular posts; includes a [latest music] widget that lists off the latest posts in the music post type.','easel'); ?>
 					</td>
 				</tr>
-				<tr class="alternate">
+				<tr>
 					<th scope="row"><label for="enable_addon_showcase"><?php _e('Comic Showcase','easel'); ?></label></th>
 					<td>
 						<input id="enable_addon_showcase" name="enable_addon_showcase" type="checkbox" value="1" <?php checked(true, $easel_options['enable_addon_showcase']); ?> />
@@ -47,7 +47,7 @@
 					</td>
 				</tr>
 				<?php } ?>
-				<tr>
+				<tr class="alternate">
 					<th scope="row"><label for="enable_addon_comics"><?php _e('ComicPress Light','easel'); ?></label></th>
 					<td>
 						<input id="enable_addon_comics" name="enable_addon_comics" type="checkbox" value="1" <?php checked(true, $easel_options['enable_addon_comics']); ?> />

@@ -71,7 +71,7 @@ function easel_is_member() {
 	$this_ID = get_current_user_id();
 	if (!empty($this_ID)) {
 		$is_member = get_user_meta($this_ID,'easel-is-member', true);
-		if (empty($is_member)) $is_member = get_user_meta($this_ID, 'comicpress-is-member', true);
+		if (empty($is_member)) $is_member = get_user_meta($this_ID, 'easel-is-member', true);
 		if ($is_member || current_user_can('manage_options')) {
 			return true;
 		}

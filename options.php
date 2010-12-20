@@ -82,6 +82,7 @@ function easel_admin_options() { ?>
 				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
 			}
+			
 			$tab = 'addons';
 			update_option('easel-options', $easel_options);
 		}
@@ -121,7 +122,9 @@ function easel_admin_options() { ?>
 				'avatar_directory',
 				'home_post_count',
 				'copyright_name',
-				'copyright_url'
+				'copyright_url',
+				'custom_image_header_width',
+				'custom_image_header_height'
 						) as $key) {
 							if (isset($_REQUEST[$key])) 
 								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
