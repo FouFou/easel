@@ -37,8 +37,6 @@ if (is_dir(easel_themeinfo('themepath') . '/addons')) {
 		@require_once(easel_themeinfo('themepath') . '/addons/showcase.php');
 	if (easel_themeinfo('enable_addon_commpress'))
 		@require_once(easel_themeinfo('themepath') . '/addons/commpress.php');
-	if (easel_themeinfo('enable_addon_custom_header'))
-		@require_once(easel_themeinfo('themepath') . '/addons/custom-header.php');
 }
 
 // These autoload
@@ -171,7 +169,6 @@ function easel_load_options() {
 			'enable_addon_playingnow' => false,
 			'enable_addon_showcase_slider' => false,
 			'enable_addon_commpress' => false,
-			'enable_addon_custom_header' => false,
 			'custom_image_header_width' => '980',
 			'custom_image_header_height' => '100',
 			'copyright_name' => '',
