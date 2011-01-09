@@ -170,8 +170,8 @@ if (!function_exists('easel_comics_display_comic_navigation')) {
 			<div class="default-nav">
 				<div class="default-nav-base default-nav-first"><?php if ( get_permalink() != $first_comic ) { ?><a href="<?php echo $first_comic ?>"><?php echo $first_text; ?></a><?php } else { echo $first_text; } ?></div>
 				<div class="default-nav-base default-nav-previous"><?php if ($prev_comic) { ?><a href="<?php echo $prev_comic ?>"><?php echo $prev_text; ?></a><?php } else { echo $prev_text; } ?></div>
-				<div class="default-nav-base default-nav-next"><?php if ($next_comic) { ?><a href="<?php echo $next_comic ?>"><?php echo $next_text; ?></a><?php } else { echo $next_text; } ?></div>
 				<div class="default-nav-base default-nav-last"><?php if ( get_permalink() != $last_comic ) { ?><a href="<?php echo $last_comic ?>"><?php echo $last_text; ?></a><?php } else { echo $last_text; } ?></div>
+				<div class="default-nav-base default-nav-next"><?php if ($next_comic) { ?><a href="<?php echo $next_comic ?>"><?php echo $next_text; ?></a><?php } else { echo $next_text; } ?></div>
 				<div class="clear"></div>
 			</div>
 		</div>
@@ -229,7 +229,7 @@ function easel_comics_display_comic_area() {
 
 // This is used inside easel_comics_display_comic_area()
 function easel_comics_display_comic_wrapper() {
-	global $post; 
+	global $post, $wp_query; 
 	if ($post->post_type == 'comic') {
 		?>
 		<div id="comic-wrap" class="comic-id-<?php echo $post->ID; ?>">
@@ -238,7 +238,7 @@ function easel_comics_display_comic_wrapper() {
 				<?php echo easel_comics_display_comic(); ?>
 			</div>
 			<div id="comic-foot">
-				<?php easel_comics_display_comic_navigation(); ?>
+				<?php if (!is_search() && !is_archive()) easel_comics_display_comic_navigation(); ?>
 			</div>
 			<div class="clear"></div>
 		</div>

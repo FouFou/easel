@@ -21,6 +21,7 @@ function easel_menubar() {
 					<?php get_search_form(); ?>
 				</div>
 				<?php } ?>
+				<?php do_action('easel-menubar-menunav'); ?>
 				<?php if (easel_themeinfo('enable_rss_in_menubar')) { ?>
 					<a href="<?php bloginfo('rss2_url') ?>" title="RSS Feed" class="menunav-rss">RSS</a>
 				<?php } ?>
@@ -28,9 +29,7 @@ function easel_menubar() {
 			</div>
 			<?php
 				// dont mess with the pre_get_posts for the wp_nav_menu()
-				remove_filter( 'pre_get_posts' , 'easel_include_custom_post_types' );
 				wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu', 'theme_location' => 'Primary' ) );
-				add_filter( 'pre_get_posts' , 'easel_include_custom_post_types' );
 				do_action('easel-menubar-after'); 
 			?>
 			<div class="clear"></div>

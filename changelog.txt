@@ -1,4 +1,16 @@
 ﻿Changelog
+1.1.7
+Removed the pre_get_posts completely, now the blog loop has its own post type section which handles what displays there and the rss feed has a pre_get_posts for that in functions/syndication.php
+fixed the members only code to properly update for wordpress 3.1+
+added twitter, facebook and MSN to the the profile pages for everyone
+added option to make the archive pages display as text links instead of full posts
+on 404 pages moved the title out of the post area to keep consistant with site design elements
+fixed the displaying of the navigation on list pages 
+fixed the easel_display_content function with @gisse's help from the forums
+also with Gisse's help we squashed a bug with the post type thinking the home page was is_archive
+fixed the author pages to display the proper information
+
+
 1.1.6
 removed that changelog.php template that shouldnt have been there
 CSS Cleanups

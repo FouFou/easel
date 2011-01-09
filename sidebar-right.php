@@ -1,4 +1,3 @@
-<?php remove_filter( 'pre_get_posts' , 'easel_include_custom_post_types' ); ?>
 <div id="sidebar-right">
 	<div class="sidebar-head"></div>
 		<div class="sidebar">
@@ -25,4 +24,3 @@
 		</div>
 	<div class="sidebar-foot"></div>
 </div>
-<?php add_filter( 'pre_get_posts' , 'easel_include_custom_post_types' ); ?>

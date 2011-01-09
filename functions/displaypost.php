@@ -136,15 +136,15 @@ if (!function_exists('easel_display_blog_navigation')) {
 if (!function_exists('easel_display_the_content')) {
 	function easel_display_the_content() {
 		global $post, $wp_query;
-		if (is_archive() || is_search()) {
-			do_action('easel-display-the-content-archive-before');
-			the_excerpt();
-			do_action('easel-display-the-content-archive-after');
-		} else {
+		if (is_single() || is_home() || is_page()) {
 			if (!is_single()) { global $more; $more = 0; } 
 			do_action('easel-display-the-content-before');
 			the_content(__('&darr; Read the rest of this entry...','easel'));
 			do_action('easel-display-the-content-after');
+		} else {
+			do_action('easel-display-the-content-archive-before');
+			the_excerpt();
+			do_action('easel-display-the-content-archive-after');
 		}
 	}
 }

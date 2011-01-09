@@ -4,13 +4,8 @@ add_action('admin_menu', 'easel_options_setup');
 
 function easel_options_setup() {
 	$options_title = __('Options','easel');
-	if (!function_exists('comiceasel_pluginfo')) {
-		$admin_title = __('Easel Options', 'easel');
-		$pagehook = add_menu_page($admin_title, __('Easel', 'easel'), 'edit_theme_options', 'easel-options', 'easel_admin_options', easel_themeinfo('themeurl') . '/images/easel.png', 58);
-		$pagehook = add_submenu_page('easel-options', $admin_title, $options_title, 'edit_theme_options', 'easel-options', 'easel_admin_options');
-	} else {
-		$pagehook = add_submenu_page('themes.php', $options_title, $options_title, 'edit_theme_options', 'easel-options', 'easel_admin_options');
-	}
+	$admin_title = __('Easel Options', 'easel');
+	$pagehook = add_theme_page($admin_title, $admin_title, 'edit_theme_options', 'easel-options', 'easel_admin_options');
 	add_action('admin_head-' . $pagehook, 'easel_admin_page_head');
 	add_action('admin_print_scripts-' . $pagehook, 'easel_admin_print_scripts');
 	add_action('admin_print_styles-' . $pagehook, 'easel_admin_print_styles');
@@ -112,7 +107,10 @@ function easel_admin_options() { ?>
 			'enable_search_in_menubar',
 			'enable_rss_in_menubar',
 			'disable_blog_on_homepage',
-			'enable_comments_on_homepage'
+			'enable_comments_on_homepage',
+			'facebook_like_blog_post',
+			'facebook_meta',
+			'display_archive_as_links'
 				) as $key) {
 					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );

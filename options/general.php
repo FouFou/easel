@@ -339,7 +339,61 @@
 					</td>
 				</tr>
 			</table>
+		
+			<table class="widefat">
+				<thead>
+					<tr>
+						<th colspan="3"><?php _e('Facebook','easel'); ?></th>
+					</tr>
+				</thead>
+				<tr class="alternate">
+					<th scope="row"><label for="facebook_like_blog_post"><?php _e('Enable the Facebook Like button in Blog Posts?','easel'); ?></label></th>
+					<td>
+						<input id="facebook_like_blog_post" name="facebook_like_blog_post" type="checkbox" value="1" <?php checked(true, $easel_options['facebook_like_blog_post']); ?> />
+					</td>
+					<td>
+						<?php _e('When enabled this option will allow the Facebook like button to appear at the bottom of regular blog posts.','easel'); ?>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="facebook_meta"><?php _e('Enable the Facebook Meta?','easel'); ?></label></th>
+					<td>
+						<input id="facebook_meta" name="facebook_meta" type="checkbox" value="1" <?php checked(true, $easel_options['facebook_meta']); ?> />
+					</td>
+					<td>
+						<?php _e('When setting this option, Easel will add meta information to the head area of each page so that facebook will recognize the content within.','easel'); ?>
+					</td>
+				</tr>
+			</table>
 			
+			<table class="widefat">
+				<thead>
+					<tr>
+						<th colspan="3"><?php _e('Archive & Search','easel'); ?></th>
+					</tr>
+				</thead>
+				<tr class="alternate">
+					<th scope="row"><label for="display_archive_as_links"><?php _e('Display archive results as a list of links?','easel'); ?></label></th>
+					<td>
+						<input id="display_archive_as_links" name="display_archive_as_links" type="checkbox" value="1" <?php checked(true, $easel_options['display_archive_as_links']); ?> />
+					</td>
+					<td>
+						<?php _e('Enabling this will make the archive pages by date/category/term display as a list of links instead of full posts.','easel'); ?>
+					</td>
+				</tr>
+				<!--
+				<tr>
+					<th scope="row"><label for="facebook_meta"><?php _e('Enable the Facebook Meta?','easel'); ?></label></th>
+					<td>
+						<input id="facebook_meta" name="facebook_meta" type="checkbox" value="1" <?php checked(true, $easel_options['facebook_meta']); ?> />
+					</td>
+					<td>
+						<?php _e('When setting this option, Easel will add meta information to the head area of each page so that facebook will recognize the content within.','easel'); ?>
+					</td>
+				</tr>
+				// -->
+			</table>
+				
 		</div>
 
 		<div class="easel-options-save">

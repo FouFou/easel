@@ -10,7 +10,6 @@ add_theme_support( 'custom-header' );
 
 // This theme allows users to set a custom background
 add_custom_background();
-add_theme_support( 'custom-background' );
 
 /* this sets default video width */
 if (!isset($content_width)) $content_width = 538;
@@ -41,13 +40,12 @@ if (is_dir(easel_themeinfo('themepath') . '/addons')) {
 
 // These autoload
 foreach (glob(easel_themeinfo('themepath') . "/functions/*.php") as $funcfile) {
-	@require_once($funcfile);
+	@require($funcfile);
 }
-
 
 // Load all the widgets.
 foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
-	@require_once($widgefile);
+	@require($widgefile);
 }
 
 // Load all the widgets from the child theme *if* a child theme exists
@@ -56,7 +54,7 @@ if (is_child_theme()) {
 		$results = glob(easel_themeinfo('stylepath') . '/widgets/*.php');
 		if (!empty($results)) {
 			foreach ($results as $widgefile) {
-				@require_once($widgefile);
+				@require($widgefile);
 			}
 		}
 	}
@@ -85,6 +83,8 @@ function __easel_init() {
 			wp_enqueue_script('themetricks_historic1', easel_themeinfo('themeurl') . '/js/cvi_text_lib.js', array(), false, true);
 			wp_enqueue_script('themetricks_historic2', easel_themeinfo('themeurl') . '/js/instant.js', array(), false, true);
 		}
+		if (easel_themeinfo('facebook_like_blog_post'))
+			wp_enqueue_script('facebook', 'http://connect.facebook.net/en_US/all.js#xfbml=1', array(), false, true);
 	}
 }
 
@@ -116,13 +116,11 @@ if (!function_exists('easel_register_sidebars')) {
 
 function easel_get_sidebar($location = '') {
 	if (empty($location)) { get_sidebar(); return; }
-	if (is_active_sidebar('sidebar-'.$location)) { 
-		remove_filter( 'pre_get_posts' , 'easel_include_custom_post_types' ); ?>
+	if (is_active_sidebar('sidebar-'.$location)) { ?>
 		<div id="sidebar-<?php echo $location; ?>" class="sidebar">
 			<?php dynamic_sidebar('sidebar-'.$location); ?>
 		</div>
-	<?php add_filter( 'pre_get_posts' , 'easel_include_custom_post_types' );
-	}
+	<?php }
 }
 
 function easel_is_signup() {
@@ -172,7 +170,11 @@ function easel_load_options() {
 			'custom_image_header_width' => '980',
 			'custom_image_header_height' => '100',
 			'copyright_name' => '',
-			'copyright_url' => ''
+			'copyright_url' => '',
+			'facebook_like_blog_post' => false,
+			'facebook_meta' => false,
+			'display_archive_as_links' => false,
+			'archive_display_order' => 'DESC'
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
@@ -189,7 +191,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '1.1.6',
+			'version' => '1.1.7',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -231,38 +233,6 @@ function easel_debug_page_foot_code() { ?>
 	<p><?php echo get_num_queries() ?> queries. <?php if (function_exists('memory_get_usage')) { $unit=array('b','kb','mb','gb','tb','pb'); echo @round(memory_get_usage(true)/pow(1024,($i=floor(log(memory_get_usage(true),1024)))),2).' '.$unit[$i]; ?> Memory usage. <?php } timer_stop(1) ?> seconds.</p>
 <?php }
 
-// Credit: http://bajada.net/2010/06/08/custom-post-types-in-the-loop-adding-a-filter-on-pre_get_posts
-// This filter adds all of the custom post types except comic to the blog loop.
-add_filter( 'pre_get_posts' , 'easel_include_custom_post_types' );
-
-function easel_include_custom_post_types( $query ) {
-	
-	/* Don't break admin or preview pages. This is also a good place to exclude feed with !is_feed() if desired. */
-	if ( !$query->is_preview && !$query->is_admin && !$query->is_singular ) {
-		$args = array(
-				'public' => true,
-				'_builtin' => false
-				);
-		$output = 'names';
-		$operator = 'and';
-		
-		$post_types = get_post_types( $args , $output , $operator );
-		$post_types = array_merge( $post_types , array( 'post' ) );
-		if ($query->is_search || $query->is_archive) $post_types = array_merge( $post_types, array( 'page' ) );
-		
-		// Set all the custom post types to be able to be seen by the feed.
-		$my_post_type = get_query_var('post_type');
-		if ($query->is_feed) {	
-			if (empty($my_post_type)) $query->set( 'post_type' , $post_types );
-		}  else {
-			// if its a comic post type, dont show it in the blog loop but show all others
-			if ($query->is_home) $post_types = array_diff( $post_types, array ( 'comic', 'casts' ) );
-			if ( empty( $my_post_type ) )
-				$query->set( 'post_type' , $post_types ); 
-		}
-	}
-	return $query;
-}
 
 /**
  * Retrieve adjacent post link.
@@ -271,9 +241,8 @@ function easel_include_custom_post_types( $query ) {
  */
 function easel_get_adjacent_post_type($in_same_chapter = false, $previous = true, $excluded_chapters = '', $taxonomy = 'post') {
 	global $post, $wpdb;
-
-	if ( empty( $post ) )
-		return null;
+	
+	if ( empty( $post ) ) return null;
 
 	$current_post_date = $post->post_date;
 
@@ -323,68 +292,111 @@ function easel_get_adjacent_post_type($in_same_chapter = false, $previous = true
 	return $result;
 }
 
-add_filter('easel_header_image_width', 'easel_change_header_width');
-
-function easel_change_header_width($width) {
-	if (easel_themeinfo('custom_image_header_width')) $width = easel_themeinfo('custom_image_header_width');
-	return (int)$width;
-}
-
-add_filter('easel_header_image_height', 'easel_change_header_height');
-
-function easel_change_header_height($height) {
-	if (easel_themeinfo('custom_image_header_height')) $width = easel_themeinfo('custom_image_header_height');
-	return (int)$height;
-}
-
-// Custom Image Header Defaults
-define('HEADER_TEXTCOLOR', '');
-define('HEADER_IMAGE', ''); // %s is theme dir
-define('NO_HEADER_TEXT', true);
-
-define( 'HEADER_IMAGE_WIDTH', apply_filters( 'easel_header_image_width', 980) );
-define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'easel_header_image_height', 100) );
-set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-
-add_custom_image_header('easel_header_style', 'easel_admin_header_style');
-
-function easel_admin_header_style() { ?>
-<style type="text/css">
-#headimg {
-	width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-	height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
-	background: url(<?php header_image(); ?>) no-repeat center;	
-}
-	
-#headimg h1, #headimg .description {
-	display: none;
-}
-</style>
-
-	<?php
-}
-	
-function easel_header_style() { 
-	if (get_header_image()) { ?>
-<style type="text/css">
-	#header {
-		width: <?php echo HEADER_IMAGE_WIDTH; ?>px; 
-		height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
-		background: url(<?php header_image(); ?>) top center no-repeat;
-		overflow: hidden;
+function easel_is_post_type($post_type) {
+	if ( is_array($post_type) )	{	// multiple post types 
+		if ( count($post_type) > 1 )	// not a custom post type archive
+			return false;
+		$post_type = $post_type[0];		
 	}
-
-	#header h1 { padding: 0; }
-	#header h1 a { 
-		display: block;
-		width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-		height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
-		text-indent: -9999px;
-	}
-	#header .description { display: none; }
-</style>
-
-	<?php }
+	if ( !is_string($post_type) )
+		return;
+	if ($post_type == 'post') return;
+	$post_type = get_post_type_object( $post_type );
+	if ( !is_null( $post_type ) && ($post_type->public == true) ) 
+		return $post_type;		
+	return false;
 }
+
+function easel_is_custom_post_type_archive( $post_type = '' ) {
+	global $wp_query;
+	
+	if ( !isset($wp_query->is_custom_post_type_archive) || !$wp_query->is_custom_post_type_archive ) 
+		return false;
+	
+	if ( empty($post_type) || $post_type == get_query_var('post_type') )
+		return true;
+		
+	return false;
+}
+
+/*  
+// This is actually NO GOOD
+add_action( 'template_redirect', 'easel_template_redirect' );
+
+function easel_template_redirect() {	
+	if ( easel_is_custom_post_type_archive() ) :
+		$post_type = easel_is_post_type( get_query_var('post_type') );
+	
+		$template = array( "type-".$post_type->name.".php" );
+		if ( isset( $post_type->rewrite['slug'] ) ) $template[] = "type-".$post_type->rewrite['slug'].".php";
+		array_push( $template, 'type.php', 'index.php' );
+	
+		locate_template( $template, true );
+		
+		die();
+		
+	endif;
+}
+*/
+
+add_action( 'generate_rewrite_rules', 'easel_rewrite_rules' );
+
+function easel_rewrite_rules( $wp_rewrite ) {
+	$args = array(
+			'public' => true,
+			'_builtin' => false
+			);
+	$output = 'names';
+	$operator = 'and';
+	
+	$post_types = get_post_types( $args , $output , $operator );
+	$feed = get_default_feed();
+
+	foreach ( $post_types as $ptype ) :
+		$this_type = get_post_type_object( $ptype );
+		$type_slug = $this_type->rewrite['slug'];
+		if (!empty($type_slug)) {
+			$new_rules = array( 
+					$type_slug.'/([0-9]+)/([0-9]{1,2})/([0-9]{1,2})/?$' => 'index.php?post_type='.$ptype.'&year=' . $wp_rewrite->preg_index(1) . '&monthnum=' . $wp_rewrite->preg_index(2) . '&day=' . $wp_rewrite->preg_index(3),
+					$type_slug.'/([0-9]+)/([0-9]{1,2})/?$' => 'index.php?post_type='.$ptype.'&year=' . $wp_rewrite->preg_index(1) . '&monthnum=' . $wp_rewrite->preg_index(2),
+					$type_slug.'/([0-9]+/?$)' => 'index.php?post_type='.$ptype.'&year=' . $wp_rewrite->preg_index(1),
+					$type_slug.'/page/?([0-9]{1,})/?$' => 'index.php?post_type='.$ptype.'&paged='.$wp_rewrite->preg_index(1),
+					$type_slug.'/feed/(feed|rdf|rss|rss2|atom)/?$' => 'index.php?post_type='.$ptype.'&feed='.$wp_rewrite->preg_index(1),
+					$type_slug.'/(feed|rdf|rss|rss2|atom)/?$' => 'index.php?post_type='.$ptype.'&feed='.$wp_rewrite->preg_index(1),
+					$type_slug.'/?$' => 'index.php?post_type='.$ptype,
+					);
+			
+			$wp_rewrite->rules = array_merge($new_rules, $wp_rewrite->rules);
+		}
+		endforeach;
+}
+
+add_action( 'parse_query', 'easel_parse_query', 100 );
+
+function easel_parse_query( $wp_query ) {
+	if ( !isset($wp_query->query_vars['post_type']) )
+		return;
+	
+	$post_type = $wp_query->query_vars['post_type'];
+	if (!empty($post_type)) {
+		if ( get_query_var('name') || !easel_is_post_type($post_type) || is_robots() || is_feed() || is_trackback() )
+			return;
+		
+		$wp_query->is_home = false;	// correct is_home variable
+		$wp_query->is_archive = true;
+		$wp_query->is_custom_post_type_archive = true; // define new query variable
+	}
+} 
+
+function easel_continue_reading_link() {
+	return ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...','comicpress') . '</a>';
+}
+
+function easel_auto_excerpt_more( $more ) {
+	return __(' [&hellip;]','easel') . easel_continue_reading_link();
+}
+
+add_filter( 'excerpt_more', 'easel_auto_excerpt_more' );
+
 
 ?>

@@ -285,6 +285,7 @@ function easel_commpress_get_previous_cast() {
 
 function easel_commpress_get_previous_cast_permalink() {
 	$prev_cast = easel_commpress_get_previous_cast();
+	
 	if (is_object($prev_cast)) {
 		if (isset($prev_cast->ID)) {
 			return get_permalink($prev_cast->ID);
@@ -331,7 +332,7 @@ add_action('easel-post-foot', 'easel_commpress_display_navigation');
 if (!function_exists('easel_commpress_display_navigation')) {
 	function easel_commpress_display_navigation() {
 		global $post, $wp_query;
-		if ($post->post_type == 'casts') {
+		if ($post->post_type == 'casts' && !is_archive() && !is_search()) {
 			$first_cast = easel_commpress_get_first_cast_permalink();
 			$first_text = __('&lsaquo;&lsaquo; First','easel');
 			$last_cast = easel_commpress_get_last_cast_permalink();

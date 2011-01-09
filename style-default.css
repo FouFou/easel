@@ -264,3 +264,10 @@ blockquote, .type-attachment  {
 	padding: 4px 2px;
 }
 
+
+/* fix for opera */
+.opera #submit, .opera #searchform button, .opera .type-post, .opera .type-page, .opera .wpsb_opt_in button,
+.opera .type-comic, .opera .type-showcase, .opera .type-music, .opera #wp-paginav, .opera .sidebar h2, 
+.opera #comment-wrapper, .opera .blognav, .opera .default-nav, .opera .submit, .opera .type-attachment, .opera .sidebar .widget {
+	background: #ccc;
+}

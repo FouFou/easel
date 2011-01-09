@@ -31,11 +31,30 @@ if (!function_exists('easel_insert_thumbnail_feed')) {
 	}
 }
 
+// Using the_content and the_excerpt instead of the_content_rss cause it doesn't work properly otherwise
 if (easel_themeinfo('enable_post_thumbnail_rss')) {
 	add_filter('the_content','easel_insert_thumbnail_feed');
 	add_filter('the_excerpt_rss','easel_insert_thumbnail_feed');
 }
 
-// Using the_content and the_excerpt instead of the_content_rss cause it doesn't work properly otherwise
+// This will add *all* custom post types to the RSS feed naturally
+// This doesn't work the query is still hitting the /comic/feed/
+// add_filter( 'pre_get_posts' , 'easel_include_custom_post_types_in_rss' );
+
+function easel_include_custom_post_types_in_rss( $query ) {
+	if ($query->is_feed && !isset($query->post_type) && empty($query->post_type)) {
+		$args = array(
+				'public' => true,
+				'_builtin' => false
+				);
+		$output = 'names';
+		$operator = 'and';
+		$post_types = get_post_types( $args , $output , $operator );
+		// remove 'pages' from the RSS
+		$post_types = array_merge( $post_types, array('post') ) ;
+		$query->set( 'post_type' , $post_types );
+	}
+	return $query;
+}
 
 ?>

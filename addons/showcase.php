@@ -444,11 +444,16 @@ function showcase_filter_display_slider() {
 	global $wp_query, $post;
 	if (is_home()) {
 	Protect();
+	$showcase_query = array(
+				'posts_per_page' => 1,
+				'post_type' => array('showcase'),
+				'orderby' => 'rand'
+		);
 ?>
 <div id="slider">
 	<div id="mygallery" class="stepcarousel">
 		<div class="belt">
-			<?php query_posts('showposts=1&posts_per_page=1&orderby=rand&post_type=showcase'); ?>
+			<?php $posts = &query_posts($showcase_query); ?>
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<div class="panel">
 					<h2><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>

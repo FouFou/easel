@@ -1,46 +1,91 @@
 <?php
-get_header(); 
+get_header();
 
+// set to empty
+$order = $post_count = $theCatID = '';
 if (is_category()) {
-	$theCatId = get_term_by( 'slug', $wp_query->query_vars['category_name'], 'category' );
-	$theCatId = $theCatId->term_id;
+	$theCatID = get_term_by( 'slug', $wp_query->query_vars['category_name'], 'category' );
+	if (!empty($theCatID))
+		$theCatID = $theCatID->term_id;
 }
+
+$archive_display_order = easel_themeinfo('archive_display_order');
+if (empty($archive_display_order)) $archive_display_order = 'DESC';
+
+$order = '&order='.$archive_display_order;
+
+if (easel_themeinfo('display_archive_as_links')) {
+	$post_count = '&showposts=-1&posts_per_page=-1';
+}
+
+Protect();
+$tmp_search = new WP_Query($query_string.'&showposts=-1&posts_per_page=-1');
+if (isset($tmp_search->post_count)) {
+	$count = $tmp_search->post_count;
+} else {
+	$count = "No";
+}
+UnProtect();
+
+$args = $query_string . $post_count . $order;
+$posts = &query_posts($args);
+
 if (have_posts()) :
+
+	$post = $posts[0]; // Hack. Set $post so that the_date() works
+	$post_title_type = $title_string = '';
+	if ($post->post_type !== 'post') $post_title_type = $post->post_type.'-'; // extra space at the end for visual
+	if (is_category()) { /* Category */
+		$title_string = __('Archive for &#8216;','easel').$post_title_type.single_cat_title('',false).__('&#8217;', 'easel');
+	} elseif(is_tag()) { /* Tag */
+		$title_string = __('Posts Tagged &#8216;','easel').$post_title_type.single_tag_title('',false).__('&#8217;', 'easel');
+	} elseif (is_day()) {
+		$title_string = __('Archive for &#8216;','easel').$post_title_type.get_the_time('F jS, Y').__('&#8217;', 'easel');
+	} elseif (is_month()) {
+		$title_string = __('Archive for &#8216;','easel').$post_title_type.get_the_time('F, Y').__('&#8217;', 'easel');
+	} elseif (is_year()) {
+		$title_string = __('Archive for &#8216;','easel').$post_title_type.get_the_time('Y').__('&#8217;', 'easel');
+	} elseif (is_author()) {
+		$title_string = __('Author Archive &#8216;','easel').$post_title_type.get_the_time('Y').__('&#8217;', 'easel');
+	} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+		$title_string = __('Archives','easel');
+	} elseif (taxonomy_exists($wp_query->query_vars['taxonomy'])) {
+		if (term_exists($wp_query->query_vars['term'])) {
+			$title_string = __('Archive for &#8216;','easel').$post_title_type.$wp_query->query_vars['term'].__('&#8217;', 'easel');
+		} else {
+			$title_string = __('Archive for &#8216;','easel').$post_title_type.$wp_query->query_vars['taxonomy'].__('&#8217;', 'easel');
+		}
+	} elseif ($post->post_type !== 'post') {
+		$title_string = __('Archive for &#8216;','easel').$post->post_type.__('&#8217;', 'easel');
+	} else {
+		$title_string = __('Archive is unable to be found.','easel');
+	}
 ?>
-	<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
-	<?php /* Category Archive */ if (is_category()) { ?>
-		<h2 class="page-title"><?php _e('Archive for &#8216;','easel'); ?><?php single_cat_title() ?>&#8217;</h2>
-	<?php /* Tag Archive */ } elseif( is_tag() ) { ?>
-		<h2 class="page-title"><?php _e('Posts Tagged &#8216;','easel'); ?><?php single_tag_title() ?>&#8217;</h2>
-	<?php /* Daily Archive */ } elseif (is_day()) { ?>
-		<h2 class="page-title"><?php _e('Archive for','easel'); ?> <?php the_time('F jS, Y') ?></h2>
-	<?php /* Monthly Archive */ } elseif (is_month()) { ?>
-		<h2 class="page-title"><?php _e('Archive for','easel'); ?> <?php the_time('F, Y') ?></h2>
-	<?php /* Yearly Archive */ } elseif (is_year()) { ?>
-		<h2 class="page-title"><?php _e('Archive for','easel'); ?> <?php the_time('Y') ?></h2>
-	<?php /* Author Archive */ } elseif (is_author()) { ?>
-		<h2 class="page-title"><?php _e('Author Archive','easel'); ?></h2>
-	<?php /* Paged Archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-		<h2 class="page-title"><?php _e('Archives','easel'); ?></h2>
-	<?php /* taxonomy */ } elseif (taxonomy_exists($wp_query->query_vars['taxonomy'])) {
-		if (term_exists($wp_query->query_vars['term'])) { ?>
-			<h2 class="page-title"><?php _e('Archive for','easel'); ?> - <?php echo $wp_query->query_vars['term']; ?></h2>
-		<?php } else { ?>
-			<h2 class="page-title"><?php _e('Archive for','easel'); ?> - <?php echo $wp_query->query_vars['taxonomy']; ?></h2>
-		<?php } ?>
-	<?php /* Post Type */ } elseif ($post->post_type !== 'post') { ?>
-		<h2 class="page-title"><?php echo $post->post_type; ?></h2>
-	<?php } ?>
+	<h2 class="page-title"><?php echo $title_string; ?></h2>
+	<div class="archiveresults"><?php printf(_n("%d result.", "%d results.", $count,'easel'),$count); ?></div>
 	<div class="clear"></div>
 	<?php 
-	while (have_posts()) : the_post();
-		easel_display_post();
-	endwhile;
+	if (easel_themeinfo('display_archive_as_links')) { ?>
+	<div <?php post_class(); ?>>
+		<div class="post-head"></div>
+		<div class="entry">
+		<table class="archive-table">
+			<?php while (have_posts()) : the_post(); ?>
+			<tr><td class="archive-date"><?php the_time('M d, Y') ?></td><td class="archive-title"><a href="<?php echo get_permalink($post->ID) ?>" rel="bookmark" title="<?php _e('Permanent Link:','easel'); ?> <?php the_title() ?>"><?php the_title() ?></a></td></tr>
+			<?php endwhile; ?>
+		</table>
+		</div>
+		<div class="post-foot"></div>
+	</div>
+	<?php } else {
+		while (have_posts()) : the_post();
+			easel_display_post();
+		endwhile;
+	}
 	?>
 	<div class="clear"></div>
 	<?php easel_pagination(); ?>
 	
 <?php endif; ?>
-
 
 <?php get_footer(); ?>
