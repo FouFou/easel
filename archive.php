@@ -7,6 +7,7 @@ if (is_category()) {
 	$theCatID = get_term_by( 'slug', $wp_query->query_vars['category_name'], 'category' );
 	if (!empty($theCatID))
 		$theCatID = $theCatID->term_id;
+	if (isset($wp_query->query_vars['cat'])) $theCatID = (int)$wp_query->query_vars['cat'];	
 }
 
 $archive_display_order = easel_themeinfo('archive_display_order');

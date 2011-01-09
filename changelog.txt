@@ -1,4 +1,7 @@
 ﻿Changelog
+1.1.8 
+Fixed the archive page to know the difference between a permalink category and non-permalink cat=
+
 1.1.7
 Removed the pre_get_posts completely, now the blog loop has its own post type section which handles what displays there and the rss feed has a pre_get_posts for that in functions/syndication.php
 fixed the members only code to properly update for wordpress 3.1+
