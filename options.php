@@ -33,7 +33,7 @@ function easel_admin_options() { ?>
 	<div id="eadmin-headericon" style="background: url('<?php echo easel_themeinfo('themeurl') ?>/images/easel_small.png') no-repeat;"></div>
 	<p class="alignleft">
 		<h2><?php _e('Easel Options','easel'); ?></h2>
-		<?php _e('Easel is a modular theme that has an abudant of hooks and actions placed in it for additional usability.  Ref: Comic Easel', 'easel'); ?><br />
+		<?php _e('Easel is a modular theme that has an abundant of hooks and actions placed in it for additional usability.  Ref: Comic Easel', 'easel'); ?><br />
 		<?php _e('While Easel is an excellent stand-alone theme, it can be enhanced in usability with the associated plugins that have been built to utilize it\'s functionality.','easel'); ?><br />
 	</p>
 	<div class="clear"></div>
@@ -52,6 +52,17 @@ function easel_admin_options() { ?>
 	}
 	$easel_options = get_option('easel-options');
 	if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-options') ) {
+		
+		if ($_REQUEST['action'] == 'easel_save_layout') {
+			foreach (array(
+				'layout'
+					) as $key) {
+							if (isset($_REQUEST[$key])) 
+								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
+			}
+			$tab = 'layout';
+			update_option('easel-options', $easel_options);
+		}
 		
 		if ($_REQUEST['action'] == 'easel_save_debug') {
 			foreach (array(
@@ -142,6 +153,7 @@ function easel_admin_options() { ?>
 		<div id="eadmin">
 		  <?php
 		  	$tab_info = array(
+				'layout' => __('Layout', 'easel'),
 		  		'general' => __('General', 'easel'),
 				'addons' => __('Addons', 'easel'),
 				'debug' => __('Debug', 'easel') 

@@ -6,7 +6,7 @@ Description: A theme with many different roles and capabilities, a framework-lik
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
 Tags: Dark, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
-Version: 1.1.8
+Version: 2.0
 License: GNU General Public License, v3 (or newer)
 License URI: http://www.opensource.org/licenses/gpl-3.0.html
 */
@@ -144,23 +144,6 @@ input, textarea {
 	text-align: center;
 }
 
-
-/* CLEAR FLOATS */
-
-.clear {
-	clear: both;
-}
-
-/* CLEAR MARGINS */
-/* Used with BR for clearing paragraph margins for Safari, Chrome - avoid background gaps */
-
-.clear-margins {
-	clear: both;
-	height: 0;
-	line-height: 0;
-	font-size: 0;
-}
-
 /* HEADINGS */
 
 h1, h1 a {
@@ -201,6 +184,10 @@ h4, h4 a {
 #page {
 	width: 980px;
 	margin: 0 auto;
+}
+
+body.layout-b2cl #page, body.layout-b2cr #page{
+	width: 780px;
 }
 
 /* Header */
@@ -406,8 +393,21 @@ h4, h4 a {
 	width: 550px;
 }
 
+body.layout-b2cl .narrowcolumn, body.layout-b2cr .narrowcolumn {
+	width: 560px;
+}
+
 .widecolumn {
 	width: 970px;
+}
+
+/* this handles the GN style layouts that need to contain that section */
+.section {
+	width: 780px;
+}
+
+body.layout-b2cl .widecolumn, .body.layout-b2cr .widecolumn {
+	width: 770px;
 }
 
 /* titles */
@@ -732,7 +732,7 @@ textarea#comment {
 }
 
 #sidebar-right {
-	float: right;
+	float: left;
 	width: 210px;
 }
 
@@ -1348,7 +1348,6 @@ table#wp-calendar td {
 		float: right;
 	}
 	
-	
 
 /* menunav social icons */
 
@@ -1375,4 +1374,20 @@ table#wp-calendar td {
 
 .menunav-social:hover {
 	background-position: 0 -25px;
+}
+
+/* CLEAR FLOATS */
+
+.clear {
+	clear: both;
+}
+
+/* CLEAR MARGINS */
+/* Used with BR for clearing paragraph margins for Safari, Chrome - avoid background gaps */
+
+.clear-margins {
+	clear: both;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
 }

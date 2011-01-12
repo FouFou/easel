@@ -42,5 +42,5 @@
 <?php 
 if (!easel_themeinfo('disable_default_menubar') && function_exists('easel_menubar')) easel_menubar();
 easel_get_sidebar('menubar');
-get_template_part('layout', 'head'); 
+easel_display_layout('head');
 ?>

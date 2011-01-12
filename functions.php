@@ -174,7 +174,8 @@ function easel_load_options() {
 			'facebook_like_blog_post' => false,
 			'facebook_meta' => false,
 			'display_archive_as_links' => false,
-			'archive_display_order' => 'DESC'
+			'archive_display_order' => 'DESC',
+			'layout' => 'standard'
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
@@ -191,7 +192,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '1.1.8',
+			'version' => '2.0',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -389,7 +390,7 @@ function easel_parse_query( $wp_query ) {
 } 
 
 function easel_continue_reading_link() {
-	return ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...','comicpress') . '</a>';
+	return ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...','easel') . '</a>';
 }
 
 function easel_auto_excerpt_more( $more ) {
@@ -398,5 +399,24 @@ function easel_auto_excerpt_more( $more ) {
 
 add_filter( 'excerpt_more', 'easel_auto_excerpt_more' );
 
+// easel_layout_head and easel_layout_foot are remade inside Comic Easel to handle different layouts
+function easel_display_layout($position = null) {
+	if (!empty($position)) {
+		$layout = easel_themeinfo('layout');
+		if (!empty($layout)) $layout .= '-';
+		if (($layout == 'b3c-') || ($layout == 'standard') || ($layout == 'c3c-')) $layout = '';
+		get_template_part('layouts/layout', $layout.$position);
+	}
+}
+
+/* 
+doing a function
+			if (function_exists('easel_display_layout_head_'.$layout)) {
+				// easel_layout_head_b-3c() sorta thing.
+				call_user_func('easel_layout_'.$position.'_'.$layout);
+			} else {
+				get_template_part('layout', $position);
+			}
+*/
 
 ?>

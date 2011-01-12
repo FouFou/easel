@@ -1,4 +1,4 @@
-		<?php get_template_part('layout', 'foot'); ?>
+		<?php easel_display_layout('foot'); ?>
 		<div id="footer">
 			<?php do_action('easel-footer'); ?>
 			<?php easel_get_sidebar('footer'); ?>
