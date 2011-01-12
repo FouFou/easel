@@ -34,7 +34,7 @@
 		<?php easel_get_sidebar('above-header'); ?>
 		<div id="header">
 			<div class="description"><?php bloginfo('description') ?></div>
-			<h1><a href="<?php echo site_url(); ?>"><?php bloginfo('name') ?></a></h1>
+			<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name') ?></a></h1>
 			<?php easel_get_sidebar('header'); ?>
 			<div class="clear"></div>
 		</div>

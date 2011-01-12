@@ -18,17 +18,13 @@ class easel_control_panel_widget extends WP_Widget {
 	function easel_show_control_panel() { 
 		global $user_login;
 		if (!is_user_logged_in()) { ?>
-			<form action="<?php echo home_url(); ?>/wp-login.php" method="post">
-			<?php _e('UserName:','easel'); ?><br />
-			<input type="text" name="log" id="sname" value="<?php echo esc_html(stripslashes($user_login), 1) ?>" size="22" /><br /><br />
-			<?php _e('Password:','easel'); ?><br />
-			<input type="password" name="pwd" id="spassword" size="22" /><br />
-			<label for="rememberme"><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /> Remember me</label><br />
-			<br />
-			<button type="submit" class="button"><?php _e('Login','easel'); ?></button>
-			<input type="hidden" name="redirect_to" value="<?php echo home_url(); ?>"/>
-			</form>
-			<br />
+			<?php 
+			$args = array(
+					'label_username' => __('Username', 'easel'),
+					'label_password' => __('Password', 'easel')
+					);
+				wp_login_form($args); 
+			?>
 			<ul>
 			<?php if (is_multisite()) { ?>
 				<li><a href="<?php echo home_url(); ?>/wp-signup.php"><?php _e('Register','easel'); ?></a></li>
@@ -39,8 +35,8 @@ class easel_control_panel_widget extends WP_Widget {
 			</ul>
 		<?php } else { ?>
 			<ul>
-			<?php $redirect = '&amp;redirect_to='.urlencode(wp_make_link_relative(get_bloginfo('wpurl')));
-			$uri = wp_nonce_url( site_url("wp-login.php?action=logout$redirect", 'login'), 'log-out' ); ?>
+			<?php $redirect = '&amp;redirect_to='.urlencode(wp_make_link_relative(get_bloginfo('url')));
+			$uri = wp_nonce_url( home_url("wp-login.php?action=logout$redirect", 'login'), 'log-out' ); ?>
 			<li><a href="<?php echo $uri; ?>"><?php _e('Logout','easel'); ?></a></li>
 			<?php wp_register(); ?>
 			<li><a href="<?php echo home_url(); ?>/wp-admin/profile.php"><?php _e('Profile','easel'); ?></a></li>
