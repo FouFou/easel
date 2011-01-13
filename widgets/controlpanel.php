@@ -27,19 +27,17 @@ class easel_control_panel_widget extends WP_Widget {
 			?>
 			<ul>
 			<?php if (is_multisite()) { ?>
-				<li><a href="<?php echo home_url(); ?>/wp-signup.php"><?php _e('Register','easel'); ?></a></li>
+				<li><a href="<?php echo site_url(); ?>/wp-signup.php"><?php _e('Register','easel'); ?></a></li>
 			<?php } else { ?>
-				<li><a href="<?php echo home_url(); ?>/wp-register.php"><?php _e('Register','easel'); ?></a></li>
+				<li><a href="<?php echo site_url(); ?>/wp-register.php"><?php _e('Register','easel'); ?></a></li>
 			<?php } ?>
-			<li><a href="<?php echo home_url(); ?>/wp-login.php?action=lostpassword"><?php _e('Recover password','easel'); ?></a></li>
+			<li><a href="<?php echo site_url(); ?>/wp-login.php?action=lostpassword"><?php _e('Recover password','easel'); ?></a></li>
 			</ul>
 		<?php } else { ?>
 			<ul>
-			<?php $redirect = '&amp;redirect_to='.urlencode(wp_make_link_relative(get_bloginfo('url')));
-			$uri = wp_nonce_url( home_url("wp-login.php?action=logout$redirect", 'login'), 'log-out' ); ?>
-			<li><a href="<?php echo $uri; ?>"><?php _e('Logout','easel'); ?></a></li>
-			<?php wp_register(); ?>
-			<li><a href="<?php echo home_url(); ?>/wp-admin/profile.php"><?php _e('Profile','easel'); ?></a></li>
+				<li><a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php _e('Logout','easel'); ?></a></li>
+				<?php wp_register(); ?>
+				<li><a href="<?php echo site_url(); ?>/wp-admin/profile.php"><?php _e('Profile','easel'); ?></a></li>
 			</ul>
 		<?php } ?>
 		<?php

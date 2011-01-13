@@ -40,12 +40,12 @@ if (is_dir(easel_themeinfo('themepath') . '/addons')) {
 
 // These autoload
 foreach (glob(easel_themeinfo('themepath') . "/functions/*.php") as $funcfile) {
-	@require($funcfile);
+	@require_once($funcfile);
 }
 
 // Load all the widgets.
 foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
-	@require($widgefile);
+	@require_once($widgefile);
 }
 
 // Load all the widgets from the child theme *if* a child theme exists
@@ -54,7 +54,7 @@ if (is_child_theme()) {
 		$results = glob(easel_themeinfo('stylepath') . '/widgets/*.php');
 		if (!empty($results)) {
 			foreach ($results as $widgefile) {
-				@require($widgefile);
+				@require_once($widgefile);
 			}
 		}
 	}

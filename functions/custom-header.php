@@ -10,7 +10,7 @@ function easel_change_header_width($width) {
 add_filter('easel_header_image_height', 'easel_change_header_height');
 
 function easel_change_header_height($height) {
-	if (easel_themeinfo('custom_image_header_height')) $width = easel_themeinfo('custom_image_header_height');
+	if (easel_themeinfo('custom_image_header_height')) $height = easel_themeinfo('custom_image_header_height');
 	return (int)$height;
 }
 
@@ -19,8 +19,9 @@ define('HEADER_TEXTCOLOR', '');
 define('HEADER_IMAGE', ''); // %s is theme dir
 define('NO_HEADER_TEXT', true);
 
-define( 'HEADER_IMAGE_WIDTH', apply_filters( 'easel_header_image_width', '980') );
-define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'easel_header_image_height', '100') );
+define( 'HEADER_IMAGE_WIDTH', apply_filters( 'easel_header_image_width', 980) );
+define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'easel_header_image_height', 100) );
+
 set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
 add_custom_image_header('easel_header_style', 'easel_admin_header_style');
