@@ -67,7 +67,7 @@ if (is_admin()) {
 
 function __easel_init() {
 	global $is_IE;
-	
+
 	easel_register_sidebars();
 	
 	if (!is_admin()) {
@@ -85,6 +85,7 @@ function __easel_init() {
 		}
 		if (easel_themeinfo('facebook_like_blog_post'))
 			wp_enqueue_script('facebook', 'http://connect.facebook.net/en_US/all.js#xfbml=1', array(), false, true);
+		easel_display_scheme();
 	}
 }
 
@@ -175,7 +176,8 @@ function easel_load_options() {
 			'facebook_meta' => false,
 			'display_archive_as_links' => false,
 			'archive_display_order' => 'DESC',
-			'layout' => 'standard'
+			'layout' => 'standard',
+			'scheme' => 'default'
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
@@ -403,20 +405,43 @@ add_filter( 'excerpt_more', 'easel_auto_excerpt_more' );
 function easel_display_layout($position = null) {
 	if (!empty($position)) {
 		$layout = easel_themeinfo('layout');
-		if (!empty($layout)) $layout .= '-';
-		if (($layout == 'b3c-') || ($layout == 'standard') || ($layout == 'c3c-')) $layout = '';
-		get_template_part('layouts/layout', $layout.$position);
+		switch ($layout) {
+			// Comic Layouts
+			case 'c3c':
+				get_template_part('layouts/layout-c3col', $position);
+				break;
+			// Blog Layouts
+			case 'b2cr':
+			case 'b2cl':
+				get_template_part('layouts/layout-b2col', $position);
+				break;
+			case 'b3cr':
+			case 'b3cl':
+			case 'b3c':
+			default:
+				get_template_part('layouts/layout-b3col', $position);
+				break;
+		}
 	}
 }
 
-/* 
-doing a function
-			if (function_exists('easel_display_layout_head_'.$layout)) {
-				// easel_layout_head_b-3c() sorta thing.
-				call_user_func('easel_layout_'.$position.'_'.$layout);
-			} else {
-				get_template_part('layout', $position);
+function easel_display_scheme() {
+	if (!easel_themeinfo('disable_default_design') && !is_child_theme()) {
+		$scheme = easel_themeinfo('scheme');
+		if (!empty($scheme)) {
+			switch ($scheme) {
+				case 'desert':
+					wp_enqueue_style('easel-desert-scheme', get_template_directory_uri().'/schemes/desert.css');
+					break;
+				case 'ocean':
+					wp_enqueue_style('ease-blue-scheme', get_template_directory_uri().'/schemes/ocean.css');
+					break;
+				case 'default':
+				default:
+					break;
 			}
-*/
+		}
+	}
+}
 
 ?>

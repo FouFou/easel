@@ -1,0 +1,54 @@
+/* Base theme design */
+
+body {
+	background: #80755f url('../images/background-desert.jpg') top center no-repeat;
+	color: #282113;
+}
+
+a:link, #header h1 a:link {
+	color: #2e4524;
+}
+
+a:visited, #header h1 a:visited {
+	color: #2e4524;
+}
+
+a:hover, #header h1 a:hover {
+	color: #fff;
+}
+
+.post-text {
+	border-color: #80755f;
+}
+
+table#wp-calendar td {
+	border-color: #80755f;
+}
+
+
+#content-wrapper, .wp-caption, .default-nav, .casts-nav {
+	background: url('../images/browntrans.png') repeat;
+	border: solid 1px #333;
+}
+
+.default-nav, .casts-nav {
+	color: #706653;
+}
+
+.type-post, .type-page, .type-comic, .type-music, .type-showcase, .type-casts, .sidebar .widget, .type-attachment, #wp-paginav {
+	background: url('../images/tantrans.png') repeat;
+	border: solid 1px #333;
+	margin-bottom: 10px;
+}
+
+.comment .comment-content, blockquote {
+	background: url('../images/tantrans.png') repeat;
+}
+
+.sidebar-no-widgets a:link, .sidebar-no-widgets a:visited {
+	color: #b00;
+}
+
+.sidebar-no-widgets a:hover {
+	color: #f00;
+}

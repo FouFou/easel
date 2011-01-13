@@ -222,8 +222,8 @@ function commpress_display_cast_show($post_show) {
 		$sep = ', '; 
 		$after = '</div>';
 		$post_show = get_the_term_list( $post->ID, 'cast-show', $before, $sep, $after );
-		if (!empty($post_show)) echo apply_filters('commpress_display_cast_show', $post_show);
 	}
+	return $post_show;
 }
 
 add_action('easel-post-extras', 'commpress_display_cast_tags');

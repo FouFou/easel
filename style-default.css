@@ -45,7 +45,7 @@ h1 {
 
 
 /* curved corners 6px */
-#menubar-wrapper, #content-wrapper, .comment .comment-content, .sidebar .widget, .casts-nav {
+#menubar-wrapper, #content-wrapper, .comment .comment-content, .sidebar .widget, .casts-nav, #wp-paginav {
 	-moz-border-radius: 6px;
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
@@ -60,6 +60,15 @@ blockquote, .type-attachment  {
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
+
+/* border radius none */
+.menu ul li ul li {
+	-moz-border-radius: none;
+	-khtml-border-radius: none;
+	-webkit-border-radius: none;
+	border-radius: none;
+}
+
 
 /* box shadow min */
 .box-shadow-min {
@@ -92,7 +101,7 @@ blockquote, .type-attachment  {
 	-webkit-text-shadow: 1px 1px 1px #000;
 }
 
-#content-wrapper, .wp-caption {
+#content-wrapper, .wp-caption, #wp-paginav {
 	background: url('images/whitetrans.png') repeat;
 	border: solid 1px #bbb;
 }
@@ -224,6 +233,10 @@ blockquote, .type-attachment  {
 /* this is the color of the text in the menubar when its on that page */
 .menu .current_page_item a {
 	color: #fcff00 !important;
+}
+
+#wp-paginav {
+	padding: 0 5px;
 }
 
 #footer {

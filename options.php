@@ -55,11 +55,20 @@ function easel_admin_options() { ?>
 		
 		if ($_REQUEST['action'] == 'easel_save_layout') {
 			foreach (array(
-				'layout'
+				'layout',
+				'scheme'
 					) as $key) {
 							if (isset($_REQUEST[$key])) 
 								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
 			}
+			
+			foreach (array(
+				'disable_default_design'
+			) as $key) {
+				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
+				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
+			}
+			
 			$tab = 'layout';
 			update_option('easel-options', $easel_options);
 		}
@@ -100,7 +109,6 @@ function easel_admin_options() { ?>
 			'disable_scroll_to_top',
 			'enable_sidebar_css',
 			'enable_avatar_trick',
-			'disable_default_design',
 			'disable_comment_note',
 			'disable_comment_javascript',
 			'enable_numbered_pagination',

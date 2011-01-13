@@ -4,6 +4,11 @@
 	<div id="subcontent-wrapper-head"><?php do_action('easel-subcontent-wrapper-head'); ?></div>
 	<div id="subcontent-wrapper">
 		<?php do_action('easel-subcontent-wrapper'); ?>
+<?php 
+if (!easel_is_signup() && !is_page('chat') && !is_page('forum') && (easel_themeinfo('layout') == 'b2cl')) {
+	get_sidebar('left');
+}
+?>
 		<div id="column-head"></div>
 		<?php if (easel_is_signup() || is_page('chat') || is_page('forum')) { ?>
 			<div id="column" class="widecolumn">

@@ -5,6 +5,9 @@ fixed site_url to home_url in the header.php thanks @mike on the forums
 added layouts so you can switch between a few different layouts
 control panel widget change to use wp_login_form()
 bug fix from @fred on the forums, the $height wasnt passing properly for the custom header
+added schemes, default, ocean and desert
+fixed commpress casts to only set to casts on category output
+adjusted widths of menu items to not take up as much room as it each menu item was
 
 1.1.7
 Removed the pre_get_posts completely, now the blog loop has its own post type section which handles what displays there and the rss feed has a pre_get_posts for that in functions/syndication.php

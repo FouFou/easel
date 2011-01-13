@@ -10,15 +10,7 @@
 						<th colspan="3"><?php _e('General','easel'); ?></th>
 					</tr>
 				</thead>
-				<tr class="alternate">
-					<th scope="row"><label for="disable_default_design"><?php _e('Disable Default Design','easel'); ?></label></th>
-					<td>
-						<input id="disable_default_design" name="disable_default_design" type="checkbox" value="1" <?php checked(true, $easel_options['disable_default_design']); ?> />
-					</td>
-					<td>
-						<?php _e('Checking this option will make it so the style-default.css isn\'t loaded.  This style is what is used if there isn\'t a child theme found.  A default site design for Easel.','easel'); ?>
-					</td>
-				</tr>
+
 				<tr>
 					<th scope="row"><label for="home_post_count"><?php _e('How many blog posts would you like to display on the home page?','easel'); ?></label></th>
 					<td>

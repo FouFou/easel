@@ -242,3 +242,8 @@ div.show .eadmin-footer img{
 #easel-comic-filename-filters-holder input {
 	margin: 0 10px;
 }
+
+.easelscheme {
+	height: 180px;
+	width: 240px;
+}
