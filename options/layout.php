@@ -22,18 +22,15 @@
 						<th colspan="4"><?php _e('Layout','easel'); ?></th>
 					</tr>
 				</thead>
-				<?php if (!isset($easel_options['layout']) || empty($easel_options['layout'])) $easel_options['layout'] = 'b3c'; ?>
+				<?php if (!isset($easel_options['layout']) || empty($easel_options['layout'])) $easel_options['layout'] = '3c'; ?>
 				<tr class="alternate">
 					<th scope="row" style="width:250px"><label for="layout" style="text-align:left"><?php _e('Choose Your Website Layout','easel'); ?></label>
 						<select name="layout" id="layout" onchange="lshowimage(this,'easellayout')">
-							<option class="level-0" value="b3c" <?php if (($easel_options['layout'] == 'b3c') || ($easel_options['layout'] == 'standard')) { ?>selected="selected" <?php } ?>><?php _e('3 Column - Standard','easel'); ?></option>
-							<option class="level-0" value="b3cl" <?php if ($easel_options['layout'] == 'b3cl') { ?>selected="selected" <?php } ?>><?php _e('3 Column - Sidebar\'s on left','easel'); ?></option>
-							<option class="level-0" value="b3cr" <?php if ($easel_options['layout'] == 'b3cr') { ?>selected="selected" <?php } ?>><?php _e('3 Column - Sidebar\'s on right','easel'); ?></option>
-							<option class="level-0" value="b2cl" <?php if ($easel_options['layout'] == 'b2cl') { ?>selected="selected" <?php } ?>><?php _e('2 Column - Sidebar on left','easel'); ?></option>
-							<option class="level-0" value="b2cr" <?php if ($easel_options['layout'] == 'b2cr') { ?>selected="selected" <?php } ?>><?php _e('2 Column - Sidebar on right','easel'); ?></option>
-						<?php if (function_exists('ceo_initialize_post_types')) { ?>
-							<option class="level-0" value="c3c" <?php if ($easel_options['layout'] == 'c3c') { ?>selected="selected" <?php } ?>><?php _e('COMIC: 3 Column - Standard','easel'); ?></option>
-						<?php } ?>
+							<option class="level-0" value="3c" <?php if ($easel_options['layout'] == '3c') { ?>selected="selected" <?php } ?>><?php _e('3 Column - Standard','easel'); ?></option>
+							<option class="level-0" value="3cl" <?php if ($easel_options['layout'] == '3cl') { ?>selected="selected" <?php } ?>><?php _e('3 Column - Sidebar\'s on left','easel'); ?></option>
+							<option class="level-0" value="3cr" <?php if ($easel_options['layout'] == '3cr') { ?>selected="selected" <?php } ?>><?php _e('3 Column - Sidebar\'s on right','easel'); ?></option>
+							<option class="level-0" value="2cl" <?php if ($easel_options['layout'] == '2cl') { ?>selected="selected" <?php } ?>><?php _e('2 Column - Sidebar on left','easel'); ?></option>
+							<option class="level-0" value="2cr" <?php if ($easel_options['layout'] == '2cr') { ?>selected="selected" <?php } ?>><?php _e('2 Column - Sidebar on right','easel'); ?></option>
 						</select>
 						<br />
 					</th>

@@ -8,7 +8,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '2.0.2',
+			'version' => '2.0.3',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -18,8 +18,9 @@ function easel_themeinfo($whichinfo = null) {
 			'home' => untrailingslashit(home_url()),  
 			'siteurl' => untrailingslashit(site_url()) 
 		);
-		$easel_themeinfo = array_merge($easel_coreinfo, $easel_addinfo);		
+		$easel_themeinfo = array_merge($easel_coreinfo, $easel_addinfo);
 		$easel_themeinfo = array_merge($easel_themeinfo, $easel_options);
+		if (!isset($easel_themeinfo['layout']) || empty($easel_themeinfo['layout'])) $easel_themeinfo['layout'] = '3c';
 	}
 	if ($whichinfo && $whichinfo !== 'reset')
 		if (isset($easel_themeinfo[$whichinfo])) 
@@ -41,7 +42,13 @@ add_theme_support( 'custom-header' );
 add_custom_background();
 
 /* this sets default video width */
-if (!isset($content_width)) $content_width = 538;
+if (!isset($content_width)) {
+	if (easel_sidebars_disabled()) {
+		$content_width = 740;
+	} else {
+		$content_width = 540;
+	}
+}
 
 register_nav_menus(array(
 			'Primary' => __( 'Primary', 'easel' )
@@ -204,7 +211,7 @@ function easel_load_options() {
 			'facebook_meta' => false,
 			'display_archive_as_links' => false,
 			'archive_display_order' => 'DESC',
-			'layout' => 'standard',
+			'layout' => '3c',
 			'scheme' => 'default',
 			'enable_wprewrite_posttype_control' => false,
 			'force_active_connection_close' => false
@@ -296,30 +303,6 @@ function easel_auto_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'easel_auto_excerpt_more' );
 
-// easel_layout_head and easel_layout_foot are remade inside Comic Easel to handle different layouts
-function easel_display_layout($position = null) {
-	if (!empty($position)) {
-		$layout = easel_themeinfo('layout');
-		switch ($layout) {
-			// Comic Layouts
-			case 'c3c':
-				get_template_part('layouts/layout-c3col', $position);
-				break;
-			// Blog Layouts
-			case 'b2cr':
-			case 'b2cl':
-				get_template_part('layouts/layout-b2col', $position);
-				break;
-			case 'b3cr':
-			case 'b3cl':
-			case 'b3c':
-			default:
-				get_template_part('layouts/layout-b3col', $position);
-				break;
-		}
-	}
-}
-
 function easel_display_scheme() {
 	if (!easel_themeinfo('disable_default_design') && !is_child_theme()) {
 		$scheme = easel_themeinfo('scheme');
@@ -349,9 +332,18 @@ function easel_close_up_shop() {
 	@mysql_close();
 }
 
+if (!function_exists('easel_is_layout')) {
+	function easel_is_layout($choices) {
+		$choices = explode(",", $choices);
+		if (in_array(easel_themeinfo('layout'), $choices)) return true;
+		return false;
+	}
+}
+
+
 function easel_sidebars_disabled() {
 	global $post;
-	if (is_page()) {
+	if (is_page() && !empty($post)) {
 		$sidebars_disabled = get_post_meta($post->ID, 'disable-sidebars', true);
 		if ($sidebars_disabled) return true;
 	}

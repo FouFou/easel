@@ -432,7 +432,7 @@ function showcase_filter_display_post_category($post_category) {
 }
 
 if (easel_themeinfo('enable_addon_showcase_slider')) {
-	add_filter('easel-subcontent-wrapper','showcase_filter_display_slider');
+	add_filter('easel-subcontent-area-top','showcase_filter_display_slider');
 	add_filter('easel_display_post_thumbnail','showcase_remove_post_thumbnail_filter');
 }
 

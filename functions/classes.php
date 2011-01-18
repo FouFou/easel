@@ -73,6 +73,9 @@ function easel_body_class($classes = '') {
 			$classes[] = 'attachment-' . $type;
 		endforeach;
 	}
+	
+	if (easel_sidebars_disabled()) $classes[] = 'wide';
+	
 	$layout = easel_themeinfo('layout');
 	if (empty($layout)) $layout = 'b3c';
 	$classes[] = 'layout-'.$layout;
