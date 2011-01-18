@@ -2,10 +2,10 @@
 Theme Name: Easel
 Contributors: Frumph
 Theme URI: http://frumph.net/easel
-Description: A theme with many different roles and capabilities, a framework-like theme for more components to be added with it, includes a base theme design that is easily cleared for child themes, with post type addons, layouts and different visual schemes.  Easel also handles custom post type rewrite rules for archives and feeds automatically without any additional plugin.
+Description: A theme with many different roles and capabilities, a framework-like theme for more components to be added with it, includes a base theme design that is easily cleared for child themes, with post type addons, 2column and 3column layouts and different visual schemes.  Easel also handles custom post type rewrite rules for archives and feeds automatically without any additional plugin.
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
-Tags: Dark, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
+Tags: Dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
 Version: 2.0
 License: GNU General Public License, v3 (or newer)
 License URI: http://www.opensource.org/licenses/gpl-3.0.html
@@ -652,7 +652,7 @@ ul.children {
 }
 
 #respond {
-	padding: 20px 0 0 0;
+	padding: 0;
 }
 
 .nocomments {
@@ -1321,6 +1321,11 @@ table#wp-calendar td {
 	line-height: 18px;
 	font-size: 16px;
 	border: solid 1px #888;
+}
+
+.chrome .searchform button {
+	line-height: 16px;
+	margin-top: 0;
 }
 
 

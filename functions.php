@@ -30,6 +30,14 @@ function easel_themeinfo($whichinfo = null) {
 	return $easel_themeinfo;
 }
 
+// xili-language plugin check
+if (class_exists('xili_language')) {
+	define('THEME_TEXTDOMAIN', 'easel');
+	define('THEME_LANGS_FOLDER', get_template_directory() . '/lang');
+} else {
+	load_theme_textdomain( 'easel', get_template_directory() . '/lang' );
+}
+
 // the_post_thumbnail('thumbnail/medium/full');
 add_theme_support( 'post-thumbnails' );
 

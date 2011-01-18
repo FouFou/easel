@@ -2,7 +2,7 @@
 2.0
 Fixed the archive page to know the difference between a permalink category and non-permalink cat=
 fixed site_url to home_url in the header.php thanks @mike on the forums
-added layouts so you can switch between a few different layouts
+added layouts so you can switch between a few different layouts, 3col and 2col
 control panel widget change to use wp_login_form()
 bug fix from @fred on the forums, the $height wasnt passing properly for the custom header
 added schemes, default, ocean and desert
