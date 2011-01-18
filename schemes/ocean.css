@@ -67,3 +67,11 @@ table#wp-calendar td a {
 .sidebar-no-widgets a:hover {
 	color: #f00;
 }
+
+/* fix the classic bookmark */
+
+.sidebar .widget_easel_classic_bookmark {
+	background: none;
+	border: none;
+	padding: 2px 0;
+}

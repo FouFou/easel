@@ -111,12 +111,6 @@ blockquote, .type-attachment  {
 	border: solid 1px #bbb;
 	margin-bottom: 10px;
 }
-
-.sidebar .widget_easel_classic_bookmark {
-	background: none;
-	border: none;
-}
-
 .comment .comment-content, blockquote {
 	background: url('images/whitetranslow.png') repeat;
 }
@@ -283,4 +277,10 @@ blockquote, .type-attachment  {
 .opera .type-comic, .opera .type-showcase, .opera .type-music, .opera #wp-paginav, .opera .sidebar h2, 
 .opera #comment-wrapper, .opera .blognav, .opera .default-nav, .opera .submit, .opera .type-attachment, .opera .sidebar .widget {
 	background: #ccc;
+}
+
+.sidebar .widget_easel_classic_bookmark {
+	background: none;
+	border: none;
+	padding: 2px 0;
 }
