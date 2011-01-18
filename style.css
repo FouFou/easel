@@ -2,7 +2,7 @@
 Theme Name: Easel
 Contributors: Frumph
 Theme URI: http://frumph.net/easel
-Description: A theme with many different roles and capabilities, a framework-like theme for more components to be added with it, includes a base theme design that is easily cleared for child themes, Now with post-type addons.
+Description: A theme with many different roles and capabilities, a framework-like theme for more components to be added with it, includes a base theme design that is easily cleared for child themes, with post type addons, layouts and different visual schemes.  Easel also handles custom post type rewrite rules for archives and feeds automatically without any additional plugin.
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
 Tags: Dark, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
@@ -311,7 +311,7 @@ body.layout-b2cl #page, body.layout-b2cr #page{
 	display: inline-block;
 }
 
-.menu ul li a:link, .menu ul li a:visited {
+.menu ul li a:link, .menu ul li a:visited, .menunav a:link, .menunav a:visited  {
 	color: #fff;
 }
 
@@ -402,7 +402,7 @@ body.layout-b2cl .narrowcolumn, body.layout-b2cr .narrowcolumn {
 }
 
 .widecolumn {
-	width: 970px;
+	width: auto;
 }
 
 /* this handles the GN style layouts that need to contain that section */
@@ -413,12 +413,6 @@ body.layout-b2cl .narrowcolumn, body.layout-b2cr .narrowcolumn {
 body.layout-b2cl .widecolumn, .body.layout-b2cr .widecolumn {
 	width: 770px;
 }
-
-/* titles */
-
-.page-title, .post-title {
-	text-transform: capitalize;
-}	
 
 /* Posts Area  */
 
@@ -464,6 +458,8 @@ a.post-edit-link {
 }
 
 .post-author-gravatar {
+	display: inline-block;
+	width: 64px;
 	float: right;
 }
 
@@ -792,6 +788,11 @@ textarea#comment {
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
+}
+
+.classic-bookmark {
+	margin: 0 auto;
+	width: 190px;
 }
 
 /* Footer */
@@ -1398,3 +1399,4 @@ table#wp-calendar td {
 	line-height: 0;
 	font-size: 0;
 }
+

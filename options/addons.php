@@ -9,13 +9,25 @@
 						<th colspan="3"><?php _e('Addons','easel'); ?></th>
 					</tr>
 				</thead>
-				<tr>
-					<th scope="row"><label for="enable_addon_membersonly"><?php _e('Members Only','easel'); ?></label></th>
+				<?php if (!isset($easel_options['non_members_message'])) $easel_options['non_members_message'] = __('There is members only content here.', 'easel'); ?>
+				<tr class="alternate">
+					<th scope="row"><label for="enable_addon_membersonly"><?php _e('Members Only','easel'); ?></label><br /><label for="non_members_message"><?php _e('Message to give to non-members.'); ?></label></th>
 					<td>
 						<input id="enable_addon_membersonly" name="enable_addon_membersonly" type="checkbox" value="1" <?php checked(true, $easel_options['enable_addon_membersonly']); ?> />
 					</td>
 					<td>
-						<?php _e('Enabled the members only shortcode [members]content[/members] - you can configure who is a member in the user editor.  Those with access will be able to see the content.','easel'); ?>
+						<?php _e('Enabled the members only shortcode [members]content[/members] - you can configure who is a member in the user editor.  Those with access will be able to see the content.','easel'); ?><br />
+						<br />
+						<input id="non_members_message" name="non_members_message" size="100" type="text" value="<?php echo stripcslashes($easel_options['non_members_message']); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="enable_addon_page_options"><?php _e('Additional Page Options','easel'); ?></label></th>
+					<td>
+						<input id="enable_addon_page_options" name="enable_addon_page_options" type="checkbox" value="1" <?php checked(true, $easel_options['enable_addon_page_options']); ?> />
+					</td>
+					<td>
+						<?php _e('Extra options for the page-editor which include removal of sidebars for display.','easel'); ?>
 					</td>
 				</tr>
 				<tr class="alternate">
@@ -71,9 +83,27 @@
 							</ol>
 					</td>
 				</tr>
+			</table>
+
+			<table class="widefat">
+				<thead>
+					<tr>
+						<th colspan="3"><?php _e('Custom Post Types','easel'); ?></th>
+					</tr>
+				</thead>
+				<tr class="alternate">
+					<?php if (!isset($easel_options['enable_wprewrite_posttype_control'])) $easel_options['enable_wprewrite_posttype_control'] = false; ?>
+					<th scope="row"><label for="enable_wprewrite_posttype_control"><?php _e('WP Rewrite Control','easel'); ?></label></th>
+					<td>
+						<input id="enable_wprewrite_posttype_control" name="enable_wprewrite_posttype_control" type="checkbox" value="1" <?php checked(true, $easel_options['enable_wprewrite_posttype_control']); ?> />
+					</td>
+					<td>
+						<?php _e('When enabled, Easel will create additional wp-rewrite rules for all of the custom post types that it finds enabled, including plugin based ones.   To initiate the rewrite rules go to the settings -> permalinks screen.  This will only work if you have custom permalinks enabled.','easel'); ?>
+					</td>
+				</tr>
 				<tr style="background: #fcffc7">
 					<td scope="row" colspan="3">
-						Remember with custom post types, you will need to go to settings -> permalinks and click "save" to enable them to work properly and reinitilize the permalink structure.
+						<?php _e('Remember with custom post types, you will need to go to settings -> permalinks and click "save" to enable them to work properly and reinitilize the permalink structure regardless of using the additional wp-rewrite rules option.','easel'); ?>
 					</td>
 				</tr>
 			</table>

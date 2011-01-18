@@ -21,12 +21,12 @@
 					</td>
 				</tr>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_blog_on_homepage"><?php _e('Disable Blog on Home Page','easel'); ?></label></th>
+					<th scope="row"><label for="disable_blog_on_homepage"><?php _e('Disable Blog Loop','easel'); ?></label></th>
 					<td>
 						<input id="disable_blog_on_homepage" name="disable_blog_on_homepage" type="checkbox" value="1" <?php checked(true, $easel_options['disable_blog_on_homepage']); ?> />
 					</td>
 					<td>
-						<?php _e('Enabling this option, will DISABLE the blog from appearing on the home page.  This will let you design specific scenerios that allow you to create seperate sections and pages for blog posts.','easel'); ?>
+						<?php _e('Enabling this option, will DISABLE the blog from appearing on the home page AND any pages set as the blog posts page in the settings - reading.','easel'); ?>
 					</td>
 				</tr>
 			</table>
@@ -300,7 +300,7 @@
 				</tr>
 				<tr class="alternate">
 					<th scope="row"><label for="copyright_name"><?php _e('&copy; Copyright Name','easel'); ?></label>
-						<input type="text" size="20" name="copyright_name" id="copyright_name" value="<?php echo  $easel_options['copyright_name']; ?>" /><br />
+						<input type="text" size="20" name="copyright_name" id="copyright_name" value="<?php echo  stripcslashes($easel_options['copyright_name']); ?>" /><br />
 					</th>
 					<td colspan="2">
 						<?php _e('Set the name to which this site is &copy; Copyright to, leave blank to have the site name.','easel'); ?>
@@ -308,7 +308,7 @@
 				</tr>
 				<tr>
 					<th scope="row"><label for="copyright_url"><?php _e('Copyright Holder URL','easel'); ?></label>
-						<input type="text" size="30" name="copyright_url" id="copyright_url" value="<?php echo  $easel_options['copyright_url']; ?>" /><br />
+						<input type="text" size="30" name="copyright_url" id="copyright_url" value="<?php echo  stripcslashes($easel_options['copyright_url']); ?>" /><br />
 					</th>
 					<td colspan="2">
 						<?php _e('Set the URL to the owner of the &copy; Copyright if different then this website, leave blank for sites link.','easel'); ?>

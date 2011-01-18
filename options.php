@@ -75,7 +75,8 @@ function easel_admin_options() { ?>
 		
 		if ($_REQUEST['action'] == 'easel_save_debug') {
 			foreach (array(
-				'enable_debug_footer_code'
+				'enable_debug_footer_code',
+				'force_active_connection_close'
 			) as $key) {
 				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
@@ -84,18 +85,26 @@ function easel_admin_options() { ?>
 			update_option('easel-options', $easel_options);
 		}
 		
-		
 		if ($_REQUEST['action'] == 'easel_save_addons') {
 			foreach (array(
+				'enable_addon_page_options',
 				'enable_addon_comics',
 				'enable_addon_membersonly',
 				'enable_addon_showcase',
 				'enable_addon_showcase_slider',
 				'enable_addon_playingnow',
-				'enable_addon_commpress'
+				'enable_addon_commpress',
+				'enable_wprewrite_posttype_control'
 			) as $key) {
 				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
+			}
+			
+			foreach (array(
+				'non_members_message'
+			) as $key) {
+				if (isset($_REQUEST[$key])) 
+					$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
 			}
 			
 			$tab = 'addons';
@@ -199,7 +208,7 @@ function easel_admin_options() { ?>
 				return false;
 			});
 
-			showPage('<?php echo esc_js($tab) ?>');
+			showPage('<?php echo esc_js($tab); ?>');
 		}(jQuery));
 	</script>
 </div>

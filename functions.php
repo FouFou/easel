@@ -1,5 +1,34 @@
 <?php
 
+function easel_themeinfo($whichinfo = null) {
+	global $easel_themeinfo;
+	if (empty($easel_themeinfo) || $whichinfo == 'reset') {	
+		$easel_themeinfo = array();
+		$easel_options = easel_load_options();
+		$easel_coreinfo = wp_upload_dir();
+		$easel_addinfo = array(
+			'upload_path' => get_option('upload_path'),
+			'version' => '2.0.2',
+			'themepath' => get_template_directory(),
+			'themeurl' => get_template_directory_uri(), 
+			'stylepath' => get_stylesheet_directory(), 
+			'styleurl' => get_stylesheet_directory_uri(),
+			'uploadpath' => $easel_coreinfo['basedir'],
+			'uploadurl' => $easel_coreinfo['baseurl'],
+			'home' => untrailingslashit(home_url()),  
+			'siteurl' => untrailingslashit(site_url()) 
+		);
+		$easel_themeinfo = array_merge($easel_coreinfo, $easel_addinfo);		
+		$easel_themeinfo = array_merge($easel_themeinfo, $easel_options);
+	}
+	if ($whichinfo && $whichinfo !== 'reset')
+		if (isset($easel_themeinfo[$whichinfo])) 
+			return $easel_themeinfo[$whichinfo];
+		else
+			return false;
+	return $easel_themeinfo;
+}
+
 // the_post_thumbnail('thumbnail/medium/full');
 add_theme_support( 'post-thumbnails' );
 
@@ -15,27 +44,13 @@ add_custom_background();
 if (!isset($content_width)) $content_width = 538;
 
 register_nav_menus(array(
-	'Primary' => __( 'Primary', 'easel' )
-));
+			'Primary' => __( 'Primary', 'easel' )
+			));
 
 /* child-functions.php / child-widgets.php - in the child theme */
 if (is_child_theme()) {
 	get_template_part('child', 'functions');
 	get_template_part('child', 'widgets');
-}
-
-// load up the addons that it finds, loads before functions just in case we want to rewrite a function
-if (is_dir(easel_themeinfo('themepath') . '/addons')) {
-	if (easel_themeinfo('enable_addon_comics')) 
-		@require_once(easel_themeinfo('themepath') . '/addons/comics.php');
-	if (easel_themeinfo('enable_addon_membersonly'))
-		@require_once(easel_themeinfo('themepath') . '/addons/membersonly.php');
-	if (easel_themeinfo('enable_addon_playingnow'))
-		@require_once(easel_themeinfo('themepath') . '/addons/playingnow.php');
-	if (easel_themeinfo('enable_addon_showcase'))
-		@require_once(easel_themeinfo('themepath') . '/addons/showcase.php');
-	if (easel_themeinfo('enable_addon_commpress'))
-		@require_once(easel_themeinfo('themepath') . '/addons/commpress.php');
 }
 
 // These autoload
@@ -46,6 +61,24 @@ foreach (glob(easel_themeinfo('themepath') . "/functions/*.php") as $funcfile) {
 // Load all the widgets.
 foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
 	@require_once($widgefile);
+}
+
+// load up the addons that it finds, loads before functions just in case we want to rewrite a function
+if (is_dir(easel_themeinfo('themepath') . '/addons')) {
+	if (easel_themeinfo('enable_addon_page_options')) 
+		@require_once(easel_themeinfo('themepath') . '/addons/page-options.php');
+	if (easel_themeinfo('enable_addon_comics')) 
+		@require_once(easel_themeinfo('themepath') . '/addons/comics.php');
+	if (easel_themeinfo('enable_addon_membersonly'))
+		@require_once(easel_themeinfo('themepath') . '/addons/membersonly.php');
+	if (easel_themeinfo('enable_addon_playingnow'))
+		@require_once(easel_themeinfo('themepath') . '/addons/playingnow.php');
+	if (easel_themeinfo('enable_addon_showcase'))
+		@require_once(easel_themeinfo('themepath') . '/addons/showcase.php');
+	if (easel_themeinfo('enable_addon_commpress'))
+		@require_once(easel_themeinfo('themepath') . '/addons/commpress.php');
+	if (easel_themeinfo('enable_wprewrite_posttype_control'))
+		@require_once(easel_themeinfo('themepath') . '/addons/wp-rewrite.php');
 }
 
 // Load all the widgets from the child theme *if* a child theme exists
@@ -65,31 +98,23 @@ if (is_admin()) {
 	@require_once(easel_themeinfo('themepath') . '/options.php');
 }
 
-function __easel_init() {
-	global $is_IE;
-
-	easel_register_sidebars();
-	
-	if (!is_admin()) {
-		wp_enqueue_script('jquery');
-		if (!easel_themeinfo('disable_jquery_menu_code')) {
-			wp_enqueue_script('ddsmoothmenu_js', easel_themeinfo('themeurl') . '/js/ddsmoothmenu.js'); 
-			wp_enqueue_script('menubar_js', easel_themeinfo('themeurl') . '/js/menubar.js');
-		}
-		if (!easel_themeinfo('disable_scroll_to_top')) {
-			wp_enqueue_script('easel_scroll', easel_themeinfo('themeurl') . '/js/scroll.js', array(), false, true);
-		}
-		if (easel_themeinfo('enable_avatar_trick') && !$is_IE) {
-			wp_enqueue_script('themetricks_historic1', easel_themeinfo('themeurl') . '/js/cvi_text_lib.js', array(), false, true);
-			wp_enqueue_script('themetricks_historic2', easel_themeinfo('themeurl') . '/js/instant.js', array(), false, true);
-		}
-		if (easel_themeinfo('facebook_like_blog_post'))
-			wp_enqueue_script('facebook', 'http://connect.facebook.net/en_US/all.js#xfbml=1', array(), false, true);
-		easel_display_scheme();
+if (!is_admin()) {
+	wp_enqueue_script('jquery');
+	if (!easel_themeinfo('disable_jquery_menu_code')) {
+		wp_enqueue_script('ddsmoothmenu_js', easel_themeinfo('themeurl') . '/js/ddsmoothmenu.js'); 
+		wp_enqueue_script('menubar_js', easel_themeinfo('themeurl') . '/js/menubar.js');
 	}
+	if (!easel_themeinfo('disable_scroll_to_top')) {
+		wp_enqueue_script('easel_scroll', easel_themeinfo('themeurl') . '/js/scroll.js', null, null, true);
+	}
+	if (easel_themeinfo('enable_avatar_trick') && !$is_IE) {
+		wp_enqueue_script('themetricks_historic1', easel_themeinfo('themeurl') . '/js/cvi_text_lib.js', null, null, true);
+		wp_enqueue_script('themetricks_historic2', easel_themeinfo('themeurl') . '/js/instant.js', null, null, true);
+	}
+	if (easel_themeinfo('facebook_like_blog_post'))
+		wp_enqueue_script('easel-facebook', 'http://connect.facebook.net/en_US/all.js#xfbml=1'); // force to the header instead of footer
+	easel_display_scheme();
 }
-
-add_action('init', '__easel_init');
 
 if (!function_exists('easel_register_sidebars')) {
 	function easel_register_sidebars() {
@@ -114,6 +139,7 @@ if (!function_exists('easel_register_sidebars')) {
 		}
 	}
 }
+add_action('widgets_init', 'easel_register_sidebars');
 
 function easel_get_sidebar($location = '') {
 	if (empty($location)) { get_sidebar(); return; }
@@ -164,10 +190,12 @@ function easel_load_options() {
 			'enable_comments_on_homepage' => false,
 			'enable_addon_comics' => false,
 			'enable_addon_membersonly' => false,
+			'non_members_message' => __('There is members only content here.','easel'),
 			'enable_addon_showcase' => false,
 			'enable_addon_playingnow' => false,
 			'enable_addon_showcase_slider' => false,
 			'enable_addon_commpress' => false,
+			'enable_addon_page_options' => false,
 			'custom_image_header_width' => '980',
 			'custom_image_header_height' => '100',
 			'copyright_name' => '',
@@ -177,7 +205,9 @@ function easel_load_options() {
 			'display_archive_as_links' => false,
 			'archive_display_order' => 'DESC',
 			'layout' => 'standard',
-			'scheme' => 'default'
+			'scheme' => 'default',
+			'enable_wprewrite_posttype_control' => false,
+			'force_active_connection_close' => false
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
@@ -186,56 +216,21 @@ function easel_load_options() {
 	return $easel_options;
 }
 
-function easel_themeinfo($whichinfo = null) {
-	global $easel_themeinfo;
-	if (empty($easel_themeinfo) || $whichinfo == 'reset') {	
-		$easel_themeinfo = array();
-		$easel_options = easel_load_options();
-		$easel_coreinfo = wp_upload_dir();
-		$easel_addinfo = array(
-			'upload_path' => get_option('upload_path'),
-			'version' => '2.0',
-			'themepath' => get_template_directory(),
-			'themeurl' => get_template_directory_uri(), 
-			'stylepath' => get_stylesheet_directory(), 
-			'styleurl' => get_stylesheet_directory_uri(),
-			'uploadpath' => $easel_coreinfo['basedir'],
-			'uploadurl' => $easel_coreinfo['baseurl'],
-			'home' => untrailingslashit(home_url()),  
-			'siteurl' => untrailingslashit(site_url()) 
-		);
-		$easel_themeinfo = array_merge($easel_coreinfo, $easel_addinfo);		
-		$easel_themeinfo = array_merge($easel_themeinfo, $easel_options);
-	}
-	if ($whichinfo && $whichinfo !== 'reset')
-		if (isset($easel_themeinfo[$whichinfo])) 
-			return $easel_themeinfo[$whichinfo];
-		else
-			return false;
-	return $easel_themeinfo;
-}
-
-// Examples of how to inject something into the post-info area of the theme.
-
-add_action('easel-post-info','easel_add_post_ratings');
-
 if (!function_exists('easel_add_post_ratings')) {
 	function easel_add_post_ratings() {
 		global $post;
 		if (function_exists('the_ratings') && $post->post_type !== 'post') { the_ratings(); } 
 	}
 }
+add_action('easel-post-info','easel_add_post_ratings');
 
-// Example of checking with option first.
-
-if (easel_themeinfo('enable_debug_footer_code')) {
-	add_action('easel-page-foot', 'easel_debug_page_foot_code');
-}
 
 function easel_debug_page_foot_code() { ?>
 	<p><?php echo get_num_queries() ?> queries. <?php if (function_exists('memory_get_usage')) { $unit=array('b','kb','mb','gb','tb','pb'); echo @round(memory_get_usage(true)/pow(1024,($i=floor(log(memory_get_usage(true),1024)))),2).' '.$unit[$i]; ?> Memory usage. <?php } timer_stop(1) ?> seconds.</p>
 <?php }
-
+if (easel_themeinfo('enable_debug_footer_code')) {
+	add_action('easel-page-foot', 'easel_debug_page_foot_code');
+}
 
 /**
  * Retrieve adjacent post link.
@@ -295,110 +290,10 @@ function easel_get_adjacent_post_type($in_same_chapter = false, $previous = true
 	return $result;
 }
 
-function easel_is_post_type($post_type) {
-	if ( is_array($post_type) )	{	// multiple post types 
-		if ( count($post_type) > 1 )	// not a custom post type archive
-			return false;
-		$post_type = $post_type[0];		
-	}
-	if ( !is_string($post_type) )
-		return;
-	if ($post_type == 'post') return;
-	$post_type = get_post_type_object( $post_type );
-	if ( !is_null( $post_type ) && ($post_type->public == true) ) 
-		return $post_type;		
-	return false;
-}
-
-function easel_is_custom_post_type_archive( $post_type = '' ) {
-	global $wp_query;
-	
-	if ( !isset($wp_query->is_custom_post_type_archive) || !$wp_query->is_custom_post_type_archive ) 
-		return false;
-	
-	if ( empty($post_type) || $post_type == get_query_var('post_type') )
-		return true;
-		
-	return false;
-}
-
-/*  
-// This is actually NO GOOD
-add_action( 'template_redirect', 'easel_template_redirect' );
-
-function easel_template_redirect() {	
-	if ( easel_is_custom_post_type_archive() ) :
-		$post_type = easel_is_post_type( get_query_var('post_type') );
-	
-		$template = array( "type-".$post_type->name.".php" );
-		if ( isset( $post_type->rewrite['slug'] ) ) $template[] = "type-".$post_type->rewrite['slug'].".php";
-		array_push( $template, 'type.php', 'index.php' );
-	
-		locate_template( $template, true );
-		
-		die();
-		
-	endif;
-}
-*/
-
-add_action( 'generate_rewrite_rules', 'easel_rewrite_rules' );
-
-function easel_rewrite_rules( $wp_rewrite ) {
-	$args = array(
-			'public' => true,
-			'_builtin' => false
-			);
-	$output = 'names';
-	$operator = 'and';
-	
-	$post_types = get_post_types( $args , $output , $operator );
-	$feed = get_default_feed();
-
-	foreach ( $post_types as $ptype ) :
-		$this_type = get_post_type_object( $ptype );
-		$type_slug = $this_type->rewrite['slug'];
-		if (!empty($type_slug)) {
-			$new_rules = array( 
-					$type_slug.'/([0-9]+)/([0-9]{1,2})/([0-9]{1,2})/?$' => 'index.php?post_type='.$ptype.'&year=' . $wp_rewrite->preg_index(1) . '&monthnum=' . $wp_rewrite->preg_index(2) . '&day=' . $wp_rewrite->preg_index(3),
-					$type_slug.'/([0-9]+)/([0-9]{1,2})/?$' => 'index.php?post_type='.$ptype.'&year=' . $wp_rewrite->preg_index(1) . '&monthnum=' . $wp_rewrite->preg_index(2),
-					$type_slug.'/([0-9]+/?$)' => 'index.php?post_type='.$ptype.'&year=' . $wp_rewrite->preg_index(1),
-					$type_slug.'/page/?([0-9]{1,})/?$' => 'index.php?post_type='.$ptype.'&paged='.$wp_rewrite->preg_index(1),
-					$type_slug.'/feed/(feed|rdf|rss|rss2|atom)/?$' => 'index.php?post_type='.$ptype.'&feed='.$wp_rewrite->preg_index(1),
-					$type_slug.'/(feed|rdf|rss|rss2|atom)/?$' => 'index.php?post_type='.$ptype.'&feed='.$wp_rewrite->preg_index(1),
-					$type_slug.'/?$' => 'index.php?post_type='.$ptype,
-					);
-			
-			$wp_rewrite->rules = array_merge($new_rules, $wp_rewrite->rules);
-		}
-		endforeach;
-}
-
-add_action( 'parse_query', 'easel_parse_query', 100 );
-
-function easel_parse_query( $wp_query ) {
-	if ( !isset($wp_query->query_vars['post_type']) )
-		return;
-	
-	$post_type = $wp_query->query_vars['post_type'];
-	if (!empty($post_type)) {
-		if ( get_query_var('name') || !easel_is_post_type($post_type) || is_robots() || is_feed() || is_trackback() )
-			return;
-		
-		$wp_query->is_home = false;	// correct is_home variable
-		$wp_query->is_archive = true;
-		$wp_query->is_custom_post_type_archive = true; // define new query variable
-	}
-} 
-
-function easel_continue_reading_link() {
-	return ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...','easel') . '</a>';
-}
 
 function easel_auto_excerpt_more( $more ) {
-	return __(' [&hellip;]','easel') . easel_continue_reading_link();
+	return __(' [&hellip;]','easel') . ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...','easel') . '</a>';
 }
-
 add_filter( 'excerpt_more', 'easel_auto_excerpt_more' );
 
 // easel_layout_head and easel_layout_foot are remade inside Comic Easel to handle different layouts
@@ -436,12 +331,31 @@ function easel_display_scheme() {
 				case 'ocean':
 					wp_enqueue_style('ease-blue-scheme', get_template_directory_uri().'/schemes/ocean.css');
 					break;
+				case 'greymatter':
+					wp_enqueue_style('ease-greymatter-scheme', get_template_directory_uri().'/schemes/greymatter.css');
+					break;
 				case 'default':
 				default:
 					break;
 			}
 		}
 	}
+}
+
+if (easel_themeinfo('force_active_connection_close')) 
+	add_action('shutdown_action_hook','easel_close_up_shop');
+
+function easel_close_up_shop() {
+	@mysql_close();
+}
+
+function easel_sidebars_disabled() {
+	global $post;
+	if (is_page()) {
+		$sidebars_disabled = get_post_meta($post->ID, 'disable-sidebars', true);
+		if ($sidebars_disabled) return true;
+	}
+	return false;
 }
 
 ?>

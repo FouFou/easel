@@ -75,6 +75,16 @@ if (!function_exists('easel_display_post_date')) {
 	}
 }
 
+if (!function_exists('easel_display_post_time')) {
+	function easel_display_post_time() {
+		global $post;
+		if ($post->post_type == 'post' && !easel_themeinfo('disable_date_info_in_posts')) {
+			$post_time = "<span class=\"posted-at\">".__('at&nbsp;','easel')."</span><span class=\"post-time\">".get_the_time()."</span>\r\n";
+			echo apply_filters('easel_display_post_time',$post_time);
+		}
+	}
+}
+
 if (!function_exists('easel_display_post_category')) {
 	function easel_display_post_category() {
 		global $post;
@@ -158,15 +168,17 @@ if (!function_exists('easel_display_post')) {
 			<div class="post-head"><?php do_action('easel-post-head'); ?></div>
 			<div class="post-content">
 				<div class="post-info">
-					<?php easel_display_author_gravatar(); ?>
-					<?php easel_display_post_calendar(); ?>
-					<?php if (function_exists('easel_show_mood_in_post')) easel_show_mood_in_post(); ?>
+					<?php 
+						easel_display_author_gravatar();
+						easel_display_post_calendar();
+						if (function_exists('easel_show_mood_in_post')) easel_show_mood_in_post(); 
+					?>
 					<div class="post-text">
 						<?php 
 						easel_display_post_title();
 						if (!is_page()) {
 							easel_display_post_author();
-							easel_display_post_date();	
+							easel_display_post_date();	easel_display_post_time();
 							if (!is_archive() && !is_search() && $post->post_type == 'post') {edit_post_link(__('Edit','easel'), ' <span class="post-edit">', '</span>'); }
 							easel_display_post_category();
 							do_action('easel-post-info');

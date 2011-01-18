@@ -39,6 +39,18 @@ table#wp-calendar td {
 	border-color: #256991;
 }
 
+table#wp-calendar td a {
+	color: #ffd34e;
+}
+
+#wp-calendar caption, .sidebar h2 {
+	color: #ffd34e;
+}
+
+.sidebar .widget {
+	color: #fff;
+}
+
 .default-nav, .casts-nav {
 	background-color: #256991;
 	color: #6598b6;

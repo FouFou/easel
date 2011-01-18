@@ -53,7 +53,7 @@ h1 {
 }
 
 /* curved corners 10px */
-.type-post, .type-page, .type-music, .type-comic, .type-showcase, .type-casts, .wp-caption,
+#comment-wrapper, .type-post, .type-page, .type-music, .type-comic, .type-showcase, .type-casts, .wp-caption,
 blockquote, .type-attachment  {
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
@@ -62,13 +62,13 @@ blockquote, .type-attachment  {
 }
 
 /* border radius none */
-.menu ul li ul li {
-	-moz-border-radius: none;
-	-khtml-border-radius: none;
-	-webkit-border-radius: none;
-	border-radius: none;
+.menu ul li ul li a:hover, .menu ul li ul li a.selected {
+	-moz-border-radius: 0;
+	-khtml-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	background: #111;
 }
-
 
 /* box shadow min */
 .box-shadow-min {
@@ -121,7 +121,7 @@ blockquote, .type-attachment  {
 	background: url('images/whitetranslow.png') repeat;
 }
 
-.type-post, .type-page, .type-music, .type-showcase, .type-comic, .type-casts, .wp-caption {
+#comment-wrapper, .type-post, .type-page, .type-music, .type-showcase, .type-comic, .type-casts, .wp-caption {
 	padding: 5px;
 }
 

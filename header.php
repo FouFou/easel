@@ -17,7 +17,7 @@
 	}
   ?></title>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
-<?php if (!easel_themeinfo('disable_default_design') && !is_child_theme()) { ?>
+<?php if (!easel_themeinfo('disable_default_design') && !is_child_theme() && (easel_themeinfo('scheme') !== 'greymatter')) { ?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style-default.css" type="text/css" media="screen" />
 <?php } ?>
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />

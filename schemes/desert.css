@@ -25,6 +25,10 @@ table#wp-calendar td {
 	border-color: #80755f;
 }
 
+table#wp-calendar td a {
+	color: #d0dfca;
+}
+
 
 #content-wrapper, .wp-caption, .default-nav, .casts-nav {
 	background: url('../images/browntrans.png') repeat;
@@ -35,7 +39,7 @@ table#wp-calendar td {
 	color: #706653;
 }
 
-.type-post, .type-page, .type-comic, .type-music, .type-showcase, .type-casts, .sidebar .widget, .type-attachment, #wp-paginav {
+#comment-wrapper, .type-post, .type-page, .type-comic, .type-music, .type-showcase, .type-casts, .sidebar .widget, .type-attachment, #wp-paginav {
 	background: url('../images/tantrans.png') repeat;
 	border: solid 1px #333;
 	margin-bottom: 10px;

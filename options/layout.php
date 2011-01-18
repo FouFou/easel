@@ -26,11 +26,11 @@
 				<tr class="alternate">
 					<th scope="row" style="width:250px"><label for="layout" style="text-align:left"><?php _e('Choose Your Website Layout','easel'); ?></label>
 						<select name="layout" id="layout" onchange="lshowimage(this,'easellayout')">
-							<option class="level-0" value="b3c" <?php if (($easel_options['layout'] == 'b3c') || ($easel_options['layout'] == 'standard')) { ?>selected="selected" <?php } ?>><?php _e('BLOG: 3 Column - Standard','easel'); ?></option>
-							<option class="level-0" value="b3cl" <?php if ($easel_options['layout'] == 'b3cl') { ?>selected="selected" <?php } ?>><?php _e('BLOG: 3 Column - Sidebar\'s on left','easel'); ?></option>
-							<option class="level-0" value="b3cr" <?php if ($easel_options['layout'] == 'b3cr') { ?>selected="selected" <?php } ?>><?php _e('BLOG: 3 Column - Sidebar\'s on right','easel'); ?></option>
-							<option class="level-0" value="b2cl" <?php if ($easel_options['layout'] == 'b2cl') { ?>selected="selected" <?php } ?>><?php _e('BLOG: 2 Column - Sidebar on left','easel'); ?></option>
-							<option class="level-0" value="b2cr" <?php if ($easel_options['layout'] == 'b2cr') { ?>selected="selected" <?php } ?>><?php _e('BLOG: 2 Column - Sidebar on right','easel'); ?></option>
+							<option class="level-0" value="b3c" <?php if (($easel_options['layout'] == 'b3c') || ($easel_options['layout'] == 'standard')) { ?>selected="selected" <?php } ?>><?php _e('3 Column - Standard','easel'); ?></option>
+							<option class="level-0" value="b3cl" <?php if ($easel_options['layout'] == 'b3cl') { ?>selected="selected" <?php } ?>><?php _e('3 Column - Sidebar\'s on left','easel'); ?></option>
+							<option class="level-0" value="b3cr" <?php if ($easel_options['layout'] == 'b3cr') { ?>selected="selected" <?php } ?>><?php _e('3 Column - Sidebar\'s on right','easel'); ?></option>
+							<option class="level-0" value="b2cl" <?php if ($easel_options['layout'] == 'b2cl') { ?>selected="selected" <?php } ?>><?php _e('2 Column - Sidebar on left','easel'); ?></option>
+							<option class="level-0" value="b2cr" <?php if ($easel_options['layout'] == 'b2cr') { ?>selected="selected" <?php } ?>><?php _e('2 Column - Sidebar on right','easel'); ?></option>
 						<?php if (function_exists('ceo_initialize_post_types')) { ?>
 							<option class="level-0" value="c3c" <?php if ($easel_options['layout'] == 'c3c') { ?>selected="selected" <?php } ?>><?php _e('COMIC: 3 Column - Standard','easel'); ?></option>
 						<?php } ?>
@@ -69,6 +69,7 @@
 							<option class="level-0" value="default" <?php if (!!isset($easel_options['scheme']) || empty($easel_options['scheme']) || ($easel_options['scheme'] == 'default')) { ?>selected="selected" <?php } ?>><?php _e('Default','easel'); ?></option>
 							<option class="level-0" value="ocean" <?php if ($easel_options['scheme'] == 'ocean') { ?>selected="selected" <?php } ?>><?php _e('Ocean','easel'); ?></option>
 							<option class="level-0" value="desert" <?php if ($easel_options['scheme'] == 'desert') { ?>selected="selected" <?php } ?>><?php _e('Desert','easel'); ?></option>
+							<option class="level-0" value="greymatter" <?php if ($easel_options['scheme'] == 'greymatter') { ?>selected="selected" <?php } ?>><?php _e('Grey Matter','easel'); ?></option>
 						</select>
 						<br />
 					</th>

@@ -13,10 +13,19 @@
 			<tr class="alternate">
 				<th scope="row"><label for="enable_debug_footer_code"><?php _e('Enable the debug page load/memory usage at the bottom of each page?','easel'); ?></label></th>
 				<td>
-					<input id="enable_debug_footer_code" name="enable_debug_footer_code" type="checkbox" value="1" <?php checked(true, $easel_options['enable_debug_footer_code']); ?> />		
+					<input id="enable_debug_footer_code" name="enable_debug_footer_code" type="checkbox" value="1" <?php checked(true, $easel_options['enable_debug_footer_code']); ?> />
 				</td>
 				<td>
 					<?php _e('If enabled will show information on how many queries, memory is used as well as how fast the page loads.','easel'); ?>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><label for="force_active_connection_close"><?php _e('Force MySQL to close the current active connection after page load?','easel'); ?></label></th>
+				<td>
+					<input id="force_active_connection_close" name="force_active_connection_close" type="checkbox" value="1" <?php checked(true, $easel_options['force_active_connection_close']); ?> />		
+				</td>
+				<td>
+					<?php _e('This option forces mysql to close the connection after each page load - not recommended unless you are requested to enable it.','easel'); ?>
 				</td>
 			</tr>
 		</table>

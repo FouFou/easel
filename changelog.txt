@@ -8,6 +8,11 @@ bug fix from @fred on the forums, the $height wasnt passing properly for the cus
 added schemes, default, ocean and desert
 fixed commpress casts to only set to casts on category output
 adjusted widths of menu items to not take up as much room as it each menu item was
+removed the content stripping of <p> and </p>, leaving them in the [members] code whether they validate or not
+added posted at time in posts, disables by option for the remove date also can be disabled via css
+removed the text-transform to capitalize from the page-title/post-title
+added the scheme 'greymatter'
+fixed it so that gravatars are able to be seen (author gravatars) in IE
 
 1.1.7
 Removed the pre_get_posts completely, now the blog loop has its own post type section which handles what displays there and the rss feed has a pre_get_posts for that in functions/syndication.php

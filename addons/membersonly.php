@@ -21,12 +21,12 @@ add_action( 'edit_user_profile_update', 'easel_profile_members_only_save' );
 function shortcode_for_easel_members_only( $atts, $content = null ) {
 	global $post;
 	$this_ID = get_current_user_id();
-	$returninfo = '<div class="non-members-post"><p>'.__('There is Members Only content here.<br />To view this content you need to be a member of this site.','easel').'</p></div>';
+	$returninfo = '<div class="non-members-post"><p>'.easel_themeinfo('non_members_message').'</p></div>';
 	if ( !empty($this_ID) && !empty($content) ) {
 		$is_member = get_user_meta($this_ID, 'easel-is-member', true);
 		if ($is_member || current_user_can('manage_options')) {
-			$content = str_replace('<p>', '', $content);
-			$content = str_replace('</p>', '', $content);
+//			$content = str_replace('<p>', '', $content);
+//			$content = str_replace('</p>', '', $content);
 			$returninfo = "<div class=\"members-post\">$content</div>\r\n";
 		}
 	}
@@ -37,11 +37,14 @@ function easel_profile_members_only() {
 	global $profileuser, $errormsg;
 	$easel_is_member = get_user_meta($profileuser->ID,'easel-is-member', true);
 	if (empty($easel_is_member)) $easel_is_member = 0;
-	$current_site = get_current_site();
-	if (!isset($current_site->site_name)) {
-		$site_name = ucfirst( $current_site->domain );
-	} else {
-		$site_name = $current_site->site_name;
+	$site_name = get_option('blogname');
+	if (is_multisite()) {
+		$current_site = get_current_site();
+		if (!isset($current_site->site_name)) {
+			$site_name = ucfirst( $current_site->domain );
+		} else {
+			$site_name = $current_site->site_name;
+		}
 	}
 	?>
 	<div style="border: solid 1px #aaa; background: #eee; padding: 0 10px 10px;">

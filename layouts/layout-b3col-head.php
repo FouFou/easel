@@ -7,11 +7,11 @@
 	<div id="subcontent-wrapper">
 		<?php do_action('easel-subcontent-wrapper'); ?>
 		<div id="column-head"></div>
-		<?php if (easel_is_signup() || is_page('chat') || is_page('forum')) { ?>
+		<?php if (easel_is_signup() || easel_sidebars_disabled()) { ?>
 			<div id="column" class="widecolumn">
 		<?php } else { ?>
 <?php
-if (!easel_is_signup() && !is_page('chat') && !is_page('forum')) {
+if (!easel_is_signup() && !easel_sidebars_disabled()) {
 		if (easel_themeinfo('layout') != 'b3cr') get_sidebar('left');
 		if (easel_themeinfo('layout') == 'b3cl') get_sidebar('right');
 }

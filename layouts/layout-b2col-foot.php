@@ -2,7 +2,7 @@
 		</div>
 		<div id="column-foot"></div>
 <?php
-if (!easel_is_signup() && !is_page('chat') && !is_page('forum') && (easel_themeinfo('layout') == 'b2cr')) {
+if (!easel_is_signup() && (easel_themeinfo('layout') == 'b2cr') && !easel_sidebars_disabled()) {
 	get_sidebar('right'); 
 }
 ?>
