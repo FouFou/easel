@@ -1,4 +1,11 @@
 ﻿Changelog
+2.0.4
+moved the site description to *under* the h1 in the header
+added slider to the comic showcase - the showcase is meant to be example of addons someone can make
+fixed loading of what loads when in the functions.php - cause it was fatal erroring out on duplicate functions
+added header-info class to wrap around the header, erm.. information
+added all custom post type formats to be found on author pages
+
 2.0
 Fixed the archive page to know the difference between a permalink category and non-permalink cat=
 fixed site_url to home_url in the header.php thanks @mike on the forums

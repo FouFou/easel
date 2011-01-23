@@ -210,6 +210,7 @@ function comic_list_init() {
 	register_taxonomy_for_object_type('cms', 'showcase');
 	register_taxonomy_for_object_type('twitter', 'showcase');
 	if (easel_themeinfo('enable_addon_showcase_slider')) {
+		wp_enqueue_script( 'slider', easel_themeinfo('themeurl') . '/js/jquery.cycle.js', array( 'jquery' ), 0.1, true );
 		wp_enqueue_style('jQuery-Slider', easel_themeinfo('themeurl') . '/js/slide.css');
 	}
 }
@@ -432,7 +433,7 @@ function showcase_filter_display_post_category($post_category) {
 }
 
 if (easel_themeinfo('enable_addon_showcase_slider')) {
-	add_filter('easel-subcontent-area-top','showcase_filter_display_slider');
+	add_action('easel-narrowcolumn-area','showcase_filter_display_slider');
 	add_filter('easel_display_post_thumbnail','showcase_remove_post_thumbnail_filter');
 }
 
@@ -440,7 +441,56 @@ function showcase_remove_post_thumbnail_filter($post_thumbnail) {
 	return '';
 }
 
-function showcase_filter_display_slider() {
+function showcase_filter_display_slider() { 
+	global $wp_query, $post;
+	if (is_home()) {
+	Protect();
+	$showcase_query = array(
+				'posts_per_page' => 5,
+				'post_type' => array('showcase'),
+				'orderby' => 'rand'
+		);
+?>
+		<!-- Begin feature slider. -->
+		<div id="slider-container">
+
+			<div id="slider">
+
+				<?php $loop = new WP_Query( $showcase_query ); ?>
+
+				<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+					<div class="feature">
+					<?php 
+						$link = get_post_meta( $post->ID, 'url', true );
+						if (empty($link)) $link = get_permalink();
+						echo "<div class=\"post-image\"><center><a href=\"".$link."\" rel=\"bookmark\" title=\"Link to ".get_the_title()."\">".get_the_post_thumbnail($post->ID,'full')."</a></center></div>\r\n";
+					?>	
+						<div class="entry-summary">
+							<h2 class="slider-title"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+							<?php the_excerpt(); ?>
+							<a class="more-link" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php _e('Full Story &raquo;', 'news'); ?></a>
+						</div>
+
+					</div>
+
+				<?php endwhile; ?>
+
+			</div>
+
+			<div class="slider-controls">
+				<a class="slider-prev" title="<?php esc_attr_e( 'Previous Post', 'hybrid-news' ); ?>"><?php _e( 'Previous', 'hybrid-news' ); ?></a>
+				<a class="slider-pause" title="<?php esc_attr_e( 'Pause', 'hybrid-news' ); ?>"><?php _e( 'Pause', 'hybrid-news' ); ?></a>
+				<a class="slider-next" title="<?php esc_attr_e( 'Next Post', 'hybrid-news' ); ?>"><?php _e( 'Next', 'hybrid-news' ); ?></a>
+			</div>
+
+		</div>
+<?php 
+		UnProtect();
+	}
+}
+
+function old_showcase_filter_display_slider() {
 	global $wp_query, $post;
 	if (is_home()) {
 	Protect();

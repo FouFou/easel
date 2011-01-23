@@ -48,7 +48,7 @@ get_header();
 					<div class="clear"></div>
 					<div class="userpage-posts">
 						<?php if (have_posts()) { ?>
-							<h3><?php _e('Posts by','easel'); ?> <?php echo $authorname; ?> (<?php echo count_user_posts($curauth->ID); ?>) &not;</h3>
+							<h3><?php _e('Posts by','easel'); ?> <?php echo $authorname; ?> &not;</h3>
 							<?php // this area is a loop that shows what posts the person has done. ?>
 							<ol>
 									<li><table class="month-table">
@@ -60,7 +60,6 @@ get_header();
 							</ol>
 							
 							<?php easel_pagination(); ?>
-						
 						<?php } ?>
 					</div>
 				</div>

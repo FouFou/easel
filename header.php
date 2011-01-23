@@ -33,8 +33,10 @@
 	<div id="page">
 		<?php easel_get_sidebar('above-header'); ?>
 		<div id="header">
-			<div class="description"><?php bloginfo('description') ?></div>
-			<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name') ?></a></h1>
+			<div class="header-info">
+				<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name') ?></a></h1>
+				<div class="description"><?php bloginfo('description') ?></div>
+			</div>
 			<?php easel_get_sidebar('header'); ?>
 			<div class="clear"></div>
 		</div>

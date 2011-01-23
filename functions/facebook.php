@@ -8,10 +8,9 @@ if (!function_exists('easel_display_facebook_like')) {
 		echo '<meta property="og:type" content="article" />'."\r\n";
 		if (is_single()) {
 			echo '<meta property="og:title" content="'.get_the_title().'" />'."\r\n";
-			echo '<meta property="og:description" content="'.get_the_excerpt().'" />'."\r\n";
-		} elseif (is_home()) { 
-			echo '<meta property="og:description" content="'.get_bloginfo('description').'" />'."\r\n";
-		}
+		} 
+		echo '<meta property="og:description" content="'.get_bloginfo('description').'" />'."\r\n";
+
 	}
 }
 

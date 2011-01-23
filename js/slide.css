@@ -1,162 +1,103 @@
+/**
+* Featured slider
+************************************************/
+#slider-container {
+	overflow: hidden;
+	width: 540px;
+	height: 250px;
+	margin: 10px auto;
+	}
 #slider {
-	height: 234px;
 	overflow: hidden;
-	position: relative;
-	margin: 0 auto;
-}
-
-.stepcarousel {
-	position: relative; /*leave this value alone*/
-	overflow: hidden; /*leave this value alone*/
-	width: 940px; /*Width of Carousel Viewer itself*/
-	height: 225px; /*Height should enough to fit largest content's height*/
-	margin: 0px 30px 0px 30px;
-}
-
-.stepcarousel .belt {
-	position: absolute; /*leave this value alone*/
-	left: 0;
-	top: 0;
-}
-
-.stepcarousel .panel {
-	float: left; /*leave this value alone*/
-	overflow: hidden; /*clip content that go outside dimensions of holding panel DIV*/
-	width: 960px; /*Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
-	margin: 0 auto;
-}
-.stepcarousel .panel p {
-	text-align: justify; /*leave this value alone*/
-	width: 600px;
-	line-height: 24px;
+	width: auto;
+	height: 230px;
+	}
+.feature {
+	overflow: hidden;
+	width: auto;
+	height: 210px;
+	padding: 10px 10px 0 10px;
 	color: #fff;
-	font-size: 16px;
-	padding: 5px;
-}
-
-.stepcarousel .panel h2 {
-	font-size: 25px;
-	color: #ac0000;
-	margin-top: 10px;
-	width: 500px;
-	padding: 5px;
-	overflow: hidden;
-}
-.stepcarousel .panel h2 a:link, .stepcarousel .panel h2 a:visited {
-	color: #fff;
-	background-color: transparent;
-	line-height: 20px;
-	margin: 5px 0px;
-}
-.stepcarousel .panel img {
-	position: absolute;
-	top: 20px;
-	right: 60px;
-	border: solid 1px #999;
-}
-
-/*Featured*/
-.featout {
-	width: 650px;
-	overflow: hidden;
-	padding: 5px 5px;
-	margin: 0px 4px 5px 5px;
-	background: #55656f;
-}
-.featured {
-	width: 650px;
-	overflow: hidden;
-	padding: 5px 0px 2px 0px;
-	margin: 0px 0px 0px 0px;
-	background: #39525e;
-}
-.featured h2 {
-	font-size: 22px;
-	margin: 3px 0 4px 10px;
-}
-.featured h2 a, .featured h2 a:link, .featured h2 a:visited {
-	color: #fff;
-	background-color: transparent;
-}
-.featured h2 a:hover {
-	color: #fff;
-	background-color: transparent;
-}
-
-.fentry {
-	height: auto;
-	overflow: hidden;
-}
-
-.fentry a:link, .fentry a:visited {
-	color: #92C5EC;
-}
-
-.cat {
-	padding: 1px 5px 1px 10px;
-	font-size: 12px;
-}
-
-
-.cat a:link, .cat a:visited {
-	color: #ac2d2d;
-}
-.cat a:hover {
-	color: #ac2d2d;
-}
-.cats {
-	margin: 1px 5px 1px 0px;
-	font-size: 13px;
-	margin-left: 5px;
-	color: #24a1cc;
-}
-.cats a:link, .cats a:visited {
-	color: #24a1cc;
-}
-.cats a:hover {
-	color: #24a1cc;
-}
-
-.fentry p {
-	margin: 5px 10px;
-	color: #c2d4dd;
-	line-height: 20px;
-}
-.fentry img {
-	border: 0;
-	padding: 4px 4px;
-	background: #1E1F20;
-	border: 1px solid #1E1F20;
-	margin: 2px 5px 5px 5px;
-}
-
-
-
-.featmeta {
-	height: 22px;
-	text-align: right;
-	padding: 3px 5px 0 0;
-	background: url(images/readm.jpg) right no-repeat;
-}
-.featmeta a:link, .featmeta a:visited {
-	color: #3c2e1b;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-img {
-	border: none;
-}
-
-.showme {
-	font-size: 6px;
+	border: none !important;
+	}
+.feature img {
 	float: left;
-	color: #333;
+	max-width: 240px;
+	margin: 0 15px 0 0;
+	border: 5px solid #001838;
+	}
+#slider .feature .entry-title {
+	font-size: 21px;
+	}
+#slider .feature .entry-title a {
+	color: #eee;
+	}
+.feature .byline {
+	color: #aaa;
+	margin-bottom: 15px;
+	}
+.more-link {
+	float: right;
+	text-indent: -9999px;
+	width: 100px;
+	height: 20px;
+	display: block;
+	background: url('../images/slider/more-link.gif') no-repeat 0 0;
+	}
+.more-link:hover {
+	background: url('../images/slider/more-link.gif') no-repeat 0 -20px;
+	}
+
+/* Slider controls */
+.slider-controls {
+	float: left;
+	width: 100%;
+	height: 20px;
+	overflow: hidden;
+	clear: both;
+	line-height: 15px;
+	margin: 0 0 0;
+	display: block;
+	padding: 0 10px;
+	}
+.slider-controls .slider-prev {
+	text-indent: -9999px;
+	float: left;
+	width: 22px;
+	height: 20px;
+	background: url('../images/slider/slider-prev.png') no-repeat 0 0;
+	border: none !important;
+	}
+.slider-controls .slider-prev:hover {
+	background: url('../images/slider/slider-prev.png') no-repeat left -20px;
+	}
+.slider-controls .slider-pause {
+	text-indent: -9999px;
+	float: left;
+	width: 22px;
+	height: 20px;
+	background: url('../images/slider/pause.png') no-repeat center 0;
+	border: none !important;
+	}
+.slider-controls .slider-pause:hover, .slider-controls a.paused {
+	background: url('../images/slider/pause.png') no-repeat center -20px;
+	}
+.slider-controls .slider-next {
+	text-indent: -9999px;
+	float: left;
+	width: 22px;
+	height: 20px;
+	background: url('../images/slider/slider-next.png') no-repeat right 0;
+	border: none !important;
+	}
+.slider-controls .slider-next:hover {
+	background: url('../images/slider/slider-next.png') no-repeat right -20px;
+	}
+	
+h2.slider-title a, h2.slider-title {
+	color: #fff;
 }
 
-.showme a {
-	font-size: 6px;
-	text-decoration: none;
-	color: #3b3b3b;
+h2.slider-title a:hover, h2.slider-title:hover {
+	color: #fcff00;
 }
-

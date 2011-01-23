@@ -6,7 +6,7 @@ Description: A theme with many different roles and capabilities, a framework-lik
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
 Tags: Dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
-Version: 2.0
+Version: 2.0.4
 License: GNU General Public License, v3 (or newer)
 License URI: http://www.opensource.org/licenses/gpl-3.0.html
 */
@@ -1404,4 +1404,14 @@ table#wp-calendar td {
 	height: 0;
 	line-height: 0;
 	font-size: 0;
+}
+
+.page-template-backlinks-template-php .entry ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.page-template-backlinks-template-php .entry ul li {
+	margin: 5px 0;
 }

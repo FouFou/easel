@@ -65,9 +65,12 @@
 			<strong>Upload Path Base Dir</strong>:(uploadpath) <?php echo easel_themeinfo('uploadpath'); ?><br />
 			<strong>Upload Base URL</strong>:(uploadurl) <?php echo easel_themeinfo('uploadurl'); ?><br />
 			<br />
-			<?php var_dump(easel_themeinfo()); ?>
+			<?php var_dump(easel_themeinfo()); ?><br />
+			<br />
 			</td>
 		</tr>
 		</table>
 	</div>
 </div>
+
+<?php phpinfo(); ?>

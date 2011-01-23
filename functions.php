@@ -8,7 +8,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '2.0.3',
+			'version' => '2.0.4',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -68,16 +68,6 @@ if (is_child_theme()) {
 	get_template_part('child', 'widgets');
 }
 
-// These autoload
-foreach (glob(easel_themeinfo('themepath') . "/functions/*.php") as $funcfile) {
-	@require_once($funcfile);
-}
-
-// Load all the widgets.
-foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
-	@require_once($widgefile);
-}
-
 // load up the addons that it finds, loads before functions just in case we want to rewrite a function
 if (is_dir(easel_themeinfo('themepath') . '/addons')) {
 	if (easel_themeinfo('enable_addon_page_options')) 
@@ -94,6 +84,16 @@ if (is_dir(easel_themeinfo('themepath') . '/addons')) {
 		@require_once(easel_themeinfo('themepath') . '/addons/commpress.php');
 	if (easel_themeinfo('enable_wprewrite_posttype_control'))
 		@require_once(easel_themeinfo('themepath') . '/addons/wp-rewrite.php');
+}
+
+// These autoload
+foreach (glob(easel_themeinfo('themepath') . "/functions/*.php") as $funcfile) {
+	@require_once($funcfile);
+}
+
+// Load all the widgets.
+foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
+	@require_once($widgefile);
 }
 
 // Load all the widgets from the child theme *if* a child theme exists
@@ -222,11 +222,12 @@ function easel_load_options() {
 			'layout' => '3c',
 			'scheme' => 'default',
 			'enable_wprewrite_posttype_control' => false,
-			'force_active_connection_close' => false
+			'force_active_connection_close' => false,
+			'enable_addon_easel_slider' => true
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
-		add_option('easel-options', $easel_options, '', false);
+		update_option('easel-options', $easel_options);
 	}
 	return $easel_options;
 }
@@ -348,7 +349,6 @@ if (!function_exists('easel_is_layout')) {
 	}
 }
 
-
 function easel_sidebars_disabled() {
 	global $post;
 	if (is_page() && !empty($post)) {
@@ -356,6 +356,23 @@ function easel_sidebars_disabled() {
 		if ($sidebars_disabled) return true;
 	}
 	return false;
+}
+
+add_action('pre_get_posts','easel_add_post_types_to_queries');
+
+function easel_add_post_types_to_queries($query) {
+	$args = array(
+			'public' => true,
+			'_builtin' => false
+			);
+	$output = 'names';
+	$operator = 'and';
+	$post_types = get_post_types( $args , $output , $operator );
+	$post_types = array_merge(array('post'), $post_types);
+	if ($query->is_author) {
+		$query->set('post_type', $post_types);
+	}
+	return $query;
 }
 
 ?>
