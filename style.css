@@ -6,7 +6,7 @@ Description: A theme with many different roles and capabilities, a framework-lik
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
 Tags: Dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
-Version: 2.0.4
+Version: 2.0.5
 License: GNU General Public License, v3 (or newer)
 License URI: http://www.opensource.org/licenses/gpl-3.0.html
 */
@@ -401,9 +401,8 @@ body.wide #column {
 	width: 550px;
 }
 
-/* added 2px cause one of the sidebars is gone */
 body.layout-2cl .narrowcolumn, body.layout-2cr .narrowcolumn {
-	width: 562px;
+	width: 560px;
 }
 
 body.wide .narrowcolumn {

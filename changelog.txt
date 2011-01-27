@@ -1,4 +1,7 @@
 ﻿Changelog
+2.0.5
+Fixing CSS
+
 2.0.4
 moved the site description to *under* the h1 in the header
 added slider to the comic showcase - the showcase is meant to be example of addons someone can make

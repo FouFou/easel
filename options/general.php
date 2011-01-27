@@ -374,17 +374,6 @@
 						<?php _e('Enabling this will make the archive pages by date/category/term display as a list of links instead of full posts.','easel'); ?>
 					</td>
 				</tr>
-				<!--
-				<tr>
-					<th scope="row"><label for="facebook_meta"><?php _e('Enable the Facebook Meta?','easel'); ?></label></th>
-					<td>
-						<input id="facebook_meta" name="facebook_meta" type="checkbox" value="1" <?php checked(true, $easel_options['facebook_meta']); ?> />
-					</td>
-					<td>
-						<?php _e('When setting this option, Easel will add meta information to the head area of each page so that facebook will recognize the content within.','easel'); ?>
-					</td>
-				</tr>
-				// -->
 			</table>
 				
 		</div>
