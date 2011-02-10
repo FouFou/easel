@@ -1,4 +1,4 @@
-			<?php easel_get_sidebar('under-blog'); ?>
+			<?php if (!easel_sidebars_disabled()) easel_get_sidebar('under-blog'); ?>
 		</div>
 		<div id="column-foot"></div>
 <?php 

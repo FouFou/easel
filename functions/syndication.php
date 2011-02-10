@@ -10,7 +10,7 @@ if (!function_exists('easel_thumbnail_feed')) {
 	function easel_thumbnail_feed() { 
 		global $post, $wp_query;
 		$post_thumbnail = '';
-		$post_thumbnail_image = get_the_post_thumbnail($post->ID, 'full');
+		$post_thumbnail_image = get_the_post_thumbnail($post->ID, 'thumbnail');
 		if (!empty($post_thumbnail_image)) {
 			$link = get_post_meta( $post->ID, 'link', true );
 			if (empty($link)) $link = get_permalink();

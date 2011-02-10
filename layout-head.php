@@ -16,4 +16,4 @@ if (!easel_is_signup() && !easel_sidebars_disabled()) {
 		<div id="column-head"></div>
 		<div id="column" class="narrowcolumn">
 		<?php do_action('easel-narrowcolumn-area'); ?>
-		<?php easel_get_sidebar('over-blog'); ?>
+		<?php if (!easel_sidebars_disabled()) easel_get_sidebar('over-blog'); ?>

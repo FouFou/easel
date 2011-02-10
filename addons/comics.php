@@ -77,7 +77,14 @@ function easel_comics_init() {
 // Navigation
 
 function easel_comics_get_first_comic() {
-	return easel_comics_get_terminal_post_of_chapter(0, true);
+	global $post;
+	$current_chapter = reset(get_the_terms( $post->ID, 'chapters'));
+	if (empty($current_chapter) || is_null($current_chapter)) { 
+		$current_chapter_id = 0;
+	} else {
+		$current_chapter_id = $current_chapter->term_id;
+	}
+	return easel_comics_get_terminal_post_of_chapter($current_chapter_id, true);
 }
 
 function easel_comics_get_first_comic_permalink() {
@@ -86,7 +93,14 @@ function easel_comics_get_first_comic_permalink() {
 }
 
 function easel_comics_get_last_comic() {
-	return easel_comics_get_terminal_post_of_chapter(0, false);
+	global $post;
+	$current_chapter = reset(get_the_terms( $post->ID, 'chapters'));
+	if (empty($current_chapter) || is_null($current_chapter)) { 
+		$current_chapter_id = 0;
+	} else {
+		$current_chapter_id = $current_chapter->term_id;
+	}	
+	return easel_comics_get_terminal_post_of_chapter($current_chapter_id, false);
 }
 
 function easel_comics_get_last_comic_permalink() {
@@ -95,7 +109,7 @@ function easel_comics_get_last_comic_permalink() {
 }
 
 function easel_comics_get_previous_comic() {
-	return easel_get_adjacent_post_type(false, true, '', 'comic');
+	return easel_get_adjacent_post_type(true, 'comic', true);
 }
 
 function easel_comics_get_previous_comic_permalink() {
@@ -109,7 +123,7 @@ function easel_comics_get_previous_comic_permalink() {
 }
 
 function easel_comics_get_next_comic() {
-	return easel_get_adjacent_post_type(false, false, '', 'comic');
+	return easel_get_adjacent_post_type(false, 'comic', true);
 }
 
 function easel_comics_get_next_comic_permalink() {
@@ -212,7 +226,7 @@ function easel_comics_display_comic_area() {
 	if (is_single()) {
 		easel_comics_display_comic_wrapper();
 	} else {
-		if (is_home() && !is_paged())  {
+		if (is_home() && !is_paged() && easel_themeinfo('display_comic_on_home'))  {
 			Protect();
 			$comic_args = array(
 				'posts_per_page' => 1,
@@ -249,7 +263,7 @@ add_action('easel-narrowcolumn-area', 'easel_comics_display_comic_post_home');
 
 function easel_comics_display_comic_post_home() { 
 	global $wp_query;
-	if (is_home()) { 
+	if (is_home() && easel_themeinfo('display_comic_post_on_home')) { 
 		if (!is_paged())  { 
 			Protect();
 			$posts = &query_posts('post_type=comic&showposts=1');

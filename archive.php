@@ -52,9 +52,9 @@ if (have_posts()) :
 		$title_string = __('Archives','easel');
 	} elseif (taxonomy_exists($wp_query->query_vars['taxonomy'])) {
 		if (term_exists($wp_query->query_vars['term'])) {
-			$title_string = __('Archive for &#8216;','easel').$post_title_type.$wp_query->query_vars['term'].__('&#8217;', 'easel');
+			$title_string = __('Archive for &#8216;','easel').$wp_query->query_vars['term'].__('&#8217;', 'easel');
 		} else {
-			$title_string = __('Archive for &#8216;','easel').$post_title_type.$wp_query->query_vars['taxonomy'].__('&#8217;', 'easel');
+			$title_string = __('Archive for &#8216;','easel').$wp_query->query_vars['taxonomy'].__('&#8217;', 'easel');
 		}
 	} elseif ($post->post_type !== 'post') {
 		$title_string = __('Archive for &#8216;','easel').$post->post_type.__('&#8217;', 'easel');

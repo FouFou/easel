@@ -280,7 +280,7 @@ function easel_commpress_get_last_cast_permalink() {
 }
 
 function easel_commpress_get_previous_cast() {
-	return easel_get_adjacent_post_type(false, true, '', 'casts');
+	return easel_get_adjacent_post_type(true, 'casts');
 }
 
 function easel_commpress_get_previous_cast_permalink() {
@@ -295,7 +295,7 @@ function easel_commpress_get_previous_cast_permalink() {
 }
 
 function easel_commpress_get_next_cast() {
-	return easel_get_adjacent_post_type(false, false, '', 'casts');
+	return easel_get_adjacent_post_type(false, 'casts');
 }
 
 function easel_commpress_get_next_cast_permalink() {

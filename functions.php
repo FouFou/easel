@@ -8,7 +8,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '2.0.4',
+			'version' => '2.0.6',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -223,7 +223,9 @@ function easel_load_options() {
 			'scheme' => 'default',
 			'enable_wprewrite_posttype_control' => false,
 			'force_active_connection_close' => false,
-			'enable_addon_easel_slider' => true
+			'enable_addon_easel_slider' => true,
+			'display_comic_on_home' => true,
+			'display_comic_post_on_home' => true
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
@@ -252,8 +254,9 @@ if (easel_themeinfo('enable_debug_footer_code')) {
  * Retrieve adjacent post link.
  *
  * Can either be next or previous post link.
+ * chapters is for the comic post type
  */
-function easel_get_adjacent_post_type($in_same_chapter = false, $previous = true, $excluded_chapters = '', $taxonomy = 'post') {
+function easel_get_adjacent_post_type($previous = true, $taxonomy = 'post', $in_same_chapter = false) {
 	global $post, $wpdb;
 	
 	if ( empty( $post ) ) return null;
@@ -261,26 +264,14 @@ function easel_get_adjacent_post_type($in_same_chapter = false, $previous = true
 	$current_post_date = $post->post_date;
 
 	$join = '';
-	$posts_in_ex_cats_sql = '';
-	if ( $in_same_chapter || !empty($excluded_chapters) ) {
+
+	if ( $in_same_chapter ) {
 		$join = " INNER JOIN $wpdb->term_relationships AS tr ON p.ID = tr.object_id INNER JOIN $wpdb->term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id";
 
 		if ( $in_same_chapter ) {
-			$cat_array = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'ids'));
-			$join .= " AND tt.taxonomy = '".$taxonomy."' AND tt.term_id IN (" . implode(',', $cat_array) . ")";
-		}
-
-		$posts_in_ex_cats_sql = "AND tt.taxonomy = '".$taxonomy."'";
-		if ( !empty($excluded_chapters) ) {
-			$excluded_chapters = array_map('intval', explode(' and ', $excluded_chapters));
-			if ( !empty($cat_array) ) {
-				$excluded_chapters = array_diff($excluded_chapters, $cat_array);
-				$posts_in_ex_cats_sql = '';
-			}
-
-			if ( !empty($excluded_chapters) ) {
-				$posts_in_ex_cats_sql = " AND tt.taxonomy = '".$taxonomy."' AND tt.term_id NOT IN (" . implode($excluded_chapters, ',') . ')';
-			}
+			$chapt_array = wp_get_object_terms($post->ID, 'chapters', array('fields' => 'ids'));
+			if (!empty($chapt_array))
+				$join .= " AND tt.taxonomy = 'chapters' AND tt.term_id IN (" . implode(',', $chapt_array) . ")";
 		}
 	}
 
@@ -374,5 +365,15 @@ function easel_add_post_types_to_queries($query) {
 	}
 	return $query;
 }
+
+
+add_action('easel-menubar-menunav', 'easel_social_icons');
+
+function easel_social_icons() {
+	echo '<a href="http://www.twitter.com/Frumph" title="Follow Frumph on Twitter" class="menunav-social menunav-twitter">Twitter</a>'."\r\n";
+	echo '<a href="http://www.facebook.com/philip.hofer" title="Friend Frumph on Facebook" class="menunav-social menunav-facebook">Facebook</a>'."\r\n";
+	echo '<a href="'.get_bloginfo('rss2_url').'" title="RSS Feed" class="menunav-social menunav-rss2">RSS</a>'."\r\n";
+}
+
 
 ?>

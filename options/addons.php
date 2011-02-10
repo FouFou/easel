@@ -59,15 +59,6 @@
 					</td>
 				</tr>
 				<?php } ?>
-				<tr class="alternate">
-					<th scope="row"><label for="enable_addon_comics"><?php _e('ComicPress Light','easel'); ?></label></th>
-					<td>
-						<input id="enable_addon_comics" name="enable_addon_comics" type="checkbox" value="1" <?php checked(true, $easel_options['enable_addon_comics']); ?> />
-					</td>
-					<td>
-						<?php _e('This is the Comics post type, how it works is when you add a comic, you put the comic in the "featured image" section of the comic post type.  Whatever image is in the featured image section will be used as the comic.  There is standard navigation first next previous and last and a latest comics widget that goes with this.  This is a very basic rudimentary comic system.','easel'); ?>
-					</td>
-				</tr>
 				<tr>
 					<th scope="row"><label for="enable_addon_commpress"><?php _e('CommPress - Casts','easel'); ?></label></th>
 					<td>
@@ -81,6 +72,42 @@
 								<li><a href="http://wordpress.org/extend/plugins/audio-player/">Audio Player</a> by <a href="http://wpaudioplayer.com/">Martin Laine</a></li>
 								<li><a href="http://wordpress.org/extend/plugins/comicpress-companion/">Theme Companion</a> by <a href="http://frumph.net">Philip M. Hofer (Frumph)</a></li>
 							</ol>
+					</td>
+				</tr>
+			</table>
+
+
+			<table class="widefat">
+				<thead>
+					<tr>
+						<th colspan="3"><?php _e('ComicPress','easel'); ?></th>
+					</tr>
+				</thead>
+				<tr class="alternate">
+					<th scope="row"><label for="enable_addon_comics"><?php _e('ComicPress Light','easel'); ?></label></th>
+					<td>
+						<input id="enable_addon_comics" name="enable_addon_comics" type="checkbox" value="1" <?php checked(true, $easel_options['enable_addon_comics']); ?> />
+					</td>
+					<td>
+						<?php _e('This is the Comics post type, how it works is when you add a comic, you put the comic in the "featured image" section of the comic post type.  Whatever image is in the featured image section will be used as the comic.  There is standard navigation first next previous and last and a latest comics widget that goes with this.  This is a very basic rudimentary comic system.','easel'); ?>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="display_comic_on_home"><?php _e('Display Comic on the Home Page?','easel'); ?></label></th>
+					<td>
+						<input id="display_comic_on_home" name="display_comic_on_home" type="checkbox" value="1" <?php checked(true, $easel_options['display_comic_on_home']); ?> />
+					</td>
+					<td>
+						<?php _e('Enabling this will display the comic and comic area on the home page','easel'); ?>
+					</td>
+				</tr>
+				<tr class="alternate">
+					<th scope="row"><label for="display_comic_post_on_home"><?php _e('Display Comic Post on the Home Page?','easel'); ?></label></th>
+					<td>
+						<input id="display_comic_post_on_home" name="display_comic_post_on_home" type="checkbox" value="1" <?php checked(true, $easel_options['display_comic_post_on_home']); ?> />
+					</td>
+					<td>
+						<?php _e('Enabling this will display the comic post on the home page.','easel'); ?>
 					</td>
 				</tr>
 			</table>

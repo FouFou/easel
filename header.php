@@ -4,8 +4,9 @@
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	<title><?php 
 	bloginfo('name'); 
-	if (is_home () ) {
-		echo ' - '; bloginfo('description');
+	$blog_description = get_bloginfo('description');
+	if (is_home () && !empty($blog_description) ) {
+		echo ' - '; echo $blog_description;
 	} elseif (is_category() ) {
 		echo ' - '; single_cat_title();
 	} elseif (is_single() || is_page() ) { 
