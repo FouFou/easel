@@ -132,6 +132,7 @@ if (!function_exists('easel_display_blog_navigation')) {
 		}
 		if (is_single() && !is_page() && !is_archive() && !is_search() && ($post->post_type !== 'comic') && ($post->post_type !== 'casts')) { ?>
 			<div class="blognav">
+				<?php // previous_post('&laquo; %', '', 'yes'); ?> | <?php next_post('% &raquo;', '', 'yes'); ?>
 				<?php previous_post_link('<span class="blognav-prev">%link</span>',__('&lsaquo; Prev','easel'), false); ?>
 				<?php next_post_link('<span class="blognav-next">%link</span>',__('Next &rsaquo;','easel'), false); ?>
 				<div class="clear"></div>

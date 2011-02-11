@@ -3,6 +3,7 @@
 Added proper navigation for seperate chapters/storylines for comics, and options to display on home page
 made featured images in the rss feed be 'thumbnails' instead of full images
 modified the header browser line for <title> only show the - description if there *is* a description
+added google translate widget
 
 2.0.5
 Fixing CSS

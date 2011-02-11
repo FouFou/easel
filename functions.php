@@ -122,6 +122,10 @@ if (!is_admin()) {
 	if (!easel_themeinfo('disable_scroll_to_top')) {
 		wp_enqueue_script('easel_scroll', easel_themeinfo('themeurl') . '/js/scroll.js', null, null, true);
 	}
+	if (is_active_widget('easel_google_translate_widget', false, 'easel_google_translate_widget', true)) {
+		wp_enqueue_script('google-translate', 'http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit', null, null, true);
+		wp_enqueue_script('google-translate-settings', get_template_directory_uri() . '/js/googletranslate.js');
+	}
 	if (easel_themeinfo('enable_avatar_trick') && !$is_IE) {
 		wp_enqueue_script('themetricks_historic1', easel_themeinfo('themeurl') . '/js/cvi_text_lib.js', null, null, true);
 		wp_enqueue_script('themetricks_historic2', easel_themeinfo('themeurl') . '/js/instant.js', null, null, true);

@@ -405,7 +405,7 @@ body.layout-2cl .narrowcolumn, body.layout-2cr .narrowcolumn {
 	width: 560px;
 }
 
-body.wide .narrowcolumn {
+body.wide .narrowcolumn, body.signup .narrowcolumn {
 	width: auto;
 }
 
