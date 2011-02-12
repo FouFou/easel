@@ -371,7 +371,7 @@ function easel_add_post_types_to_queries($query) {
 }
 
 
-add_action('easel-menubar-menunav', 'easel_social_icons');
+// add_action('easel-menubar-menunav', 'easel_social_icons');
 
 function easel_social_icons() {
 	echo '<a href="http://www.twitter.com/Frumph" title="Follow Frumph on Twitter" class="menunav-social menunav-twitter">Twitter</a>'."\r\n";

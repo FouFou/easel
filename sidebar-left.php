@@ -10,7 +10,6 @@
 				<?php _e('Once you add widgets to this sidebar, this default information will go away.','easel'); ?><br />
 				<br />
 				<?php _e('Widgets can be added by going to your dashboard (wp-admin) -> Appearance -> Widgets, drag a widget you want to see into one of the appropriate sidebars.','easel'); ?><br />
-				<br />
 			</div>
 			<?php }
 		?>

@@ -31,12 +31,11 @@ if (easel_themeinfo('enable_numbered_pagination')) {
 	### Function: Page Navigation: Boxed Style Paging
 	function easel_wp_pagenavi($before = '', $after = '') {
 		global $wpdb, $wp_query;
-		easel_pagenavi_init(); //Calling the pagenavi_init() function
+		$pagenavi_options = easel_pagenavi_init();
 		if (!is_single()) {
 			$request = $wp_query->request;
 			$posts_per_page = intval(get_query_var('posts_per_page'));
 			$paged = intval(get_query_var('paged'));
-			$pagenavi_options = get_option('pagenavi_options');
 			$numposts = $wp_query->found_posts;
 			$max_page = $wp_query->max_num_pages;
 			/*
@@ -148,9 +147,6 @@ if (easel_themeinfo('enable_numbered_pagination')) {
 		}
 	}
 	
-
-	### Function: Page Navigation Options
-	add_action('activate_wp-pagenavi/wp-pagenavi.php', 'easel_pagenavi_init');
 	function easel_pagenavi_init() {
 		// Add Options
 		$pagenavi_options = array();
@@ -166,7 +162,7 @@ if (easel_themeinfo('enable_numbered_pagination')) {
 		$pagenavi_options['style'] = 1;
 		$pagenavi_options['num_pages'] = 5;
 		$pagenavi_options['always_show'] = 0;
-		add_option('pagenavi_options', $pagenavi_options, false, true);
+		return $pagenavi_options;
 	}
 
 }

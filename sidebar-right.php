@@ -11,14 +11,13 @@
 				<br />
 				<?php _e('This theme also uses the WordPress 3.0 Menu system.  You probably see the default stuff you have in the menubar.  Go to Appearance -> Menu in the
 				wp-admin (dashboard) and create a new menu.','easel'); ?><br />
-				<br />
+			</div>
 				<h2><?php _e('Recommended Plugins','easel'); ?></h2>
 				<ol>
 					<li><a href="http://wordpress.org/extend/plugins/vipers-video-quicktags/">Viper's Video Quicktags</a></li>
 					<li><a href="http://wordpress.org/extend/plugins/audio-player/">Audio Player</a></li>
 					<li><a href="http://wordpress.org/extend/plugins/comicpress-companion/">Theme Companion</a></li>
 				</ol>						
-			</div>
 			<?php }
 		?>
 		</div>
