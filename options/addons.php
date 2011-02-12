@@ -80,7 +80,7 @@
 			<table class="widefat">
 				<thead>
 					<tr>
-						<th colspan="3"><?php _e('ComicPress','easel'); ?></th>
+						<th colspan="3"><?php _e('ComicPress (Light)','easel'); ?></th>
 					</tr>
 				</thead>
 				<tr class="alternate">

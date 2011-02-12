@@ -20,7 +20,7 @@ function easel_themeinfo($whichinfo = null) {
 		);
 		$easel_themeinfo = array_merge($easel_coreinfo, $easel_addinfo);
 		$easel_themeinfo = array_merge($easel_themeinfo, $easel_options);
-		if (!isset($easel_themeinfo['layout']) || empty($easel_themeinfo['layout'])) $easel_themeinfo['layout'] = '3c';
+		if (!isset($easel_themeinfo['layout']) || empty($easel_themeinfo['layout']) || ($easel_themeinfo['layout'] == 'standard')) $easel_themeinfo['layout'] = '3c';
 	}
 	if ($whichinfo && $whichinfo !== 'reset')
 		if (isset($easel_themeinfo[$whichinfo])) 
@@ -229,7 +229,10 @@ function easel_load_options() {
 			'force_active_connection_close' => false,
 			'enable_addon_easel_slider' => true,
 			'display_comic_on_home' => true,
-			'display_comic_post_on_home' => true
+			'display_comic_post_on_home' => true,
+			'menubar_social_icons' => false,
+			'menubar_social_twitter' => '',
+			'menubar_social_facebook' => ''
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
@@ -370,12 +373,14 @@ function easel_add_post_types_to_queries($query) {
 	return $query;
 }
 
+if (easel_themeinfo('menubar_social_icons')) 
+	add_action('easel-menubar-menunav', 'easel_display_social_icons');
 
-// add_action('easel-menubar-menunav', 'easel_social_icons');
-
-function easel_social_icons() {
-	echo '<a href="http://www.twitter.com/Frumph" title="Follow Frumph on Twitter" class="menunav-social menunav-twitter">Twitter</a>'."\r\n";
-	echo '<a href="http://www.facebook.com/philip.hofer" title="Friend Frumph on Facebook" class="menunav-social menunav-facebook">Facebook</a>'."\r\n";
+function easel_display_social_icons() {
+	$twitter = easel_themeinfo('menubar_social_twitter');
+	$facebook = easel_themeinfo('menubar_social_facebook');
+	if (!empty($twitter)) echo '<a href="http://www.twitter.com/'.$twitter.'" title="Follow '.$twitter.' on Twitter" class="menunav-social menunav-twitter">Twitter</a>'."\r\n";
+	if (!empty($facebook)) echo '<a href="http://www.facebook.com/'.$facebook.'" title="Friend on Facebook" class="menunav-social menunav-facebook">Facebook</a>'."\r\n";
 	echo '<a href="'.get_bloginfo('rss2_url').'" title="RSS Feed" class="menunav-social menunav-rss2">RSS</a>'."\r\n";
 }
 

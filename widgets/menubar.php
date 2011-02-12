@@ -15,6 +15,11 @@ function easel_menubar() {
 	} else { ?>
 		<div id="menubar-wrapper">
 			<?php do_action('easel-menubar-before'); ?>
+			<?php
+				// dont mess with the pre_get_posts for the wp_nav_menu()
+				wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu', 'theme_location' => 'Primary' ) );
+				do_action('easel-menubar-after'); 
+			?>
 			<div class="menunav">
 				<?php if (easel_themeinfo('enable_search_in_menubar')) { ?>
 				<div class="menunav-search">
@@ -22,16 +27,11 @@ function easel_menubar() {
 				</div>
 				<?php } ?>
 				<?php do_action('easel-menubar-menunav'); ?>
-				<?php if (easel_themeinfo('enable_rss_in_menubar')) { ?>
+				<?php if (easel_themeinfo('enable_rss_in_menubar') && !easel_themeinfo('menubar_social_icons')) { ?>
 					<a href="<?php bloginfo('rss2_url') ?>" title="RSS Feed" class="menunav-rss">RSS</a>
 				<?php } ?>
 				<?php do_action('easel-menubar-mini-navigation'); ?>
 			</div>
-			<?php
-				// dont mess with the pre_get_posts for the wp_nav_menu()
-				wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu', 'theme_location' => 'Primary' ) );
-				do_action('easel-menubar-after'); 
-			?>
 			<div class="clear"></div>
 		</div>
 	<?php } 

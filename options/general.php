@@ -90,6 +90,19 @@
 						<?php _e('Disable the loading of the menubar jQuery.  If you do not want the ddsmoother menu code to load. (will not do drop downs without it)','easel'); ?>
 					</td>
 				</tr>
+				<tr class="alternate">
+					<th scope="row"><label for="menubar_social_icons"><?php _e('Enable Social Icons in Menubar?','easel'); ?></label></th>
+					<td>
+						<input id="menubar_social_icons" name="menubar_social_icons" type="checkbox" value="1" <?php checked(true, $easel_options['menubar_social_icons']); ?> />
+					</td>
+					<td>
+					<?php _e('Adds additional social icons in the menubar on in the menunav area.','easel'); ?><br />
+					<?php _e('Twitter','easel'); ?><br />
+					<input type="text" size="20" name="menubar_social_twitter" id="menubar_social_twitter" value="<?php echo $easel_options['menubar_social_twitter']; ?>" /><br />
+					<?php _e('facebook','easel'); ?><br />
+					<input type="text" size="20" name="menubar_social_facebook" id="menubar_social_facebook" value="<?php echo $easel_options['menubar_social_facebook']; ?>" /><br />
+					</td>
+				</tr>
 			</table>
 			
 			<table class="widefat">

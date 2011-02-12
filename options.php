@@ -140,7 +140,8 @@ function easel_admin_options() { ?>
 			'enable_comments_on_homepage',
 			'facebook_like_blog_post',
 			'facebook_meta',
-			'display_archive_as_links'
+			'display_archive_as_links',
+			'menubar_social_icons'
 				) as $key) {
 					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
@@ -152,7 +153,9 @@ function easel_admin_options() { ?>
 				'copyright_name',
 				'copyright_url',
 				'custom_image_header_width',
-				'custom_image_header_height'
+				'custom_image_header_height',
+				'menubar_social_twitter',
+				'menubar_social_facebook'
 						) as $key) {
 							if (isset($_REQUEST[$key])) 
 								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
