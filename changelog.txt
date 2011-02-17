@@ -7,6 +7,10 @@ added google translate widget
 internalization fix for the wp-pagenavi code, removal of adding it as an db save
 menunav moved below execution of the wp_nav_menu now so that if it does scroll over the menunav displays below and not the menu
 added enable social icons in menubar as an option now with input boxes instead of end users adding to child theme
+new feature, breadcrumbs
+fix for backlinks-template.php
+featured image now set to 'large' 
+new google translator widget
 
 2.0.5
 Fixing CSS

@@ -17,7 +17,7 @@ function easel_is_post_type($post_type) {
 		$post_type = array_diff($post_type, array('post'));
 		if ( count($post_type) > 1 )	// not a custom post type archive
 			return false;
-		$post_type = $post_type[0];
+		// $post_type = reset($post_type);
 	}
 	if ( !is_string($post_type) )
 		return;
