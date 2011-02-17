@@ -49,14 +49,6 @@ add_theme_support( 'custom-header' );
 // This theme allows users to set a custom background
 add_custom_background();
 
-/* this sets default video width */
-if (!isset($content_width)) {
-	if (easel_sidebars_disabled()) {
-		$content_width = 740;
-	} else {
-		$content_width = 540;
-	}
-}
 
 register_nav_menus(array(
 			'Primary' => __( 'Primary', 'easel' )
@@ -66,6 +58,11 @@ register_nav_menus(array(
 if (is_child_theme()) {
 	get_template_part('child', 'functions');
 	get_template_part('child', 'widgets');
+}
+
+/* this sets default video width */
+if (!isset($content_width)) {
+	$content_width = 540;
 }
 
 // load up the addons that it finds, loads before functions just in case we want to rewrite a function
@@ -162,7 +159,9 @@ add_action('widgets_init', 'easel_register_sidebars');
 
 function easel_get_sidebar($location = '') {
 	if (empty($location)) { get_sidebar(); return; }
-	if (is_active_sidebar('sidebar-'.$location)) { ?>
+	if (file_exists(get_stylesheet_directory().'/sidebar-'.$location.'.php')) {
+		get_sidebar($location);
+	} elseif (is_active_sidebar('sidebar-'.$location)) { ?>
 		<div id="sidebar-<?php echo $location; ?>" class="sidebar">
 			<?php dynamic_sidebar('sidebar-'.$location); ?>
 		</div>
@@ -232,7 +231,8 @@ function easel_load_options() {
 			'display_comic_post_on_home' => true,
 			'menubar_social_icons' => false,
 			'menubar_social_twitter' => '',
-			'menubar_social_facebook' => ''
+			'menubar_social_facebook' => '',
+			'enable_breadcrumbs' => false
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
@@ -308,6 +308,7 @@ function easel_get_adjacent_post_type($previous = true, $taxonomy = 'post', $in_
 function easel_auto_excerpt_more( $more ) {
 	return __(' [&hellip;]','easel') . ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...','easel') . '</a>';
 }
+
 add_filter( 'excerpt_more', 'easel_auto_excerpt_more' );
 
 function easel_display_scheme() {
@@ -347,13 +348,15 @@ if (!function_exists('easel_is_layout')) {
 	}
 }
 
-function easel_sidebars_disabled() {
-	global $post;
-	if (is_page() && !empty($post)) {
-		$sidebars_disabled = get_post_meta($post->ID, 'disable-sidebars', true);
-		if ($sidebars_disabled) return true;
+if (!function_exists('easel_sidebars_disabled')) {
+	function easel_sidebars_disabled() {
+		global $post;
+		if (is_page() && !empty($post)) {
+			$sidebars_disabled = get_post_meta($post->ID, 'disable-sidebars', true);
+			if ($sidebars_disabled) return true;
+		}
+		return false;
 	}
-	return false;
 }
 
 add_action('pre_get_posts','easel_add_post_types_to_queries');
@@ -379,8 +382,8 @@ if (easel_themeinfo('menubar_social_icons'))
 function easel_display_social_icons() {
 	$twitter = easel_themeinfo('menubar_social_twitter');
 	$facebook = easel_themeinfo('menubar_social_facebook');
-	if (!empty($twitter)) echo '<a href="http://www.twitter.com/'.$twitter.'" title="Follow '.$twitter.' on Twitter" class="menunav-social menunav-twitter">Twitter</a>'."\r\n";
-	if (!empty($facebook)) echo '<a href="http://www.facebook.com/'.$facebook.'" title="Friend on Facebook" class="menunav-social menunav-facebook">Facebook</a>'."\r\n";
+	if (!empty($twitter)) echo '<a href="http://www.twitter.com/'.$twitter.'" title="'.__('Follow on Twitter','easel').'" class="menunav-social menunav-twitter">'.__('Twitter','easel').'</a>'."\r\n";
+	if (!empty($facebook)) echo '<a href="http://www.facebook.com/'.$facebook.'" title="'.__('Friend on Facebook','easel').'" class="menunav-social menunav-facebook">Facebook</a>'."\r\n";
 	echo '<a href="'.get_bloginfo('rss2_url').'" title="RSS Feed" class="menunav-social menunav-rss2">RSS</a>'."\r\n";
 }
 

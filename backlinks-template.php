@@ -31,7 +31,7 @@ if ( is_wp_error($rss) && is_admin() ) {
 }
 
 if ( !$rss->get_item_quantity() ) {
-	$output .= '<p>' . __('There were no backlinks found.') . "</p>\r\n";
+	$output .= '<p>' . __('There were no backlinks found.','easel') . "</p>\r\n";
 } else {
 	
 	$output .= "<ul>\r\n";
@@ -51,9 +51,9 @@ if ( !$rss->get_item_quantity() ) {
 		if ( $author ) {
 			$site_link = esc_url( strip_tags( $author->get_link() ) );
 			if ( !$publisher = esc_html( strip_tags( $author->get_name() ) ) )
-				$publisher = __( 'Somebody' );
+				$publisher = __('Somebody','easel');
 		} else {
-			$publisher = __( 'Somebody' );
+			$publisher = __('Somebody','easel');
 		}
 		if ( $site_link )
 			$publisher = "<a href='$site_link'>$publisher</a>";
@@ -64,15 +64,15 @@ if ( !$rss->get_item_quantity() ) {
 		
 		if ( $link )
 			/* translators: incoming links feed, %1$s is other person, %3$s is content */
-			$text = __( '%1$s linked here <a href="%2$s">saying</a>, "%3$s"' );
+			$text = __( '%1$s linked here <a href="%2$s">saying</a>, "%3$s"' ,'easel');
 		else
 			/* translators: incoming links feed, %1$s is other person, %3$s is content */
-			$text = __( '%1$s linked here saying, <br />"%3$s"' );
+			$text = __( '%1$s linked here saying, <br />"%3$s"','easel');
 		
 		if ( !empty($show_date) ) {
 			if ( !empty($show_author) || !empty($show_summary) )
 				/* translators: incoming links feed, %4$s is the date */
-				$text .= ' ' . __( 'on %4$s' );
+				$text .= ' ' . __( 'on %4$s', 'easel');
 			$date = esc_html( strip_tags( $item->get_date() ) );
 			$date = strtotime( $date );
 			$date = gmdate( get_option( 'date_format' ), $date );

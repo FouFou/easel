@@ -11,7 +11,7 @@
 				</thead>
 				<?php if (!isset($easel_options['non_members_message'])) $easel_options['non_members_message'] = __('There is members only content here.', 'easel'); ?>
 				<tr class="alternate">
-					<th scope="row"><label for="enable_addon_membersonly"><?php _e('Members Only','easel'); ?></label><br /><label for="non_members_message"><?php _e('Message to give to non-members.'); ?></label></th>
+					<th scope="row"><label for="enable_addon_membersonly"><?php _e('Members Only','easel'); ?></label><br /><label for="non_members_message"><?php _e('Message to give to non-members.','easel'); ?></label></th>
 					<td>
 						<input id="enable_addon_membersonly" name="enable_addon_membersonly" type="checkbox" value="1" <?php checked(true, $easel_options['enable_addon_membersonly']); ?> />
 					</td>

@@ -44,6 +44,7 @@
 
 <?php 
 if (!easel_themeinfo('disable_default_menubar') && function_exists('easel_menubar')) easel_menubar();
+if (easel_themeinfo('enable_breadcrumbs')) easel_breadcrumbs();
 easel_get_sidebar('menubar');
 get_template_part('layout', 'head');
 ?>

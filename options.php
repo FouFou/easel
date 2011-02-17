@@ -141,7 +141,8 @@ function easel_admin_options() { ?>
 			'facebook_like_blog_post',
 			'facebook_meta',
 			'display_archive_as_links',
-			'menubar_social_icons'
+			'menubar_social_icons',
+			'enable_breadcrumbs'
 				) as $key) {
 					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );

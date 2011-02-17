@@ -24,7 +24,7 @@ if (!function_exists('easel_display_post_thumbnail')) {
 			if ( has_post_thumbnail() ) {
 				$link = get_post_meta( $post->ID, 'link', true );
 				if (empty($link)) $link = get_permalink();
-				$post_thumbnail = "<div class=\"post-image\"><center><a href=\"".$link."\" rel=\"bookmark\" title=\"Link to ".get_the_title()."\">".get_the_post_thumbnail($post->ID,'full')."</a></center></div>\r\n";
+				$post_thumbnail = "<div class=\"post-image\"><center><a href=\"".$link."\" rel=\"bookmark\" title=\"Link to ".get_the_title()."\">".get_the_post_thumbnail($post->ID, 'large')."</a></center></div>\r\n";
 				echo apply_filters('easel_display_post_thumbnail', $post_thumbnail);
 			}
 		} 
@@ -132,7 +132,6 @@ if (!function_exists('easel_display_blog_navigation')) {
 		}
 		if (is_single() && !is_page() && !is_archive() && !is_search() && ($post->post_type !== 'comic') && ($post->post_type !== 'casts')) { ?>
 			<div class="blognav">
-				<?php // previous_post('&laquo; %', '', 'yes'); ?> | <?php next_post('% &raquo;', '', 'yes'); ?>
 				<?php previous_post_link('<span class="blognav-prev">%link</span>',__('&lsaquo; Prev','easel'), false); ?>
 				<?php next_post_link('<span class="blognav-next">%link</span>',__('Next &rsaquo;','easel'), false); ?>
 				<div class="clear"></div>

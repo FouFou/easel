@@ -103,6 +103,15 @@
 					<input type="text" size="20" name="menubar_social_facebook" id="menubar_social_facebook" value="<?php echo $easel_options['menubar_social_facebook']; ?>" /><br />
 					</td>
 				</tr>
+				<tr>
+					<th scope="row"><label for="enable_breadcrumbs"><?php _e('Enable Breadcrumbs?','easel'); ?></label></th>
+					<td>
+						<input id="enable_breadcrumbs" name="enable_breadcrumbs" type="checkbox" value="1" <?php checked(true, $easel_options['enable_breadcrumbs']); ?> />
+					</td>
+					<td>
+						<?php _e('This will create a pathable breathcrumbs beneith the menubar underneith the default menubar location.','easel'); ?>
+					</td>
+				</tr>
 			</table>
 			
 			<table class="widefat">

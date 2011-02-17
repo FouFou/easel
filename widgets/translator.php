@@ -5,7 +5,7 @@ Widget URI: http://comicpress.net/
 Description: 
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net/
-Version: 1.00
+Version: 1.1
 
 */
 
@@ -13,7 +13,7 @@ class easel_google_translate_widget extends WP_Widget {
 
 	function easel_google_translate_widget($skip_widget_init = false) {
 		if (!$skip_widget_init) {
-			$widget_ops = array('classname' => __CLASS__, 'description' => __('Translate your site with google.','easel') );
+			$widget_ops = array('classname' => __CLASS__, 'description' => __('Translate your site with Google.','easel') );
 			$this->WP_Widget(__CLASS__, __('Google Translator','easel'), $widget_ops);
 		}
 	}
