@@ -13,7 +13,7 @@ function easel_breadcrumbs() {
 		echo '<div id="breadcrumb-wrapper">';
 		
 		global $post;
-		$homeLink = get_bloginfo('url');
+		$homeLink = home_url();
 		echo '<a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
 		
 		if ( is_category() ) {
