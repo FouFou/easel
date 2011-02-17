@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: easel\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-13 01:49-0800\n"
+"POT-Creation-Date: 2011-02-17 06:26-0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Philip M. Hofer (Frumph) <philip@frumph.net>\n"
 "Language-Team: \n"
@@ -225,43 +225,43 @@ msgstr "Post Comment"
 msgid "NOTE - You can use these "
 msgstr "NOTE - You can use these "
 
-#: ../functions.php:62
+#: ../functions.php:54
 msgid "Primary"
 msgstr "Primary"
 
-#: ../functions.php:141
+#: ../functions.php:138
 msgid "Left Sidebar"
 msgstr "Left Sidebar"
 
-#: ../functions.php:142
+#: ../functions.php:139
 msgid "Right Sidebar"
 msgstr "Right Sidebar"
 
-#: ../functions.php:143
+#: ../functions.php:140
 msgid "Above Header"
 msgstr "Above Header"
 
-#: ../functions.php:144
+#: ../functions.php:141
 msgid "Header"
 msgstr "Header"
 
-#: ../functions.php:145
+#: ../functions.php:142
 msgid "Menubar"
 msgstr "Menubar"
 
-#: ../functions.php:146
+#: ../functions.php:143
 msgid "Over Blog"
 msgstr "Over Blog"
 
-#: ../functions.php:147
+#: ../functions.php:144
 msgid "Under Blog"
 msgstr "Under Blog"
 
-#: ../functions.php:148
+#: ../functions.php:145
 msgid "Footer"
 msgstr "Footer"
 
-#: ../functions.php:212
+#: ../functions.php:211
 msgid "There is members only content here."
 msgstr "There is members only content here."
 
@@ -272,6 +272,18 @@ msgstr " [&hellip;]"
 #: ../functions.php:309
 msgid "&darr; Read the rest of this entry..."
 msgstr "&darr; Read the rest of this entry..."
+
+#: ../functions.php:385
+msgid "Follow on Twitter"
+msgstr "Follow on Twitter"
+
+#: ../functions.php:385
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../functions.php:386
+msgid "Friend on Facebook"
+msgstr "Friend on Facebook"
 
 #: ../header.php:15
 msgid " search results: "
@@ -314,31 +326,31 @@ msgstr "While Easel is an excellent stand-alone theme, it can be enhanced in usa
 msgid "Easel Settings RESET!"
 msgstr "Easel Settings RESET!"
 
-#: ../options.php:167
+#: ../options.php:168
 msgid "Easel Settings SAVED!"
 msgstr "Easel Settings SAVED!"
 
-#: ../options.php:178
+#: ../options.php:179
 msgid "Layout"
 msgstr "Layout"
 
-#: ../options.php:179
+#: ../options.php:180
 msgid "General"
 msgstr "General"
 
-#: ../options.php:180
+#: ../options.php:181
 msgid "Addons"
 msgstr "Addons"
 
-#: ../options.php:181
+#: ../options.php:182
 msgid "Debug"
 msgstr "Debug"
 
-#: ../options.php:223
+#: ../options.php:224
 msgid "Created, Developed and maintained by"
 msgstr "Created, Developed and maintained by"
 
-#: ../options.php:224
+#: ../options.php:225
 msgid "If you like the Easel theme, please donate.  It will help in developing new features and versions."
 msgstr "If you like the Easel theme, please donate.  It will help in developing new features and versions."
 
@@ -1120,6 +1132,38 @@ msgstr "Next"
 msgid "Easel - Rewrite Rules Updated!"
 msgstr "Easel - Rewrite Rules Updated!"
 
+#: ../functions/breadcrumbs.php:6
+msgid "&raquo;"
+msgstr "&raquo;"
+
+#: ../functions/breadcrumbs.php:7
+msgid "Home"
+msgstr "Home"
+
+#: ../functions/breadcrumbs.php:26
+msgid "Archive by category"
+msgstr "Archive by category"
+
+#: ../functions/breadcrumbs.php:79
+msgid "Search results for"
+msgstr "Search results for"
+
+#: ../functions/breadcrumbs.php:82
+msgid "Posts tagged"
+msgstr "Posts tagged"
+
+#: ../functions/breadcrumbs.php:87
+msgid "Articles posted by"
+msgstr "Articles posted by"
+
+#: ../functions/breadcrumbs.php:90
+msgid "Error 404"
+msgstr "Error 404"
+
+#: ../functions/breadcrumbs.php:95
+msgid "Page"
+msgstr "Page"
+
 #: ../functions/comment-functions.php:121
 msgid "l, F jS, Y, g:i a"
 msgstr "l, F jS, Y, g:i a"
@@ -1146,6 +1190,7 @@ msgid "Login to Reply"
 msgstr "Login to Reply"
 
 #: ../functions/comment-functions.php:141
+#: ../functions/displaypost.php:182
 msgid "Edit"
 msgstr "Edit"
 
@@ -1220,10 +1265,6 @@ msgstr "&laquo; First"
 #: ../functions/wp-pagenavi.php:157
 msgid "Last &raquo;"
 msgstr "Last &raquo;"
-
-#: ../functions/wp-pagenavi.php:158
-msgid "&raquo;"
-msgstr "&raquo;"
 
 #: ../functions/wp-pagenavi.php:159
 msgid "&laquo;"
@@ -1426,215 +1467,219 @@ msgstr "Enable Social Icons in Menubar?"
 msgid "Adds additional social icons in the menubar on in the menunav area."
 msgstr "Adds additional social icons in the menubar on in the menunav area."
 
-#: ../options/general.php:100
-msgid "Twitter"
-msgstr "Twitter"
-
 #: ../options/general.php:102
 msgid "facebook"
 msgstr "facebook"
 
-#: ../options/general.php:111
+#: ../options/general.php:107
+msgid "Enable Breadcrumbs?"
+msgstr "Enable Breadcrumbs?"
+
+#: ../options/general.php:112
+msgid "This will create a pathable breathcrumbs beneith the menubar underneith the default menubar location."
+msgstr "This will create a pathable breathcrumbs beneith the menubar underneith the default menubar location."
+
+#: ../options/general.php:120
 msgid "Pages"
 msgstr "Pages"
 
-#: ../options/general.php:115
+#: ../options/general.php:124
 msgid "Disable the titles on pages"
 msgstr "Disable the titles on pages"
 
-#: ../options/general.php:120
+#: ../options/general.php:129
 msgid "Page titles will be turned off.  If you disable the titles no pages you can still add a post-image in the page editor."
 msgstr "Page titles will be turned off.  If you disable the titles no pages you can still add a post-image in the page editor."
 
-#: ../options/general.php:128
+#: ../options/general.php:137
 msgid "Posts"
 msgstr "Posts"
 
-#: ../options/general.php:132
+#: ../options/general.php:141
 msgid "Disable the titles on posts"
 msgstr "Disable the titles on posts"
 
-#: ../options/general.php:137
+#: ../options/general.php:146
 msgid "Post titles will be turned off.  If you disable the titles on posts can still add a post-image in the post editor."
 msgstr "Post titles will be turned off.  If you disable the titles on posts can still add a post-image in the post editor."
 
-#: ../options/general.php:141
+#: ../options/general.php:150
 msgid "Add graphic calendar to blog posts"
 msgstr "Add graphic calendar to blog posts"
 
-#: ../options/general.php:146
+#: ../options/general.php:155
 msgid "Enabling this option will display a calendar image on your blog posts. The graphic calendar is an image that has the date of the blog post overlayed on top of it."
 msgstr "Enabling this option will display a calendar image on your blog posts. The graphic calendar is an image that has the date of the blog post overlayed on top of it."
 
-#: ../options/general.php:150
+#: ../options/general.php:159
 msgid "Enable Author Gravatar"
 msgstr "Enable Author Gravatar"
 
-#: ../options/general.php:155
+#: ../options/general.php:164
 msgid "Enabling this option will show a gravatar of the post author based on the author email address.  Gravatars are associated by your email address and you can create them at"
 msgstr "Enabling this option will show a gravatar of the post author based on the author email address.  Gravatars are associated by your email address and you can create them at"
 
-#: ../options/general.php:159
+#: ../options/general.php:168
 msgid "Enable Avatar Mod"
 msgstr "Enable Avatar Mod"
 
-#: ../options/general.php:164
+#: ../options/general.php:173
 msgid "With this enabled, the avatar's that are displayed will be jquery modified to look like polaroids randomly tilted."
 msgstr "With this enabled, the avatar's that are displayed will be jquery modified to look like polaroids randomly tilted."
 
-#: ../options/general.php:183
+#: ../options/general.php:192
 msgid "Avatar Directory"
 msgstr "Avatar Directory"
 
-#: ../options/general.php:197
+#: ../options/general.php:206
 msgid "Choose a directory to get the avatars for default gravatars if someone does not have one.  You will have to make these images yourself, or download them from avatar providers. Then make a new directory on your site server to upload them to and select that directory here. <strong>Setting this to 'none' will disable it from using any special avatar sets.</strong>"
 msgstr "Choose a directory to get the avatars for default gravatars if someone does not have one.  You will have to make these images yourself, or download them from avatar providers. Then make a new directory on your site server to upload them to and select that directory here. <strong>Setting this to 'none' will disable it from using any special avatar sets.</strong>"
 
-#: ../options/general.php:201
+#: ../options/general.php:210
 msgid "Disable display of <strong>tags</strong> in posts"
 msgstr "Disable display of <strong>tags</strong> in posts"
 
-#: ../options/general.php:206
+#: ../options/general.php:215
 msgid "Checkmarking this will make it so that tags will not appear in posts."
 msgstr "Checkmarking this will make it so that tags will not appear in posts."
 
-#: ../options/general.php:210
+#: ../options/general.php:219
 msgid "Disable display of <strong>categories</strong> in posts"
 msgstr "Disable display of <strong>categories</strong> in posts"
 
-#: ../options/general.php:215
+#: ../options/general.php:224
 msgid "Checkmarking this will make it so that categories will not appear in posts."
 msgstr "Checkmarking this will make it so that categories will not appear in posts."
 
-#: ../options/general.php:219
+#: ../options/general.php:228
 msgid "Disable display of <strong>by Author</strong> in post information."
 msgstr "Disable display of <strong>by Author</strong> in post information."
 
-#: ../options/general.php:224
+#: ../options/general.php:233
 msgid "Checkmarking this will make it so that the by Author information will not appear in posts."
 msgstr "Checkmarking this will make it so that the by Author information will not appear in posts."
 
-#: ../options/general.php:228
+#: ../options/general.php:237
 msgid "Disable display of <strong>on post-Date</strong> in posts"
 msgstr "Disable display of <strong>on post-Date</strong> in posts"
 
-#: ../options/general.php:233
+#: ../options/general.php:242
 msgid "Checkmarking this will make it so that on post-Date will not appear in posts."
 msgstr "Checkmarking this will make it so that on post-Date will not appear in posts."
 
-#: ../options/general.php:241
+#: ../options/general.php:250
 msgid "Comments"
 msgstr "Comments"
 
-#: ../options/general.php:245
+#: ../options/general.php:254
 msgid "Disable the comment notes"
 msgstr "Disable the comment notes"
 
-#: ../options/general.php:250
+#: ../options/general.php:259
 msgid "Disabling this will remove the note text that displays with more options for adding to comments (html)."
 msgstr "Disabling this will remove the note text that displays with more options for adding to comments (html)."
 
-#: ../options/general.php:254
+#: ../options/general.php:263
 msgid "Disable Comment Javascript"
 msgstr "Disable Comment Javascript"
 
-#: ../options/general.php:259
+#: ../options/general.php:268
 msgid "Checkmark this if you want the comment form to not use javascript to appear directly under who is being replied to. (increases pageviews/hits)"
 msgstr "Checkmark this if you want the comment form to not use javascript to appear directly under who is being replied to. (increases pageviews/hits)"
 
-#: ../options/general.php:263
+#: ../options/general.php:272
 msgid "Enable Comments on Home Page"
 msgstr "Enable Comments on Home Page"
 
-#: ../options/general.php:268
+#: ../options/general.php:277
 msgid "Checkmarking this option will make it so that the post(s) on the home page will also display the comments under them, This will ONLY work if you have it set to only display 1 post on the home page.  The post count and this must be set to work."
 msgstr "Checkmarking this option will make it so that the post(s) on the home page will also display the comments under them, This will ONLY work if you have it set to only display 1 post on the home page.  The post count and this must be set to work."
 
-#: ../options/general.php:276
+#: ../options/general.php:285
 msgid "Navigation"
 msgstr "Navigation"
 
-#: ../options/general.php:280
+#: ../options/general.php:289
 msgid "Enable numbered pagination"
 msgstr "Enable numbered pagination"
 
-#: ../options/general.php:285
+#: ../options/general.php:294
 msgid "Previous Entries and Next Entries buttons are replaced by a bar of numbered pages. Numbered pagination appears on the Home page, the author(s) page, the blog template, and comments/single when there are more then the set number of comments per page. Uses the same styling as the Menubar."
 msgstr "Previous Entries and Next Entries buttons are replaced by a bar of numbered pages. Numbered pagination appears on the Home page, the author(s) page, the blog template, and comments/single when there are more then the set number of comments per page. Uses the same styling as the Menubar."
 
-#: ../options/general.php:297
+#: ../options/general.php:306
 msgid "Disable the default text in the footer"
 msgstr "Disable the default text in the footer"
 
-#: ../options/general.php:302
+#: ../options/general.php:311
 msgid "Default text in the footer will not display. Enable this if you do not want any text in the footer. If you wish to add you own custom content, you may do so via Appearance -> Widgets-> Footer."
 msgstr "Default text in the footer will not display. Enable this if you do not want any text in the footer. If you wish to add you own custom content, you may do so via Appearance -> Widgets-> Footer."
 
-#: ../options/general.php:306
+#: ../options/general.php:315
 msgid "Disable the scroll to top link in the footer?"
 msgstr "Disable the scroll to top link in the footer?"
 
-#: ../options/general.php:311
+#: ../options/general.php:320
 msgid "When this link is clicked on long pages it will scroll back to the top."
 msgstr "When this link is clicked on long pages it will scroll back to the top."
 
-#: ../options/general.php:315
+#: ../options/general.php:324
 msgid "&copy; Copyright Name"
 msgstr "&copy; Copyright Name"
 
-#: ../options/general.php:319
+#: ../options/general.php:328
 msgid "Set the name to which this site is &copy; Copyright to, leave blank to have the site name."
 msgstr "Set the name to which this site is &copy; Copyright to, leave blank to have the site name."
 
-#: ../options/general.php:323
+#: ../options/general.php:332
 msgid "Copyright Holder URL"
 msgstr "Copyright Holder URL"
 
-#: ../options/general.php:327
+#: ../options/general.php:336
 msgid "Set the URL to the owner of the &copy; Copyright if different then this website, leave blank for sites link."
 msgstr "Set the URL to the owner of the &copy; Copyright if different then this website, leave blank for sites link."
 
-#: ../options/general.php:335
+#: ../options/general.php:344
 msgid "RSS"
 msgstr "RSS"
 
-#: ../options/general.php:339
+#: ../options/general.php:348
 msgid "Enable the post thumbnails in the RSS feed?"
 msgstr "Enable the post thumbnails in the RSS feed?"
 
-#: ../options/general.php:344
+#: ../options/general.php:353
 msgid "If enabled will show the post thumbnail of the post in the RSS feed."
 msgstr "If enabled will show the post thumbnail of the post in the RSS feed."
 
-#: ../options/general.php:352
+#: ../options/general.php:361
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../options/general.php:356
+#: ../options/general.php:365
 msgid "Enable the Facebook Like button in Blog Posts?"
 msgstr "Enable the Facebook Like button in Blog Posts?"
 
-#: ../options/general.php:361
+#: ../options/general.php:370
 msgid "When enabled this option will allow the Facebook like button to appear at the bottom of regular blog posts."
 msgstr "When enabled this option will allow the Facebook like button to appear at the bottom of regular blog posts."
 
-#: ../options/general.php:365
+#: ../options/general.php:374
 msgid "Enable the Facebook Meta?"
 msgstr "Enable the Facebook Meta?"
 
-#: ../options/general.php:370
+#: ../options/general.php:379
 msgid "When setting this option, Easel will add meta information to the head area of each page so that facebook will recognize the content within."
 msgstr "When setting this option, Easel will add meta information to the head area of each page so that facebook will recognize the content within."
 
-#: ../options/general.php:378
+#: ../options/general.php:387
 msgid "Archive & Search"
 msgstr "Archive & Search"
 
-#: ../options/general.php:382
+#: ../options/general.php:391
 msgid "Display archive results as a list of links?"
 msgstr "Display archive results as a list of links?"
 
-#: ../options/general.php:387
+#: ../options/general.php:396
 msgid "Enabling this will make the archive pages by date/category/term display as a list of links instead of full posts."
 msgstr "Enabling this will make the archive pages by date/category/term display as a list of links instead of full posts."
 
@@ -1844,8 +1889,8 @@ msgid "Scheduled Posts"
 msgstr "Scheduled Posts"
 
 #: ../widgets/translator.php:16
-msgid "Translate your site with google."
-msgstr "Translate your site with google."
+msgid "Translate your site with Google."
+msgstr "Translate your site with Google."
 
 #: ../widgets/translator.php:17
 msgid "Google Translator"
