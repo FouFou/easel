@@ -156,7 +156,8 @@ function easel_admin_options() { ?>
 				'custom_image_header_width',
 				'custom_image_header_height',
 				'menubar_social_twitter',
-				'menubar_social_facebook'
+				'menubar_social_facebook',
+				'archive_display_order'
 						) as $key) {
 							if (isset($_REQUEST[$key])) 
 								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);

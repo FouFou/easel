@@ -1,32 +1,14 @@
 <?php 
 get_header();
-$archive_display_order = easel_themeinfo('archive_display_order');
-if (empty($archive_display_order)) $archive_display_order = 'DESC';
 
-$order = '&order='.$archive_display_order;
-
-if (easel_themeinfo('display_archive_as_links')) {
-	$post_count = '&showposts=-1&posts_per_page=-1';
-}
-
-Protect();
-$tmp_search = new WP_Query($query_string.'&showposts=-1&posts_per_page=-1');
-if (isset($tmp_search->post_count)) {
-	$count = $tmp_search->post_count;
-} else {
-	$count = "No";
-}
-UnProtect();
-
-$args = $query_string . $post_count . $order;
-$posts = &query_posts($args);
-
+$count = 'No';
+if (have_posts()) :
+	$count = $wp_query->found_posts;
 ?>
 	<h2 class="page-title"><?php _e('Search for &lsquo;','easel'); the_search_query(); _e('&rsquo;','easel'); ?></h2>
 	<div class="searchresults"><?php printf(_n("%d result.", "%d results.", $count,'easel'),$count); ?></div>
 	<div class="clear"></div>
-<?php
-if (have_posts()) :
+<?php 
 	if (easel_themeinfo('display_archive_as_links')) { ?>
 	<div <?php post_class(); ?>>
 		<div class="post-head"></div>

@@ -1,4 +1,10 @@
 ﻿Changelog
+2.0.7
+possible fix for a catchall error in breadcrumbs
+added orderby for the archives, can now descend and ascend the list in the options
+optimized the archive and search function to use a ton of less memory
+
+
 2.0.6
 Added proper navigation for seperate chapters/storylines for comics, and options to display on home page
 made featured images in the rss feed be 'thumbnails' instead of full images

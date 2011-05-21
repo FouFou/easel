@@ -59,7 +59,7 @@ if ( post_password_required() ) { ?>
 		
 	<?php endif; ?>
 	
-	<?php if ( !empty($comments_by_type['pings']) && ($wp_query->query_vars['cpage'] < 2)) : ?>
+	<?php if ( isset($comments_by_type['pings']) && (isset($wp_query->query_vars['cpage']) && $wp_query->query_vars['cpage'] < 2)) : ?>
 		<div id="pingtrackback-wrap">
 			<h3 id="pingtrackback"><?php _e('Pings &amp; Trackbacks &not;','easel'); ?></h3>
 			<ol class="commentlist">

@@ -396,6 +396,18 @@
 						<?php _e('Enabling this will make the archive pages by date/category/term display as a list of links instead of full posts.','easel'); ?>
 					</td>
 				</tr>
+				<tr>
+					<th scope="row" colspan="2">
+						<label for="archive_display_order"><?php _e('Archive Display Order','easel'); ?></label>
+						<select name="archive_display_order" id="archive_display_order">
+							<option class="level-0" value="asc" <?php if ($easel_options['archive_display_order'] == "asc") { ?>selected="selected"<?php } ?>>Oldest to Newest - Ascending</option>
+							<option class="level-0" value="desc" <?php if ($easel_options['archive_display_order'] == "desc") { ?>selected="selected"<?php } ?>>Newest to Oldest - Descending</option>
+						</select>
+					</th>
+					<td>
+						<?php _e('Sets the display order of your archives. Newest to Oldest will display your posts starting with the most recent. Oldest to Newest will start with the first entry in the category, tag, or date range (e.g., Selecting May 20XX will start with May 1, not May 31st.)','comicpress'); ?>
+					</td>
+				</tr>
 			</table>
 				
 		</div>

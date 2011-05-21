@@ -2,7 +2,7 @@
 get_header();
 
 // set to empty
-$order = $post_count = $theCatID = '';
+$count = $theCatID = '';
 if (is_category()) {
 	$theCatID = get_term_by( 'slug', $wp_query->query_vars['category_name'], 'category' );
 	if (!empty($theCatID))
@@ -10,29 +10,11 @@ if (is_category()) {
 	if (isset($wp_query->query_vars['cat'])) $theCatID = (int)$wp_query->query_vars['cat'];	
 }
 
-$archive_display_order = easel_themeinfo('archive_display_order');
-if (empty($archive_display_order)) $archive_display_order = 'DESC';
-
-$order = '&order='.$archive_display_order;
-
-if (easel_themeinfo('display_archive_as_links')) {
-	$post_count = '&showposts=-1&posts_per_page=-1';
-}
-
-Protect();
-$tmp_search = new WP_Query($query_string.'&showposts=-1&posts_per_page=-1');
-if (isset($tmp_search->post_count)) {
-	$count = $tmp_search->post_count;
-} else {
-	$count = "No";
-}
-UnProtect();
-
-$args = $query_string . $post_count . $order;
-$posts = &query_posts($args);
+$count = 'No';
 
 if (have_posts()) :
-
+	$count = $wp_query->found_posts;
+//	$count = $wp_query->post_count;
 	$post = $posts[0]; // Hack. Set $post so that the_date() works
 	$post_title_type = $title_string = '';
 	if ($post->post_type !== 'post') $post_title_type = $post->post_type.'-'; // extra space at the end for visual

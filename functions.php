@@ -8,7 +8,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '2.0.6',
+			'version' => '2.0.7',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -130,6 +130,18 @@ if (!is_admin()) {
 	if (easel_themeinfo('facebook_like_blog_post'))
 		wp_enqueue_script('easel-facebook', 'http://connect.facebook.net/en_US/all.js#xfbml=1'); // force to the header instead of footer
 	easel_display_scheme();
+	add_filter('pre_get_posts', 'easel_archive_query');
+
+// Set the 'order' of the archive and search
+	function easel_archive_query($query) {
+		if (is_archive() || is_search()) {
+			$archive_display_order = easel_themeinfo('archive_display_order');
+			if (empty($archive_display_order)) $archive_display_order = 'DESC';
+			$order = '&order='.$archive_display_order;
+			$query->set('order', $archive_display_order);
+			return $query;
+		}
+	}
 }
 
 if (!function_exists('easel_register_sidebars')) {
