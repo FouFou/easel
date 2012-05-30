@@ -1,7 +1,7 @@
 <?php
 /*
 Widget Name: Menubar Widget (wordpress 3.0 required)
-Widget URI: http://comicpress.net/
+Widget URI: http://frumph.net/
 Description: Display a calendar of this months posts.
 Author: Philip M. Hofer (Frumph)
 Version: 1.07
@@ -18,7 +18,8 @@ function easel_menubar() {
 			<?php
 				// dont mess with the pre_get_posts for the wp_nav_menu()
 				wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu', 'theme_location' => 'Primary' ) );
-				do_action('easel-menubar-after'); 
+				do_action('easel-menubar-after');
+				do_action('comic-mini-navigation');
 			?>
 			<div class="menunav">
 				<?php if (easel_themeinfo('enable_search_in_menubar')) { ?>

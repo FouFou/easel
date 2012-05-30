@@ -88,15 +88,11 @@ function easel_admin_options() { ?>
 		if ($_REQUEST['action'] == 'easel_save_addons') {
 			foreach (array(
 				'enable_addon_page_options',
-				'enable_addon_comics',
 				'enable_addon_membersonly',
 				'enable_addon_showcase',
 				'enable_addon_showcase_slider',
 				'enable_addon_playingnow',
-				'enable_addon_commpress',
-				'enable_wprewrite_posttype_control',
-				'display_comic_on_home',
-				'display_comic_post_on_home'
+				'enable_addon_commpress'
 			) as $key) {
 				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );

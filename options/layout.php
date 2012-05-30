@@ -50,33 +50,19 @@
 					</tr>
 				</thead>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_default_design"><?php _e('Disable Design Schemes','easel'); ?><?php if (is_child_theme()) { ?><br /><?php _e('(Schemes are disabled due to child theme active)','easel'); } ?></label></th>
+					<th scope="row"><label for="disable_default_design"><?php _e('Disable default design','easel'); ?></label></th>
 					<td>
 						<input id="disable_default_design" name="disable_default_design" type="checkbox" value="1" <?php checked(true, $easel_options['disable_default_design']); ?> />
 					</td>
 					<td>
-						<?php _e('Checking this option will make it so the various schemes are not loaded.  Schemes are automatically disabled if a child-theme exists.  This is a completely blank slate with no design.','easel'); ?>
+						<?php _e('Checking this option will make it so the default scheme does not load.  This makes a completely blank template with no special colors appear.','easel'); ?>
 					</td>
 				</tr>
-				<?php if (!is_child_theme() && !$easel_options['disable_default_design']) { ?>
-				<?php if (!isset($easel_options['scheme']) || empty($easel_options['scheme'])) $easel_options['scheme'] = 'default'; ?>
 				<tr>
-					<th scope="row" style="width:250px"><label for="layout" style="text-align:left"><?php _e('Choose the default scheme.','easel'); ?></label>
-						<select name="scheme" id="scheme" onchange="sshowimage(this,'easelscheme')">
-							<option class="level-0" value="default" <?php if (!!isset($easel_options['scheme']) || empty($easel_options['scheme']) || ($easel_options['scheme'] == 'default')) { ?>selected="selected" <?php } ?>><?php _e('Default','easel'); ?></option>
-							<option class="level-0" value="ocean" <?php if ($easel_options['scheme'] == 'ocean') { ?>selected="selected" <?php } ?>><?php _e('Ocean','easel'); ?></option>
-							<option class="level-0" value="desert" <?php if ($easel_options['scheme'] == 'desert') { ?>selected="selected" <?php } ?>><?php _e('Desert','easel'); ?></option>
-							<option class="level-0" value="greymatter" <?php if ($easel_options['scheme'] == 'greymatter') { ?>selected="selected" <?php } ?>><?php _e('Grey Matter','easel'); ?></option>
-						</select>
-						<br />
-					</th>
-					<td>
-						<img id="easelscheme" src="<?php echo get_template_directory_uri(); ?>/images/schemes/<?php echo $easel_options['scheme']; ?>.jpg" alt="Scheme" />
-					</td>
-					<td style="vertical-align:middle">
+					<td colspan="3">
+						<strong><?php _e('Schemes have been removed and replaced with Child Themes. If you wish to recover the look of your site from a previous version of Easel - they are available from the developer - and soon the WordPress repository.','easel'); ?></strong>
 					</td>
 				</tr>
-				<?php } ?>
 			</table>
 			<br />
 		</div>

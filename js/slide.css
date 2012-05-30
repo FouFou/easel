@@ -4,7 +4,7 @@
 #slider-container {
 	overflow: hidden;
 	width: 540px;
-	height: 250px;
+	height: 260px;
 	margin: 10px auto;
 	}
 #slider {
@@ -15,14 +15,14 @@
 .feature {
 	overflow: hidden;
 	width: auto;
-	height: 210px;
+	height: 220px;
 	padding: 10px 10px 0 10px;
 	color: #fff;
 	border: none !important;
 	}
 .feature img {
 	float: left;
-	max-width: 240px;
+	max-width: 250px;
 	margin: 0 15px 0 0;
 	border: 5px solid #001838;
 	}
@@ -95,9 +95,9 @@
 	}
 	
 h2.slider-title a, h2.slider-title {
-	color: #fff;
+	color: #fcff00;
 }
 
 h2.slider-title a:hover, h2.slider-title:hover {
-	color: #fcff00;
+	color: #f00;
 }

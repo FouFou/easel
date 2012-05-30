@@ -79,6 +79,8 @@ function easel_body_class($classes = '') {
 	$layout = easel_themeinfo('layout');
 	if (empty($layout)) $layout = 'b3c';
 	$classes[] = 'layout-'.$layout;
+	
+	if (!empty($post) && $post->post_type == 'comic') $classes[] = 'comic-layout';
 
 	return $classes;
 }

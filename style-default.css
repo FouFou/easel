@@ -1,67 +1,285 @@
 /* Base theme design */
 
-body {
-	background: #000 url('images/background-wolfbw.jpg') top center no-repeat;
+#page-wrap {
+	background: url('images/background-overlay.png') top center repeat-x;
 }
 
-blockquote {
-	color: #005;
+#header {
+	height: 100px;
 }
 
-h2, blockquote p:first-letter, .comment-author {
-	text-shadow: 1px 1px 1px #777;
-	-moz-text-shadow: 1px 1px 1px #777;
-	-khtml-text-shadow: 1px 1px 1px #777;
-	-webkit-text-shadow: 1px 1px 1px #777;
+.header-info {
+	float: left;
+	display: inline-block;
+	}
+
+#header .description {
+	margin-left: 50px;
+	color: #fff;
 }
 
-h1 {
-	text-shadow: 2px 2px 2px #111;
-	-moz-text-shadow: 2px 2px 2px #111;
-	-khtml-text-shadow: 2px 2px 2px #111;
-	-webkit-text-shadow: 2px 2px 2px #111;
+
+#sidebar-header {
+    float: right;
 }
 
-#header h1 a:link, #header h1 a:visited {
-	color: #d00;
+#header .sidebar .widget {
+	background: none;
+	background-color: Transparent;
+	border: 0;
 }
 
-#header h1 a:hover {
+
+#menubar-wrapper {
+	margin-bottom: 10px;
+	padding: 3px 0;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	text-shadow: 0 -1px 1px #111;
+	background: #111;
+	-moz-box-shadow: 1px 2px 10px #000;
+	-webkit-box-shadow: 1px 2px 10px #000;
+	-khtml-box-shadow: 1px 2px 10px #000;
+	box-shadow: 1px 2px 10px #000;
+	background: -moz-linear-gradient(100% 100% 90deg,#0b0b0b, #333, #444 100%); /* IE8 uses -ms-filter for whatever reason... */
+	background: -o-linear-gradient(rgb(68,68,68),rgb(0,0,0));
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=0, endColoStr=#FFFFFF);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(72, 72, 72, 1.0)), to(rgba(11, 11, 11, 3.0))         );
+}
+
+#breadcrumb-wrapper { color: #ccc; }
+#breadcrumb-wrapper a:link, #breadcrumb-wrapper a:visited { color: #00ffa0; }
+#breadcrumb-wrapper a:hover { color: #f00; }
+
+#content-wrapper {
+	background: #111 url('images/background-lines.png') repeat;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 1px 2px 10px #000;
+	-webkit-box-shadow: 1px 2px 10px #000;
+	-khtml-box-shadow: 1px 2px 10px #000;
+	box-shadow: 1px 2px 10px #000;
+}
+
+#comic-wrap {
+	padding: 3px;
+}
+
+#comic img, .ceo_thumbnail_widget img {
+	border: solid 1px #000;
+}
+
+#submit, .type-post, .type-forum, .type-reply, .type-topic, .type-page, .type-comic, .type-showcase, .type-music, .type-attachment, .type-casts, #wp-paginav, .sidebar h2, #comment-wrapper, .blognav, .default-nav, .submit, .feature {
+	padding: 2px 5px;
+	background: #ccc;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: -moz-linear-gradient(100% 100% 90deg, #aaa, #ccc, #eee 100%); /* IE8 uses -ms-filter for whatever reason... */
+	background: -o-linear-gradient(rgb(238,238,238),rgb(170,170,170));
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=#ccc, endColoStr=#FFFFFF);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(238, 238, 238, 1.0)),to(rgba(170, 170, 170, 3.0)));
+}
+
+.opera #submit, .opera .searchform button, .opera .submit {
+    background: #ccc;
+}
+
+.blognav {
+	margin-bottom: 5px;
+}
+
+#default-nav-wrapper {
+	clear: both;
+	padding: 5px 0 0;
+}
+
+#submit, #searchform button {
+	color: #fff;
+}
+
+#searchform button {
+	padding: 0 5px;
+}
+
+.type-post, .type-page, .type-forum, .type-reply, .type-topic, .type-comic, .type-showcase, .type-music, #comment-wrapper, .type-attachment, .type-casts, .feature {
+	border: solid 1px #000;
+	margin-bottom: 20px;
+}
+
+.ie .type-post, .ie .type-page, .ie .type-forum, .ie .type-reply, .ie .type-topic, .ie .type-comic, .ie .type-showcase, .ie .type-music, .ie #wp-paginav, .ie #comment-wrapper, .ie .sidebar h2, .ie input, .ie .type-attachment, .ie .type-casts, .ie .feature {
+	background: #ddd;
+}
+
+.menu a, .menunav a, #header h1 {
+	text-shadow: 1px 1px 1px #000;
+	-moz-text-shadow: 1px 1px 1px #000;
+	-khtml-text-shadow: 1px 1px 1px #000;
+	-webkit-text-shadow: 1px 1px 1px #000;
+}
+
+h2.page-title, h2.post-title {
+	border-bottom: solid 1px #000;
+	margin-bottom: 3px;
+	color: #000;
+	text-shadow: 1px 1px 1px #555;
+	-moz-text-shadow: 1px 1px 1px #555;
+	-khtml-text-shadow: 1px 1px 1px #555;
+	-webkit-text-shadow: 1px 1px 1px #555;
+}
+
+.archive h2.page-title, .search h2.page-title {
+	border-bottom: solid 1px #000;
+	margin-bottom: 3px;
+	color: #fff;
+}
+
+table#wp-calendar caption {
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+	-moz-text-shadow: 1px 1px 1px #000;
+	-khtml-text-shadow: 1px 1px 1px #000;
+	-webkit-text-shadow: 1px 1px 1px #000;
+}
+
+a {
+	color: #003d6c;
+}
+
+.sidebar a, .nav a, #header h1 a {
+	color: #fff;
+}
+
+a:hover, .sidebar a:hover, .nav a:hover, #header h1 a:hover {
 	color: #f00;
 }
 
-#menubar-wrapper {
-	clear: both;
-	margin-bottom: 10px;
+#wp-calendar-wrap {
+	background: #333;
+	background: -o-linear-gradient(rgb(0,0,0),rgb(68,68,68));
+	background: -moz-radial-gradient(100% 100%, farthest-side, #333, #000);
+	background: -webkit-gradient(radial, 100% 100%, 0, 50% 50%, 350, from(#333), to(#000));
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: solid 1px #111;
 }
 
-	.menu { 
-		padding-left: 3px; 
-	}
+.ie #wp-calendar-wrap {
+	color: #ccc;
+}
 
-	.menunav {
-		padding-right: 5px;
-	}
+#wp-calendar a {
+	color: #fcff00;
+}
 
 
-/* curved corners 6px */
-#menubar-wrapper, #content-wrapper, .comment .comment-content, .sidebar .widget, .casts-nav, #wp-paginav {
+table#wp-calendar td {
+	border-color: #aaa;
+}
+
+.narrowcolumn {
+/*	min-height: 800px; */
+}
+
+body.signup .narrowcolumn, .mu_register {
+	color: #fff;
+}
+
+body.signup #column {
+	float: none;
+}
+
+.page-forum .type-page {
+	background: none;
+	background-color: Transparent;
+	border: none;
+	border-radius: none;
+	padding: 0;
+}
+
+.comment-text {
+	padding: 10px;
+	border-bottom: dotted 1px #000;
+}
+
+/* comments */
+
+#comment, #author, #email, #url, #comment-textarea, #s-search {
+	padding: 2px;
+	color: #000;
+	font-family: 'Verdana' , sans-serif;
+	font-size: 12px;
+	background: #eee;
+	border: 1px solid #888;
 	-moz-border-radius: 6px;
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 }
 
-/* curved corners 10px */
-#comment-wrapper, .type-post, .type-page, .type-music, .type-comic, .type-showcase, .type-casts, .wp-caption,
-blockquote, .type-attachment  {
+#comment-textarea:focus, #comment:hover, #author:hover, #email:hover, #url:hover, #comment:focus, #author:focus, #email:focus, #url:focus {
+	background: #fff;
+}
+
+#submit, #searchform button {
+	color: #000;
+	font-weight: 700;
+}
+
+.ie .searchform button, .ie #submit, .opera .searchform button {
+	height: 22px;
+	padding-bottom: 3px;
+	line-height: 8px;
+	background: #ccc;
+}
+
+.sidebar-no-widgets {
+	color: #000;
+	margin-bottom: 5px;
+}
+
+.sidebar h2 {
+	border: solid 1px #000;
+	margin-bottom: 5px;
+	color: #000;
+}
+
+.sidebar h2 a {
+	color: #000;
+}
+
+.sidebar h2 a:hover {
+	color: #f00;
+}
+
+.ceo_latest_thumbnail_widget .widget-content {
+	text-align: center;
+}
+
+.widget-content, .archiveresults, .searchresults {
+	color: #fff;
+}
+
+/* Menu stuff */
+
+.menunav-prev a:hover, .menunav-next a:hover, .menunav-rss:hover, .menu ul li a:hover, .menu ul li a.selected {
+	color: #fcff00;
+	background: -o-linear-gradient(rgb(0,0,0),rgb(68,68,68));
+	background: -moz-linear-gradient(100% 100% 90deg, #303030, #444, #000 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 1.0)),to(rgba(56, 56, 56, 3.0)));
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
 
-/* border radius none */
 .menu ul li ul li a:hover, .menu ul li ul li a.selected {
 	-moz-border-radius: 0;
 	-khtml-border-radius: 0;
@@ -70,185 +288,25 @@ blockquote, .type-attachment  {
 	background: #111;
 }
 
-/* box shadow min */
-.box-shadow-min {
-	-moz-box-shadow: 2px 2px 2px #555;
-	-webkit-box-shadow: 2px 2px 2px #555;
-	-khtml-box-shadow: 2px 2px 2px #555;
-	box-shadow: 2px 2px 2px #555;
-}
-
-/* box shadow thick */
-#menubar-wrapper, #content-wrapper {
-	-moz-box-shadow: 1px 2px 5px #000;
-	-webkit-box-shadow: 1px 2px 5px #000;
-	-khtml-box-shadow: 1px 2px 5px #000;
-	box-shadow: 1px 2px 5px #000;
-}
-
-.no-box-shadow {
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	-khtml-box-shadow: none;
-	box-shadow: none;
-}
-
-/* text shadow min */
-#menubar-wrapper {
-	text-shadow: 1px 1px 1px #000;
-	-moz-text-shadow: 1px 1px 1px #000;
-	-khtml-text-shadow: 1px 1px 1px #000;
-	-webkit-text-shadow: 1px 1px 1px #000;
-}
-
-#content-wrapper, .wp-caption, #wp-paginav {
-	background: url('images/whitetrans.png') repeat;
-	border: solid 1px #bbb;
-}
-
-.type-post, .type-page, .type-comic, .type-music, .type-showcase, .type-casts, .sidebar .widget, .type-attachment {
-	background: url('images/whitetrans.png') repeat;
-	border: solid 1px #bbb;
-	margin-bottom: 10px;
-}
-.comment .comment-content, blockquote {
-	background: url('images/whitetranslow.png') repeat;
-}
-
-#comment-wrapper, .type-post, .type-page, .type-music, .type-showcase, .type-comic, .type-casts, .wp-caption {
-	padding: 5px;
-}
-
-.sidebar .widget {
-	padding: 0px 5px 2px;
-}
-
-.post-text {
-	border-bottom: dotted 1px #ddd;
-}
-
-.comment-author {
-	text-transform: capitalize;
-}
-
-#comic-wrap {
-	background: #fff;
-	margin: 5px auto;
-	padding: 5px;
-	-moz-box-shadow: 2px 2px 2px #555;
-	-webkit-box-shadow: 2px 2px 2px #555;
-	-khtml-box-shadow: 2px 2px 2px #555;
-	box-shadow: 2px 2px 2px #555;
-	-moz-border-radius: 10px;
-	-khtml-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-}
-
-#comic {
-	margin: 0 auto;
-	text-align: center;
-}
-
-#blogheader {
-	width: 80%;
-	border-top: solid 1px #333;
-	margin: 15px auto;
-	-moz-box-shadow: 2px 2px 2px #999;
-	-webkit-box-shadow: 2px 2px 2px #999;
-	-khtml-box-shadow: 2px 2px 2px #999;
-	box-shadow: 2px 2px 2px #999;
-}
-
-.sidebar .widget_search {
-	padding: 3px 0;
-}
-
-.members-post, .non-members-post {
-	background: #d1ddd1;
-	padding: 5px;
-}
-
-#menubar-wrapper {
-	padding: 2px 0;
-	background: #111;
-	background:-moz-linear-gradient(100% 100% 90deg, #000, #444, #303030 100%);
-    /* IE8 uses -ms-filter for whatever reason... */
-	background: -ms-filter: progid:DXImageTransform.Microsoft.gradient(
-        gradientType=1, startColor=#000, endColoStr=#555
-	);
-        background-image: -webkit-gradient(
-          linear, left top, left bottom, from(rgba(17, 17, 17, 1.0)),
-          to(rgba(117, 117, 117, 3.0))
-        );
-}
-
-.chrome .menu, .safari .menu {
-	margin-top: 2px;
-}
-
-.chrome .menunav, .safari .menunav {
-	margin-top: 4px;
-}
-
-.chrome .searchform button, .safari .searchform button {
-	margin-top: 0px;
-}
-
-.ie button {
-	color: #000;
-}
-
-.menunav-prev a, .menunav-next a {
-	margin: 0 3px;
-}
-
-.menunav-prev a:hover, .menunav-next a:hover, .menunav-rss:hover, .menu ul li a:hover, .menu ul li a.selected{
-	color: #fcff00;
-	background:-moz-linear-gradient(100% 100% 90deg, #303030, #444, #000 100%);
-        background-image: -webkit-gradient(
-          linear, left top, left bottom, from(rgba(17, 17, 17, 1.0)),
-          to(rgba(56, 56, 56, 3.0))
-        );
-	-moz-border-radius: 10px;
-	-khtml-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-}
-
-.menu ul li ul li a:hover {
-	background: #888;
-	-moz-border-radius: 0;
-	-khtml-border-radius: 0;
-	-webkit-border-radius: 0;
-	border-radius: 0;
-}
-
-/* this is the color of the text in the menubar when its on that page */
 .menu .current_page_item a {
-	color: #fcff00 !important;
+    font-weight: 700;
 }
 
-#wp-paginav {
-	padding: 0 5px;
+.menu-item-home {
+	margin-left: 5px;
 }
 
-#footer {
-	color: #fff;
+.menu ul li a:hover, .menu ul li ul li a:hover {
+	color: yellow;
 }
 
-	#footer a {
-		color: #ffcf00;
-	}
-	
-	#footer a:hover {
-		color: #f00;
-	}
-	
-.blognav {
-	margin: 2px auto;
-}
+/* footer */
 
+
+#footer { color: #ccc; }
+
+#footer a:link, #footer a:visited { color: #a0fa0f; }
+#footer a:hover { color: #f00; }
 
 /* casts / commpress design */
 
@@ -265,22 +323,96 @@ blockquote, .type-attachment  {
 }
 
 .default-nav, .casts-nav {
-	border: solid 1px #aaa;
+	border: solid 1px #999;
 	background: #ddd;
 	width: 240px;
 	padding: 4px 2px;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 
-
-/* fix for opera */
-.opera #submit, .opera #searchform button, .opera .type-post, .opera .type-page, .opera .wpsb_opt_in button,
-.opera .type-comic, .opera .type-showcase, .opera .type-music, .opera #wp-paginav, .opera .sidebar h2, 
-.opera #comment-wrapper, .opera .blognav, .opera .default-nav, .opera .submit, .opera .type-attachment, .opera .sidebar .widget {
-	background: #ccc;
+.wcp_collective_ads_widget .wcp-ad {
+	text-align: center;
 }
+
+.wcp_collective_ads_widget img {
+	margin: 0 auto;
+	border: solid 1px: #000;
+	-moz-box-shadow: 1px 1px 3px #111;
+	-webkit-box-shadow: 1px 1px 3px #111;
+	box-shadow: 1px 1px 3px #111;
+}
+
+/* fix the classic bookmark */
 
 .sidebar .widget_easel_classic_bookmark {
 	background: none;
 	border: none;
 	padding: 2px 0;
 }
+
+/* BBPress Stuff */
+
+.bbp-breadcrumb, .bbp-pagination, .bbp-pagination-count {
+    display: block;
+    float:none !important;
+    text-align: left;
+}
+
+.bbp-topics, .bbp-forums, .bbp-replies {
+    width: 100%;
+}
+
+.bbp-forums img {
+    max-width: inherit !important;
+}
+
+.bbp-forum-title, td.bbp-topic-title {
+    font-size: 22px;
+}
+
+.bbp-forum-info, td.bbp-topic-title {
+    padding: 5px;
+}
+
+.bbp-topic-meta, .bbp-topic-freshness-author, .bbp-author-name {
+    font-size: 11px;
+}
+
+.bbp-reply-author, .bbp-topic-voice-count, .bbp-topic-reply-count, .bbp-forum-topic-count, .bbp-forum-reply-count {
+    text-align: center;
+}
+
+.type-topic {
+    border: solid 1px #000;
+}
+
+/* simple forums fix */
+
+.sfuseravatar a, .sfuseravatar {
+	float: left;
+}
+
+.sfuseravatar a {
+	margin-left: 3px;
+}
+
+.page-forum .post-info {
+	padding: 0;
+	margin: 0;
+}
+
+.page-forum .entry {
+	padding: 5px;
+}
+
+a#forumtop { display: none; }
+
+/* the page navigation at the bottom */
+
+#wp-paginav {
+	margin-bottom: 5px;
+}
+

@@ -45,7 +45,7 @@
 		<table class="widefat" style="width: 100%">
 		<tr>
 			<td colspan="5">
-				Technical Support is available on the forums at <a href="http://comicpress.net/forum" target="_blank">ComicPress/Frumph.NET forums</a>
+				Technical Support is available on the forums at <a href="http://forum.frumph.net" target="_blank">Frumph.NET forums</a>
 			</td>
 		<tr>
 			<td>

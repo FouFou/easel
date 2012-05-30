@@ -392,7 +392,7 @@ function addInstant() {
 				context.drawImage(image,border-xo,border-yo,ww,hh);
 				context.restore();
 			}
-			if(typeof set_textRenderContext=='function' && text!='') {				set_textRenderContext(context);
+			if(typeof set_textRenderContext=='function' && text!='') {				set_textRenderContext(context);
 				if(check_textRenderContext(context)) {
 					context.save();
 					context.beginPath(); context.rect(1,canvas.height-(border*3),canvas.width-2,(border*3)); context.closePath(); context.fillStyle = color; context.fill();

@@ -1,11 +1,14 @@
 <?php
 
-$permalink_structure = get_option('permalink_structgure');
+$permalink_structure = get_option('permalink_structure');
 
-if (is_admin() && ($pagenow == 'options-permalink.php') && ($permalink_structure !== '') ) {
-	add_action( 'generate_rewrite_rules', 'easel_rewrite_rules' );
+add_action( 'generate_rewrite_rules', 'easel_rewrite_rules' );
+
+/*
+if (is_admin() && ($pagenow == 'options-permalink.php') && ($permalink_structure !== '') ) {	
 	add_action( 'admin_notices', 'easel_permalink_rewrite_info' );
 }
+*/
 
 if (!is_admin() && ($permalink_structure !== '')) {
 	add_action( 'parse_query', 'easel_parse_query', 100 );

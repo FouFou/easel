@@ -3,19 +3,19 @@
 function commpress_init() {
 	
 	$labels = array(
-		'name' => _x('Casts', 'post type general name'),
-		'singular_name' => _x('Cast', 'post type singular name'),
-		'add_new' => _x('Add New', 'casts'),
-		'add_new_item' => __('Add New Cast'),
-		'edit_item' => __('Edit Cast'),
-		'edit' => _x('Edit', 'casts'),
-		'new_item' => __('New Cast'),
-		'view_item' => __('View Cast'),
-		'search_items' => __('Search Casts'),
-		'not_found' =>  __('No casts found'),
-		'not_found_in_trash' => __('No casts found in Trash'), 
-		'view' =>  __('View Cast'),
-		'parent_item_colon' => ''
+			'name' => __('Casts', 'easel'),
+			'singular_name' => __('Cast', 'easel'),
+			'add_new' => __('Add New', 'easel'),
+			'add_new_item' => __('Add New Cast', 'easel'),
+			'edit_item' => __('Edit Cast', 'easel'),
+			'edit' => _x('Edit', 'casts', 'easel'),
+			'new_item' => __('New Cast', 'easel'),
+			'view_item' => __('View Cast', 'easel'),
+			'search_items' => __('Search Casts', 'easel'),
+			'not_found' =>  __('No casts found', 'easel'),
+			'not_found_in_trash' => __('No casts found in Trash', 'easel'), 
+			'view' =>  __('View Cast', 'easel'),
+			'parent_item_colon' => ''
 	);	
 	
 	register_post_type(
@@ -36,17 +36,17 @@ function commpress_init() {
 	);
 	
 	$labels = array(
-		'name' => _x( 'Tags', 'taxonomy general name' ),
-		'singular_name' => _x( 'Tag', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Tags' ),
-		'popular_items' => __( 'Popular Tags' ),
-		'all_items' => __( 'All Tags' ),
-		'parent_item' => __( 'Parent Tag' ),
-		'parent_item_colon' => __( 'Parent Tag:' ),
-		'edit_item' => __( 'Edit Tag' ), 
-		'update_item' => __( 'Update Tag' ),
-		'add_new_item' => __( 'Add New Tag' ),
-		'new_item_name' => __( 'New Tag Name' ),
+			'name' => __( 'Tags', 'easel' ),
+			'singular_name' => __( 'Tag', 'easel' ),
+			'search_items' =>  __( 'Search Tags', 'easel' ),
+			'popular_items' => __( 'Popular Tags', 'easel' ),
+			'all_items' => __( 'All Tags', 'easel' ),
+			'parent_item' => __( 'Parent Tag', 'easel' ),
+			'parent_item_colon' => __( 'Parent Tag:', 'easel' ),
+			'edit_item' => __( 'Edit Tag', 'easel' ), 
+			'update_item' => __( 'Update Tag', 'easel' ),
+			'add_new_item' => __( 'Add New Tag', 'easel' ),
+			'new_item_name' => __( 'New Tag Name', 'easel' ),
 	); 	
 
 	register_taxonomy('cast-tag',array('casts'), array(
@@ -60,17 +60,17 @@ function commpress_init() {
 	));
 
 	$labels = array(
-		'name' => _x( 'Guests', 'taxonomy general name' ),
-		'singular_name' => _x( 'Guest', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Guests' ),
-		'popular_items' => __( 'Popular Guests' ),
-		'all_items' => __( 'All Guests' ),
-		'parent_item' => __( 'Parent Guest' ),
-		'parent_item_colon' => __( 'Parent Guest:' ),
-		'edit_item' => __( 'Edit Guest' ), 
-		'update_item' => __( 'Update Guest' ),
-		'add_new_item' => __( 'Add New Guest' ),
-		'new_item_name' => __( 'New Guest Name' ),
+			'name' => __( 'Guests', 'easel' ),
+			'singular_name' => __( 'Guest', 'easel' ),
+			'search_items' =>  __( 'Search Guests', 'easel' ),
+			'popular_items' => __( 'Popular Guests', 'easel' ),
+			'all_items' => __( 'All Guests', 'easel' ),
+			'parent_item' => __( 'Parent Guest', 'easel' ),
+			'parent_item_colon' => __( 'Parent Guest:', 'easel' ),
+			'edit_item' => __( 'Edit Guest', 'easel' ), 
+			'update_item' => __( 'Update Guest', 'easel' ),
+			'add_new_item' => __( 'Add New Guest', 'easel' ),
+			'new_item_name' => __( 'New Guest Name', 'easel' ),
 	); 	
 
 	register_taxonomy('cast-guest',array('casts'), array(
@@ -84,17 +84,17 @@ function commpress_init() {
 	));
 	
 	$labels = array(
-		'name' => _x( 'Audience', 'taxonomy general name' ),
-		'singular_name' => _x( 'Audience', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Audience' ),
-		'popular_items' => __( 'Popular Audience' ),
-		'all_items' => __( 'All Audience' ),
-		'parent_item' => __( 'Parent Audience' ),
-		'parent_item_colon' => __( 'Parent Audience:' ),
-		'edit_item' => __( 'Edit Audience' ), 
-		'update_item' => __( 'Update Audience' ),
-		'add_new_item' => __( 'Add New Audience' ),
-		'new_item_name' => __( 'New Audience Name' ),
+			'name' => __( 'Audience', 'easel' ),
+			'singular_name' => __( 'Audience', 'easel' ),
+			'search_items' =>  __( 'Search Audience', 'easel' ),
+			'popular_items' => __( 'Popular Audience', 'easel' ),
+			'all_items' => __( 'All Audience', 'easel' ),
+			'parent_item' => __( 'Parent Audience', 'easel' ),
+			'parent_item_colon' => __( 'Parent Audience:', 'easel' ),
+			'edit_item' => __( 'Edit Audience', 'easel' ), 
+			'update_item' => __( 'Update Audience', 'easel' ),
+			'add_new_item' => __( 'Add New Audience', 'easel' ),
+			'new_item_name' => __( 'New Audience Name', 'easel' ),
 	); 	
 
 	register_taxonomy('cast-audience',array('casts'), array(
@@ -108,17 +108,17 @@ function commpress_init() {
 	));
 	
 	$labels = array(
-		'name' => _x( 'Hosts', 'taxonomy general name' ),
-		'singular_name' => _x( 'Host', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Hosts' ),
-		'popular_items' => __( 'Popular Host' ),
-		'all_items' => __( 'All Hosts' ),
-		'parent_item' => __( 'Parent Host' ),
-		'parent_item_colon' => __( 'Parent Host:' ),
-		'edit_item' => __( 'Edit Host' ), 
-		'update_item' => __( 'Update Host' ),
-		'add_new_item' => __( 'Add New Host' ),
-		'new_item_name' => __( 'New Host Name' ),
+			'name' => __( 'Hosts', 'easel' ),
+			'singular_name' => __( 'Host', 'easel' ),
+			'search_items' =>  __( 'Search Hosts', 'easel' ),
+			'popular_items' => __( 'Popular Host', 'easel' ),
+			'all_items' => __( 'All Hosts', 'easel' ),
+			'parent_item' => __( 'Parent Host', 'easel' ),
+			'parent_item_colon' => __( 'Parent Host:', 'easel' ),
+			'edit_item' => __( 'Edit Host', 'easel' ), 
+			'update_item' => __( 'Update Host', 'easel' ),
+			'add_new_item' => __( 'Add New Host', 'easel' ),
+			'new_item_name' => __( 'New Host Name', 'easel' ),
 	); 	
 
 	register_taxonomy('cast-host',array('casts'), array(
@@ -132,17 +132,17 @@ function commpress_init() {
 	));
 
 	$labels = array(
-		'name' => _x( 'Show', 'taxonomy general name' ),
-		'singular_name' => _x( 'Show', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Shows' ),
-		'popular_items' => __( 'Popular Shows' ),
-		'all_items' => __( 'All Shows' ),
-		'parent_item' => __( 'Parent Show' ),
-		'parent_item_colon' => __( 'Parent Show:' ),
-		'edit_item' => __( 'Edit Show' ), 
-		'update_item' => __( 'Update Show' ),
-		'add_new_item' => __( 'Add New Show' ),
-		'new_item_name' => __( 'New Show Name' ),
+			'name' => __( 'Show', 'easel' ),
+			'singular_name' => __( 'Show', 'easel' ),
+			'search_items' =>  __( 'Search Shows', 'easel' ),
+			'popular_items' => __( 'Popular Shows', 'easel' ),
+			'all_items' => __( 'All Shows', 'easel' ),
+			'parent_item' => __( 'Parent Show', 'easel' ),
+			'parent_item_colon' => __( 'Parent Show:', 'easel' ),
+			'edit_item' => __( 'Edit Show', 'easel' ), 
+			'update_item' => __( 'Update Show', 'easel' ),
+			'add_new_item' => __( 'Add New Show', 'easel' ),
+			'new_item_name' => __( 'New Show Name', 'easel' ),
 	); 	
 
 	register_taxonomy('cast-show',array('casts'), array(
@@ -186,7 +186,7 @@ if (!function_exists('commpress_display_guests')) {
 	function commpress_display_guests() {
 		global $post;
 		if ($post->post_type == 'casts') {
-			$before = '<div class="casts-guests">With Guests: ';
+			$before = '<div class="casts-guests">With Guest(s): ';
 			$sep = ', '; 
 			$after = '</div>';
 			$output = get_the_term_list( $post->ID, 'cast-guest', $before, $sep, $after );

@@ -41,7 +41,7 @@ function easel_breadcrumbs() {
 			if ( get_post_type() != 'post' ) {
 				$post_type = get_post_type_object(get_post_type());
 				$slug = $post_type->rewrite;
-				echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a> ' . $delimiter . ' ';
+				echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->name . '</a> ' . $delimiter . ' ';
 				echo $before . get_the_title() . $after;
 			} else {
 				$cat = get_the_category(); $cat = $cat[0];
@@ -49,9 +49,11 @@ function easel_breadcrumbs() {
 				echo $before . get_the_title() . $after;
 			}
 			
-		} elseif ( !is_single() && !is_page() && get_post_type() != 'post' ) {
+		} elseif ( !is_single() && !is_page() && get_post_type() !== 'post' && !is_search()) {
 			$post_type = get_post_type_object(get_post_type());
-			echo $before . $post_type->labels->singular_name . $after;
+			if (!empty($post)) {
+				echo $before . $post_type->labels->singular_name . $after;
+			} else echo $before . __('No Results', 'easel') . $after;
 			
 		} elseif ( is_attachment() ) {
 			$parent = get_post($post->post_parent);
@@ -93,7 +95,7 @@ function easel_breadcrumbs() {
 		
 		if ( get_query_var('paged') ) {
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-			echo __('Page') . ' ' . get_query_var('paged');
+			echo __('Page','easel') . ' ' . get_query_var('paged');
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
 		}
 		

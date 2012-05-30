@@ -1,9 +1,26 @@
 ﻿Changelog
-2.0.7
-possible fix for a catchall error in breadcrumbs
-added orderby for the archives, can now descend and ascend the list in the options
-optimized the archive and search function to use a ton of less memory
+3.0
+Added clear div to the widgets for better control of CSS
+New default "look"
+Added BBPress support
+Tons of code cleanup to remove custom post_type problems
+Changed the base image for the repo
+Removed "Schemes" can be done as child themes now.  
+Removed some Post Type addons that are better served in a plugin 
+Added some background opera support to the style.css
+changed the <title> code to the wordpress specific wp_title();
+CSS
+Menubar CSS changes adding an extra padding 
+Made some changes to the heights in the showcase slider
+text-align: right the more link info
+changed the comment box width to 90% to adjust appropriately
+changed the posted in box to only display the categories that it actually is posted in.
 
+
+2.0.7
+Optimized the archive and search to not do extra loops, which saves memory.
+Added option for archive display order in the easel options
+possible fix for a catchall error in breadcrumbs
 
 2.0.6
 Added proper navigation for seperate chapters/storylines for comics, and options to display on home page

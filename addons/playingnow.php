@@ -3,18 +3,18 @@
 function playingnow_init() {
 	
 	$labels = array(
-		'name' => _x('Music List', 'post type general name'),
-		'singular_name' => _x('Music', 'post type singular name'),
-		'add_new' => _x('Add New', 'music'),
-		'add_new_item' => __('Add New Music'),
-		'edit_item' => __('Edit Music'),
-		'edit' => _x('Edit', 'music'),
-		'new_item' => __('New Music'),
-		'view_item' => __('View Music'),
-		'search_items' => __('Search Music'),
-		'not_found' =>  __('No Music found'),
-		'not_found_in_trash' => __('No Music found in Trash'), 
-		'view' =>  __('View Music'),
+		'name' => __('Music List', 'easel'),
+		'singular_name' => __('Music', 'easel'),
+		'add_new' => __('Add New', 'easel'),
+		'add_new_item' => __('Add New Music', 'easel'),
+		'edit_item' => __('Edit Music', 'easel'),
+		'edit' => __('Edit', 'easel'),
+		'new_item' => __('New Music', 'easel'),
+		'view_item' => __('View Music', 'easel'),
+		'search_items' => __('Search Music', 'easel'),
+		'not_found' =>  __('No Music found', 'easel'),
+		'not_found_in_trash' => __('No Music found in Trash', 'easel'), 
+		'view' =>  __('View Music', 'easel'),
 		'parent_item_colon' => ''
 	);
 	
@@ -33,17 +33,17 @@ function playingnow_init() {
 	));
 			
 	  $labels = array(
-		'name' => _x( 'Group', 'taxonomy general name' ),
-		'singular_name' => _x( 'Group', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Groups' ),
-		'popular_items' => __( 'Popular Groups' ),
-		'all_items' => __( 'All Groups' ),
-		'parent_item' => __( 'Parent Group' ),
-		'parent_item_colon' => __( 'Parent Group:' ),
-		'edit_item' => __( 'Edit Group' ), 
-		'update_item' => __( 'Update Group' ),
-		'add_new_item' => __( 'Add New Group' ),
-		'new_item_name' => __( 'New Group Name' ),
+			'name' => __( 'Group', 'easel' ),
+			'singular_name' => __( 'Group', 'easel' ),
+			'search_items' =>  __( 'Search Groups', 'easel' ),
+			'popular_items' => __( 'Popular Groups', 'easel' ),
+			'all_items' => __( 'All Groups', 'easel' ),
+			'parent_item' => __( 'Parent Group', 'easel' ),
+			'parent_item_colon' => __( 'Parent Group:', 'easel' ),
+			'edit_item' => __( 'Edit Group', 'easel' ), 
+			'update_item' => __( 'Update Group', 'easel' ),
+			'add_new_item' => __( 'Add New Group', 'easel' ),
+			'new_item_name' => __( 'New Group Name', 'easel' ),
 	  ); 	
 
 	  register_taxonomy('group',array('music'), array(

@@ -2,11 +2,11 @@
 Theme Name: Easel
 Contributors: Frumph
 Theme URI: http://frumph.net/easel
-Description: A theme with many different roles and capabilities, a framework-like theme for more components to be added with it, includes a base theme design that is easily cleared for child themes, with post type addons, 2column and 3column layouts and different visual schemes.  Easel also handles custom post type rewrite rules for archives and feeds automatically without any additional plugin.
+Description: A very intuitively designed theme that has a very robust set of options, CSS entities and abilities.  Is a *core* theme for plugins like Comic Easel.
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
-Tags: Dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
-Version: 2.0.7
+Tags: Dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
+Version: 3.0
 License: GNU General Public License, v3 (or newer)
 License URI: http://www.opensource.org/licenses/gpl-3.0.html
 */
@@ -200,6 +200,11 @@ body.layout-2cl #page, body.layout-2cr #page{
 		margin-left: 60px;
 	}
 
+.header-info {
+    float: left;
+    display: inline-block;
+}
+
 /* THE MENU */
 
 #menubar-wrapper {
@@ -297,7 +302,7 @@ body.layout-2cl #page, body.layout-2cr #page{
 /*Top level menu link items style*/
 .menu ul li a {
 	display: block;
-	padding: 5px 7px;
+	padding: 4px 7px;
 	text-decoration: none;
 }
 
@@ -356,10 +361,6 @@ body.layout-2cl #page, body.layout-2cr #page{
 	width: 160px; /*width of sub menus*/
 	padding: 5px;
 	margin: 0;
-}
-
-.menu .current_page_item a {
-	color: #f00;
 }
 
 /* Holly Hack for IE \*/
@@ -678,7 +679,7 @@ ul.children {
 }
 
 textarea#comment {
-	width: 500px;
+	width: 90%;
 	height: 80px;
 }
 
@@ -746,9 +747,14 @@ textarea#comment {
 	list-style: none;
 }
 
+#sidebar-header {
+    float: right;
+    display: inline-block;
+}
+
 /* Sidebar Class */
 
-.sidebar {
+#sidebar-right .sidebar, #sidebar-left .sidebar {
 	font-size: 12px;
 	overflow: hidden;
 }
@@ -1265,6 +1271,7 @@ table#wp-calendar td {
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	background:-moz-linear-gradient(100% 100% 90deg,#aaa, #ccc, #ddd 100%);
+	background:-o-linear-gradient(rgb(30,30,30),rgb(44,44,44));
 	background-image: -webkit-gradient(
           linear, left top, left bottom, from(rgba(255, 255, 255, 1.0)),
           to(rgba(170, 170, 170, 3.0))
@@ -1279,6 +1286,7 @@ table#wp-calendar td {
 	border-radius: 10px 0 0 10px;
 	padding-right: 0;
 	background:-moz-linear-gradient(100% 100% 90deg,#bbb, #ddd, #fff 100%);
+	background:-o-linear-gradient(rgb(30,30,30),rgb(44,44,44));
     /* IE8 uses -ms-filter for whatever reason... */
 	-ms-filter: progid:DXImageTransform.Microsoft.gradient(
         gradientType=1, startColor=0, endColoStr=#FFFFFF
@@ -1424,4 +1432,120 @@ table#wp-calendar td {
 #breadcrumb-wrapper {
 	padding: 2px 0 2px 10px;
 }
+
+/**
+* Featured slider
+************************************************/
+#slider-container {
+	overflow: hidden;
+	width: 540px;
+	height: 260px;
+	margin: 10px auto;
+	}
+#slider {
+	overflow: hidden;
+	width: auto;
+	height: 230px;
+	}
+.feature {
+	overflow: hidden;
+	width: auto;
+	height: 220px;
+	padding: 10px 10px 0 10px;
+	color: #000;
+	border: none !important;
+	}
+.feature img {
+	float: left;
+	max-width: 250px;
+	margin: 0 15px 0 0;
+	border: 5px solid #001838;
+	}
+#slider .feature .entry-title {
+	font-size: 21px;
+	}
+#slider .feature .entry-title a {
+	color: #eee;
+	}
+.feature .byline {
+	color: #aaa;
+	margin-bottom: 15px;
+	}
+.amore-link {
+	float: right;
+	text-indent: -9999px;
+	width: 100px;
+	height: 20px;
+	display: block;
+	background: url('images/slider/more-link.gif') no-repeat 0 0;
+	}
+.amore-link:hover {
+	background: url('images/slider/more-link.gif') no-repeat 0 -20px;
+	}
+.more-link {
+	text-align: right;
+}
+
+/* Slider controls */
+.slider-controls {
+	float: left;
+	width: 100%;
+	height: 20px;
+	overflow: hidden;
+	clear: both;
+	line-height: 15px;
+	margin: 0 0 0;
+	display: block;
+	padding: 0 10px;
+	}
+.slider-controls .slider-prev {
+	text-indent: -9999px;
+	float: left;
+	width: 22px;
+	height: 20px;
+	background: url('images/slider/slider-prev.png') no-repeat 0 0;
+	border: none !important;
+	}
+.slider-controls .slider-prev:hover {
+	background: url('images/slider/slider-prev.png') no-repeat left -20px;
+	}
+.slider-controls .slider-pause {
+	text-indent: -9999px;
+	float: left;
+	width: 22px;
+	height: 20px;
+	background: url('images/slider/pause.png') no-repeat center 0;
+	border: none !important;
+	}
+.slider-controls .slider-pause:hover, .slider-controls a.paused {
+	background: url('images/slider/pause.png') no-repeat center -20px;
+	}
+.slider-controls .slider-next {
+	text-indent: -9999px;
+	float: left;
+	width: 22px;
+	height: 20px;
+	background: url('images/slider/slider-next.png') no-repeat right 0;
+	border: none !important;
+	}
+.slider-controls .slider-next:hover {
+	background: url('images/slider/slider-next.png') no-repeat right -20px;
+	}
 	
+h2.slider-title a, h2.slider-title {
+	color: #000;
+}
+
+h2.slider-title a:hover, h2.slider-title:hover {
+	color: #fcff00;
+}
+
+/* comic easel mini navigation overrides */
+
+.mininav-prev a, .mininav-next a {
+    color: #fff;
+}
+
+.mininav-prev a:hover, .mininav-next a:hover {
+	color: #f00;
+}

@@ -3,18 +3,18 @@
 function comic_list_init() {
 	
 	$labels = array(
-		'name' => _x('Comic List', 'post type general name'),
-		'singular_name' => _x('Comic', 'post type singular name'),
-		'add_new' => _x('Add New', 'showcase'),
-		'add_new_item' => __('Add New Comic'),
-		'edit_item' => __('Edit Comic'),
-		'edit' => _x('Edit', 'showcase'),
-		'new_item' => __('New Comic'),
-		'view_item' => __('View Comic'),
-		'search_items' => __('Search Comics'),
-		'not_found' =>  __('No comics found'),
-		'not_found_in_trash' => __('No comics found in Trash'), 
-		'view' =>  __('View Comic'),
+		'name' => __('Showcase List', 'easel'),
+		'singular_name' => __('Showcase', 'easel'),
+		'add_new' => __('Add New', 'easel'),
+		'add_new_item' => __('Add New Showcase', 'easel'),
+		'edit_item' => __('Edit Showcase','easel'),
+		'edit' => __('Edit', 'easel'),
+		'new_item' => __('New Showcase', 'easel'),
+		'view_item' => __('View Showcase', 'easel'),
+		'search_items' => __('Search Showcases','easel'),
+		'not_found' =>  __('No Showcases found', 'easel'),
+		'not_found_in_trash' => __('No howcases found in Trash', 'easel'), 
+		'view' =>  __('View Showcase', 'easel'),
 		'parent_item_colon' => ''
 	);
 	
@@ -35,17 +35,17 @@ function comic_list_init() {
 	));
 			
 	  $labels = array(
-		'name' => _x( 'Genres', 'taxonomy general name' ),
-		'singular_name' => _x( 'Genre', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Genres' ),
-		'popular_items' => __( 'Popular Genres' ),
-		'all_items' => __( 'All Genres' ),
-		'parent_item' => __( 'Parent Genre' ),
-		'parent_item_colon' => __( 'Parent Genre:' ),
-		'edit_item' => __( 'Edit Genre' ), 
-		'update_item' => __( 'Update Genre' ),
-		'add_new_item' => __( 'Add New Genre' ),
-		'new_item_name' => __( 'New Genre Name' ),
+		'name' => __( 'Genres', 'easel' ),
+		'singular_name' => __( 'Genre', 'easel' ),
+		'search_items' =>  __( 'Search Genres', 'easel' ),
+		'popular_items' => __( 'Popular Genres', 'easel' ),
+		'all_items' => __( 'All Genres', 'easel' ),
+		'parent_item' => __( 'Parent Genre', 'easel'),
+		'parent_item_colon' => __( 'Parent Genre:', 'easel' ),
+		'edit_item' => __( 'Edit Genre', 'easel'), 
+		'update_item' => __( 'Update Genre', 'easel'),
+		'add_new_item' => __( 'Add New Genre', 'easel'),
+		'new_item_name' => __( 'New Genre Name', 'easel' ),
 	  ); 	
 
 	  register_taxonomy('genre',array('showcase'), array(
@@ -59,17 +59,17 @@ function comic_list_init() {
 	  ));
 	
 	  $labels = array(
-		'name' => _x( 'Styles', 'taxonomy general name' ),
-		'singular_name' => _x( 'Style', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Styles' ),
-		'popular_items' => __( 'Popular Styles' ),
-		'all_items' => __( 'All Styles' ),
-		'parent_item' => __( 'Parent Style' ),
-		'parent_item_colon' => __( 'Parent Style:' ),
-		'edit_item' => __( 'Edit Style' ), 
-		'update_item' => __( 'Update Style' ),
-		'add_new_item' => __( 'Add New Style' ),
-		'new_item_name' => __( 'New Style Name' ),
+		'name' => __( 'Styles', 'easel' ),
+		'singular_name' => __( 'Style', 'easel' ),
+		'search_items' =>  __( 'Search Styles', 'easel' ),
+		'popular_items' => __( 'Popular Styles', 'easel' ),
+		'all_items' => __( 'All Styles', 'easel' ),
+		'parent_item' => __( 'Parent Style', 'easel' ),
+		'parent_item_colon' => __( 'Parent Style:', 'easel' ),
+		'edit_item' => __( 'Edit Style', 'easel' ), 
+		'update_item' => __( 'Update Style', 'easel' ),
+		'add_new_item' => __( 'Add New Style', 'easel' ),
+		'new_item_name' => __( 'New Style Name', 'easel' ),
 	  ); 	
 
 	  register_taxonomy('style',array('showcase'), array(
@@ -83,17 +83,17 @@ function comic_list_init() {
 	  ));
 	
 	  $labels = array(
-		'name' => _x( 'Authors', 'taxonomy general name' ),
-		'singular_name' => _x( 'Author', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Authors' ),
-		'popular_items' => __( 'Popular Authors' ),
-		'all_items' => __( 'All Authors' ),
-		'parent_item' => __( 'Parent Author' ),
-		'parent_item_colon' => __( 'Parent Author:' ),
-		'edit_item' => __( 'Edit Author' ), 
-		'update_item' => __( 'Update Author' ),
-		'add_new_item' => __( 'Add New Author' ),
-		'new_item_name' => __( 'New Author Name' ),
+		'name' => __( 'Authors', 'easel' ),
+		'singular_name' => __( 'Author', 'easel' ),
+		'search_items' =>  __( 'Search Authors', 'easel' ),
+		'popular_items' => __( 'Popular Authors', 'easel' ),
+		'all_items' => __( 'All Authors', 'easel' ),
+		'parent_item' => __( 'Parent Author', 'easel' ),
+		'parent_item_colon' => __( 'Parent Author:', 'easel' ),
+		'edit_item' => __( 'Edit Author', 'easel' ), 
+		'update_item' => __( 'Update Author', 'easel' ),
+		'add_new_item' => __( 'Add New Author', 'easel' ),
+		'new_item_name' => __( 'New Author Name', 'easel' ),
 	  ); 	
 
 	  register_taxonomy('authors',array('showcase'), array(
@@ -107,17 +107,17 @@ function comic_list_init() {
 	  ));
 
 	  $labels = array(
-		'name' => _x( 'Languages', 'taxonomy general name' ),
-		'singular_name' => _x( 'Language', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Languages' ),
-		'popular_items' => __( 'Popular Languages' ),
-		'all_items' => __( 'All Languages' ),
-		'parent_item' => __( 'Parent Language' ),
-		'parent_item_colon' => __( 'Parent Language:' ),
-		'edit_item' => __( 'Edit Language' ), 
-		'update_item' => __( 'Update Language' ),
-		'add_new_item' => __( 'Add New Language' ),
-		'new_item_name' => __( 'New Language' ),
+		'name' => __( 'Languages', 'easel' ),
+		'singular_name' => __( 'Language', 'easel' ),
+		'search_items' =>  __( 'Search Languages', 'easel' ),
+		'popular_items' => __( 'Popular Languages', 'easel' ),
+		'all_items' => __( 'All Languages', 'easel' ),
+		'parent_item' => __( 'Parent Language', 'easel' ),
+		'parent_item_colon' => __( 'Parent Language:', 'easel' ),
+		'edit_item' => __( 'Edit Language', 'easel' ), 
+		'update_item' => __( 'Update Language', 'easel' ),
+		'add_new_item' => __( 'Add New Language', 'easel' ),
+		'new_item_name' => __( 'New Language', 'easel' ),
 	  ); 	
 
 	  register_taxonomy('language',array('showcase'), array(
@@ -131,17 +131,17 @@ function comic_list_init() {
 	  ));
 	
 	  $labels = array(
-		'name' => _x( 'Designers', 'taxonomy general name' ),
-		'singular_name' => _x( 'Designer', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Designers' ),
-		'popular_items' => __( 'Popular Designers' ),
-		'all_items' => __( 'All Designers' ),
-		'parent_item' => __( 'Parent Designer' ),
-		'parent_item_colon' => __( 'Parent Designer:' ),
-		'edit_item' => __( 'Edit Designer' ), 
-		'update_item' => __( 'Update Designer' ),
-		'add_new_item' => __( 'Add New Designer' ),
-		'new_item_name' => __( 'New Designer Name' ),
+		'name' => __( 'Designers', 'easel' ),
+		'singular_name' => __( 'Designer', 'easel' ),
+		'search_items' =>  __( 'Search Designers', 'easel' ),
+		'popular_items' => __( 'Popular Designers', 'easel' ),
+		'all_items' => __( 'All Designers', 'easel' ),
+		'parent_item' => __( 'Parent Designer', 'easel' ),
+		'parent_item_colon' => __( 'Parent Designer:', 'easel' ),
+		'edit_item' => __( 'Edit Designer', 'easel' ), 
+		'update_item' => __( 'Update Designer', 'easel' ),
+		'add_new_item' => __( 'Add New Designer', 'easel' ),
+		'new_item_name' => __( 'New Designer Name', 'easel' ),
 	  ); 	
 
 	  register_taxonomy('designer',array('showcase'), array(
@@ -155,17 +155,17 @@ function comic_list_init() {
 	  ));
 
 	  $labels = array(
-		'name' => _x( 'CMS Used', 'taxonomy general name' ),
-		'singular_name' => _x( 'CMS', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search CMS\'s' ),
-		'popular_items' => __( 'Popular CMS\'s' ),
-		'all_items' => __( 'All CMS\'s' ),
-		'parent_item' => __( 'Parent CMS' ),
-		'parent_item_colon' => __( 'Parent CMS:' ),
-		'edit_item' => __( 'Edit CMS' ), 
-		'update_item' => __( 'Update CMS' ),
-		'add_new_item' => __( 'Add New CMS' ),
-		'new_item_name' => __( 'New CMS Name' ),
+		'name' => __( 'CMS Used', 'easel' ),
+		'singular_name' => __( 'CMS', 'easel' ),
+		'search_items' =>  __( 'Search CMS\'s', 'easel' ),
+		'popular_items' => __( 'Popular CMS\'s', 'easel' ),
+		'all_items' => __( 'All CMS\'s', 'easel' ),
+		'parent_item' => __( 'Parent CMS', 'easel' ),
+		'parent_item_colon' => __( 'Parent CMS:', 'easel' ),
+		'edit_item' => __( 'Edit CMS', 'easel' ), 
+		'update_item' => __( 'Update CMS', 'easel' ),
+		'add_new_item' => __( 'Add New CMS', 'easel' ),
+		'new_item_name' => __( 'New CMS Name', 'easel' ),
 	  ); 	
 
 	  register_taxonomy('cms',array('showcase'), array(
@@ -179,17 +179,17 @@ function comic_list_init() {
 	  ));
 	
 	  $labels = array(
-		'name' => _x( 'Twitter Names', 'taxonomy general name' ),
-		'singular_name' => _x( 'Twitter User', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search Twitter Users' ),
-		'popular_items' => __( 'Popular Twitter Users' ),
-		'all_items' => __( 'All Twitter Users' ),
-		'parent_item' => __( 'Parent Twitter' ),
-		'parent_item_colon' => __( 'Parent Twitter:' ),
-		'edit_item' => __( 'Edit Twitter Name' ), 
-		'update_item' => __( 'Update Twitter Name' ),
-		'add_new_item' => __( 'Add New Twitter Name' ),
-		'new_item_name' => __( 'New Twitter Name' ),
+		'name' => __( 'Twitter Names', 'easel' ),
+		'singular_name' => __( 'Twitter User', 'easel' ),
+		'search_items' =>  __( 'Search Twitter Users', 'easel' ),
+		'popular_items' => __( 'Popular Twitter Users', 'easel' ),
+		'all_items' => __( 'All Twitter Users', 'easel' ),
+		'parent_item' => __( 'Parent Twitter', 'easel' ),
+		'parent_item_colon' => __( 'Parent Twitter:', 'easel' ),
+		'edit_item' => __( 'Edit Twitter Name', 'easel' ), 
+		'update_item' => __( 'Update Twitter Name', 'easel' ),
+		'add_new_item' => __( 'Add New Twitter Name', 'easel' ),
+		'new_item_name' => __( 'New Twitter Name', 'easel' ),
 	  ); 	
 
 	  register_taxonomy('twitter',array('showcase'), array(
@@ -211,7 +211,7 @@ function comic_list_init() {
 	register_taxonomy_for_object_type('twitter', 'showcase');
 	if (easel_themeinfo('enable_addon_showcase_slider')) {
 		wp_enqueue_script( 'slider', easel_themeinfo('themeurl') . '/js/jquery.cycle.js', array( 'jquery' ), 0.1, true );
-		wp_enqueue_style('jQuery-Slider', easel_themeinfo('themeurl') . '/js/slide.css');
+//		wp_enqueue_style('jQuery-Slider', easel_themeinfo('themeurl') . '/js/slide.css');
 	}
 }
 
@@ -443,7 +443,7 @@ function showcase_remove_post_thumbnail_filter($post_thumbnail) {
 
 function showcase_filter_display_slider() { 
 	global $wp_query, $post;
-	if (is_home()) {
+	if (is_home() && !easel_is_signup() && !is_paged()) {
 	Protect();
 	$showcase_query = array(
 				'posts_per_page' => 5,
@@ -469,7 +469,6 @@ function showcase_filter_display_slider() {
 						<div class="entry-summary">
 							<h2 class="slider-title"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 							<?php the_excerpt(); ?>
-							<a class="more-link" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php _e('Full Story &raquo;', 'news'); ?></a>
 						</div>
 
 					</div>

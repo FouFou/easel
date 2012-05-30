@@ -20,7 +20,7 @@ if (!function_exists('easel_display_post_title')) {
 if (!function_exists('easel_display_post_thumbnail')) {
 	function easel_display_post_thumbnail() {
 		global $post;
-		if (function_exists('has_post_thumbnail')) {
+		if (function_exists('has_post_thumbnail') && ($post->post_type == 'post')) {
 			if ( has_post_thumbnail() ) {
 				$link = get_post_meta( $post->ID, 'link', true );
 				if (empty($link)) $link = get_permalink();
@@ -48,7 +48,7 @@ if (!function_exists('easel_display_post_calendar')) {
 	function easel_display_post_calendar() {
 		global $post, $wp_query;
 		if (is_page()) return;
-		if (easel_themeinfo('enable_post_calendar') && (($post->post_type == 'post') || ($post->post_type == 'comic'))) { 
+		if (easel_themeinfo('enable_post_calendar') && ($post->post_type == 'post')) { 
 			$post_calendar = "<div class=\"post-calendar-date\"><div class=\"calendar-date\"><span>".get_the_time('M')."</span>".get_the_time('d')."</div></div>\r\n";
 			echo apply_filters('easel_display_post_calendar', $post_calendar);
 		}
@@ -69,7 +69,7 @@ if (!function_exists('easel_display_post_date')) {
 	function easel_display_post_date() {
 		global $post;
 		if ($post->post_type == 'post' && !easel_themeinfo('disable_date_info_in_posts')) {
-			$post_date = "<span class=\"posted-on\">".__('on&nbsp;','easel')."</span><span class=\"post-date\">".get_the_time('F jS, Y')."</span>\r\n";
+			$post_date = "<span class=\"posted-on\">".__('on&nbsp;','easel')."</span><span class=\"post-date\">".get_the_date(get_option('date_format'))."</span>\r\n";
 			echo apply_filters('easel_display_post_date',$post_date);
 		}
 	}
@@ -79,7 +79,7 @@ if (!function_exists('easel_display_post_time')) {
 	function easel_display_post_time() {
 		global $post;
 		if ($post->post_type == 'post' && !easel_themeinfo('disable_date_info_in_posts')) {
-			$post_time = "<span class=\"posted-at\">".__('at&nbsp;','easel')."</span><span class=\"post-time\">".get_the_time()."</span>\r\n";
+			$post_time = "<span class=\"posted-at\">".__('at&nbsp;','easel')."</span><span class=\"post-time\">".get_the_time(get_option('time_format'))."</span>\r\n";
 			echo apply_filters('easel_display_post_time',$post_time);
 		}
 	}
@@ -89,9 +89,9 @@ if (!function_exists('easel_display_post_category')) {
 	function easel_display_post_category() {
 		global $post;
 		$post_category = '';
-		if (!easel_themeinfo('disable_categories_in_posts') && !is_attachment() && ($post->post_type !== 'page')) {
+		if (!easel_is_bbpress() && !easel_themeinfo('disable_categories_in_posts') && !is_attachment() && ($post->post_type == 'post')) {
 			if ($post->post_type == 'post') {
-				$post_cats = get_the_category_list(', ', 'multiple');
+				$post_cats = get_the_category_list(',');
 			} else {
 				$post_cats = $post->post_type;
 			}
@@ -146,15 +146,15 @@ if (!function_exists('easel_display_blog_navigation')) {
 if (!function_exists('easel_display_the_content')) {
 	function easel_display_the_content() {
 		global $post, $wp_query;
-		if (is_single() || is_home() || is_page()) {
+		if ((is_archive() || is_search()) && $post->post_type == 'post') {
+			do_action('easel-display-the-content-archive-before');
+			the_excerpt();
+			do_action('easel-display-the-content-archive-after');
+		} else {
 			if (!is_single()) { global $more; $more = 0; } 
 			do_action('easel-display-the-content-before');
 			the_content(__('&darr; Read the rest of this entry...','easel'));
 			do_action('easel-display-the-content-after');
-		} else {
-			do_action('easel-display-the-content-archive-before');
-			the_excerpt();
-			do_action('easel-display-the-content-archive-after');
 		}
 	}
 }
@@ -162,26 +162,27 @@ if (!function_exists('easel_display_the_content')) {
 if (!function_exists('easel_display_post')) {
 	function easel_display_post() {
 		global $post, $wp_query;
-		easel_display_blog_navigation(); ?>
+		if (!easel_is_bbpress()) easel_display_blog_navigation(); ?>
 		<div <?php post_class(); ?>>
-			<?php easel_display_post_thumbnail(); ?>
+			<?php if (!is_home() && !is_single()) easel_display_post_thumbnail(); ?>
 			<div class="post-head"><?php do_action('easel-post-head'); ?></div>
 			<div class="post-content">
 				<div class="post-info">
 					<?php 
-						easel_display_author_gravatar();
-						easel_display_post_calendar();
+						if (!easel_is_bbpress()) easel_display_author_gravatar();
+						if (!easel_is_bbpress()) easel_display_post_calendar();
 						if (function_exists('easel_show_mood_in_post')) easel_show_mood_in_post(); 
 					?>
 					<div class="post-text">
 						<?php 
 						easel_display_post_title();
-						if (!is_page()) {
+						if (!is_page() && !easel_is_bbpress()) {
 							easel_display_post_author();
 							easel_display_post_date();	easel_display_post_time();
 							if (!is_archive() && !is_search() && $post->post_type == 'post') {edit_post_link(__('Edit','easel'), ' <span class="post-edit">', '</span>'); }
 							easel_display_post_category();
 							do_action('easel-post-info');
+							do_action('comic-post-info');
 						} ?>
 					</div>
 				</div>

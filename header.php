@@ -3,22 +3,22 @@
 <head>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	<title><?php 
-	bloginfo('name'); 
-	$blog_description = get_bloginfo('description');
-	if (is_home () && !empty($blog_description) ) {
-		echo ' - '; echo $blog_description;
+	bloginfo('name');
+	$bloginfo_description = get_bloginfo('description');
+	if (is_home () && !empty($bloginfo_description)) {
+		echo ' - '; bloginfo('description');
 	} elseif (is_category() ) {
 		echo ' - '; single_cat_title();
 	} elseif (is_single() || is_page() ) { 
 		echo ' - '; single_post_title();
 	} elseif (is_search() ) { 
-		echo __(' search results: ','easel'); echo esc_html($s);
+		echo __(' search results: ','comicpress'); echo esc_html($s);
 	} else { 
 		echo ' - '; wp_title('',true);
 	}
   ?></title>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
-<?php if (!easel_themeinfo('disable_default_design') && !is_child_theme() && (easel_themeinfo('scheme') !== 'greymatter')) { ?>
+<?php if (!easel_themeinfo('disable_default_design')) { ?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style-default.css" type="text/css" media="screen" />
 <?php } ?>
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
@@ -28,7 +28,24 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+<!-- Project Wonderful Ad Box Loader -->
+<!-- Put this after the <body> tag at the top of your page -->
+<script type="text/javascript">
+   (function(){function pw_load(){
+      if(arguments.callee.z)return;else arguments.callee.z=true;
+      var d=document;var s=d.createElement('script');
+      var x=d.getElementsByTagName('script')[0];
+      s.type='text/javascript';s.async=true;
+      s.src='//www.projectwonderful.com/pwa.js';
+      x.parentNode.insertBefore(s,x);}
+   if (window.attachEvent){
+    window.attachEvent('DOMContentLoaded',pw_load);
+    window.attachEvent('onload',pw_load);}
+   else{
+    window.addEventListener('DOMContentLoaded',pw_load,false);
+    window.addEventListener('load',pw_load,false);}})();
+</script>
+<!-- End Project Wonderful Ad Box Loader -->
 <div id="page-head"><?php do_action('easel-page-head'); ?></div>
 <div id="page-wrap">
 	<div id="page">
