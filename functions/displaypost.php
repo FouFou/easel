@@ -3,6 +3,7 @@
 if (!function_exists('easel_display_post_title')) {
 	function easel_display_post_title() {
 		global $post, $wp_query;
+		$get_post_title = '';
 		if ((easel_themeinfo('disable_page_titles') && is_page()) || (easel_themeinfo('disable_post_titles') && !is_page()) || (is_page('chat') || is_page('forum'))) return;
 		if (is_page()) {
 			$post_title = "<h2 class=\"page-title\">";
@@ -10,7 +11,9 @@ if (!function_exists('easel_display_post_title')) {
 			$post_title = "<h2 class=\"post-title\">";
 		}
 		if (is_home() || is_search() || is_archive() && !is_page()) $post_title .= "<a href=\"".get_permalink()."\">";
-		$post_title .= get_the_title();
+		$get_post_title .= get_the_title();
+		if (!$get_post_title) $get_post_title = '( No Title )';
+		$post_title .= $get_post_title;
 		if (is_home() || is_search() || is_archive() && !is_page()) $post_title .= "</a>";
 		$post_title .= "</h2>\r\n";
 		echo apply_filters('easel_display_post_title',$post_title);
