@@ -1,6 +1,6 @@
 <?php
 
-if ( ( ! function_exists( 'wp_get_theme' ) ) || wp_get_theme('version') < '3.4' ) {
+if ( ( function_exists( 'wp_get_theme' ) ) && wp_get_theme('version') > '3.3' ) {
 	$custom_header_args = array();
 	
 	add_theme_support( 'custom-header', array(

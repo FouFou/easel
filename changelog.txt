@@ -1,4 +1,10 @@
-﻿Changelog
+﻿3.0.2
+Added overflow:hidden to .entry for the post area.
+Fixed a breadcrumb mistake for 404 pages.
+Fixed the logic for showing the appearance -> header for new code for 3.4 and old code methodology.
+
+
+Changelog
 3.0
 Added clear div to the widgets for better control of CSS
 New default "look"

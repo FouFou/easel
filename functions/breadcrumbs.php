@@ -49,7 +49,7 @@ function easel_breadcrumbs() {
 				echo $before . get_the_title() . $after;
 			}
 			
-		} elseif ( !is_single() && !is_page() && get_post_type() !== 'post' && !is_search()) {
+		} elseif ( !is_single() && !is_page() && get_post_type() !== 'post' && !is_search() && !is_paged()) {
 			$post_type = get_post_type_object(get_post_type());
 			if (!empty($post)) {
 				echo $before . $post_type->labels->singular_name . $after;
