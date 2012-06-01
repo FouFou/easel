@@ -1,4 +1,8 @@
-﻿3.0.2
+﻿3.0.3
+Fix for featured thumbnails on post->post_type == post and nulls it out for any other post type.
+Fixed version comparisons for WP 3.4 for custom-header and custom-background
+
+3.0.2
 Added overflow:hidden to .entry for the post area.
 Fixed a breadcrumb mistake for 404 pages.
 Fixed the logic for showing the appearance -> header for new code for 3.4 and old code methodology.

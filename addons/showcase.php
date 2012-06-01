@@ -434,11 +434,6 @@ function showcase_filter_display_post_category($post_category) {
 
 if (easel_themeinfo('enable_addon_showcase_slider')) {
 	add_action('easel-narrowcolumn-area','showcase_filter_display_slider');
-	add_filter('easel_display_post_thumbnail','showcase_remove_post_thumbnail_filter');
-}
-
-function showcase_remove_post_thumbnail_filter($post_thumbnail) {
-	return '';
 }
 
 function showcase_filter_display_slider() { 

@@ -8,7 +8,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '3.0.2',
+			'version' => '3.0.3',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -50,9 +50,7 @@ if (is_child_theme()) {
 	get_template_part('child', 'widgets');
 }
 
-if ( ( ! function_exists( 'wp_get_theme' ) ) || wp_get_theme('version') < '3.4' ) {
-	add_custom_background();
-} else {
+if ( version_compare( $wp_version, "3.3.999", ">" ) ) {
 	// This theme allows users to set a custom background
 	// the global if has anything in it from the child theme, use it.
 	$easel_background_array = array();
@@ -61,6 +59,8 @@ if ( ( ! function_exists( 'wp_get_theme' ) ) || wp_get_theme('version') < '3.4' 
 	// Set defaults if it doesn't exit from the global #131315 url('images/background-tile-131315.jpg') repeat;
 	if (!isset($easel_background_array) || empty($easel_background_array)) $easel_background_array = array('default-color' => '#131315', 'default-image' => easel_themeinfo('themeurl').'/images/background-tile.jpg');
 	add_theme_support( 'custom-background', $easel_background_array );
+} else {
+	add_custom_background();
 }
 
 /* this sets default video width */

@@ -23,14 +23,12 @@ if (!function_exists('easel_display_post_title')) {
 if (!function_exists('easel_display_post_thumbnail')) {
 	function easel_display_post_thumbnail() {
 		global $post;
-		if (function_exists('has_post_thumbnail') && ($post->post_type == 'post')) {
-			if ( has_post_thumbnail() ) {
-				$link = get_post_meta( $post->ID, 'link', true );
-				if (empty($link)) $link = get_permalink();
-				$post_thumbnail = "<div class=\"post-image\"><center><a href=\"".$link."\" rel=\"bookmark\" title=\"Link to ".get_the_title()."\">".get_the_post_thumbnail($post->ID, 'large')."</a></center></div>\r\n";
-				echo apply_filters('easel_display_post_thumbnail', $post_thumbnail);
-			}
-		} 
+		if ( has_post_thumbnail() && ($post->post_type == 'post') ) {
+			$link = get_post_meta( $post->ID, 'link', true );
+			if (empty($link)) $link = get_permalink();
+			$post_thumbnail = "<div class=\"post-image\"><center><a href=\"".$link."\" rel=\"bookmark\" title=\"Link to ".get_the_title()."\">".get_the_post_thumbnail($post->ID, 'large')."</a></center></div>\r\n";
+			echo apply_filters('easel_display_post_thumbnail', $post_thumbnail);
+		}
 	}
 }
 
@@ -167,7 +165,7 @@ if (!function_exists('easel_display_post')) {
 		global $post, $wp_query;
 		if (!easel_is_bbpress()) easel_display_blog_navigation(); ?>
 		<div <?php post_class(); ?>>
-			<?php if (!is_home() && !is_single()) easel_display_post_thumbnail(); ?>
+			<?php easel_display_post_thumbnail(); ?>
 			<div class="post-head"><?php do_action('easel-post-head'); ?></div>
 			<div class="post-content">
 				<div class="post-info">

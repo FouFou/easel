@@ -1,6 +1,7 @@
 <?php
+global $wp_version;
 
-if ( ( function_exists( 'wp_get_theme' ) ) && wp_get_theme('version') > '3.3' ) {
+if ( version_compare( $wp_version, "3.3.999", ">" ) ) {
 	$custom_header_args = array();
 	
 	add_theme_support( 'custom-header', array(
