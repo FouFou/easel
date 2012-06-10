@@ -1546,3 +1546,12 @@ h2.slider-title a:hover, h2.slider-title:hover {
 .mininav-prev a:hover, .mininav-next a:hover {
 	color: #f00;
 }
+
+.sticky-image {
+	text-indent: -9999px;
+	width: 48px;
+	height: 48px;
+	background: url('images/pushpin.png') top center no-repeat;
+	display: inline-block;
+	float: left;
+}

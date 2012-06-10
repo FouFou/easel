@@ -23,7 +23,7 @@ if (!function_exists('easel_display_post_title')) {
 if (!function_exists('easel_display_post_thumbnail')) {
 	function easel_display_post_thumbnail() {
 		global $post, $wp_query;
-		if ( has_post_thumbnail() && ($post->post_type == 'post') && !is_archive() && !is_search() ) {
+		if ( has_post_thumbnail() && ($post->post_type == 'post') ) {
 			$link = get_post_meta( $post->ID, 'link', true );
 			if (empty($link)) $link = get_permalink();
 			$post_thumbnail = "<div class=\"post-image\"><center><a href=\"".$link."\" rel=\"bookmark\" title=\"Link to ".get_the_title()."\">".get_the_post_thumbnail($post->ID, 'large')."</a></center></div>\r\n";
@@ -126,7 +126,7 @@ if (!function_exists('easel_display_blog_navigation')) {
 			$temp_single = $wp_query -> is_single;
 			$wp_query -> is_single = true;
 		}
-		if (is_single() && !is_page() && !is_archive() && !is_search() && ($post->post_type !== 'comic') && ($post->post_type !== 'casts')) { ?>
+		if (is_single() && !is_page() && !is_archive() && !is_search() && ($post->post_type == 'post')) { ?>
 			<div class="blognav">
 				<?php previous_post_link('<span class="blognav-prev">%link</span>',__('&lsaquo; Prev','easel'), false); ?>
 				<?php next_post_link('<span class="blognav-next">%link</span>',__('Next &rsaquo;','easel'), false); ?>
@@ -142,10 +142,10 @@ if (!function_exists('easel_display_blog_navigation')) {
 if (!function_exists('easel_display_the_content')) {
 	function easel_display_the_content() {
 		global $post, $wp_query;
-		if ((is_archive() || is_search()) && $post->post_type == 'post') {
-			do_action('easel-display-the-content-archive-before');
+		if ((is_archive() || is_search()) && (easel_themeinfo('excerpt_or_content_in_archive') == 'excerpt')) {
+			do_action('easel-display-the-content-before');
 			the_excerpt();
-			do_action('easel-display-the-content-archive-after');
+			do_action('easel-display-the-content-after');
 		} else {
 			if (!is_single()) { global $more; $more = 0; } 
 			do_action('easel-display-the-content-before');
@@ -171,11 +171,12 @@ if (!function_exists('easel_display_post')) {
 					?>
 					<div class="post-text">
 						<?php 
+						if (is_sticky()) { ?><div class="sticky-image">Featured Post</div><?php }
 						easel_display_post_title();
 						if (!is_page()) {
 							easel_display_post_author();
 							easel_display_post_date();	easel_display_post_time();
-							if (!is_archive() && !is_search() && $post->post_type == 'post') {edit_post_link(__('Edit','easel'), ' <span class="post-edit">', '</span>'); }
+							if ($post->post_type == 'post') { edit_post_link(__('Edit','easel'), ' <span class="post-edit">', '</span>'); }
 							easel_display_post_category();
 							do_action('easel-post-info');
 							do_action('comic-post-info');

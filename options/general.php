@@ -398,6 +398,18 @@
 				</tr>
 				<tr>
 					<th scope="row" colspan="2">
+						<label for="excerpt_or_content_in_archive"><?php _e('Excerpt or Full Content in archive and search.','easel'); ?></label>
+						<select name="excerpt_or_content_in_archive" id="excerpt_or_content_in_archive">
+							<option class="level-0" value="excerpt" <?php selected($easel_options['excerpt_or_content_in_archive'], 'excerpt'); ?>>Excerpt</option>
+							<option class="level-0" value="content" <?php selected($easel_options['excerpt_or_content_in_archive'], 'content'); ?>>Full Content</option>
+						</select>
+					</th>
+					<td>
+						<?php _e('If Display archives results as list is disabled, decide how much is seen in the archive display. ','easel'); ?>
+					</td>
+				</tr>				
+				<tr class="alternate">
+					<th scope="row" colspan="2">
 						<label for="archive_display_order"><?php _e('Archive Display Order','easel'); ?></label>
 						<select name="archive_display_order" id="archive_display_order">
 							<option class="level-0" value="asc" <?php if ($easel_options['archive_display_order'] == "asc") { ?>selected="selected"<?php } ?>>Oldest to Newest - Ascending</option>
@@ -405,7 +417,7 @@
 						</select>
 					</th>
 					<td>
-						<?php _e('Sets the display order of your archives. Newest to Oldest will display your posts starting with the most recent. Oldest to Newest will start with the first entry in the category, tag, or date range (e.g., Selecting May 20XX will start with May 1, not May 31st.)','comicpress'); ?>
+						<?php _e('Sets the display order of your archives. Newest to Oldest will display your posts starting with the most recent. Oldest to Newest will start with the first entry in the category, tag, or date range (e.g., Selecting May 20XX will start with May 1, not May 31st.)','easel'); ?>
 					</td>
 				</tr>
 			</table>

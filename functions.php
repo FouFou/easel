@@ -255,7 +255,8 @@ function easel_load_options() {
 			'menubar_social_icons' => false,
 			'menubar_social_twitter' => '',
 			'menubar_social_facebook' => '',
-			'enable_breadcrumbs' => false
+			'enable_breadcrumbs' => false,
+			'excerpt_or_content_in_archive' => 'excerpt'
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
