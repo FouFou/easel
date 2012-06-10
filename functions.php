@@ -139,7 +139,7 @@ function easel_init() {
 
 	// Set the 'order' of the archive and search
 		function easel_archive_query($query) {
-			if (is_archive() || is_search()) {
+			if ((is_archive() || is_search()) && !isset($query->query_vars['feed'])) {
 				$archive_display_order = easel_themeinfo('archive_display_order');
 				if (empty($archive_display_order)) $archive_display_order = 'DESC';
 				$order = '&order='.$archive_display_order;
@@ -376,5 +376,3 @@ function easel_display_social_icons() {
 function easel_clean_filename($filename) {
 	return str_replace("%2F", "/", rawurlencode($filename));
 }
-
-?>

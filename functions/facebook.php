@@ -1,5 +1,19 @@
 <?php
 
+add_action('wp_head', 'easel_facebook_comic_thumbnail');
+
+function easel_facebook_comic_thumbnail() {
+	global $post;
+	if (!empty($post) && $post->post_type == 'post') {
+		$post_image_id = get_post_thumbnail_id($post->ID);
+		$thumbnail = wp_get_attachment_image_src( $post_image_id, 'thumbnail', false);
+		if (is_array($thumbnail)) { 
+			$thumbnail = reset($thumbnail);
+			echo '<meta property="og:image" content="'.$thumbnail.'" />'."\r\n";	
+		}	
+	}	
+}
+
 if (!function_exists('easel_display_facebook_like')) {
 	function easel_add_facebook_meta() { 
 		global $post;

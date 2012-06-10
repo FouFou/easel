@@ -22,8 +22,8 @@ if (!function_exists('easel_display_post_title')) {
 
 if (!function_exists('easel_display_post_thumbnail')) {
 	function easel_display_post_thumbnail() {
-		global $post;
-		if ( has_post_thumbnail() && ($post->post_type == 'post') ) {
+		global $post, $wp_query;
+		if ( has_post_thumbnail() && ($post->post_type == 'post') && !is_archive() && !is_search() ) {
 			$link = get_post_meta( $post->ID, 'link', true );
 			if (empty($link)) $link = get_permalink();
 			$post_thumbnail = "<div class=\"post-image\"><center><a href=\"".$link."\" rel=\"bookmark\" title=\"Link to ".get_the_title()."\">".get_the_post_thumbnail($post->ID, 'large')."</a></center></div>\r\n";
@@ -91,12 +91,7 @@ if (!function_exists('easel_display_post_category')) {
 		global $post;
 		$post_category = '';
 		if (!easel_is_bbpress() && !easel_themeinfo('disable_categories_in_posts') && !is_attachment() && ($post->post_type == 'post')) {
-			if ($post->post_type == 'post') {
-				$post_cats = get_the_category_list(',');
-			} else {
-				$post_cats = $post->post_type;
-			}
-			$post_category = "<div class=\"post-cat\">". __('Posted In: ','easel') .$post_cats."</div>\r\n";
+			$post_category = "<div class=\"post-cat\">". __('Posted In: ','easel') .get_the_category_list(', ')."</div>\r\n";
 		}
 		echo apply_filters('easel_display_post_category', $post_category);
 	}
@@ -177,7 +172,7 @@ if (!function_exists('easel_display_post')) {
 					<div class="post-text">
 						<?php 
 						easel_display_post_title();
-						if (!is_page() && !easel_is_bbpress()) {
+						if (!is_page()) {
 							easel_display_post_author();
 							easel_display_post_date();	easel_display_post_time();
 							if (!is_archive() && !is_search() && $post->post_type == 'post') {edit_post_link(__('Edit','easel'), ' <span class="post-edit">', '</span>'); }
@@ -206,7 +201,7 @@ if (!function_exists('easel_display_post')) {
 				<?php } else
 					edit_post_link(__('Edit this page.','easel'), '', ''); ?>
 			</div>
-			<div class="post-foot"><?php do_action('easel-post-foot'); ?></div>
+			<div class="post-foot"><?php do_action('comic-post-foot'); ?><?php do_action('easel-post-foot'); ?></div>
 		</div>
 		<?php
 		if (is_page()) {
