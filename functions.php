@@ -8,7 +8,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '3.0.4',
+			'version' => '3.0.5',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -154,7 +154,7 @@ function easel_init() {
 		add_filter('excerpt_length', 'easel_excerpt_length');
 		
 		function easel_enqueue_comment_reply() {
-			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
+			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) && !easel_themeinfo('disable_comment_javascript')) wp_enqueue_script( 'comment-reply' );
 		}
 		add_action( 'wp_enqueue_scripts', 'easel_enqueue_comment_reply' );
 	}

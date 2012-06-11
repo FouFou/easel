@@ -1,4 +1,17 @@
-﻿3.0.3
+﻿3.0.5
+Huge cleanup of the comments.php comment-functions.php files.
+- comments & pings & trackbacks now stay visible if comments are disabled and comments/pings exist
+- enqueu'ing of the comment javascript now moved to init as appropriate instead of in header.php
+
+3.0.4
+Added option to display excerpt or content in archive & search
+Fix for pre_get_query for RSS feeds going the wrong desc/asc direction
+Featured images for post's now properly display in archive & search
+Edit button now displays properly in search & archive
+Added pushpin graphic for "sticky" posts, that help denote they are sticky posts
+
+
+3.0.3
 Fix for featured thumbnails on post->post_type == post and nulls it out for any other post type.
 Fixed version comparisons for WP 3.4 for custom-header and custom-background
 

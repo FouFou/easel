@@ -23,7 +23,6 @@
 <?php } ?>
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	<meta name="Easel" content="<?php echo easel_themeinfo('version'); ?>" />
-	<?php if ( is_singular() && get_option( 'thread_comments' ) && !easel_themeinfo('disable_comment_javascript')) wp_enqueue_script( 'comment-reply' ); ?>
 <?php wp_head(); ?>
 </head>
 

@@ -6,7 +6,7 @@ Description: A very intuitively designed theme that has a very robust set of opt
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
 Tags: Dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
-Version: 3.0.4
+Version: 3.0.5
 License: GNU General Public License, v3 (or newer)
 License URI: http://www.opensource.org/licenses/gpl-3.0.html
 */
@@ -633,7 +633,7 @@ a.post-edit-link {
 
 ol.commentlist {
 	margin: 0;
-	padding: 10px 0 0;
+	padding: 5px 0;
 	list-style: none;
 }
 
@@ -651,15 +651,19 @@ ul.children {
 	padding: 0;
 }
 
-.nocomments {
+.nocomments, .closed-comments {
 	text-align: center;
 }
 
-#pingtrackback-wrap {
-	margin-top: 20px;
+#cancel-comment-reply-link {
+	font-size: 14px;
 }
 
 /* Pingbacks and Trackbacks */
+
+#pingtrackback-wrap {
+	margin: 10px 20px 0;
+}
 
 #pingtrackback {
 	font-size: 16px;

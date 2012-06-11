@@ -118,8 +118,8 @@ function easel_comments_callback($comment, $args, $depth) {
 	
 			<div class="comment-meta-data">
 						
-				<span class="comment-time" title="<?php comment_date(__('l, F jS, Y, g:i a','easel')); ?>">
-					<?php printf(__('%1$s at %2$s','easel'), get_comment_date(), get_comment_time()); ?>
+				<span class="comment-time" title="<?php comment_date(__('l, F jS Y, g:ia','easel')); ?>">
+					<?php printf(__('%1$s, %2$s','easel'), get_comment_date(), get_comment_time()); ?>
 				</span> 
 		
 				<span class="comment-permalink">
@@ -138,7 +138,7 @@ function easel_comments_callback($comment, $args, $depth) {
 					));
 				endif; ?>
 					
-				<?php edit_comment_link('<span class="edit">'.__('Edit','easel').'</span>',' <span class="separator">|</span> ',''); ?> 
+				<?php edit_comment_link('<span class="comment-edit">'.__('Edit','easel').'</span>',' <span class="separator">|</span> ',''); ?> 
 				
 				<?php if($comment->comment_approved == '0') : ?>
 				<div class="comment-moderated"><?php _e('Your comment is awaiting moderation.','easel'); ?></div>

@@ -205,13 +205,7 @@ if (!function_exists('easel_display_post')) {
 			<div class="post-foot"><?php do_action('comic-post-foot'); ?><?php do_action('easel-post-foot'); ?></div>
 		</div>
 		<?php
-		if (is_page()) {
-			if ($post->comment_status == 'open') {
-				comments_template('', true);
-			}
-		} else {
 			comments_template('', true);
-		}
 	}
 }
 

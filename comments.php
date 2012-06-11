@@ -1,40 +1,61 @@
 <?php
-if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-  die (__('Please do not load this page directly. Thanks!','easel'));
-
 if ( post_password_required() ) { ?>
 	<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.','easel'); ?></p>
 	<?php
 	return;
 }
+if (function_exists('in_members_category')) {
+	if (in_members_category() && !easel_is_member()) { ?>
+		<p class="closed-comments-to-non-members"><?php _e('Comments are closed to non-members.'); ?></p>
+		<?php return;
+	}
+}
 ?>
-
 <div id="comment-wrapper-head"></div>
 <div id="comment-wrapper">
-
-<?php if ( have_comments() ) : ?>
-
-	<?php if ( !empty($comments_by_type['comment']) ) : ?>
-		
-		<h3 id="comments"><?php comments_number(__('Discussion &not;','easel'), __('Discussion &not;','easel'), __('Discussion (%) &not;','easel') );?></h3>
-		<div class="commentsrsslink"><?php post_comments_feed_link('Comments RSS'); ?></div>
+	<div class="commentsrsslink"><?php post_comments_feed_link(__('Comments RSS', 'easel')); ?></div>
+	<h3 id="comments"><?php comments_number(__('Discussion &not;','easel'), __('Discussion &not;','easel'), __('Discussion (%) &not;','easel') );?></h3>
+<?php 
+if ( isset($comments_by_type['pings']) && (!isset($wp_query->query_vars['cpage']) || ((int)$wp_query->query_vars['cpage'] < 2))&& (count($comments_by_type['pings']) > 0)) { ?>
+		<div id="pingtrackback-wrap">
+			<ol class="commentlist">
+			<li>
+				<ul>
+					<?php if (function_exists('easel_comments_callback')) { 
+						wp_list_comments(array(
+									'type' => 'pings',
+									'callback' => 'easel_comments_callback',
+									'end-callback' => 'easel_comments_end_callback',
+									'avatar_size'=>32
+									)
+								); 
+					} else {
+						wp_list_comments(array('type' => 'pings', 'avatar_size'=>64));
+					}?>	
+				</ul>
+			</li>
+			</ol>
+		</div>
+	<?php 
+}
+	if ( !empty($comments_by_type['comment']) ) { ?>
 		<ol class="commentlist">
-			<?php if (function_exists('easel_comments_callback')) { 
-				wp_list_comments(array(
-							'type' => 'comment',
-							'reply_text' => __('Reply to %s&not;','easel'), 
-							'callback' => 'easel_comments_callback',
-							'end-callback' => 'easel_comments_end_callback',
-							'avatar_size'=>64
-							)
-						); 
-			} else {
-				wp_list_comments(array('type' => 'comment', 'avatar_size'=>64));
+		<?php if (function_exists('easel_comments_callback')) { 
+			wp_list_comments(array(
+						'type' => 'comment',
+						'reply_text' => __('Reply &not;','easel'),
+						'callback' => 'easel_comments_callback',
+						'end-callback' => 'easel_comments_end_callback',
+						'avatar_size'=>64
+						)
+					); 
+		} else {
+			wp_list_comments(array('type' => 'comment', 'avatar_size'=>64));
 			}?>	
 		</ol>
 		
 		<?php if (easel_themeinfo('enable_numbered_pagination')) { ?>
-		<?php 
+			<?php 
 			$pagelinks = paginate_comments_links(array('echo' => 0)); 
 			if (!empty($pagelinks)) {
 				$pagelinks = str_replace('<a', '<li><a', $pagelinks);
@@ -55,59 +76,12 @@ if ( post_password_required() ) { ?>
 				<div class="commentnav-left"><?php previous_comments_link(__('&darr; Previous Comments','easel')) ?></div>
 				<div class="clear"></div>
 			</div>
-		<?php } ?>
-		
-	<?php endif; ?>
-	
-	<?php if ( isset($comments_by_type['pings']) && (isset($wp_query->query_vars['cpage']) && $wp_query->query_vars['cpage'] < 2)) : ?>
-		<div id="pingtrackback-wrap">
-			<h3 id="pingtrackback"><?php _e('Pings &amp; Trackbacks &not;','easel'); ?></h3>
-			<ol class="commentlist">
-			<li>
-				<ul>
-					<?php if (function_exists('easel_comments_callback')) { 
-						wp_list_comments(array(
-									'type' => 'pings',
-									'callback' => 'easel_comments_callback',
-									'end-callback' => 'easel_comments_end_callback',
-									'avatar_size'=>32
-									)
-								); 
-					} else {
-						wp_list_comments(array('type' => 'pings', 'avatar_size'=>64));
-					}?>	
-				</ul>
-			</li>
-			</ol>
-		</div>
+	<?php }
+}
 
-	<?php endif; ?>
-
-	
-<?php else : // this is displayed if there are no comments so far ?>
-	<?php if ('open' == $post->comment_status) : ?>
-  <!-- If comments are open, but there are no comments. -->
-
-	<?php else : // comments are closed ?>
-	<!-- If comments are closed. -->
-	<?php if (!is_page()) { ?>
-		<p class="nocomments"><?php _e('Comments are closed.','easel'); ?></p>
-	<?php } ?>
-	<?php endif; ?>
-<?php endif; ?>
-
-<?php if ('open' == $post->comment_status) : 
-
-	if (function_exists('in_members_category')) {
-		if (in_members_category() && !easel_is_member()) {
-			return;
-		}
-	}
-	// comment_form(); not used based on our own required look and functionality.
-?>
+if (comments_open()) { ?>
 <div class="comment-wrapper-respond">
 	<?php
-	
 	$fields =  array(
 			'author' => '<p class="comment-form-author">' .
 			'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />'. ' <label for="author"><small>' . __( 'NAME &mdash;','easel' ) . ' <a href="http://gravatar.com">'. __('Get a Gravatar','easel') . '</a></small></label></p>',
@@ -116,35 +90,20 @@ if ( post_password_required() ) { ?>
 			'url'    => '<p class="comment-form-url">' .
 			'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> <label for="url">' . __( 'Website URL', 'easel' ) . '</label></p>',
 			);
-
-	if (easel_themeinfo('disable_comment_note')) {
-		$args = array(
-				'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
-				'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" name="comment" class="comment-textarea"></textarea></p>',
-				'comment_notes_before' => '',
-				'comment_notes_after'  => '',
-				'title_reply'          => __( 'Comment &not;<br />', 'easel' ),
-				'title_reply_to'       => __( 'Reply to %s &not;<br />','easel' ), 
-				'cancel_reply_link'    => __( '<small>Cancel reply</small>', 'easel' ),
-				'label_submit'         => __( 'Post Comment', 'easel' )
-				);
-	} else {
-		$args = array(
-				'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
-				'comment_notes_before' => '',
-				'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" name="comment" class="comment-textarea"></textarea></p>',
-				'comment_notes_after'  => '<p class="comment-note">' . __('NOTE - You can use these ','easel') . sprintf(('<abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:<br />%s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
-				'title_reply'          => __( 'Comment &not;<br />', 'easel'),
-				'title_reply_to'       => __('Reply to %s &not;<br />','easel'), 
-				'cancel_reply_link'    => __( '<small>Cancel reply</small>', 'easel' ),
-				'label_submit'         => __( 'Post Comment', 'easel' )
-				);
-	}
+	$args = array(
+			'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
+			'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" name="comment" class="comment-textarea"></textarea></p>', 
+			'comment_notes_after'  => easel_themeinfo('disable_comment_note') ? '' : '<p class="comment-note">' . __('NOTE - You can use these ','easel') . sprintf(('<abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:<br />%s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
+			'title_reply'          => __( 'Comment &not;', 'easel' ),
+			'title_reply_to'       => __( 'Reply to %s &not;','easel' ), 
+			'cancel_reply_link'    => __( 'Cancel reply', 'easel' ),
+			'label_submit'         => __( 'Post Comment', 'easel' )
+			);
 	comment_form($args); 
 	?>
+	</div>
+<?php } else { ?>
+	<p class="closed-comments"><?php _e('Comments are closed.','easel'); ?></p>
+<?php } ?>
 </div>
-
-<?php endif; ?>
-</div>
-
 <div id="comment-wrapper-foot"></div>
