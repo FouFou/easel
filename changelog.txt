@@ -2,6 +2,9 @@
 Huge cleanup of the comments.php comment-functions.php files.
 - comments & pings & trackbacks now stay visible if comments are disabled and comments/pings exist
 - enqueu'ing of the comment javascript now moved to init as appropriate instead of in header.php
+Menu location in Footer added.  It's centered and cannot use dropdowns.
+Deprecating child-functions.php and child-widgets.php for favor of just straight functions.php in child themes.
+Removed default background via coded, keeping with style.css usage.
 
 3.0.4
 Added option to display excerpt or content in archive & search
