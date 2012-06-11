@@ -1,7 +1,7 @@
 		<?php get_template_part('layout', 'foot'); ?>
 		<div id="footer">
 			<div id="footer-menubar-wrapper">
-				<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'fallback_cb' => false, 'container_class' => 'footmenu', 'theme_location' => 'Footer' ) ); ?>
+				<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'depth' => 1, 'fallback_cb' => false, 'container_class' => 'footmenu', 'theme_location' => 'Footer' ) ); ?>
 				<div class="clear"></div>
 			</div>
 			<?php do_action('easel-footer'); ?>
