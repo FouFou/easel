@@ -13,9 +13,10 @@ if (function_exists('in_members_category')) {
 ?>
 <div id="comment-wrapper-head"></div>
 <div id="comment-wrapper">
+<?php if (comments_open() || (get_comments_number() > 0)) { ?> 
 	<div class="commentsrsslink"><?php post_comments_feed_link(__('Comments RSS', 'easel')); ?></div>
 	<h3 id="comments"><?php comments_number(__('Discussion &not;','easel'), __('Discussion &not;','easel'), __('Discussion (%) &not;','easel') );?></h3>
-<?php 
+<?php } 
 if ( isset($comments_by_type['pings']) && (!isset($wp_query->query_vars['cpage']) || ((int)$wp_query->query_vars['cpage'] < 2))&& (count($comments_by_type['pings']) > 0)) { ?>
 		<div id="pingtrackback-wrap">
 			<ol class="commentlist">
