@@ -1,5 +1,9 @@
 /* Base theme design */
 
+body {
+	background: url('images/background-tile.jpg') repeat;
+}
+
 #page-wrap {
 	background: url('images/background-overlay.png') top center repeat-x;
 }

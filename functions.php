@@ -31,6 +31,14 @@ function easel_themeinfo($whichinfo = null) {
 	return $easel_themeinfo;
 }
 
+/* child-functions.php / child-widgets.php - in the child theme 
+THIS IS DEPRECATED NOW, CREATE A FUNCTIONS.PHP INSTEAD */
+if (is_child_theme()) {
+	get_template_part('child', 'functions');
+	get_template_part('child', 'widgets');
+}
+
+
 // Load the text domain for translation
 load_theme_textdomain( 'easel', get_template_directory() . '/lang' );
 
@@ -41,24 +49,14 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 
 register_nav_menus(array(
-			'Primary' => __( 'Primary', 'easel' )
+			'Primary' => __('Primary', 'easel'),
+			'Footer' => __('Footer', 'easel')
 			));
 
-/* child-functions.php / child-widgets.php - in the child theme */
-if (is_child_theme()) {
-	get_template_part('child', 'functions');
-	get_template_part('child', 'widgets');
-}
-
+global $wp_version;
 if ( version_compare( $wp_version, "3.3.999", ">" ) ) {
-	// This theme allows users to set a custom background
-	// the global if has anything in it from the child theme, use it.
-	$easel_background_array = array();
-	if (function_exists('easel_child_theme_background_array'))
-		$easel_background_array = easel_child_theme_background_array();
-	// Set defaults if it doesn't exit from the global #131315 url('images/background-tile-131315.jpg') repeat;
-	if (!isset($easel_background_array) || empty($easel_background_array)) $easel_background_array = array('default-color' => '#131315', 'default-image' => easel_themeinfo('themeurl').'/images/background-tile.jpg');
-	add_theme_support( 'custom-background', $easel_background_array );
+// Not using defaults since its implementation is not the outcome I want
+	add_theme_support( 'custom-background');
 } else {
 	add_custom_background();
 }
