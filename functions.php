@@ -39,33 +39,6 @@ if (is_child_theme()) {
 }
 
 
-// Load the text domain for translation
-load_theme_textdomain( 'easel', get_template_directory() . '/lang' );
-
-// the_post_thumbnail('thumbnail/medium/full');
-add_theme_support( 'post-thumbnails' );
-
-// Required by the wordpress review theme, it sucks donkey balls but is required.
-add_theme_support( 'automatic-feed-links' );
-
-register_nav_menus(array(
-			'Primary' => __('Primary', 'easel'),
-			'Footer' => __('Footer', 'easel')
-			));
-
-global $wp_version;
-if ( version_compare( $wp_version, "3.3.999", ">" ) ) {
-// Not using defaults since its implementation is not the outcome I want
-	add_theme_support( 'custom-background');
-} else {
-	add_custom_background();
-}
-
-/* this sets default video width */
-if (!isset($content_width)) {
-	$content_width = 540;
-}
-
 // load up the addons that it finds, loads before functions just in case we want to rewrite a function
 if (is_dir(easel_themeinfo('themepath') . '/addons')) {
 	if (easel_themeinfo('enable_addon_page_options')) 
@@ -112,7 +85,55 @@ if (is_admin()) {
 add_action('init', 'easel_init');
 
 function easel_init() {
-	global $is_IE;
+	add_filter('pre_get_posts', 'easel_query_change');
+
+	// Set the 'order' of the archive and search & the post count on the home page
+	function easel_query_change($query) {
+		if (is_home()) {
+			$query->set('posts_per_page', easel_themeinfo('home_post_count'));
+		}
+		if ((is_archive() || is_search()) && !isset($query->query_vars['feed'])) {
+			$archive_display_order = easel_themeinfo('archive_display_order');
+			if (empty($archive_display_order)) $archive_display_order = 'DESC';
+			$order = '&order='.$archive_display_order;
+			$query->set('order', $archive_display_order);
+			return $query;
+		}
+	}
+}
+
+
+add_action('after_theme_setup', 'easel_after_theme_setup');
+
+function easel_after_theme_setup() {
+	global $is_IE, $wp_version;
+
+	// Load the text domain for translation
+	load_theme_textdomain( 'easel', get_template_directory() . '/lang' );
+
+	// the_post_thumbnail('thumbnail/medium/full');
+	add_theme_support( 'post-thumbnails' );
+
+	// Required by the wordpress review theme, it sucks donkey balls but is required.
+	add_theme_support( 'automatic-feed-links' );
+
+	register_nav_menus(array(
+		'Primary' => __('Primary', 'easel'),
+		'Footer' => __('Footer', 'easel')
+		));
+
+	if ( version_compare( $wp_version, "3.3.999", ">" ) ) {
+	// Not using defaults since its implementation is not the outcome I want
+		add_theme_support( 'custom-background');
+	} else {
+		add_custom_background();
+	}
+
+	/* this sets default video width */
+	if (!isset($content_width)) {
+		$content_width = 540;
+	}
+		
 	if (!is_admin()) {
 		wp_enqueue_script('jquery');
 		if (!easel_themeinfo('disable_jquery_menu_code')) {
@@ -132,19 +153,6 @@ function easel_init() {
 		}
 		if (easel_themeinfo('facebook_like_blog_post'))
 			wp_enqueue_script('easel-facebook', 'http://connect.facebook.net/en_US/all.js#xfbml=1'); // force to the header instead of footer
-			
-		add_filter('pre_get_posts', 'easel_archive_query');
-
-	// Set the 'order' of the archive and search
-		function easel_archive_query($query) {
-			if ((is_archive() || is_search()) && !isset($query->query_vars['feed'])) {
-				$archive_display_order = easel_themeinfo('archive_display_order');
-				if (empty($archive_display_order)) $archive_display_order = 'DESC';
-				$order = '&order='.$archive_display_order;
-				$query->set('order', $archive_display_order);
-				return $query;
-			}
-		}
 		
 		function easel_excerpt_length($length) {
 			return easel_themeinfo('excerpt_length');
