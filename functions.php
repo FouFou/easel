@@ -8,7 +8,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '3.0.5',
+			'version' => '3.0.6',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -62,26 +62,6 @@ if (is_admin()) {
 	@require_once(easel_themeinfo('themepath') . '/options.php');
 }
 
-add_action('init', 'easel_init');
-
-function easel_init() {
-	add_filter('pre_get_posts', 'easel_query_change');
-
-	// Set the 'order' of the archive and search & the post count on the home page
-	function easel_query_change($query) {
-		if (is_home()) {
-			$query->set('posts_per_page', easel_themeinfo('home_post_count'));
-		}
-		if ((is_archive() || is_search()) && !isset($query->query_vars['feed'])) {
-			$archive_display_order = easel_themeinfo('archive_display_order');
-			if (empty($archive_display_order)) $archive_display_order = 'DESC';
-			$order = '&order='.$archive_display_order;
-			$query->set('order', $archive_display_order);
-			return $query;
-		}
-	}
-}
-
 add_action( 'comment_form_before', 'easel_enqueue_comment_reply' );
 
 function easel_enqueue_comment_reply() {
@@ -115,9 +95,9 @@ if (!isset($content_width)) {
 	$content_width = 520;
 }
 
-add_action('after_theme_setup', 'easel_after_theme_setup');
+add_action('init', 'easel_init');
 
-function easel_after_theme_setup() {
+function easel_init() {
 	global $is_IE;
 	if (!is_admin()) {
 		wp_enqueue_script('jquery');
@@ -138,7 +118,23 @@ function easel_after_theme_setup() {
 		}
 		if (easel_themeinfo('facebook_like_blog_post'))
 			wp_enqueue_script('easel-facebook', 'http://connect.facebook.net/en_US/all.js#xfbml=1'); // force to the header instead of footer
-	}
+			
+		add_filter('pre_get_posts', 'easel_query_change');
+
+		// Set the 'order' of the archive and search & the post count on the home page
+		function easel_query_change($query) {
+			if (is_home()) {
+				$query->set('posts_per_page', easel_themeinfo('home_post_count'));
+			}
+			if ((is_archive() || is_search()) && !isset($query->query_vars['feed'])) {
+				$archive_display_order = easel_themeinfo('archive_display_order');
+				if (empty($archive_display_order)) $archive_display_order = 'DESC';
+				$order = '&order='.$archive_display_order;
+				$query->set('order', $archive_display_order);
+				return $query;
+			}
+		}
+	}	
 }
 
 add_action('widgets_init', 'easel_register_sidebars');
