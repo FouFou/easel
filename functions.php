@@ -162,7 +162,7 @@ function easel_after_theme_setup() {
 		function easel_enqueue_comment_reply() {
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) && !easel_themeinfo('disable_comment_javascript')) wp_enqueue_script( 'comment-reply' );
 		}
-		add_action( 'wp_enqueue_scripts', 'easel_enqueue_comment_reply' );
+		add_action( 'comment_form_before', 'easel_enqueue_comment_reply' );
 	}
 }
 
