@@ -31,14 +31,6 @@ function easel_themeinfo($whichinfo = null) {
 	return $easel_themeinfo;
 }
 
-/* child-functions.php / child-widgets.php - in the child theme 
-THIS IS DEPRECATED NOW, CREATE A FUNCTIONS.PHP INSTEAD */
-if (is_child_theme()) {
-	get_template_part('child', 'functions');
-	get_template_part('child', 'widgets');
-}
-
-
 // load up the addons that it finds, loads before functions just in case we want to rewrite a function
 if (is_dir(easel_themeinfo('themepath') . '/addons')) {
 	if (easel_themeinfo('enable_addon_page_options')) 
@@ -63,18 +55,6 @@ foreach (glob(easel_themeinfo('themepath') . "/functions/*.php") as $funcfile) {
 // Load all the widgets.
 foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
 	@require_once($widgefile);
-}
-
-// Load all the widgets from the child theme *if* a child theme exists
-if (is_child_theme()) {
-	if (is_dir(easel_themeinfo('stylepath') . '/widgets')) {
-		$results = glob(easel_themeinfo('stylepath') . '/widgets/*.php');
-		if (!empty($results)) {
-			foreach ($results as $widgefile) {
-				@require_once($widgefile);
-			}
-		}
-	}
 }
 
 // Dashboard Menu Easel Options
@@ -102,38 +82,43 @@ function easel_init() {
 	}
 }
 
+add_action( 'comment_form_before', 'easel_enqueue_comment_reply' );
+
+function easel_enqueue_comment_reply() {
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) && !easel_themeinfo('disable_comment_javascript')) wp_enqueue_script( 'comment-reply' );
+}
+
+// Load the text domain for translation
+load_theme_textdomain( 'easel', get_template_directory() . '/lang' );
+
+// the_post_thumbnail('thumbnail/medium/full');
+add_theme_support( 'post-thumbnails' );
+
+// Required by the wordpress review theme, it sucks donkey balls but is required.
+add_theme_support( 'automatic-feed-links' );
+
+register_nav_menus(array(
+	'Primary' => __('Primary', 'easel'),
+	'Footer' => __('Footer', 'easel')
+	));
+	
+global $wp_version;
+if ( version_compare( $wp_version, "3.3.999", ">" ) ) {
+// Not using defaults since its implementation is not the outcome I want
+	add_theme_support( 'custom-background');
+} else {
+	add_custom_background();
+}
+
+/* this sets default video width */
+if (!isset($content_width)) {
+	$content_width = 520;
+}
 
 add_action('after_theme_setup', 'easel_after_theme_setup');
 
 function easel_after_theme_setup() {
-	global $is_IE, $wp_version;
-
-	// Load the text domain for translation
-	load_theme_textdomain( 'easel', get_template_directory() . '/lang' );
-
-	// the_post_thumbnail('thumbnail/medium/full');
-	add_theme_support( 'post-thumbnails' );
-
-	// Required by the wordpress review theme, it sucks donkey balls but is required.
-	add_theme_support( 'automatic-feed-links' );
-
-	register_nav_menus(array(
-		'Primary' => __('Primary', 'easel'),
-		'Footer' => __('Footer', 'easel')
-		));
-
-	if ( version_compare( $wp_version, "3.3.999", ">" ) ) {
-	// Not using defaults since its implementation is not the outcome I want
-		add_theme_support( 'custom-background');
-	} else {
-		add_custom_background();
-	}
-
-	/* this sets default video width */
-	if (!isset($content_width)) {
-		$content_width = 540;
-	}
-		
+	global $is_IE;
 	if (!is_admin()) {
 		wp_enqueue_script('jquery');
 		if (!easel_themeinfo('disable_jquery_menu_code')) {
@@ -153,19 +138,10 @@ function easel_after_theme_setup() {
 		}
 		if (easel_themeinfo('facebook_like_blog_post'))
 			wp_enqueue_script('easel-facebook', 'http://connect.facebook.net/en_US/all.js#xfbml=1'); // force to the header instead of footer
-		
-		function easel_excerpt_length($length) {
-			return easel_themeinfo('excerpt_length');
-		}
-		add_filter('excerpt_length', 'easel_excerpt_length');
-		
-		function easel_enqueue_comment_reply() {
-			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) && !easel_themeinfo('disable_comment_javascript')) wp_enqueue_script( 'comment-reply' );
-		}
-		add_action( 'comment_form_before', 'easel_enqueue_comment_reply' );
 	}
 }
 
+add_action('widgets_init', 'easel_register_sidebars');
 if (!function_exists('easel_register_sidebars')) {
 	function easel_register_sidebars() {
 		foreach (array(
@@ -189,7 +165,6 @@ if (!function_exists('easel_register_sidebars')) {
 		}
 	}
 }
-add_action('widgets_init', 'easel_register_sidebars');
 
 function easel_get_sidebar($location = '') {
 	if (empty($location)) { get_sidebar(); return; }
@@ -271,14 +246,14 @@ function easel_load_options() {
 	return $easel_options;
 }
 
+add_action('easel-post-info','easel_add_post_ratings');
+
 if (!function_exists('easel_add_post_ratings')) {
 	function easel_add_post_ratings() {
 		global $post;
 		if (function_exists('the_ratings') && $post->post_type == 'post') { the_ratings(); } 
 	}
 }
-add_action('easel-post-info','easel_add_post_ratings');
-
 
 function easel_debug_page_foot_code() { ?>
 	<p><?php echo get_num_queries() ?> queries. <?php if (function_exists('memory_get_usage')) { $unit=array('b','kb','mb','gb','tb','pb'); echo @round(memory_get_usage(true)/pow(1024,($i=floor(log(memory_get_usage(true),1024)))),2).' '.$unit[$i]; ?> Memory usage. <?php } timer_stop(1) ?> seconds.</p>
@@ -287,11 +262,17 @@ if (easel_themeinfo('enable_debug_footer_code')) {
 	add_action('easel-page-foot', 'easel_debug_page_foot_code');
 }
 
-function easel_auto_excerpt_more( $more ) {
-	return __(' [&hellip;]','easel') . ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...','easel') . '</a>';
+add_filter('excerpt_length', 'easel_excerpt_length');
+
+function easel_excerpt_length($length) {
+	return easel_themeinfo('excerpt_length');
 }
 
 add_filter( 'excerpt_more', 'easel_auto_excerpt_more' );
+
+function easel_auto_excerpt_more( $more ) {
+	return __(' [&hellip;]','easel') . ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...','easel') . '</a>';
+}
 
 if (easel_themeinfo('force_active_connection_close')) 
 	add_action('shutdown_action_hook','easel_close_up_shop');
@@ -343,23 +324,6 @@ if (!function_exists('easel_sidebars_disabled')) {
 //		if (easel_is_bbpress()) return true;
 		return false;
 	}
-}
-
-add_action('pre_get_posts','easel_add_post_types_to_queries');
-
-function easel_add_post_types_to_queries($query) {
-	$args = array(
-			'public' => true,
-			'_builtin' => false
-			);
-	$output = 'names';
-	$operator = 'and';
-	$post_types = get_post_types( $args , $output , $operator );
-	$post_types = array_merge(array('post'), $post_types);
-	if ($query->is_author) {
-		$query->set('post_type', $post_types);
-	}
-	return $query;
 }
 
 if (easel_themeinfo('menubar_social_icons')) 
