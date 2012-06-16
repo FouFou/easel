@@ -10,6 +10,10 @@ if (function_exists('in_members_category')) {
 		<?php return;
 	}
 }
+
+if (!comments_open() && !get_comments_number()) {
+	return;
+}
 ?>
 <div id="comment-wrapper-head"></div>
 <div id="comment-wrapper">
@@ -103,7 +107,7 @@ if (comments_open()) { ?>
 	comment_form($args); 
 	?>
 	</div>
-<?php } else { ?>
+<?php } elseif (!comments_open() && (get_comments_number() > 0)) { ?>
 	<p class="closed-comments"><?php _e('Comments are closed.','easel'); ?></p>
 <?php } ?>
 </div>

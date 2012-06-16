@@ -1,4 +1,9 @@
-﻿3.0.6
+﻿3.0.7
+Fixed comment display booleans
+fixed commpress
+fixed custom-header's #header {}, removed the version check for pre 3.4 in both custom-header and custom-background
+
+3.0.6
 Bug fix for execution of init/after_theme_setup
 
 3.0.5

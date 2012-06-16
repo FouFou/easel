@@ -50,7 +50,7 @@ body {
 	background: -moz-linear-gradient(100% 100% 90deg,#0b0b0b, #333, #444 100%); /* IE8 uses -ms-filter for whatever reason... */
 	background: -o-linear-gradient(rgb(68,68,68),rgb(0,0,0));
 	-ms-filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=0, endColoStr=#FFFFFF);
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(72, 72, 72, 1.0)), to(rgba(11, 11, 11, 3.0))         );
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(72, 72, 72, 1.0)), to(rgba(11, 11, 11, 3.0)));
 }
 
 #breadcrumb-wrapper { color: #ccc; }
@@ -306,11 +306,14 @@ body.signup #column {
 
 /* footer */
 
-
-#footer { color: #ccc; }
-
-#footer a:link, #footer a:visited { color: #a0fa0f; }
+#footer a { font-size: 11px; }
+#footer a:link { color: #fff; }
+#footer a:visited { color: #ccc; }
 #footer a:hover { color: #f00; }
+
+.footer-text { color: #ccc; }
+.footer-text a:link, .footer-text a:visited { color: #a0fa0f; }
+.footer-text a:hover { color: #f00; }
 
 /* casts / commpress design */
 
