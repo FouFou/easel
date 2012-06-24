@@ -14,26 +14,28 @@ function easel_menubar() {
 		include(easel_themeinfo('stylepath') . '/custom-menubar.php');
 	} else { ?>
 		<div id="menubar-wrapper">
-			<?php do_action('easel-menubar-before'); ?>
-			<?php
-				// dont mess with the pre_get_posts for the wp_nav_menu()
-				wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu', 'theme_location' => 'Primary' ) );
-				do_action('easel-menubar-after');
-				do_action('comic-mini-navigation');
-			?>
-			<div class="menunav">
-				<?php if (easel_themeinfo('enable_search_in_menubar')) { ?>
-				<div class="menunav-search">
-					<?php get_search_form(); ?>
+			<div class="menu-container">
+				<?php do_action('easel-menubar-before'); ?>
+				<?php
+					// dont mess with the pre_get_posts for the wp_nav_menu()
+					wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu', 'theme_location' => 'Primary' ) );
+					do_action('easel-menubar-after');
+					do_action('comic-mini-navigation');
+				?>
+				<div class="menunav">
+					<?php if (easel_themeinfo('enable_search_in_menubar')) { ?>
+					<div class="menunav-search">
+						<?php get_search_form(); ?>
+					</div>
+					<?php } ?>
+					<?php do_action('easel-menubar-menunav'); ?>
+					<?php if (easel_themeinfo('enable_rss_in_menubar') && !easel_themeinfo('menubar_social_icons')) { ?>
+						<a href="<?php bloginfo('rss2_url') ?>" title="RSS Feed" class="menunav-rss">RSS</a>
+					<?php } ?>
+					<?php do_action('easel-menubar-mini-navigation'); ?>
 				</div>
-				<?php } ?>
-				<?php do_action('easel-menubar-menunav'); ?>
-				<?php if (easel_themeinfo('enable_rss_in_menubar') && !easel_themeinfo('menubar_social_icons')) { ?>
-					<a href="<?php bloginfo('rss2_url') ?>" title="RSS Feed" class="menunav-rss">RSS</a>
-				<?php } ?>
-				<?php do_action('easel-menubar-mini-navigation'); ?>
+				<div class="clear"></div>
 			</div>
-			<div class="clear"></div>
 		</div>
 	<?php } 
 }

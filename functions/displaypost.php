@@ -204,7 +204,8 @@ if (!function_exists('easel_display_post')) {
 			</div>
 			<div class="post-foot"><?php do_action('comic-post-foot'); ?><?php do_action('easel-post-foot'); ?></div>
 		</div>
-		<?php
+		<?php 
+			do_action('comic-post-extras');
 			comments_template('', true);
 	}
 }
