@@ -429,7 +429,7 @@ body.wide .narrowcolumn, body.signup .narrowcolumn {
 
 /* Posts Area  */
 
-.post { 
+.type-post, .type-comic { 
 	margin-bottom: 10px; 
 }
 
@@ -437,7 +437,7 @@ body.wide .narrowcolumn, body.signup .narrowcolumn {
 
 .entry {
 	line-height: 18px;
-	padding: 0 3px;
+	padding: 10px;
 	overflow: hidden;
 }
 
