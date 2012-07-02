@@ -142,7 +142,12 @@ if (easel_themeinfo('enable_numbered_pagination')) {
 						echo "</form>\n";
 						break;
 				}
-				echo '</ul></div>'.$after."\n";
+				echo '</ul></div>';
+				echo '<form id="pagejumper" action="" method="get">'."\n";
+				echo '<input type="text" size="2" name="paged" id="paged" />'."\n";
+				echo '<input type="submit" value="Go" />'."\n";
+				echo "</form>\n";
+				echo $after."\n";
 			}
 		}
 	}

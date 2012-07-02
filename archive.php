@@ -14,20 +14,19 @@ $count = 'No';
 $count = $wp_query->found_posts;
 //	$count = $wp_query->post_count;
 $post = $posts[0]; // Hack. Set $post so that the_date() works
-$post_title_type = $title_string = '';
-if ($post->post_type !== 'post') $post_title_type = $post->post_type.'-'; // extra space at the end for visual
+$title_string = '';
 if (is_category()) { /* Category */
-	$title_string = __('Archive for ','easel').$post_title_type.single_cat_title('',false);
+	$title_string = __('Archive for ','easel').single_cat_title('',false);
 } elseif(is_tag()) { /* Tag */
-	$title_string = __('Posts Tagged ','easel').$post_title_type.single_tag_title('',false);
+	$title_string = __('Posts Tagged ','easel').single_tag_title('',false);
 } elseif (is_day()) {
-	$title_string = __('Archive for ','easel').$post_title_type.get_the_time('F jS, Y');
+	$title_string = __('Archive for ','easel').get_the_time('F jS, Y');
 } elseif (is_month()) {
-	$title_string = __('Archive for ','easel').$post_title_type.get_the_time('F, Y');
+	$title_string = __('Archive for ','easel').get_the_time('F, Y');
 } elseif (is_year()) {
-	$title_string = __('Archive for ','easel').$post_title_type.get_the_time('Y');
+	$title_string = __('Archive for ','easel').get_the_time('Y');
 } elseif (is_author()) {
-	$title_string = __('Author Archive ','easel').$post_title_type.get_the_time('Y');
+	$title_string = __('Author Archive ','easel').get_the_time('Y');
 } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
 	$title_string = __('Archives','easel');
 } elseif (isset($wp_query->query_vars['taxonomy']) && taxonomy_exists($wp_query->query_vars['taxonomy'])) {
