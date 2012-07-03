@@ -87,7 +87,7 @@ add_theme_support( 'custom-background');
 
 /* this sets default video width */
 if (!isset($content_width)) {
-	$content_width = 520;
+	$content_width = 500;
 }
 
 add_action('init', 'easel_init');

@@ -143,10 +143,12 @@ if (easel_themeinfo('enable_numbered_pagination')) {
 						break;
 				}
 				echo '</ul></div>';
-				echo '<form id="pagejumper" action="" method="get">'."\n";
-				echo '<input type="text" size="2" name="paged" id="paged" />'."\n";
-				echo '<input type="submit" value="Go" />'."\n";
-				echo "</form>\n";
+				echo '<div class="pagejumper-wrap">';
+				echo '<form id="pagejumper" action="" method="get">';
+				echo '<input type="text" size="2" name="paged" id="paged" />';
+				echo '<input type="submit" value="Go" />';
+				echo '</form>';
+				echo '</div>';
 				echo $after."\n";
 			}
 		}
