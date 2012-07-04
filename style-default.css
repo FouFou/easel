@@ -42,15 +42,17 @@ body {
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	text-shadow: 0 -1px 1px #111;
-	background: #111;
 	-moz-box-shadow: 1px 2px 10px #000;
 	-webkit-box-shadow: 1px 2px 10px #000;
 	-khtml-box-shadow: 1px 2px 10px #000;
 	box-shadow: 1px 2px 10px #000;
-	background: -moz-linear-gradient(100% 100% 90deg,#0b0b0b, #333, #444 100%); /* IE8 uses -ms-filter for whatever reason... */
-	background: -o-linear-gradient(rgb(68,68,68),rgb(0,0,0));
-	-ms-filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=0, endColoStr=#FFFFFF);
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(72, 72, 72, 1.0)), to(rgba(11, 11, 11, 3.0)));
+	background: #111;
+	background: -moz-linear-gradient(100% 100% 90deg, #0b0b0b, #333, #444 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #444), color-stop(100%, #0b0b0b)); /* Safari 4+, Chrome 2+ */  
+	background: -webkit-linear-gradient(linear, left top, left bottom, from(#444),to(rgba(#0b0b0b))); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(#444,#0b0b0b); /* Opera11.10+ */
+	background: -ms-linear-gradient(#444,#0b0b0b); /* IE10+ */
+	background: linear-gradient(linear, left top, left bottom, from(#444),to(#0b0b0b)); /* W3C */
 }
 
 #breadcrumb-wrapper { color: #ccc; }
@@ -73,21 +75,19 @@ body {
 	padding: 3px;
 }
 
-#comic img, .ceo_thumbnail_widget img {
-	border: solid 1px #000;
-}
-
-#submit, .type-post, .type-forum, .type-reply, .type-topic, .type-page, .type-comic, .type-showcase, .type-music, .type-attachment, .type-casts, #wp-paginav, .sidebar h2, #comment-wrapper, .blognav, .default-nav, .submit, .feature {
+#submit, .type-post, .type-forum, .type-reply, .type-topic, .type-page, .type-comic, .type-showcase, .type-music, .type-attachment, .type-casts, #wp-paginav, .sidebar h2, #comment-wrapper, .blognav, .default-nav, .submit, .feature, .related-comics {
 	padding: 2px 5px;
-	background: #ccc;
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	background: -moz-linear-gradient(100% 100% 90deg, #aaa, #ccc, #eee 100%); /* IE8 uses -ms-filter for whatever reason... */
-	background: -o-linear-gradient(rgb(238,238,238),rgb(170,170,170));
-	-ms-filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColor=#ccc, endColoStr=#FFFFFF);
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(238, 238, 238, 1.0)),to(rgba(170, 170, 170, 3.0)));
+	background: #eee; /* Old browsers */
+	background: -moz-linear-gradient(100% 100% 90deg, #aaa, #ccc, #eee 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eee), color-stop(100%, #aaa)); /* Safari 4+, Chrome 2+ */  
+	background: -webkit-linear-gradient(linear, left top, left bottom, from(#aaa),to(rgba(#eee))); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(#eee,#aaa); /* Opera11.10+ */
+	background: -ms-linear-gradient(#eee,#aaa); /* IE10+ */
+	background: linear-gradient(linear, left top, left bottom, from(#eee),to(#aaa)); /* W3C */
 }
 
 .opera #submit, .opera .searchform button, .opera .submit {
@@ -273,11 +273,15 @@ body.signup #column {
 
 /* Menu stuff */
 
-.menunav-prev a:hover, .menunav-next a:hover, .menunav-rss:hover, .menu ul li a:hover, .menu ul li a.selected {
+.menunav-rss:hover, .menu ul li a:hover, .menu ul li a.selected {
 	color: #fcff00;
-	background: -o-linear-gradient(rgb(0,0,0),rgb(68,68,68));
-	background: -moz-linear-gradient(100% 100% 90deg, #303030, #444, #000 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 1.0)),to(rgba(56, 56, 56, 3.0)));
+	background: #303030; /* Old browsers */
+	background: -moz-linear-gradient(100% 100% 90deg, #303030, #444, #000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000), color-stop(100%, #303030)); /* Safari 4+, Chrome 2+ */  
+	background: -webkit-linear-gradient(linear, left top, left bottom, from(#000),to(rgba(#303030))); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(#000,#303030); /* Opera11.10+ */
+	background: -ms-linear-gradient(#000,#303030); /* IE10+ */
+	background: linear-gradient(linear, left top, left bottom, from(#000),to(#303030)); /* W3C */	
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
 	-webkit-border-radius: 10px;

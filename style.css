@@ -6,7 +6,7 @@ Description: A very intuitively designed theme that has a very robust set of opt
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
 Tags: Dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
-Version: 3.0.7
+Version: 3.0.8
 License: GNU General Public License, v3 (or newer)
 License URI: http://www.opensource.org/licenses/gpl-3.0.html
 */
@@ -266,29 +266,6 @@ body.layout-2cl #page, body.layout-2cr #page{
 .menunav-rss:hover {
 	background: #414141;
 	color: #fff;
-}
-
-.menunav-prev, .menunav-next {
-	display: inline-block;
-	float: left;
-}
-
-.menunav-prev a, .menunav-next a {
-	width: 25px;
-	line-height: 22px;
-	font-size: 22px;
-	font-weight: bold;
-	display: inline-block;
-	overflow: hidden;
-	color: #fff;
-}
-
-.menunav-prev a:hover {
-	background: #414141;
-}
-
-.menunav-next a:hover {
-	background: #414141;
 }
 
 .menu {
@@ -1081,11 +1058,12 @@ table#wp-calendar td {
 }
 
 #paginav .paginav-next, #paginav .paginav-previous {
-	font-size: 20px;
+	font-size: 18px;
+	line-height: 22px;
 }
 
 #paginav .paginav-current, #paginav .current {
-	padding: 0px 10px;
+	padding: 0px 7px;
 	font-weight: bold;
 }
 

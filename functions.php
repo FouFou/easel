@@ -8,7 +8,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '3.0.7',
+			'version' => '3.0.8',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -261,8 +261,10 @@ function easel_excerpt_length($length) {
 
 add_filter( 'excerpt_more', 'easel_auto_excerpt_more' );
 
-function easel_auto_excerpt_more( $more ) {
-	return __(' [&hellip;]','easel') . ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...','easel') . '</a>';
+if (!function_exists('easel_auto_excerpt_more')) {
+	function easel_auto_excerpt_more( $more ) {
+		return __(' [&hellip;]','easel') . ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...','easel') . '</a>';
+	}
 }
 
 if (easel_themeinfo('force_active_connection_close')) 
@@ -320,12 +322,14 @@ if (!function_exists('easel_sidebars_disabled')) {
 if (easel_themeinfo('menubar_social_icons')) 
 	add_action('easel-menubar-menunav', 'easel_display_social_icons');
 
-function easel_display_social_icons() {
-	$twitter = easel_themeinfo('menubar_social_twitter');
-	$facebook = easel_themeinfo('menubar_social_facebook');
-	if (!empty($twitter)) echo '<a href="http://www.twitter.com/'.$twitter.'" title="'.__('Follow on Twitter','easel').'" class="menunav-social menunav-twitter">'.__('Twitter','easel').'</a>'."\r\n";
-	if (!empty($facebook)) echo '<a href="http://www.facebook.com/'.$facebook.'" title="'.__('Friend on Facebook','easel').'" class="menunav-social menunav-facebook">Facebook</a>'."\r\n";
-	echo '<a href="'.get_bloginfo('rss2_url').'" title="RSS Feed" class="menunav-social menunav-rss2">RSS</a>'."\r\n";
+if (!function_exists('easel_display_social_icons')) {
+	function easel_display_social_icons() {
+		$twitter = easel_themeinfo('menubar_social_twitter');
+		$facebook = easel_themeinfo('menubar_social_facebook');
+		if (!empty($twitter)) echo '<a href="http://www.twitter.com/'.$twitter.'" title="'.__('Follow on Twitter','easel').'" class="menunav-social menunav-twitter">'.__('Twitter','easel').'</a>'."\r\n";
+		if (!empty($facebook)) echo '<a href="http://www.facebook.com/'.$facebook.'" title="'.__('Friend on Facebook','easel').'" class="menunav-social menunav-facebook">Facebook</a>'."\r\n";
+		echo '<a href="'.get_bloginfo('rss2_url').'" title="RSS Feed" class="menunav-social menunav-rss2">RSS</a>'."\r\n";
+	}
 }
 
 /**
