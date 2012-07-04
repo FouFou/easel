@@ -1,8 +1,10 @@
 ﻿3.0.8
 Changed header.php title code to use a filter
 modified a ton of CSS to clean it up
-
-
+tested comments.php extensively and made some minor code changes
+added pagenav jumper in the pagination
+removed custom post type from the titles in the archive pages
+added additional .menu-wrapper for the menubar 
 
 3.0.7
 Fixed comment display booleans
