@@ -49,7 +49,7 @@ if (!function_exists('easel_display_post_calendar')) {
 	function easel_display_post_calendar() {
 		global $post, $wp_query;
 		if (is_page()) return;
-		if (easel_themeinfo('enable_post_calendar') && ($post->post_type == 'post')) { 
+		if (easel_themeinfo('enable_post_calendar')) { 
 			$post_calendar = "<div class=\"post-calendar-date\"><div class=\"calendar-date\"><span>".get_the_time('M')."</span>".get_the_time('d')."</div></div>\r\n";
 			echo apply_filters('easel_display_post_calendar', $post_calendar);
 		}
@@ -59,7 +59,7 @@ if (!function_exists('easel_display_post_calendar')) {
 if (!function_exists('easel_display_post_author')) {
 	function easel_display_post_author() {
 		global $post, $authordata;
-		if ($post->post_type == 'post' && !easel_themeinfo('disable_author_info_in_posts')) {
+		if (!easel_themeinfo('disable_author_info_in_posts')) {
 			$post_author = "<span class=\"post-author\">".__('by','easel')." <a href=\"".get_author_posts_url( $authordata->ID, $authordata->user_nicename )."\">".get_the_author()."</a></span>\r\n";
 			echo apply_filters('easel_display_post_author',$post_author);
 		}
@@ -69,7 +69,7 @@ if (!function_exists('easel_display_post_author')) {
 if (!function_exists('easel_display_post_date')) {
 	function easel_display_post_date() {
 		global $post;
-		if ($post->post_type == 'post' && !easel_themeinfo('disable_date_info_in_posts')) {
+		if (!easel_themeinfo('disable_date_info_in_posts')) {
 			$post_date = "<span class=\"posted-on\">".__('on&nbsp;','easel')."</span><span class=\"post-date\">".get_the_date(get_option('date_format'))."</span>\r\n";
 			echo apply_filters('easel_display_post_date',$post_date);
 		}
@@ -79,7 +79,7 @@ if (!function_exists('easel_display_post_date')) {
 if (!function_exists('easel_display_post_time')) {
 	function easel_display_post_time() {
 		global $post;
-		if ($post->post_type == 'post' && !easel_themeinfo('disable_date_info_in_posts')) {
+		if (!easel_themeinfo('disable_date_info_in_posts')) {
 			$post_time = "<span class=\"posted-at\">".__('at&nbsp;','easel')."</span><span class=\"post-time\">".get_the_time(get_option('time_format'))."</span>\r\n";
 			echo apply_filters('easel_display_post_time',$post_time);
 		}
