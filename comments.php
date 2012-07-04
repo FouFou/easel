@@ -58,9 +58,9 @@ if ( isset($comments_by_type['pings']) && (!isset($wp_query->query_vars['cpage']
 			wp_list_comments(array('type' => 'comment', 'avatar_size'=>64));
 			}?>	
 		</ol>
-		
-		<?php if (easel_themeinfo('enable_numbered_pagination')) { ?>
-			<?php 
+	<?php 
+	if (get_comment_pages_count() > 1 && get_option( 'page_comments' )) {
+		if (easel_themeinfo('enable_numbered_pagination')) {
 			$pagelinks = paginate_comments_links(array('echo' => 0)); 
 			if (!empty($pagelinks)) {
 				$pagelinks = str_replace('<a', '<li><a', $pagelinks);
@@ -81,7 +81,8 @@ if ( isset($comments_by_type['pings']) && (!isset($wp_query->query_vars['cpage']
 				<div class="commentnav-left"><?php previous_comments_link(__('&darr; Previous Comments','easel')) ?></div>
 				<div class="clear"></div>
 			</div>
-	<?php }
+		<?php }
+	}
 }
 
 if (comments_open()) { ?>
