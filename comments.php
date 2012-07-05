@@ -6,7 +6,7 @@ if ( post_password_required() ) { ?>
 }
 if (function_exists('in_members_category')) {
 	if (in_members_category() && !easel_is_member()) { ?>
-		<p class="closed-comments-to-non-members"><?php _e('Comments are closed to non-members.'); ?></p>
+		<p class="closed-comments-to-non-members"><?php _e('Comments are closed to non-members.','easel'); ?></p>
 		<?php return;
 	}
 }
