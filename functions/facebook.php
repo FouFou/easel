@@ -6,7 +6,7 @@ function easel_facebook_comic_thumbnail() {
 	global $post;
 	if (!empty($post) && $post->post_type == 'post') {
 		$post_image_id = get_post_thumbnail_id($post->ID);
-		$thumbnail = wp_get_attachment_image_src( $post_image_id, 'thumbnail', false);
+		$thumbnail = wp_get_attachment_image_src( $post_image_id, 'full', false);
 		if (is_array($thumbnail)) { 
 			$thumbnail = reset($thumbnail);
 			echo '<meta property="og:image" content="'.$thumbnail.'" />'."\r\n";	
@@ -14,7 +14,7 @@ function easel_facebook_comic_thumbnail() {
 	}	
 }
 
-if (!function_exists('easel_display_facebook_like')) {
+if (!function_exists('easel_add_facebook_meta')) {
 	function easel_add_facebook_meta() { 
 		global $post;
 		echo '<meta property="og:url" content="'.get_permalink().'" />'."\r\n";
@@ -23,8 +23,11 @@ if (!function_exists('easel_display_facebook_like')) {
 		if (is_single()) {
 			echo '<meta property="og:title" content="'.get_the_title().'" />'."\r\n";
 		} 
-		echo '<meta property="og:description" content="'.get_bloginfo('description').'" />'."\r\n";
-
+		if (is_single()) {
+			echo '<meta property="og:description" content="'.get_bloginfo('description').'" />'."\r\n";
+		} else {
+			echo '<meta property="og:description" content="'.the_excerpt().'" />'."\r\n";
+		}
 	}
 }
 

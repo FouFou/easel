@@ -76,6 +76,10 @@ body {
 }
 
 #submit, .type-post, .type-forum, .type-reply, .type-topic, .type-page, .type-comic, .type-showcase, .type-music, .type-attachment, .type-casts, #wp-paginav, .sidebar h2, #comment-wrapper, .blognav, .default-nav, .submit, .feature, .related-comics {
+	background: #eee;
+}
+
+#submit, .type-post, .type-forum, .type-reply, .type-topic, .type-page, .type-comic, .type-showcase, .type-music, .type-attachment, .type-casts, #wp-paginav, .sidebar h2, #comment-wrapper, .blognav, .default-nav, .submit, .feature, .related-comics {
 	padding: 2px 5px;
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;

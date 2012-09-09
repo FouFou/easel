@@ -52,19 +52,20 @@ function easel_body_class($classes = '') {
 	}
 
 // NOT hijacked from anything, doi! people should do this.
-	$rightnow = date('Gi');
-	$ampm = date('a');
+	$timestamp = current_time('timestamp');
+	$rightnow = (int)date('Gi',$timestamp);
+	$ampm = date('a', $timestamp);
 	$classes[] = $ampm;
-
-	if ((int)$rightnow > 559 && (int)$rightnow < 1800) $classes[] = 'day';
-	if ((int)$rightnow < 600 || (int)$rightnow > 1759) $classes[] = 'night';
+//	$classes[] = 'time-'.$rightnow;
+	if ($rightnow > 559 && (int)$rightnow < 1800) $classes[] = 'day';
+	if ($rightnow < 600 || (int)$rightnow > 1759) $classes[] = 'night';
 	
-	if ((int)$rightnow > 2329 || (int)$rightnow < 0030) $classes[] = 'midnight';
-	if ((int)$rightnow > 0559 && (int)$rightnow < 1130) $classes[] = 'morning';
-	if ((int)$rightnow > 1129 && (int)$rightnow < 1230) $classes[] = 'noon';
-	if ((int)$rightnow > 1759 && (int)$rightnow < 2330) $classes[] = 'evening';
+	if ($rightnow > 2329 || $rightnow < 30) $classes[] = 'midnight';
+	if ($rightnow > 459 && $rightnow < 1130) $classes[] = 'morning';
+	if ($rightnow > 1129 && $rightnow < 1230) $classes[] = 'noon';
+	if ($rightnow > 1759 && $rightnow < 2330) $classes[] = 'evening';
 	
-	$classes[] = strtolower(date('D'));
+	$classes[] = strtolower(date('D', $timestamp));
 
 	if ( is_attachment() ) {
 		$classes[] = 'attachment attachment-' . $wp_query->post->ID;

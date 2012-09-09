@@ -392,23 +392,24 @@ function easel_get_adjacent_post_type($previous = true, $taxonomy = 'post', $in_
 
 function easel_filter_wp_title( $title ) {
 	global $wp_query, $s, $paged, $page;
-	$sep = __('&raquo','easel');
-	$new_title = get_bloginfo('name').' ';
-	$bloginfo_description = get_bloginfo('description');	
-	if ((is_home () || is_front_page()) && !empty($bloginfo_description) && !$paged && !$page) {
-		$new_title .= $sep.' '.$bloginfo_description;
-	} elseif (is_category() ) {
-		$new_title .= $sep.' '.single_cat_title('', false);
-	} elseif (is_single() || is_page() ) { 
-		$new_title .= $sep.' '.single_post_title('', false);
-	} elseif (is_search() ) { 
-		$new_title .= $sep.' '.sprintf(__('Search Results: %s','easel'), esc_html($s));
-	} else
-		$new_title .= $title;
-	if ( $paged || $page ) {
-		$new_title .= ' '.$sep.' '.sprintf(__('Page: %s','easel'),max( $paged, $page ));
+	if (!is_feed()) {
+		$sep = __('&raquo;','easel');
+		$new_title = get_bloginfo('name').' ';
+		$bloginfo_description = get_bloginfo('description');	
+		if ((is_home () || is_front_page()) && !empty($bloginfo_description) && !$paged && !$page) {
+			$new_title .= $sep.' '.$bloginfo_description;
+		} elseif (is_single() || is_page()) { 
+			$new_title .= $sep.' '.single_post_title('', false);		
+		} elseif (is_search() ) { 
+			$new_title .= $sep.' '.sprintf(__('Search Results: %s','easel'), esc_html($s));
+		} else
+			$new_title .= $title;
+		if ( $paged || $page ) {
+			$new_title .= ' '.$sep.' '.sprintf(__('Page: %s','easel'),max( $paged, $page ));
+		}
+		$title = $new_title;
 	}
-    return $new_title;
+    return $title;
 }
 
 add_filter( 'wp_title', 'easel_filter_wp_title' );

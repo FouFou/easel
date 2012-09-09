@@ -59,10 +59,11 @@ function easel_breadcrumbs() {
 			$parent = get_post($post->post_parent);
 			$cat = get_the_category($parent->ID); $cat = $cat[0];
 			$cat_parents = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-			if (!empty($cat_parents)) echo $cat_parents;
-			echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
-			echo $before . get_the_title() . $after;
-			
+			if ( !is_wp_error($cat_parents) ) {
+				if (!empty($cat_parents)) echo $cat_parents;
+				echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
+				echo $before . get_the_title() . $after;
+			}
 		} elseif ( is_page() && !$post->post_parent ) {
 			echo $before . get_the_title() . $after;
 			
