@@ -413,13 +413,12 @@ body.wide .narrowcolumn, body.signup .narrowcolumn {
 .entry {
 	line-height: 18px;
 	padding: 10px;
-	overflow: hidden;
 }
 
-.facebook_like {
-	float: left;
-	display: inline-block;
-}	
+.facebook-like {
+	display: block;
+	position: static;
+}
 
 .post-cat, .post-author {
 	text-transform: capitalize;
@@ -1536,9 +1535,10 @@ h2.slider-title a:hover, h2.slider-title:hover {
 
 .sticky-image {
 	text-indent: -9999px;
-	width: 48px;
-	height: 48px;
-	background: url('images/pushpin.png') top center no-repeat;
+	width: 16px;
+	height: 16px;
+	background: url('images/pushpin-small.png') top center no-repeat;
 	display: inline-block;
 	float: left;
+	margin-top: 20px;
 }

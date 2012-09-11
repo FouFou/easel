@@ -167,11 +167,11 @@ if (!function_exists('easel_display_post')) {
 					<?php 
 						if (!easel_is_bbpress()) easel_display_author_gravatar();
 						if (!easel_is_bbpress()) easel_display_post_calendar();
+						if (is_sticky()) { ?><div class="sticky-image">Featured Post</div><?php }
 						if (function_exists('easel_show_mood_in_post')) easel_show_mood_in_post(); 
 					?>
 					<div class="post-text">
 						<?php 
-						if (is_sticky()) { ?><div class="sticky-image">Featured Post</div><?php }
 						easel_display_post_title();
 						if (!is_page()) {
 							easel_display_post_author();

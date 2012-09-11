@@ -6,10 +6,10 @@ function easel_facebook_comic_thumbnail() {
 	global $post;
 	if (!empty($post) && $post->post_type == 'post') {
 		$post_image_id = get_post_thumbnail_id($post->ID);
-		$thumbnail = wp_get_attachment_image_src( $post_image_id, 'full', false);
+		$thumbnail = wp_get_attachment_image_src( $post_image_id, 'large', false);
 		if (is_array($thumbnail)) { 
 			$thumbnail = reset($thumbnail);
-			echo '<meta property="og:image" content="'.$thumbnail.'" />'."\r\n";	
+			echo '<meta property="og:image" content="'.$thumbnail.'" />'."\r\n";				
 		}	
 	}	
 }
@@ -22,11 +22,13 @@ if (!function_exists('easel_add_facebook_meta')) {
 		echo '<meta property="og:type" content="article" />'."\r\n";
 		if (is_single()) {
 			echo '<meta property="og:title" content="'.get_the_title().'" />'."\r\n";
-		} 
-		if (is_single()) {
-			echo '<meta property="og:description" content="'.get_bloginfo('description').'" />'."\r\n";
+		}
+		if (is_single() && $post->post_content) {
+			$quick_excerpt = esc_attr(get_the_excerpt());
+//			$quick_excerpt = str_replace("\r\n", "  ", $quick_excerpt);
+			echo '<meta property="og:description" content="'.$quick_excerpt.'" />'."\r\n";
 		} else {
-			echo '<meta property="og:description" content="'.the_excerpt().'" />'."\r\n";
+			echo '<meta property="og:description" content="'.get_bloginfo('description').'" />'."\r\n";			
 		}
 	}
 }
@@ -38,7 +40,7 @@ if (!function_exists('easel_display_facebook_like')) {
 	function easel_display_facebook_like($content) {
 		global $post, $wp_query;
 		if (!is_page()) {
-			$content .= '<span class="facebook-like"><fb:like layout="box_count" show_faces="false" width="45" href="'.get_permalink().'"></fb:like></span>';
+			$content .= '<div class="facebook-like"><fb:like layout="standard" show_faces="true" href="'.get_permalink().'"></fb:like></div>';
 		}
 		return $content;
 	}
