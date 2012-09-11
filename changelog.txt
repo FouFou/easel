@@ -1,4 +1,13 @@
-﻿3.0.8
+﻿3.1
+Changed the sticky pushpin image to 16px
+Fix for the breadcrumbs (hopefully)
+Timefix for the body classes
+fixed the RSS title situation where it duplicated
+Fixed the missing language translation string in the comments.php
+changed the facebook like button and modified the og:description output
+removed the overflow: hidden from .entry - up to end user to adjust the images accordingly.
+
+3.0.8
 Changed header.php title code to use a filter
 modified a ton of CSS to clean it up
 tested comments.php extensively and made some minor code changes
