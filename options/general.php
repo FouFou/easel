@@ -43,7 +43,8 @@
 						<?php _e('Width:','easel'); ?> <input type="text" size="5" name="custom_image_header_width" id="custom_image_header_width" value="<?php echo $easel_options['custom_image_header_width']; ?>" />px &nbsp;
 						<?php _e('Height:','easel'); ?> <input type="text" size="5" name="custom_image_header_height" id="custom_image_header_height" value="<?php echo $easel_options['custom_image_header_height']; ?>" />px<br />
 						<?php _e('Modify the height and width of the custom header *if* you use Appearance - Header','easel'); ?><br />
-						<?php _e('3 Column Layouts are 980px width while 2 Column Layouts are 780px width as default.','easel'); ?>
+						<?php _e('3 Column Layouts are 980px width while 2 Column Layouts are 780px width as default.','easel'); ?><br />
+						<strong><?php _e('NOTE: This is no longer necessary since Easel 3.1.1, flexible headers will determine your height and width of your image, the available space per layout for width still applies.', 'easel'); ?></strong>
 					</td>
 				</tr>
 			</table>

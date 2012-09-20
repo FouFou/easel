@@ -1,4 +1,7 @@
-﻿3.1
+﻿3.1.1
+Flexible Headers
+
+3.1
 Changed the sticky pushpin image to 16px
 Fix for the breadcrumbs (hopefully)
 Timefix for the body classes

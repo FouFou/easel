@@ -8,9 +8,7 @@ body {
 	background: url('images/background-overlay.png') top center repeat-x;
 }
 
-#header {
-	height: 100px;
-}
+#header {}
 
 .header-info {
 	float: left;
@@ -35,7 +33,7 @@ body {
 
 
 #menubar-wrapper {
-	margin-bottom: 10px;
+	margin: 1px 0 5px auto;
 	padding: 3px 0;
 	-moz-border-radius: 6px;
 	-khtml-border-radius: 6px;
