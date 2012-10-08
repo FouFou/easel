@@ -241,7 +241,7 @@ function easel_load_options() {
 			'menubar_social_tumblr' => '',
 			'menubar_social_deviantart' => '',
 			'menubar_social_myspace' => '',
-			'menubar_social_email'
+			'menubar_social_email' => ''
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
