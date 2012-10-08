@@ -235,14 +235,32 @@
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="disable_date_info_in_posts"><?php _e('Disable display of <strong>on post-Date</strong> in posts','easel'); ?></label></th>
+					<th scope="row"><label for="disable_date_info_in_posts"><?php _e('Disable display of the posted on date in posts','easel'); ?></label></th>
 					<td>
 						<input id="disable_date_info_in_posts" name="disable_date_info_in_posts" type="checkbox" value="1" <?php checked(true, $easel_options['disable_date_info_in_posts']); ?> />
 					</td>
 					<td>
-						<?php _e('Checkmarking this will make it so that on post-Date will not appear in posts.','easel'); ?>
+						<?php _e('Checkmarking this will make it so that posted on date information will not appear in posts.','easel'); ?>
 					</td>
 				</tr>
+				<tr>
+					<th scope="row"><label for="disable_posted_at_time_in_posts"><?php _e('Disable the display of the posted at time in posts','easel'); ?></label></th>
+					<td>
+						<input id="disable_posted_at_time_in_posts" name="disable_posted_at_time_in_posts" type="checkbox" value="1" <?php checked(true, $easel_options['disable_posted_at_time_in_posts']); ?> />
+					</td>
+					<td>
+						<?php _e('Checkmarking this will make it so that the information about what time the post was made will not show.','easel'); ?>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="enable_last_modified_in_posts"><?php _e('Enable the display of last modified information in posts.','easel'); ?></label></th>
+					<td>
+						<input id="enable_last_modified_in_posts" name="enable_last_modified_in_posts" type="checkbox" value="1" <?php checked(true, $easel_options['enable_last_modified_in_posts']); ?> />
+					</td>
+					<td>
+						<?php _e('Checkmarking this will make it so that it will show when the last time that the post was modified in the post date information.','easel'); ?>
+					</td>
+				</tr>								
 			</table>
 			
 			<table class="widefat">

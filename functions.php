@@ -135,19 +135,21 @@ function easel_init() {
 add_action('widgets_init', 'easel_register_sidebars');
 if (!function_exists('easel_register_sidebars')) {
 	function easel_register_sidebars() {
-		foreach (array(
-					__('Left Sidebar', 'easel'),
-					__('Right Sidebar', 'easel'),
-					__('Above Header', 'easel'),
-					__('Header', 'easel'),
-					__('Menubar', 'easel'),
-					__('Over Blog', 'easel'),
-					__('Under Blog', 'easel'),
-					__('Footer', 'easel')			
-					) as $sidebartitle) {
+		$widgets_list = array(
+			array('id' => 'left-sidebar', 'name' => __('Left Sidebar', 'easel'), 'description' => 'The sidebar that appears to the left of the content.'),
+			array('id' => 'right-sidebar', 'name' => __('Right Sidebar', 'easel'), 'description' => 'The sidebar that appears to the right of the content.'),
+			array('id' => 'above-header', 'name' => __('Above Header', 'easel'), 'description' => 'This sidebar appears to above all of the site information.  This sidebar is not encased in CSS, you will need to create CSS for it.'),
+			array('id' => 'header', 'name' => __('Header', 'easel'), 'description' => 'This sidebar appears inside the #header block.'),
+			array('id' => 'menubar', 'name' => __('Menubar', 'easel'), 'description' => 'This sidebar is under the header and above the content-wrapper block'),
+			array('id' => 'over-blog', 'name' => __('Over Blog', 'easel'), 'description' => 'This sidebar appears over the blog within the #column .narrowcolumn'),
+			array('id' => 'under-blog', 'name' => __('Under Blog', 'easel'), 'description' => 'This sidebar appears under the blog within the #column .narrowocolumn'),
+			array('id' => 'footer', 'name' => __('Footer', 'easel'), 'description' => 'This sidebar is below the #content-wrapper block at the bottom of the page'),
+		);
+		foreach ($widgets_list as $widget_info) {
 			register_sidebar(array(
-						'name'=> $sidebartitle,
-						'id' => 'sidebar-'.sanitize_title($sidebartitle),
+						'name'=> $widget_info['name'],
+						'id' => 'sidebar-'.sanitize_title($widget_info['id']),
+						'description' => $widget_info['description'],
 						'before_widget' => "<div id=\"".'%1$s'."\" class=\"widget ".'%2$s'."\">\r\n<div class=\"widget-head\"></div>\r\n<div class=\"widget-content\">\r\n",
 						'after_widget'  => "</div>\r\n<div class=\"clear\"></div>\r\n<div class=\"widget-foot\"></div>\r\n</div>\r\n",
 						'before_title'  => "<h2 class=\"widgettitle\">",
@@ -228,7 +230,9 @@ function easel_load_options() {
 			'menubar_social_twitter' => '',
 			'menubar_social_facebook' => '',
 			'enable_breadcrumbs' => false,
-			'excerpt_or_content_in_archive' => 'excerpt'
+			'excerpt_or_content_in_archive' => 'excerpt',
+			'enable_last_modified_in_posts' => false,
+			'disable_posted_at_time_in_posts' => false
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}

@@ -138,7 +138,9 @@ function easel_admin_options() { ?>
 			'facebook_meta',
 			'display_archive_as_links',
 			'menubar_social_icons',
-			'enable_breadcrumbs'
+			'enable_breadcrumbs',
+			'enable_last_modified_in_posts',
+			'disable_posted_at_time_in_posts'			
 				) as $key) {
 					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );

@@ -1,5 +1,8 @@
 ﻿3.1.1
-Flexible Headers
+Introducing Flexible Headers, no longer need to set a specific height and width
+Removed the max-width: 100% inside the style.css cause chrome doesn't like it, wasn't really necessary - you just have to make sure you set images to "large" size when adding them inside of posts.
+Added new option(s) to disable the display of the "at time" in posts and enable the display of "last modified" date in the posts.
+
 
 3.1
 Changed the sticky pushpin image to 16px

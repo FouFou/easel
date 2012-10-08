@@ -23,10 +23,16 @@ if (!function_exists('easel_display_post_title')) {
 if (!function_exists('easel_display_post_thumbnail')) {
 	function easel_display_post_thumbnail() {
 		global $post, $wp_query;
-		if ( has_post_thumbnail() && ($post->post_type == 'post') ) {
+		if ($post->post_type == 'post') {
+			$post_thumbnail = '';
 			$link = get_post_meta( $post->ID, 'link', true );
 			if (empty($link)) $link = get_permalink();
-			$post_thumbnail = "<div class=\"post-image\"><center><a href=\"".$link."\" rel=\"bookmark\" title=\"Link to ".get_the_title()."\">".get_the_post_thumbnail($post->ID, 'large')."</a></center></div>\r\n";
+			if ( has_post_thumbnail() ) {
+				$post_thumbnail = "<div class=\"post-image\"><center><a href=\"".$link."\" rel=\"featured-image\" title=\"Link to ".get_the_title()."\">".get_the_post_thumbnail($post->ID, 'large')."</a></center></div>\r\n";
+			} else {
+				$url_image = get_post_meta($post->ID, 'featured-image', true);
+				if (!empty($url_image)) $post_thumbnail = '<div class="post-image"><center><a href="'.$link.'" rel="featured-image" title="Link to "'.get_the_title().'"><img src="'.$url_image.'" title="'.get_the_title().'" alt="'.get_the_title().'"></a></center></div>'."\r\n";
+			}
 			echo apply_filters('easel_display_post_thumbnail', $post_thumbnail);
 		}
 	}
@@ -79,9 +85,24 @@ if (!function_exists('easel_display_post_date')) {
 if (!function_exists('easel_display_post_time')) {
 	function easel_display_post_time() {
 		global $post;
-		if (!easel_themeinfo('disable_date_info_in_posts')) {
+		if (!easel_themeinfo('disable_date_info_in_posts') && !easel_themeinfo('disable_posted_at_time_in_posts')) {
 			$post_time = "<span class=\"posted-at\">".__('at&nbsp;','easel')."</span><span class=\"post-time\">".get_the_time(get_option('time_format'))."</span>\r\n";
 			echo apply_filters('easel_display_post_time',$post_time);
+		}
+	}
+}
+
+if (!function_exists('easel_display_modified_date_time')) {
+	function easel_display_modified_date_time() {
+		global $post;
+		if (!easel_themeinfo('disable_date_info_in_posts') && easel_themeinfo('enable_last_modified_in_posts')) {
+			$u_time = get_the_time('U');
+			$u_modified_time = get_the_modified_time('U');
+			if ($u_modified_time != $u_time) {
+				$post_date_time = '<span class="posted-last-modified"> '.__('and modified on','easel').' '.get_the_modified_date(get_option('date_format')).'. '; 
+				if (!easel_themeinfo('disable_posted_at_time_in_posts')) $post_date_time .= '<span class="posted-last-modified-time"> '.__('at','easel').' '.get_the_modified_time(get_option('time_format')).'</span>'."\r\n";
+				echo apply_filters('easel_display_modified_date_time', $post_date_time);
+			}
 		}
 	}
 }
@@ -175,7 +196,7 @@ if (!function_exists('easel_display_post')) {
 						easel_display_post_title();
 						if (!is_page()) {
 							easel_display_post_author();
-							easel_display_post_date();	easel_display_post_time();
+							easel_display_post_date();	easel_display_post_time(); easel_display_modified_date_time();
 							if ($post->post_type == 'post') { edit_post_link(__('Edit','easel'), ' <span class="post-edit">', '</span>'); }
 							easel_display_post_category();
 							do_action('easel-post-info');
