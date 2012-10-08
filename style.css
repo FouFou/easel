@@ -1364,6 +1364,10 @@ table#wp-calendar td {
 
 /* menunav social icons */
 
+.menunav-social-wrapper {
+	display: inline-block;
+}
+
 .menunav-social {
 	text-indent: -9999px;
 	display: inline-block;
@@ -1383,7 +1387,43 @@ table#wp-calendar td {
 
 .menunav-facebook {
 	background: url('images/icons/facebook.png') no-repeat;
-}	
+}
+
+.menunav-googleplus {
+	background: url('images/icons/googleplus.png') no-repeat;
+}
+
+.menunav-linkedin {
+	background: url('images/icons/linkedin.png') no-repeat;
+}
+
+.menunav-pinterest {
+	background: url('images/icons/pinterest.png') no-repeat;
+}
+
+.menunav-youtube {
+	background: url('images/icons/youtube.png') no-repeat;
+}
+
+.menunav-flickr {
+	background: url('images/icons/flickr.png') no-repeat;
+}
+
+.menunav-tumblr {
+	background: url('images/icons/tumblr.png') no-repeat;
+}
+
+.menunav-deviantart {
+	background: url('images/icons/deviantart.png') no-repeat;
+}
+
+.menunav-myspace {
+	background: url('images/icons/myspace.png') no-repeat;
+}
+
+.menunav-email {
+	background: url('images/icons/email.png') no-repeat;
+}
 
 .menunav-social:hover {
 	background-position: 0 -25px;
@@ -1409,6 +1449,7 @@ table#wp-calendar td {
 
 #comic {
 	text-align: center;
+	display: block;
 }
 
 /* breadcrumbs */

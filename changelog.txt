@@ -2,7 +2,9 @@
 Introducing Flexible Headers, no longer need to set a specific height and width
 Removed the max-width: 100% inside the style.css cause chrome doesn't like it, wasn't really necessary - you just have to make sure you set images to "large" size when adding them inside of posts.
 Added new option(s) to disable the display of the "at time" in posts and enable the display of "last modified" date in the posts.
-
+More cleanups in the comments.php output, including fixing a missing language translation string or two
+Added a new options tab in the Easel Options for Menubar alone, with more Social icon's for the menubar
+Added display:block on #comic
 
 3.1
 Changed the sticky pushpin image to 16px

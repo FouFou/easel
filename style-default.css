@@ -230,7 +230,7 @@ body.signup #column {
 	border-radius: 6px;
 }
 
-#comment-textarea:focus, #comment:hover, #author:hover, #email:hover, #url:hover, #comment:focus, #author:focus, #email:focus, #url:focus {
+#comment-textarea:hover, #comment:hover, #author:hover, #email:hover, #url:hover, #comment-textarea:focus, #comment:focus, #author:focus, #email:focus, #url:focus {
 	background: #fff;
 }
 

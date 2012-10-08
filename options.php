@@ -108,11 +108,47 @@ function easel_admin_options() { ?>
 			$tab = 'addons';
 			update_option('easel-options', $easel_options);
 		}
+		if ($_REQUEST['action'] == 'easel_save_menubar') {
+
+			foreach (array(
+			'disable_jquery_menu_code',
+			'disable_default_menubar',
+			'enable_search_in_menubar',
+			'enable_rss_in_menubar',
+			'menubar_social_icons',
+			'enable_breadcrumbs'			
+				) as $key) {
+					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
+					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
+			}
+
+			foreach (array(
+				'menubar_social_twitter',
+				'menubar_social_facebook',
+				'menubar_social_googleplus',
+				'menubar_social_linkedin',
+				'menubar_social_pinterest',
+				'menubar_social_youtube',
+				'menubar_social_flickr',
+				'menubar_social_tumblr',
+				'menubar_social_deviantart',
+				'menubar_social_myspace',
+				'menubar_social_email'
+						) as $key) {
+							if (isset($_REQUEST[$key]) && !empty($_REQUEST[$key])) {
+								$easel_options[$key] = esc_url($_REQUEST[$key]);
+							} else {
+								// set to empty if it's not set
+								$easel_options[$key] = '';
+							}
+			}
+			$tab = 'menubar';
+			update_option('easel-options', $easel_options);
+		}
 		
 		if ($_REQUEST['action'] == 'easel_save_general') {
 
 			foreach (array(
-			'disable_jquery_menu_code',
 			'disable_scroll_to_top',
 			'enable_sidebar_css',
 			'enable_avatar_trick',
@@ -129,16 +165,11 @@ function easel_admin_options() { ?>
 			'disable_tags_in_posts',
 			'disable_author_info_in_posts',
 			'disable_date_info_in_posts',
-			'disable_default_menubar',
-			'enable_search_in_menubar',
-			'enable_rss_in_menubar',
 			'disable_blog_on_homepage',
 			'enable_comments_on_homepage',
 			'facebook_like_blog_post',
 			'facebook_meta',
 			'display_archive_as_links',
-			'menubar_social_icons',
-			'enable_breadcrumbs',
 			'enable_last_modified_in_posts',
 			'disable_posted_at_time_in_posts'			
 				) as $key) {
@@ -153,8 +184,6 @@ function easel_admin_options() { ?>
 				'copyright_url',
 				'custom_image_header_width',
 				'custom_image_header_height',
-				'menubar_social_twitter',
-				'menubar_social_facebook',
 				'archive_display_order',
 				'excerpt_or_content_in_archive'
 						) as $key) {
@@ -178,6 +207,7 @@ function easel_admin_options() { ?>
 		  	$tab_info = array(
 				'layout' => __('Layout', 'easel'),
 		  		'general' => __('General', 'easel'),
+				'menubar' => __('Menubar', 'easel'),
 				'addons' => __('Addons', 'easel'),
 				'debug' => __('Debug', 'easel') 
 		  	);

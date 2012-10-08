@@ -232,7 +232,16 @@ function easel_load_options() {
 			'enable_breadcrumbs' => false,
 			'excerpt_or_content_in_archive' => 'excerpt',
 			'enable_last_modified_in_posts' => false,
-			'disable_posted_at_time_in_posts' => false
+			'disable_posted_at_time_in_posts' => false,
+			'menubar_social_googleplus' => '',
+			'menubar_social_linkedin' => '',
+			'menubar_social_pinterest' => '',
+			'menubar_social_youtube' => '',
+			'menubar_social_flickr' => '',
+			'menubar_social_tumblr' => '',
+			'menubar_social_deviantart' => '',
+			'menubar_social_myspace' => '',
+			'menubar_social_email'
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
@@ -330,9 +339,31 @@ if (!function_exists('easel_display_social_icons')) {
 	function easel_display_social_icons() {
 		$twitter = easel_themeinfo('menubar_social_twitter');
 		$facebook = easel_themeinfo('menubar_social_facebook');
-		if (!empty($twitter)) echo '<a href="http://www.twitter.com/'.$twitter.'" title="'.__('Follow on Twitter','easel').'" class="menunav-social menunav-twitter">'.__('Twitter','easel').'</a>'."\r\n";
-		if (!empty($facebook)) echo '<a href="http://www.facebook.com/'.$facebook.'" title="'.__('Friend on Facebook','easel').'" class="menunav-social menunav-facebook">Facebook</a>'."\r\n";
-		echo '<a href="'.get_bloginfo('rss2_url').'" title="RSS Feed" class="menunav-social menunav-rss2">RSS</a>'."\r\n";
+		$googleplus = easel_themeinfo('menubar_social_googleplus');
+		$linkedin = easel_themeinfo('menubar_social_linkedin');
+		$pinterest = easel_themeinfo('menubar_social_pinterest');
+		$youtube = easel_themeinfo('menubar_social_youtube');
+		$flickr = easel_themeinfo('menubar_social_flickr');
+		$tumblr = easel_themeinfo('menubar_social_tumblr');
+		$deviantart = easel_themeinfo('menubar_social_deviantart');
+		$myspace = easel_themeinfo('menubar_social_myspace');
+		$email = easel_themeinfo('menubar_social_email');
+		$output = '<div class="menunav-social-wrapper">';
+		if (!empty($deviantart)) $output .= '<a href="'.$deviantart.'" title="'.__(' my DeviantART','easel').'" class="menunav-social menunav-deviantart">'.__('DeviantART','easel').'</a>'."\r\n";
+		if (!empty($tumblr)) $output .= '<a href="'.$tumblr.'" title="'.__('Examine my Tumblr','easel').'" class="menunav-social menunav-tumblr">'.__('Tumblr','easel').'</a>'."\r\n";
+		if (!empty($facebook)) $output .= '<a href="'.$facebook.'" title="'.__('Friend on Facebook','easel').'" class="menunav-social menunav-facebook">'.__('Facebook','easel').'</a>'."\r\n";
+		if (!empty($myspace)) $output .= '<a href="'.$myspace.'" title="'.__('Make use of MySpace','easel').'" class="menunav-social menunav-myspace">'.__('MySpace','easel').'</a>'."\r\n";		
+		if (!empty($linkedin)) $output .= '<a href="'.$linkedin.'" title="'.__('Look at my LinkedIn','easel').'" class="menunav-social menunav-linkedin">'.__('LinkedIn','easel').'</a>'."\r\n";
+		if (!empty($twitter)) $output .= '<a href="'.$twitter.'" title="'.__('Follow me on Twitter','easel').'" class="menunav-social menunav-twitter">'.__('Twitter','easel').'</a>'."\r\n";
+		if (!empty($flickr)) $output .= '<a href="'.$flickr.'" title="'.__('Gaze at my Flickr','easel').'" class="menunav-social menunav-flickr">'.__('Flickr','easel').'</a>'."\r\n";		
+		if (!empty($email)) $output .= '<a href="'.$email.'" title="'.__('Email me','easel').'" class="menunav-social menunav-email">'.__('Email','easel').'</a>'."\r\n";
+		if (!empty($googleplus)) $output .= '<a href="'.$googleplus.'" title="'.__('Check me out on Google+','easel').'" class="menunav-social menunav-googleplus">'.__('Google+','easel').'</a>'."\r\n";
+		if (!empty($pinterest)) $output .= '<a href="'.$pinterest.'" title="'.__('Peruse my Pinterests','easel').'" class="menunav-social menunav-pinterest">'.__('pinterest','easel').'</a>'."\r\n";
+		if (!empty($youtube)) $output .= '<a href="'.$youtube.'" title="'.__('View my YouTube','easel').'" class="menunav-social menunav-youtube">'.__('YouTube','easel').'</a>'."\r\n";
+		$output .= '<a href="'.get_bloginfo('rss2_url').'" title="'.__('RSS Feed','easel').'" class="menunav-social menunav-rss2">'.__('RSS','easel').'</a>'."\r\n";
+		$output .= '<div class="clear"></div>';
+		$output .= '</div>'."\r\n";
+		echo $output;
 	}
 }
 

@@ -90,16 +90,16 @@ if (comments_open()) { ?>
 	<?php
 	$fields =  array(
 			'author' => '<p class="comment-form-author">' .
-			'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />'. ' <label for="author"><small>' . __( 'NAME &mdash;','easel' ) . ' <a href="http://gravatar.com">'. __('Get a Gravatar','easel') . '</a></small></label></p>',
+			'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />'. ' <label for="author"><small>' . __( '*NAME','easel' ) .'</label></p>',
 			'email'  => '<p class="comment-form-email">' .
-			'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /> <label for="email">' . __( 'EMAIL', 'easel' ) . '</label></p>',
+			'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /> <label for="email">' . __( '*EMAIL', 'easel' ) . '<small> &mdash; <a href="http://gravatar.com">'. __('Get a Gravatar','easel') . '</a></small></label></p>',
 			'url'    => '<p class="comment-form-url">' .
 			'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> <label for="url">' . __( 'Website URL', 'easel' ) . '</label></p>',
 			);
 	$args = array(
 			'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" name="comment" class="comment-textarea"></textarea></p>', 
-			'comment_notes_after'  => easel_themeinfo('disable_comment_note') ? '' : '<p class="comment-note">' . __('NOTE - You can use these ','easel') . sprintf(('<abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:<br />%s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
+			'comment_notes_after'  => easel_themeinfo('disable_comment_note') ? '' : '<p class="comment-note"><strong>' . __('NOTE - You can use these HTML tags and attributes: ', 'easel') . '</strong><br /><code>' . allowed_tags() . '</code></p>',
 			'title_reply'          => __( 'Comment &not;', 'easel' ),
 			'title_reply_to'       => __( 'Reply to %s &not;','easel' ), 
 			'cancel_reply_link'    => __( 'Cancel reply', 'easel' ),
