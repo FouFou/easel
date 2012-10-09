@@ -136,14 +136,14 @@ add_action('widgets_init', 'easel_register_sidebars');
 if (!function_exists('easel_register_sidebars')) {
 	function easel_register_sidebars() {
 		$widgets_list = array(
-			array('id' => 'left-sidebar', 'name' => __('Left Sidebar', 'easel'), 'description' => 'The sidebar that appears to the left of the content.'),
-			array('id' => 'right-sidebar', 'name' => __('Right Sidebar', 'easel'), 'description' => 'The sidebar that appears to the right of the content.'),
-			array('id' => 'above-header', 'name' => __('Above Header', 'easel'), 'description' => 'This sidebar appears to above all of the site information.  This sidebar is not encased in CSS, you will need to create CSS for it.'),
-			array('id' => 'header', 'name' => __('Header', 'easel'), 'description' => 'This sidebar appears inside the #header block.'),
-			array('id' => 'menubar', 'name' => __('Menubar', 'easel'), 'description' => 'This sidebar is under the header and above the content-wrapper block'),
-			array('id' => 'over-blog', 'name' => __('Over Blog', 'easel'), 'description' => 'This sidebar appears over the blog within the #column .narrowcolumn'),
-			array('id' => 'under-blog', 'name' => __('Under Blog', 'easel'), 'description' => 'This sidebar appears under the blog within the #column .narrowocolumn'),
-			array('id' => 'footer', 'name' => __('Footer', 'easel'), 'description' => 'This sidebar is below the #content-wrapper block at the bottom of the page'),
+			array('id' => 'left-sidebar', 'name' => __('Left Sidebar', 'easel'), 'description' => __('The sidebar that appears to the left of the content.','easel')),
+			array('id' => 'right-sidebar', 'name' => __('Right Sidebar', 'easel'), 'description' => __('The sidebar that appears to the right of the content.','easel')),
+			array('id' => 'above-header', 'name' => __('Above Header', 'easel'), 'description' => __('This sidebar appears to above all of the site information.  This sidebar is not encased in CSS, you will need to create CSS for it.','easel')),
+			array('id' => 'header', 'name' => __('Header', 'easel'), 'description' => __('This sidebar appears inside the #header block.','easel')),
+			array('id' => 'menubar', 'name' => __('Menubar', 'easel'), 'description' => __('This sidebar is under the header and above the content-wrapper block','easel')),
+			array('id' => 'over-blog', 'name' => __('Over Blog', 'easel'), 'description' => __('This sidebar appears over the blog within the #column .narrowcolumn','easel')),
+			array('id' => 'under-blog', 'name' => __('Under Blog', 'easel'), 'description' => __('This sidebar appears under the blog within the #column .narrowocolumn','easel')),
+			array('id' => 'footer', 'name' => __('Footer', 'easel'), 'description' => __('This sidebar is below the #content-wrapper block at the bottom of the page','easel')),
 		);
 		foreach ($widgets_list as $widget_info) {
 			register_sidebar(array(

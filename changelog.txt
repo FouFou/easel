@@ -5,6 +5,7 @@ Added new option(s) to disable the display of the "at time" in posts and enable 
 More cleanups in the comments.php output, including fixing a missing language translation string or two
 Added a new options tab in the Easel Options for Menubar alone, with more Social icon's for the menubar
 Added display:block on #comic
+New register sidebar function code that expands to allow translateable sidebar descriptions
 
 3.1
 Changed the sticky pushpin image to 16px
