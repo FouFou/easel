@@ -9,8 +9,8 @@
 		<?php do_action('easel-subcontent-area-top'); ?>
 <?php
 if (!easel_is_signup() && !easel_sidebars_disabled()) {
-		if (easel_is_layout('2cl,3c,3cl')) get_sidebar('left');
-		if (easel_is_layout('3cl')) get_sidebar('right');
+		if (easel_is_layout('2cl,3c,3cl')) easel_get_sidebar('left');
+		if (easel_is_layout('3cl')) easel_get_sidebar('right');
 }
 ?>
 		<div id="column-head"></div>

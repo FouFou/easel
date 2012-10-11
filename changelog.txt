@@ -1,4 +1,4 @@
-﻿3.1.1
+3.2
 Introducing Flexible Headers, no longer need to set a specific height and width
 Removed the max-width: 100% inside the style.css cause chrome doesn't like it, wasn't really necessary - you just have to make sure you set images to "large" size when adding them inside of posts.
 Added new option(s) to disable the display of the "at time" in posts and enable the display of "last modified" date in the posts.
@@ -6,6 +6,8 @@ More cleanups in the comments.php output, including fixing a missing language tr
 Added a new options tab in the Easel Options for Menubar alone, with more Social icon's for the menubar
 Added display:block on #comic
 New register sidebar function code that expands to allow translateable sidebar descriptions
+added additional clear float inside the easel_get_sidebar function so that it encapsulates properly
+fixed bug with the loop count on home page by removing the filter before each sidebar is displayed (then re-adding it after) 
 
 3.1
 Changed the sticky pushpin image to 16px

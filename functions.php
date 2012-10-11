@@ -8,7 +8,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '3.1.1',
+			'version' => '3.2',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -114,13 +114,18 @@ function easel_init() {
 		if (easel_themeinfo('facebook_like_blog_post'))
 			wp_enqueue_script('easel-facebook', 'http://connect.facebook.net/en_US/all.js#xfbml=1'); // force to the header instead of footer
 			
-		add_filter('pre_get_posts', 'easel_query_change');
-
-		// Set the 'order' of the archive and search & the post count on the home page
-		function easel_query_change($query) {
+		add_filter('pre_get_posts', 'easel_query_change_posts_per_page');
+		// Set the post count on the home page
+		function easel_query_change_posts_per_page($query) {
 			if (is_home()) {
 				$query->set('posts_per_page', easel_themeinfo('home_post_count'));
 			}
+			return $query;
+		}
+		
+		add_filter('pre_get_posts', 'easel_query_change_archive_display_order');
+		// Set the 'order' of the archive and search		
+		function easel_query_change_archive_display_order($query) {
 			if ((is_archive() || is_search()) && !isset($query->query_vars['feed'])) {
 				$archive_display_order = easel_themeinfo('archive_display_order');
 				if (empty($archive_display_order)) $archive_display_order = 'DESC';
@@ -160,14 +165,17 @@ if (!function_exists('easel_register_sidebars')) {
 }
 
 function easel_get_sidebar($location = '') {
+	remove_filter('pre_get_posts', 'easel_query_change_posts_per_page');
 	if (empty($location)) { get_sidebar(); return; }
 	if (file_exists(get_stylesheet_directory().'/sidebar-'.$location.'.php')) {
 		get_sidebar($location);
 	} elseif (is_active_sidebar('sidebar-'.$location)) { ?>
 		<div id="sidebar-<?php echo $location; ?>" class="sidebar">
 			<?php dynamic_sidebar('sidebar-'.$location); ?>
+			<div class="clear"></div>
 		</div>
 	<?php }
+	add_filter('pre_get_posts', 'easel_query_change_posts_per_page');
 }
 
 function easel_is_signup() {
