@@ -1,3 +1,6 @@
+3.2.1 
+Sidebar fix for left and right sidebars using easel_get_sidebar
+
 3.2
 Introducing Flexible Headers, no longer need to set a specific height and width
 Removed the max-width: 100% inside the style.css cause chrome doesn't like it, wasn't really necessary - you just have to make sure you set images to "large" size when adding them inside of posts.

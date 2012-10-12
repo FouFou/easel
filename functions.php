@@ -167,7 +167,7 @@ if (!function_exists('easel_register_sidebars')) {
 function easel_get_sidebar($location = '') {
 	remove_filter('pre_get_posts', 'easel_query_change_posts_per_page');
 	if (empty($location)) { get_sidebar(); return; }
-	if (file_exists(get_stylesheet_directory().'/sidebar-'.$location.'.php')) {
+	if (file_exists(get_template_directory().'/sidebar-'.$location.'.php') || file_exists(get_stylesheet_directory().'/sidebar-'.$location.'.php')) {
 		get_sidebar($location);
 	} elseif (is_active_sidebar('sidebar-'.$location)) { ?>
 		<div id="sidebar-<?php echo $location; ?>" class="sidebar">
