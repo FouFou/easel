@@ -1,3 +1,6 @@
+3.2.2
+Removed extra code inside the index.php file and fixed the pre_get_posts in the functions.php to associate the MAIN QUERY ONLY $query-> properly for posts per page.
+
 3.2.1 
 Sidebar fix for left and right sidebars using easel_get_sidebar
 

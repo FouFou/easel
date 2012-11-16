@@ -117,7 +117,8 @@ function easel_init() {
 		add_filter('pre_get_posts', 'easel_query_change_posts_per_page');
 		// Set the post count on the home page
 		function easel_query_change_posts_per_page($query) {
-			if (is_home()) {
+			if ( $query->is_home() && $query->is_main_query() ) {
+//				$query->set('category__in', '8');
 				$query->set('posts_per_page', easel_themeinfo('home_post_count'));
 			}
 			return $query;
