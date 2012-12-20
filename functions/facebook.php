@@ -15,23 +15,28 @@ function easel_facebook_comic_thumbnail() {
 }
 
 if (!function_exists('easel_add_facebook_meta')) {
-	function easel_add_facebook_meta() { 
+	function easel_add_facebook_meta() {
 		global $post;
-		echo '<meta property="og:url" content="'.get_permalink().'" />'."\r\n";
+		if (!is_front_page() && !is_home()) {
+			echo '<meta property="og:url" content="'.get_permalink().'" />'."\r\n";
+		} else {
+			echo '<meta property="og:url" content="'.home_url().'" />'."\r\n";
+		}
 		echo '<meta property="og:site_name" content="'.get_bloginfo('name').'" />'."\r\n";
 		echo '<meta property="og:type" content="article" />'."\r\n";
 		if (is_single()) {
 			echo '<meta property="og:title" content="'.get_the_title().'" />'."\r\n";
 		}
-		if (is_single() && $post->post_content) {
+		if (!is_front_page()) {
 			$quick_excerpt = esc_attr(get_the_excerpt());
-//			$quick_excerpt = str_replace("\r\n", "  ", $quick_excerpt);
+			//         $quick_excerpt = str_replace("\r\n", "  ", $quick_excerpt);
 			echo '<meta property="og:description" content="'.$quick_excerpt.'" />'."\r\n";
 		} else {
-			echo '<meta property="og:description" content="'.get_bloginfo('description').'" />'."\r\n";			
+			echo '<meta property="og:description" content="'.get_bloginfo('description').'" />'."\r\n";         
 		}
 	}
 }
+
 
 if (easel_themeinfo('facebook_meta'))
 	add_action('wp_head', 'easel_add_facebook_meta');

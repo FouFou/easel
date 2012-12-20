@@ -10,8 +10,8 @@ if (is_category()) {
 	if (isset($wp_query->query_vars['cat'])) $theCatID = (int)$wp_query->query_vars['cat'];	
 }
 
-$count = 'No';
 $count = $wp_query->found_posts;
+if (empty($count)) $count = 'No';
 //	$count = $wp_query->post_count;
 $post = $posts[0]; // Hack. Set $post so that the_date() works
 $title_string = '';

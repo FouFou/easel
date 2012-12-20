@@ -248,14 +248,21 @@ body.layout-2cl #page, body.layout-2cr #page{
 
 .menunav-search {
 	float: left;
-	line-height: 26px;
-	height: 20px;
+	height: 22px;
 	margin-right: 3px;
 }
 
+.menunav-search .s-search {
+	height: 15px;
+}
+
+.menunav-search button {
+	height: 21px;
+}
+
 .menunav-rss {
-	line-height: 26px;
-	padding: 0 5px;
+	line-height: 25px;
+/*	padding: 0 4px; */
 	float: left;
 	display: inline-block;
 	overflow: hidden;
@@ -290,8 +297,9 @@ body.layout-2cl #page, body.layout-2cr #page{
 
 /*Top level menu link items style*/
 .menu ul li a, .footmenu ul li a {
+	line-height: 25px;
 	display: block;
-	padding: 4px 7px 5px;
+	padding: 0 7px;
 	text-decoration: none;
 }
 
@@ -1365,6 +1373,7 @@ table#wp-calendar td {
 /* menunav social icons */
 
 .menunav-social-wrapper {
+	float: right;
 	display: inline-block;
 }
 
@@ -1374,6 +1383,8 @@ table#wp-calendar td {
 	float: left;
 	height: 25px;
 	width: 25px;
+	padding: 0;
+	margin: 0;
 }
 
 .menunav-twitter {

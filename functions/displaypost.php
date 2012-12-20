@@ -208,6 +208,7 @@ if (!function_exists('easel_display_post')) {
 				<div class="entry">
 					<?php easel_display_the_content(); ?>
 					<div class="clear"></div>
+					<?php do_action('comic-transcript'); ?>
 				</div>
 				<?php wp_link_pages(array('before' => '<div class="linkpages"><span class="linkpages-pagetext">Pages:</span> ', 'after' => '</div>', 'next_or_number' => 'number')); ?>
 				<div class="clear"></div>
