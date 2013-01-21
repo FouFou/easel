@@ -1,12 +1,8 @@
 <?php 
 get_header();
 
-if (have_posts()) {
-	while (have_posts()) : the_post();
-		easel_display_post();
-	endwhile;
-	easel_pagination();
-}
+while (have_posts()) : the_post();
+	get_template_part('content', 'page');
+endwhile;
 
 get_footer();
-?>

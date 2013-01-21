@@ -1,4 +1,4 @@
-﻿<?php get_header(); ?>
+<?php get_header(); ?>
 	
 <div class="post type-page post-404">
 	<div class="post-head"></div>

@@ -1,4 +1,4 @@
-﻿Information regarding changes from 2.0.7 to 3.0 are in the changelog.txt file.
+Information regarding changes from 2.0.7 to 3.0 are in the changelog.txt file.
 
 
 

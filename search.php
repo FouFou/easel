@@ -23,7 +23,7 @@ if (have_posts()) :
 	</div>
 	<?php } else {
 		while (have_posts()) : the_post();
-			easel_display_post();
+			get_template_part( 'content', get_post_format() );
 		endwhile;
 	} ?>
 	<div class="clear"></div>

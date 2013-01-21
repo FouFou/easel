@@ -21,14 +21,17 @@ if (!function_exists('easel_display_post_title')) {
 }
 
 if (!function_exists('easel_display_post_thumbnail')) {
-	function easel_display_post_thumbnail() {
+	function easel_display_post_thumbnail($size = 'thumbnail') {
 		global $post, $wp_query;
 		if ($post->post_type == 'post') {
 			$post_thumbnail = '';
 			$link = get_post_meta( $post->ID, 'link', true );
 			if (empty($link)) $link = get_permalink();
 			if ( has_post_thumbnail() ) {
-				$post_thumbnail = "<div class=\"post-image\"><center><a href=\"".$link."\" rel=\"featured-image\" title=\"Link to ".get_the_title()."\">".get_the_post_thumbnail($post->ID, 'large')."</a></center></div>\r\n";
+				if (is_home()) {
+					$post_thumbnail = '<div class="post-image"><center><a href="'.$link.'" rel="featured-image" title="Link to '.get_the_title().'">'.get_the_post_thumbnail($post->ID, $size).'</a></center></div>'."\r\n";
+				} else
+					$post_thumbnail = '<div class="post-image"><center>'.get_the_post_thumbnail($post->ID, $size).'</center></div>'."\r\n";
 			} else {
 				$url_image = get_post_meta($post->ID, 'featured-image', true);
 				if (!empty($url_image)) $post_thumbnail = '<div class="post-image"><center><a href="'.$link.'" rel="featured-image" title="Link to "'.get_the_title().'"><img src="'.$url_image.'" title="'.get_the_title().'" alt="'.get_the_title().'"></a></center></div>'."\r\n";
@@ -199,6 +202,7 @@ if (!function_exists('easel_display_post')) {
 							easel_display_post_date();	easel_display_post_time(); easel_display_modified_date_time();
 							if ($post->post_type == 'post') { edit_post_link(__('Edit','easel'), ' <span class="post-edit">', '</span>'); }
 							easel_display_post_category();
+							if (function_exists('the_ratings') && $post->post_type == 'post') { the_ratings(); }
 							do_action('easel-post-info');
 							do_action('comic-post-info');
 						} ?>

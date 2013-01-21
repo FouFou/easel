@@ -58,9 +58,12 @@ p.attachment {
 }
 
 img {
-/*	max-width: 100%; */
 	padding: 0;
 	margin: 0;
+}
+
+.entry img {
+	max-width: 100%;
 }
 
 small {
@@ -384,13 +387,15 @@ body.layout-2cl #page, body.layout-2cr #page{
 
 #subcontent-wrapper {}
 
-#column {
+#content {
 	float: left;
 	padding: 1px;
+	overflow: hidden;
 }
 
-body.wide #column {
+body.wide #content {
 	float: none;
+	width: 100%;
 }
 
 .narrowcolumn {
@@ -412,7 +417,7 @@ body.wide .narrowcolumn, body.signup .narrowcolumn {
 
 /* Posts Area  */
 
-.type-post, .type-comic { 
+.type-post, .type-comic, .type-page { 
 	margin-bottom: 10px; 
 }
 
@@ -441,7 +446,17 @@ a.post-edit-link {
 	text-align: right;
 }
 
-.post-image {}
+.post-image {
+	margin: 0 auto;
+}
+
+article .post-image {
+	float: left;
+	display: inline-block;
+	padding: 3px 3px 0;
+	border: solid 1px #ccc;
+	margin: 4px;
+}
 
 .post-info {
 	padding-bottom: 5px;
@@ -1593,4 +1608,15 @@ h2.slider-title a:hover, h2.slider-title:hover {
 	display: inline-block;
 	float: left;
 	margin-top: 20px;
+}
+
+/* Hides navigation links and site footer when infinite scroll is active */
+/* .infinite-scroll.neverending #footer */
+.infinite-scroll #navigation, .infinite-scroll #wp-paginav {
+	display: none;
+}
+
+/* Shows the footer again in case all posts have been loaded */
+.infinity-end.neverending #footer {
+	display: block;
 }
