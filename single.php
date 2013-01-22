@@ -6,7 +6,7 @@ if (is_active_sidebar('blog')) get_sidebar('blog');
 if (have_posts()) {
 
 	while (have_posts()) : the_post();
-		if (get_post_type()) {
+		if (get_post_type() !== 'post') {
 			get_template_part('content', get_post_type() );
 		} else
 			get_template_part('content', get_post_format());
@@ -26,4 +26,3 @@ if (have_posts()) {
 }
 
 get_footer();
-?>

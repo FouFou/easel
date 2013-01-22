@@ -46,7 +46,7 @@ if (!function_exists('easel_display_author_gravatar')) {
 		global $post, $wp_query, $is_IE;
 		if (is_page()) return;
 		if (easel_themeinfo('enable_post_author_gravatar')) {
-			$author_get_gravatar = get_avatar(get_the_author_meta('email'), 64, easel_random_default_avatar(get_the_author_meta('email'),get_the_author_meta('display_name')));
+			$author_get_gravatar = get_avatar(get_the_author_meta('email'), 82, easel_random_default_avatar(get_the_author_meta('email'),get_the_author_meta('display_name')));
 			if (!$is_IE) $author_get_gravatar = str_replace('photo', 'photo instant nocorner itxtalt', $author_get_gravatar);
 			$author_gravatar = "<div class=\"post-author-gravatar\">".$author_get_gravatar."</div>\r\n";
 			echo apply_filters('easel_display_author_gravatar', $author_gravatar);

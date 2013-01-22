@@ -73,11 +73,11 @@ body {
 	padding: 3px;
 }
 
-#submit, .type-post, .type-forum, .type-reply, .type-topic, .type-page, .type-comic, .type-showcase, .type-music, .type-attachment, .type-casts, #wp-paginav, .sidebar h2, #comment-wrapper, .blognav, .default-nav, .submit, .feature, .related-comics {
+#submit, .post-info, .type-post, .type-forum, .type-reply, .type-topic, .type-page, .type-comic, .type-showcase, .type-music, .type-attachment, .type-casts, #wp-paginav, .sidebar h2, #comment-wrapper, .blognav, .default-nav, .submit, .feature, .related-comics {
 	background: #eee;
 }
 
-#submit, .post-info, #wp-paginav, .sidebar h2, #comment-wrapper, .blognav, .default-nav, .submit, .feature, .related-comics {
+#submit, footer, .post-info, #wp-paginav, .sidebar h2, #comment-wrapper, .blognav, .default-nav, .submit, .feature, .related-comics {
 	padding: 5px;
 }
 
@@ -424,12 +424,15 @@ body.signup #column {
 	margin-top: -5px;
 }
 
-article .post-image {
+.post-image {
 	border: none;
 	padding: 0;
+	float: left;
+	display: inline-block;
+	margin: 5px;
 }
 
-article .post-image img {
+.post-image img {
 	-moz-box-shadow: 1px 2px 3px #000;
 	-webkit-box-shadow: 1px 2px 3px #000;
 	-khtml-box-shadow: 1px 2px 3px #000;

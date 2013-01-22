@@ -1,5 +1,15 @@
-3.2.2
+3.3
 Removed extra code inside the index.php file and fixed the pre_get_posts in the functions.php to associate the MAIN QUERY ONLY $query-> properly for posts per page.
+removed the use of the function easel_display_post() - now using get_template_part('content' ref: see format types (content.php)
+added format types, which you can 'skin' the post area for the format type that you want to look differently for that particular format
+rewrote the functions.php to stay with the guidelines of the theme review team as well as implement for post formats
+revamped how the featured image thumbnail for regular posts displays
+revamped the display of the .post-info area of posts
+added opengraph information for making a thumbnail for youtube video's 
+css element #column is now #content to stay correctly in tune with other themes
+
+
+
 
 3.2.1 
 Sidebar fix for left and right sidebars using easel_get_sidebar

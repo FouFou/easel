@@ -56,7 +56,7 @@ if (easel_themeinfo('facebook_meta'))
 if (!function_exists('easel_display_facebook_like')) {
 	function easel_display_facebook_like($content) {
 		global $post, $wp_query;
-		if (!is_page()) {
+		if (!is_page() && (get_post_format() !== 'aside')) {
 			$content .= '<div class="facebook-like"><fb:like layout="standard" show_faces="true" href="'.get_permalink().'"></fb:like></div>';
 		}
 		return $content;

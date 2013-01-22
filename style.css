@@ -6,7 +6,7 @@ Description: A very intuitively designed theme that has a very robust set of opt
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
 Tags: Dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready, flexible-header, featured-images
-Version: 3.2.1
+Version: 3.3
 License: GNU General Public License, v3 (or newer)
 License URI: http://www.opensource.org/licenses/gpl-3.0.html
 */
@@ -470,8 +470,9 @@ article .post-image {
 
 .post-author-gravatar {
 	display: inline-block;
-	width: 64px;
+	width: 82px;
 	float: right;
+	margin: 3px;
 }
 
 .post-mood {
@@ -529,10 +530,7 @@ article .post-image {
 	font-size: 12px;
 }
 
-.linkpages {
-	float: right;
-	margin: 5px;
-}
+.linkpages {}
 
 /* Comments */
 

@@ -15,4 +15,4 @@ if (!easel_themeinfo('disable_blog_on_homepage')) {
 
 }
 
-get_footer(); ?>
+get_footer();

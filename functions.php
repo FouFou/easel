@@ -63,9 +63,7 @@ function easel_setup() {
 	add_theme_support('post-thumbnails');
 	add_theme_support('infinite-scroll', array(
 	 	'type'           => 'scroll',
-//		'footer_widgets' => true,
-		'container'      => 'column',
-		'render'         => 'easel_infinite_scroll_loop',
+		'container'      => 'content',
 		'posts_per_page' => easel_themeinfo('home_post_count')
 	) );	
 }
