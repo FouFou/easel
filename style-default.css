@@ -96,11 +96,12 @@ body {
 }
 
 .post-info {
-	padding: 5px 5px 0 5px;
+	padding: 5px 5px 2px 5px;
 	-moz-border-radius: 10px 10px 0 0;
 	-khtml-border-radius: 10px 10px 0 0;
 	-webkit-border-radius: 10px 10px 0 0;
 	border-radius: 10px 10px 0 0;
+	border-bottom: solid 1px #888;
 }
 
 .opera #submit, .opera .searchform button, .opera .submit {
