@@ -66,11 +66,12 @@ function easel_setup() {
 	add_theme_support(
 		'post-formats', 
 		array(
-			'aside'
+//			'link',
 //			'image',
 //			'video',
 //			'quote',
-//			'status'
+//			'status',
+			'aside'
 			)
 		);
 	register_nav_menus(array(
@@ -292,7 +293,7 @@ function easel_clean_filename($filename) {
  * Can either be next or previous post link.
  * chapters is for the comic post type
  */
-/*
+
 function easel_get_adjacent_post_type($previous = true, $taxonomy = 'post', $in_same_chapter = false) {
 	global $post, $wpdb;
 	
@@ -333,7 +334,6 @@ function easel_get_adjacent_post_type($previous = true, $taxonomy = 'post', $in_
 	wp_cache_set($query_key, $result, 'counts');
 	return $result;
 }
-*/
 
 function easel_filter_wp_title( $title ) {
 	global $wp_query, $s, $paged, $page;
@@ -446,7 +446,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '3.2',
+			'version' => '3.3.1',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 

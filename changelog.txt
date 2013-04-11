@@ -1,3 +1,8 @@
+3.3.1
+Uncommented a needed function in the functions.php
+fixed the css for the image in the post info image
+
+
 3.3
 Removed extra code inside the index.php file and fixed the pre_get_posts in the functions.php to associate the MAIN QUERY ONLY $query-> properly for posts per page.
 removed the use of the function easel_display_post() - now using get_template_part('content' ref: see format types (content.php)
