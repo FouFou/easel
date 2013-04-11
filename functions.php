@@ -15,6 +15,15 @@ if (easel_themeinfo('force_active_connection_close'))
 if (easel_themeinfo('menubar_social_icons')) 
 	add_action('easel-menubar-menunav', 'easel_display_social_icons');
 
+if (class_exists('MultiPostThumbnails')) {
+	new MultiPostThumbnails(
+		array(
+			'label' => 'Secondary Image',
+			'id' => 'secondary-image',
+			'post_type' => 'comic'
+			));
+}
+
 global $content_width;
 if ( ! isset( $content_width ) )
 	$content_width = 520;
@@ -54,7 +63,16 @@ function easel_setup() {
 	load_theme_textdomain('easel', get_template_directory().'/lang');
 // 	add_editor_style();
 	add_theme_support('automatic-feed-links');
-	add_theme_support('post-formats', array('aside','image','video','quote','status'));
+	add_theme_support(
+		'post-formats', 
+		array(
+			'aside'
+//			'image',
+//			'video',
+//			'quote',
+//			'status'
+			)
+		);
 	register_nav_menus(array(
 		'Primary' => __('Primary', 'easel'),
 		'Footer' => __('Footer', 'easel')
