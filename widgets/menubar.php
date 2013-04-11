@@ -4,7 +4,7 @@ Widget Name: Menubar Widget (wordpress 3.0 required)
 Widget URI: http://frumph.net/
 Description: Display a calendar of this months posts.
 Author: Philip M. Hofer (Frumph)
-Version: 1.07
+Version: 1.08
 Author URI: http://frumph.net/
 
 */

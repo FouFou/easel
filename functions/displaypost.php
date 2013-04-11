@@ -1,5 +1,41 @@
 <?php
 
+if ( isset( $_GET['latestblogpost'] ) ) 
+	add_action( 'template_redirect', 'easel_latest_blog_post_jump' );
+
+function easel_latest_blog_post_jump() {
+	$catnum = 0;
+	if (isset($_GET['latestblogpost'])) $catnum = (int)esc_attr($_GET['latestblogpost']);
+	if (!empty($catnum)) {
+		$args = array( 
+				'numberposts' => 1, 
+				'post_type' => 'post',
+				'orderby' => 'post_date', 
+				'order' => 'DESC', 
+				'post_status' => 'publish', 
+				'category__in' => array($catnum)
+				);
+		$qposts = get_posts( $args );
+	} else {
+		$args = array( 
+				'numberposts' => 1, 
+				'post_type' => 'post', 
+				'orderby' => 'post_date', 
+				'order' => 'DESC', 
+				'post_status' => 'publish'
+				);
+		$qposts = get_posts( $args );
+	}
+	if (is_array($qposts)) {
+		$qposts = reset($qposts);
+		wp_redirect( get_permalink( $qposts->ID ) );
+	} else {
+		wp_redirect( home_url() );
+	}
+	wp_reset_query();
+	exit;
+}
+
 if (!function_exists('easel_display_post_title')) {
 	function easel_display_post_title() {
 		global $post, $wp_query;
