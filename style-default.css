@@ -34,7 +34,7 @@ body {
 
 #menubar-wrapper {
 	margin: 1px 0 5px auto;
-	padding: 3px 0;
+	padding: 2px 2px 5px 2px;
 	-moz-border-radius: 6px;
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
@@ -77,7 +77,7 @@ body {
 	background: #eee;
 }
 
-#submit, footer, .post-info, #wp-paginav, .sidebar h2, #comment-wrapper, .blognav, .default-nav, .submit, .feature, .related-comics {
+#submit, footer, #wp-paginav, .sidebar h2, #comment-wrapper, .blognav, .default-nav, .submit, .feature, .related-comics {
 	padding: 5px;
 }
 
@@ -93,6 +93,14 @@ body {
 	background: -o-linear-gradient(#eee,#aaa); /* Opera11.10+ */
 	background: -ms-linear-gradient(#eee,#aaa); /* IE10+ */
 	background: linear-gradient(linear, left top, left bottom, from(#eee),to(#aaa)); /* W3C */
+}
+
+.post-info {
+	padding: 5px 5px 0 5px;
+	-moz-border-radius: 10px 10px 0 0;
+	-khtml-border-radius: 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0;
+	border-radius: 10px 10px 0 0;
 }
 
 .opera #submit, .opera .searchform button, .opera .submit {
