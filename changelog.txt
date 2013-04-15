@@ -1,3 +1,6 @@
+3.3.2
+Removed the single-comic.php file, wasn't supposed to be there, causing issues with post types displaying in content files
+
 3.3.1
 Uncommented a needed function in the functions.php
 fixed the css for the image in the post info image
