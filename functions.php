@@ -22,6 +22,7 @@ if (class_exists('MultiPostThumbnails')) {
 			'id' => 'secondary-image',
 			'post_type' => 'comic'
 			));
+	add_image_size('secondary-image');
 }
 
 global $content_width;
@@ -114,16 +115,15 @@ function easel_enqueue_theme_scripts() {
 
 function easel_init() {
 	if (!is_admin()) {
-		add_filter('pre_get_posts', 'easel_query_change_posts_per_page');
+		add_action('pre_get_posts', 'easel_query_change_posts_per_page');
 		// Set the post count on the home page
 		function easel_query_change_posts_per_page($query) {
-			if ( $query->is_home() && $query->is_main_query() ) {
+			if ( $query->is_home() && $query->is_main_query()) {
 //				$query->set('category__in', '8');
 				$query->set('posts_per_page', easel_themeinfo('home_post_count'));
 			}
-			return $query;
 		}
-		add_filter('pre_get_posts', 'easel_query_change_archive_display_order');
+		add_action('pre_get_posts', 'easel_query_change_archive_display_order');
 		// Set the 'order' of the archive and search		
 		function easel_query_change_archive_display_order($query) {
 			if (($query->is_archive() || $query->is_search()) && !isset($query->query_vars['feed'])) {
@@ -131,7 +131,6 @@ function easel_init() {
 				if (empty($archive_display_order)) $archive_display_order = 'DESC';
 				$order = '&order='.$archive_display_order;
 				$query->set('order', $archive_display_order);
-				return $query;
 			}
 		}
 	}	
