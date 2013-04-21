@@ -46,24 +46,16 @@ get_header();
 						<?php } ?>
 					</div>
 					<div class="clear"></div>
-					<div class="userpage-posts">
-						<?php if (have_posts()) { ?>
-							<h3><?php _e('Posts by','easel'); ?> <?php echo $authorname; ?> &not;</h3>
-							<?php // this area is a loop that shows what posts the person has done. ?>
-							<ol>
-									<li><table class="month-table">
-							<?php while (have_posts()) : the_post() ?>
-									<tr><td class="archive-date" align="right"><?php the_time('M j, Y') ?></td><td class="archive-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></td>
-													
-							<?php endwhile; ?>
-									</table></li>
-							</ol>
-							
-							<?php easel_pagination(); ?>
-						<?php } ?>
-					</div>
 				</div>
 				<div class="post-foot"></div>
+	
+						<?php if (have_posts()) { ?>
+							<h3><?php _e('Posts by','easel'); ?> <?php echo $authorname; ?> &not;</h3>
+							<?php while (have_posts()) : the_post() ?>
+								<li><span class="author-archive-date" align="right"><?php the_time('M j, Y') ?></span><span class="author-archive-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></span></li>		
+							<?php endwhile; ?>
+							<?php easel_pagination(); ?>
+						<?php } ?>			
 			</div>
 		<?php } ?>
 

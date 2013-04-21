@@ -1,3 +1,6 @@
+<?php if (is_author()) { ?>
+	<li><span class="author-archive-date" align="right"><?php the_time('M j, Y') ?></span><span class="author-archive-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></span></li>
+<?php } else { ?>
 <?php if (!easel_is_bbpress()) easel_display_blog_navigation(); ?>
 <?php if (!is_home() && !is_archive() && !is_search()) { easel_display_post_thumbnail('large'); ?>
 <div class="clear"></div>
@@ -47,3 +50,4 @@
 </div>
 <?php 
 comments_template('', true);
+<?php } ?>

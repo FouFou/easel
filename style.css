@@ -1173,6 +1173,13 @@ table#wp-calendar td {
 
 /* Archive Year Template */
 
+span.author-archive-date {
+	text-align: right;
+	width: 120px;
+	margin-right: 20px;
+	display: inline-block;
+}
+
 .archive-date {
 	padding: 0 5px 0 0;
 	font-size: 12px;
