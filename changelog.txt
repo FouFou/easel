@@ -3,6 +3,7 @@ Toggle option now available to disable jetpacks infinite scroll and use the ease
 modified the author.php with nopaging = true being sent to the is_author main query to stop the annoying jetpack infinite scrolling to abuse that page
 adjusted CSS in the footer for the footer menu
 added the content-link post format type
+added additional .breadcrumb wrapper under the #breadcrumb-wrapper so it can be spaced, floated or centered as needed.
 
 
 3.3.2
