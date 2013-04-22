@@ -1232,10 +1232,10 @@ span.author-archive-date {
 
 .userpage-posts {
 	margin-top: 20px;
+	padding: 20px;
 }
 
 .userpage-posts ol {
-	margin: 10px 0 0 30px;
 	padding: 0;
 }
 

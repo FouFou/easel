@@ -1,4 +1,5 @@
 <?php 
+remove_action( 'init', 'the_neverending_home_page_init', 10 );
 get_header();
 
 	if(get_query_var('author_name') ) {
@@ -12,6 +13,7 @@ get_header();
 		<div <?php post_class(); ?>>
 			<div class="post-head"></div>
 			<div class="post-content">
+				<div class="entry">
 					<div class="userpage-avatar">
 						<?php echo str_replace('photo', 'photo instant nocorner itxtalt', get_avatar($curauth->user_email, 64, easel_random_default_avatar($curauth->user_email), esc_attr($curauth->display_name, 1))); ?>
 					</div>
@@ -27,7 +29,7 @@ get_header();
 		else
 			$authorname = $curauth->user_login;
 	?>
-							<cite><?php echo $authorname; ?></cite><br />
+							<h2><?php echo $authorname; ?></h2><br />
 							<?php _e('Registered on','easel'); ?> <?php echo date('l \\t\h\e jS \o\f M, Y',strtotime($curauth->user_registered)); ?><br />
 							<br />
 							<?php if (!empty($curauth->user_url)) { ?><?php _e('Website:','easel'); ?> <a href="<?php echo $curauth->user_url; ?>" target="_blank"><?php echo $curauth->user_url; ?></a><br /><?php } ?>
@@ -46,17 +48,23 @@ get_header();
 						<?php } ?>
 					</div>
 					<div class="clear"></div>
-				</div>
-				<div class="post-foot"></div>
-	
-						<?php if (have_posts()) { ?>
-							<h3><?php _e('Posts by','easel'); ?> <?php echo $authorname; ?> &not;</h3>
-							<?php while (have_posts()) : the_post() ?>
-								<li><span class="author-archive-date" align="right"><?php the_time('M j, Y') ?></span><span class="author-archive-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></span></li>		
-							<?php endwhile; ?>
-							<?php easel_pagination(); ?>
-						<?php } ?>			
-			</div>
-		<?php } ?>
 
-<?php get_footer(); ?>
+<?php
+	if (have_posts()) {
+?>
+					<div class="userpage-posts">
+						<h3><?php _e('Posts by','easel'); ?> <?php echo $authorname; ?> &not;</h3>
+						<ol>
+						<?php while (have_posts()) : the_post(); ?>
+							<li><span class="author-archive-date" align="right"><?php the_time('M j, Y') ?></span><span class="author-archive-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></span></li>		
+						<?php endwhile; ?>
+						</ol>
+					</div>
+<?php } ?>
+				</div>
+			</div>
+			<div class="post-foot"></div>
+		</div>
+<?php 
+	}
+get_footer();

@@ -67,11 +67,11 @@ function easel_setup() {
 	add_theme_support(
 		'post-formats', 
 		array(
-//			'link',
 //			'image',
 //			'video',
 //			'quote',
 //			'status',
+			'link',
 			'aside'
 			)
 		);
@@ -131,6 +131,13 @@ function easel_init() {
 				if (empty($archive_display_order)) $archive_display_order = 'DESC';
 				$order = '&order='.$archive_display_order;
 				$query->set('order', $archive_display_order);
+			}
+		}
+		// Make it so that it displays *all* posts by the author within the loop that is in the author.php file
+		add_action('pre_get_posts', 'easel_query_change_author_pages');
+		function easel_query_change_author_pages($query) {
+			if ($query->is_author() && $query->is_main_query()) {
+				$query->set('nopaging', true);
 			}
 		}
 	}	
