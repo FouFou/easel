@@ -220,7 +220,8 @@ body.layout-2cl #page, body.layout-2cr #page{
 	line-height: 25px;
 }
 
-#footer-menubar-wrapper {
+.footmenu {
+	height: 25px;
 	clear:both;
 	display: inline-block;
 	text-transform: uppercase;
