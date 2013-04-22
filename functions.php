@@ -81,11 +81,13 @@ function easel_setup() {
 	));
 	add_theme_support('custom-background');
 	add_theme_support('post-thumbnails');
-	add_theme_support('infinite-scroll', array(
-	 	'type'           => 'scroll',
-		'container'      => 'content',
-		'posts_per_page' => easel_themeinfo('home_post_count')
-	) );	
+	if (easel_themeinfo('enable_jetpack_infinite_scrolling')) {
+		add_theme_support('infinite-scroll', array(
+		 	'type'           => 'scroll',
+			'container'      => 'content',
+			'posts_per_page' => easel_themeinfo('home_post_count')
+		) );
+	}
 }
 
 function easel_enqueue_theme_scripts() {
@@ -434,7 +436,8 @@ function easel_load_options() {
 			'menubar_social_tumblr' => '',
 			'menubar_social_deviantart' => '',
 			'menubar_social_myspace' => '',
-			'menubar_social_email' => ''
+			'menubar_social_email' => '',
+			'enable_jetpack_infinite_scrolling' => false
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
@@ -452,7 +455,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '3.3.1',
+			'version' => '3.3.3',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -466,6 +469,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_themeinfo = array_merge($easel_coreinfo, $easel_addinfo);
 		$easel_themeinfo = array_merge($easel_themeinfo, $easel_options);
 		if (!isset($easel_themeinfo['layout']) || empty($easel_themeinfo['layout']) || ($easel_themeinfo['layout'] == 'standard')) $easel_themeinfo['layout'] = '3c';
+		if (!isset($easel_themeinfo['enable_jetpack_infinite_scrolling']) || empty($easel_themeinfo['enable_jetpack_infinite_scrolling'])) $easel_themeinfo['enable_jetpack_infinite_scrolling'] = false;
 	}
 	if ($whichinfo && $whichinfo !== 'reset')
 		if (isset($easel_themeinfo[$whichinfo])) 

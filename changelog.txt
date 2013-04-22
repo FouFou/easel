@@ -1,3 +1,10 @@
+3.3.3
+Toggle option now available to disable jetpacks infinite scroll and use the easel pagination
+modified the author.php with nopaging = true being sent to the is_author main query to stop the annoying jetpack infinite scrolling to abuse that page
+adjusted CSS in the footer for the footer menu
+added the content-link post format type
+
+
 3.3.2
 Removed the single-comic.php file, wasn't supposed to be there, causing issues with post types displaying in content files
 

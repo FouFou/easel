@@ -11,7 +11,7 @@ function easel_breadcrumbs() {
 	if ( !is_home() && !is_front_page() || is_paged() ) {
 		
 		echo '<div id="breadcrumb-wrapper">';
-		
+		echo '<div class="breadcrumbs">';
 		global $post;
 		$homeLink = home_url();
 		echo '<a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
@@ -100,7 +100,7 @@ function easel_breadcrumbs() {
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
 		}
 		
-		echo '</div>';
+		echo '</div></div>';
 		
 	}
 }
