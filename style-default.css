@@ -433,12 +433,9 @@ body.signup #column {
 	margin-top: -5px;
 }
 
-.post-image {
+.post-content .post-image {
 	border: none;
 	padding: 0;
-	float: left;
-	display: inline-block;
-	margin: 5px;
 }
 
 .post-image img {
