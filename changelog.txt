@@ -1,3 +1,6 @@
+3.3.4
+Two more layouts, 2clw & 2crw  2 column wide at 980px instead of 780px; larger posting area
+
 3.3.3
 Toggle option now available to disable jetpacks infinite scroll and use the easel pagination
 modified the author.php with nopaging = true being sent to the is_author main query to stop the annoying jetpack infinite scrolling to abuse that page
