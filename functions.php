@@ -156,6 +156,7 @@ if (!function_exists('easel_register_sidebars')) {
 			array('id' => 'over-blog', 'name' => __('Over Blog', 'easel'), 'description' => __('This sidebar appears over the blog within the #column .narrowcolumn','easel')),
 			array('id' => 'under-blog', 'name' => __('Under Blog', 'easel'), 'description' => __('This sidebar appears under the blog within the #column .narrowocolumn','easel')),
 			array('id' => 'footer', 'name' => __('Footer', 'easel'), 'description' => __('This sidebar is below the #content-wrapper block at the bottom of the page','easel')),
+			array('id' => '1', 'name' => __('Jetpack Mobile Sidebar', 'easel'), 'description' => __('If the Jetpack Mobile theme is active it will use this sidebar.','easel')),			
 		);
 		foreach ($widgets_list as $widget_info) {
 			register_sidebar(array(

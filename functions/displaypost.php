@@ -202,7 +202,7 @@ if (!function_exists('easel_display_blog_navigation')) {
 if (!function_exists('easel_display_the_content')) {
 	function easel_display_the_content() {
 		global $post, $wp_query;
-		if ((is_archive() || is_search()) && (easel_themeinfo('excerpt_or_content_in_archive') == 'excerpt')) {
+		if ((is_archive() || is_search()) && (easel_themeinfo('excerpt_or_content_in_archive') == 'excerpt') && !easel_is_bbpress()) {
 			do_action('easel-display-the-content-before');
 			the_excerpt();
 			do_action('easel-display-the-content-after');

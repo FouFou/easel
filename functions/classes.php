@@ -130,15 +130,18 @@ function easel_post_class($classes = '') {
 add_filter('comment_class','easel_comment_class');
 
 function easel_comment_class($classes = '') {
+	global $current_user;
 	/*
 	* http://microid.org
 	*/
+	
 	$email = get_comment_author_email();
 	$url = get_comment_author_url();
 	if(!empty($email) && !empty($url)) {
 		$microid = 'microid-mailto+http:sha1:' . sha1(sha1('mailto:'.$email).sha1($url));
 		$classes[] = $microid;
 	}
+	if ($current_user->user_email == $email) $classes[] = 'ucomment';
 	return $classes;
 }
 
