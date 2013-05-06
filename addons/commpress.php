@@ -361,7 +361,7 @@ add_action('easel-post-foot', 'commpress_display_edit_link');
 function commpress_display_edit_link() {
 	global $post;
 	if ($post->post_type == 'casts') {
-		edit_post_link(__('<br />Edit Cast','comiceasel'), '', ''); 
+		edit_post_link(__('<br />Edit Cast','easel'), '', ''); 
 	}
 }
 

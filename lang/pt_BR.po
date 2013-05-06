@@ -1001,27 +1001,27 @@ msgid "Latest Showcase"
 msgstr "Última Vitrine"
 
 #: addons/showcase.php:476
-#@ hybrid-news
+#@ easel
 msgid "Previous Post"
 msgstr "Post Anterior"
 
 #: addons/showcase.php:476
-#@ hybrid-news
+#@ easel
 msgid "Previous"
 msgstr "Anterior"
 
 #: addons/showcase.php:477
-#@ hybrid-news
+#@ easel
 msgid "Pause"
 msgstr "Pausar"
 
 #: addons/showcase.php:478
-#@ hybrid-news
+#@ easel
 msgid "Next Post"
 msgstr "Próximo Post"
 
 #: addons/showcase.php:478
-#@ hybrid-news
+#@ easel
 msgid "Next"
 msgstr "Próximo"
 

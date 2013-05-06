@@ -473,9 +473,9 @@ function showcase_filter_display_slider() {
 			</div>
 
 			<div class="slider-controls">
-				<a class="slider-prev" title="<?php esc_attr_e( 'Previous Post', 'hybrid-news' ); ?>"><?php _e( 'Previous', 'hybrid-news' ); ?></a>
-				<a class="slider-pause" title="<?php esc_attr_e( 'Pause', 'hybrid-news' ); ?>"><?php _e( 'Pause', 'hybrid-news' ); ?></a>
-				<a class="slider-next" title="<?php esc_attr_e( 'Next Post', 'hybrid-news' ); ?>"><?php _e( 'Next', 'hybrid-news' ); ?></a>
+				<a class="slider-prev" title="<?php esc_attr_e( 'Previous Post', 'easel' ); ?>"><?php _e( 'Previous', 'easel' ); ?></a>
+				<a class="slider-pause" title="<?php esc_attr_e( 'Pause', 'easel' ); ?>"><?php _e( 'Pause', 'easel' ); ?></a>
+				<a class="slider-next" title="<?php esc_attr_e( 'Next Post', 'easel' ); ?>"><?php _e( 'Next', 'easel' ); ?></a>
 			</div>
 
 		</div>
