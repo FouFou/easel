@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Easel v3.3.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-05-15 12:25:04+0000\n"
+"PO-Revision-Date: 2013-05-15 12:32:49+0000\n"
 "Last-Translator: frumph <philip@frumph.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -390,7 +390,7 @@ msgid "&lsaquo; Prev"
 msgstr ""
 
 #: addons/commpress.php:364
-#@ comiceasel
+#@ easel
 msgid "<br />Edit Cast"
 msgstr ""
 
@@ -1002,27 +1002,27 @@ msgid "Latest Showcase"
 msgstr ""
 
 #: addons/showcase.php:476
-#@ hybrid-news
+#@ easel
 msgid "Previous Post"
 msgstr ""
 
 #: addons/showcase.php:476
-#@ hybrid-news
+#@ easel
 msgid "Previous"
 msgstr ""
 
 #: addons/showcase.php:477
-#@ hybrid-news
+#@ easel
 msgid "Pause"
 msgstr ""
 
 #: addons/showcase.php:478
-#@ hybrid-news
+#@ easel
 msgid "Next Post"
 msgstr ""
 
 #: addons/showcase.php:478
-#@ hybrid-news
+#@ easel
 msgid "Next"
 msgstr ""
 
