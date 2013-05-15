@@ -5,6 +5,7 @@ body {
 }
 
 #page-wrap {
+	width: 100%;
 	background: url('images/background-overlay.png') top center repeat-x;
 }
 

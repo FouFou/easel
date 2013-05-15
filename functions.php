@@ -479,3 +479,12 @@ function easel_themeinfo($whichinfo = null) {
 			return false;
 	return $easel_themeinfo;
 }
+
+/*
+function geek_add_google_to_head_section() {
+	// replace {+pageid} with your ID of your google page;
+	echo '<link href="https://plus.google.com/{+PageId}" rel="publisher" />'."\r\n";
+}
+	
+add_action('wp_head', 'geek_add_google_to_head_section');
+*/

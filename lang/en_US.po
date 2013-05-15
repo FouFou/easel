@@ -1,17 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Easel v3.1\n"
+"Project-Id-Version: Easel v3.3.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-09-27 18:42:11+0000\n"
-"Last-Translator: admin <mariohackergb@gmail.com>\n"
+"PO-Revision-Date: 2013-05-15 12:25:04+0000\n"
+"Last-Translator: frumph <philip@frumph.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: BRAZIL\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
 "X-Poedit-Basepath: ../\n"
@@ -22,1027 +23,1027 @@ msgstr ""
 #: 404.php:6
 #@ easel
 msgid "Page Not Found"
-msgstr "Página Não Encontrada"
+msgstr ""
 
 #: 404.php:8
 #@ easel
 msgid "Click here to return to the home page"
-msgstr "Clique aqui para retornar à página inicial"
+msgstr ""
 
 #: 404.php:8
 #@ easel
 msgid "or try a search:"
-msgstr "ou tente uma pesquisa:"
+msgstr ""
 
 #: addons/commpress.php:6
 #@ easel
 msgid "Casts"
-msgstr "Elencos"
+msgstr ""
 
 #: addons/commpress.php:7
 #@ easel
 msgid "Cast"
-msgstr "Elenco"
+msgstr ""
 
 #: addons/commpress.php:8
 #: addons/playingnow.php:8
 #: addons/showcase.php:8
 #@ easel
 msgid "Add New"
-msgstr "Adicionar Novo"
+msgstr ""
 
 #: addons/commpress.php:9
 #@ easel
 msgid "Add New Cast"
-msgstr "Adicionar Novo Elenco"
+msgstr ""
 
 #: addons/commpress.php:10
 #@ easel
 msgid "Edit Cast"
-msgstr "Editar Elenco"
+msgstr ""
 
 #: addons/commpress.php:11
 #@ easel
 msgctxt "casts"
 msgid "Edit"
-msgstr "Editar"
+msgstr ""
 
 #: addons/commpress.php:12
 #@ easel
 msgid "New Cast"
-msgstr "Novo Elenco"
+msgstr ""
 
 #: addons/commpress.php:13
 #: addons/commpress.php:17
 #@ easel
 msgid "View Cast"
-msgstr "Visualizar Elenco"
+msgstr ""
 
 #: addons/commpress.php:14
 #@ easel
 msgid "Search Casts"
-msgstr "Pesquisar Elencos"
+msgstr ""
 
 #: addons/commpress.php:15
 #@ easel
 msgid "No casts found"
-msgstr "Nenhum cast encontrado"
+msgstr ""
 
 #: addons/commpress.php:16
 #@ easel
 msgid "No casts found in Trash"
-msgstr "Nenhum cast encontrado na Lixeira"
+msgstr ""
 
 #: addons/commpress.php:39
 #@ easel
 msgid "Tags"
-msgstr "Tags"
+msgstr ""
 
 #: addons/commpress.php:40
 #@ easel
 msgid "Tag"
-msgstr "Tag"
+msgstr ""
 
 #: addons/commpress.php:41
 #@ easel
 msgid "Search Tags"
-msgstr "Tags de Pesquisa"
+msgstr ""
 
 #: addons/commpress.php:42
 #@ easel
 msgid "Popular Tags"
-msgstr "Tags Populares"
+msgstr ""
 
 #: addons/commpress.php:43
 #@ easel
 msgid "All Tags"
-msgstr "Todas as Tags"
+msgstr ""
 
 #: addons/commpress.php:44
 #@ easel
 msgid "Parent Tag"
-msgstr "Tag Pai"
+msgstr ""
 
 #: addons/commpress.php:45
 #@ easel
 msgid "Parent Tag:"
-msgstr "Tag Pai:"
+msgstr ""
 
 #: addons/commpress.php:46
 #@ easel
 msgid "Edit Tag"
-msgstr "Editar Tag"
+msgstr ""
 
 #: addons/commpress.php:47
 #@ easel
 msgid "Update Tag"
-msgstr "Atualizar Tag"
+msgstr ""
 
 #: addons/commpress.php:48
 #@ easel
 msgid "Add New Tag"
-msgstr "Adicionar Nova Tag"
+msgstr ""
 
 #: addons/commpress.php:49
 #@ easel
 msgid "New Tag Name"
-msgstr "Nome da Nova Tag"
+msgstr ""
 
 #: addons/commpress.php:63
 #@ easel
 msgid "Guests"
-msgstr "Convidados"
+msgstr ""
 
 #: addons/commpress.php:64
 #@ easel
 msgid "Guest"
-msgstr "Convidado"
+msgstr ""
 
 #: addons/commpress.php:65
 #@ easel
 msgid "Search Guests"
-msgstr "Pesquisar Convidados"
+msgstr ""
 
 #: addons/commpress.php:66
 #@ easel
 msgid "Popular Guests"
-msgstr "Convidado Populares"
+msgstr ""
 
 #: addons/commpress.php:67
 #@ easel
 msgid "All Guests"
-msgstr "Todos Convidado"
+msgstr ""
 
 #: addons/commpress.php:68
 #@ easel
 msgid "Parent Guest"
-msgstr "Convidado Pai"
+msgstr ""
 
 #: addons/commpress.php:69
 #@ easel
 msgid "Parent Guest:"
-msgstr "Convidado Pai:"
+msgstr ""
 
 #: addons/commpress.php:70
 #@ easel
 msgid "Edit Guest"
-msgstr "Editar Convidado"
+msgstr ""
 
 #: addons/commpress.php:71
 #@ easel
 msgid "Update Guest"
-msgstr "Atualizar Convidado"
+msgstr ""
 
 #: addons/commpress.php:72
 #@ easel
 msgid "Add New Guest"
-msgstr "Adicionar Novo Convidado"
+msgstr ""
 
 #: addons/commpress.php:73
 #@ easel
 msgid "New Guest Name"
-msgstr "Nome do Novo Convidado"
+msgstr ""
 
 #: addons/commpress.php:87
 #: addons/commpress.php:88
 #@ easel
 msgid "Audience"
-msgstr "Audiência"
+msgstr ""
 
 #: addons/commpress.php:89
 #@ easel
 msgid "Search Audience"
-msgstr "Pesquisar Audiência"
+msgstr ""
 
 #: addons/commpress.php:90
 #@ easel
 msgid "Popular Audience"
-msgstr "Audiência Popular"
+msgstr ""
 
 #: addons/commpress.php:91
 #@ easel
 msgid "All Audience"
-msgstr "Todas as Audiências"
+msgstr ""
 
 #: addons/commpress.php:92
 #@ easel
 msgid "Parent Audience"
-msgstr "Audiência Pai"
+msgstr ""
 
 #: addons/commpress.php:93
 #@ easel
 msgid "Parent Audience:"
-msgstr "Audiência Pai:"
+msgstr ""
 
 #: addons/commpress.php:94
 #@ easel
 msgid "Edit Audience"
-msgstr "Editar Audiência"
+msgstr ""
 
 #: addons/commpress.php:95
 #@ easel
 msgid "Update Audience"
-msgstr "Atualizar Audiência"
+msgstr ""
 
 #: addons/commpress.php:96
 #@ easel
 msgid "Add New Audience"
-msgstr "Adicionar Nova Audiência"
+msgstr ""
 
 #: addons/commpress.php:97
 #@ easel
 msgid "New Audience Name"
-msgstr "Nome da Nova Audiência"
+msgstr ""
 
 #: addons/commpress.php:111
 #@ easel
 msgid "Hosts"
-msgstr "Anfitriões"
+msgstr ""
 
 #: addons/commpress.php:112
 #@ easel
 msgid "Host"
-msgstr "Anfitrião"
+msgstr ""
 
 #: addons/commpress.php:113
 #@ easel
 msgid "Search Hosts"
-msgstr "Pesquisar Anfitrião"
+msgstr ""
 
 #: addons/commpress.php:114
 #@ easel
 msgid "Popular Host"
-msgstr "Anfitriões Populares"
+msgstr ""
 
 #: addons/commpress.php:115
 #@ easel
 msgid "All Hosts"
-msgstr "Todos os Anfitriões"
+msgstr ""
 
 #: addons/commpress.php:116
 #@ easel
 msgid "Parent Host"
-msgstr "Anfitrião Pai"
+msgstr ""
 
 #: addons/commpress.php:117
 #@ easel
 msgid "Parent Host:"
-msgstr "Anfitrião Pai:"
+msgstr ""
 
 #: addons/commpress.php:118
 #@ easel
 msgid "Edit Host"
-msgstr "Editar Anfitrião"
+msgstr ""
 
 #: addons/commpress.php:119
 #@ easel
 msgid "Update Host"
-msgstr "Atualizar Anfitrião"
+msgstr ""
 
 #: addons/commpress.php:120
 #@ easel
 msgid "Add New Host"
-msgstr "Adicionar Novo Anfitrião"
+msgstr ""
 
 #: addons/commpress.php:121
 #@ easel
 msgid "New Host Name"
-msgstr "Nome do Novo Anfitrião"
+msgstr ""
 
 #: addons/commpress.php:135
 #: addons/commpress.php:136
 #@ easel
 msgid "Show"
-msgstr "Exibição"
+msgstr ""
 
 #: addons/commpress.php:137
 #@ easel
 msgid "Search Shows"
-msgstr "Pesquisar Exibições"
+msgstr ""
 
 #: addons/commpress.php:138
 #@ easel
 msgid "Popular Shows"
-msgstr "Exibições Populares"
+msgstr ""
 
 #: addons/commpress.php:139
 #@ easel
 msgid "All Shows"
-msgstr "Todas Exibições"
+msgstr ""
 
 #: addons/commpress.php:140
 #@ easel
 msgid "Parent Show"
-msgstr "Exibição Pai"
+msgstr ""
 
 #: addons/commpress.php:141
 #@ easel
 msgid "Parent Show:"
-msgstr "Exibição Pai:"
+msgstr ""
 
 #: addons/commpress.php:142
 #@ easel
 msgid "Edit Show"
-msgstr "Editar Exibição"
+msgstr ""
 
 #: addons/commpress.php:143
 #@ easel
 msgid "Update Show"
-msgstr "Atualizar Exibição"
+msgstr ""
 
 #: addons/commpress.php:144
 #@ easel
 msgid "Add New Show"
-msgstr "Adicionar Nova Exibição"
+msgstr ""
 
 #: addons/commpress.php:145
 #@ easel
 msgid "New Show Name"
-msgstr "Nome da Nova Exibição"
+msgstr ""
 
 #: addons/commpress.php:235
-#: functions/displaypost.php:104
+#: functions/displaypost.php:164
 #@ easel
 msgid "&#9492; Tags: "
-msgstr "&#9492; Tags: "
+msgstr ""
 
 #: addons/commpress.php:337
 #@ easel
 msgid "&lsaquo;&lsaquo; First"
-msgstr "&lsaquo;&lsaquo; Primeiro"
+msgstr ""
 
 #: addons/commpress.php:339
 #@ easel
 msgid "Last &rsaquo;&rsaquo;"
-msgstr "Último &rsaquo;&rsaquo;"
+msgstr ""
 
 #: addons/commpress.php:341
-#: functions/displaypost.php:132
+#: functions/displaypost.php:192
 #@ easel
 msgid "Next &rsaquo;"
-msgstr "Próximo &rsaquo;"
+msgstr ""
 
 #: addons/commpress.php:343
-#: functions/displaypost.php:131
+#: functions/displaypost.php:191
 #@ easel
 msgid "&lsaquo; Prev"
-msgstr "&lsaquo; Ant"
+msgstr ""
 
 #: addons/commpress.php:364
 #@ comiceasel
 msgid "<br />Edit Cast"
-msgstr "<br />Editar Elenco"
+msgstr ""
 
 #: addons/commpress.php:374
 #@ easel
 msgid "Display a list of the latest Media Casts"
-msgstr "Exibir uma lista das últimas Mídias Transmitidas"
+msgstr ""
 
 #: addons/commpress.php:375
 #@ easel
 msgid "Latest Media Casts"
-msgstr "Últimas Mídias Transmitidas"
+msgstr ""
 
 #: addons/commpress.php:384
 #@ easel
 msgid "Latest Media Cast"
-msgstr "Última Mídia Transmitida"
+msgstr ""
 
 #: addons/commpress.php:407
 #: addons/playingnow.php:130
 #: addons/showcase.php:413
 #: widgets/classicbookmark.php:136
 #: widgets/controlpanel.php:68
-#: widgets/menubar.php:73
+#: widgets/menubar.php:74
 #: widgets/randompostlink.php:61
 #: widgets/scheduledposts.php:49
 #: widgets/translator.php:44
 #@ easel
 msgid "Title:"
-msgstr "Título:"
+msgstr ""
 
 #: addons/membersonly.php:51
 #@ easel
 msgid "Member of"
-msgstr "Membro de"
+msgstr ""
 
 #: addons/membersonly.php:54
 #@ easel
 msgid "Member?"
-msgstr "Membro?"
+msgstr ""
 
 #: addons/page-options.php:23
 #@ easel
 msgid "Easel Page Options"
-msgstr "Página de Opções do Easel"
+msgstr ""
 
 #: addons/playingnow.php:6
 #@ easel
 msgid "Music List"
-msgstr "Lista de Músicas"
+msgstr ""
 
 #: addons/playingnow.php:7
 #@ easel
 msgid "Music"
-msgstr "Música"
+msgstr ""
 
 #: addons/playingnow.php:9
 #@ easel
 msgid "Add New Music"
-msgstr "Adicionar Nova Música"
+msgstr ""
 
 #: addons/playingnow.php:10
 #@ easel
 msgid "Edit Music"
-msgstr "Editar Música"
+msgstr ""
 
 #: addons/playingnow.php:11
 #: addons/showcase.php:11
 #: functions/comment-functions.php:141
-#: functions/displaypost.php:179
+#: functions/displaypost.php:239
 #@ easel
 msgid "Edit"
-msgstr "Editar"
+msgstr ""
 
 #: addons/playingnow.php:12
 #@ easel
 msgid "New Music"
-msgstr "Nova Música"
+msgstr ""
 
 #: addons/playingnow.php:13
 #: addons/playingnow.php:17
 #@ easel
 msgid "View Music"
-msgstr "Visualizar Música"
+msgstr ""
 
 #: addons/playingnow.php:14
 #@ easel
 msgid "Search Music"
-msgstr "Pesquisar Músicas"
+msgstr ""
 
 #: addons/playingnow.php:15
 #@ easel
 msgid "No Music found"
-msgstr "Nenhuma Música encontrada"
+msgstr ""
 
 #: addons/playingnow.php:16
 #@ easel
 msgid "No Music found in Trash"
-msgstr "Nenhuma Música encontrada na Lixeira"
+msgstr ""
 
 #: addons/playingnow.php:36
 #: addons/playingnow.php:37
 #@ easel
 msgid "Group"
-msgstr "Grupo"
+msgstr ""
 
 #: addons/playingnow.php:38
 #@ easel
 msgid "Search Groups"
-msgstr "Pesquisar Grupos"
+msgstr ""
 
 #: addons/playingnow.php:39
 #@ easel
 msgid "Popular Groups"
-msgstr "Grupos Populares"
+msgstr ""
 
 #: addons/playingnow.php:40
 #@ easel
 msgid "All Groups"
-msgstr "Todos os Grupos"
+msgstr ""
 
 #: addons/playingnow.php:41
 #@ easel
 msgid "Parent Group"
-msgstr "Grupo Pai"
+msgstr ""
 
 #: addons/playingnow.php:42
 #@ easel
 msgid "Parent Group:"
-msgstr "Grupo Pai:"
+msgstr ""
 
 #: addons/playingnow.php:43
 #@ easel
 msgid "Edit Group"
-msgstr "Editar Grupo"
+msgstr ""
 
 #: addons/playingnow.php:44
 #@ easel
 msgid "Update Group"
-msgstr "Atualizar Grupo"
+msgstr ""
 
 #: addons/playingnow.php:45
 #@ easel
 msgid "Add New Group"
-msgstr "Adicionar Novo Grupo"
+msgstr ""
 
 #: addons/playingnow.php:46
 #@ easel
 msgid "New Group Name"
-msgstr "Nome do Novo Grupo"
+msgstr ""
 
 #: addons/playingnow.php:80
 #@ easel
 msgid "<br />Edit this Music."
-msgstr "<br />Editar esta Música."
+msgstr ""
 
 #: addons/playingnow.php:97
 #: addons/showcase.php:380
 #@ easel
 msgid "Display a list of the latest showcase comics"
-msgstr "Exibe uma lista dos últimas vitrines de quadrinhos"
+msgstr ""
 
 #: addons/playingnow.php:98
 #: addons/playingnow.php:107
 #@ easel
 msgid "Latest Music"
-msgstr "Última Música"
+msgstr ""
 
 #: addons/showcase.php:6
 #@ easel
 msgid "Showcase List"
-msgstr "Lista de Vitrines"
+msgstr ""
 
 #: addons/showcase.php:7
 #@ easel
 msgid "Showcase"
-msgstr "Vitrine"
+msgstr ""
 
 #: addons/showcase.php:9
 #@ easel
 msgid "Add New Showcase"
-msgstr "Adicionar Nova Vitrine"
+msgstr ""
 
 #: addons/showcase.php:10
 #@ easel
 msgid "Edit Showcase"
-msgstr "Editar Vitrine"
+msgstr ""
 
 #: addons/showcase.php:12
 #@ easel
 msgid "New Showcase"
-msgstr "Nova Vitrine"
+msgstr ""
 
 #: addons/showcase.php:13
 #: addons/showcase.php:17
 #@ easel
 msgid "View Showcase"
-msgstr "Visualizar Vitrine"
+msgstr ""
 
 #: addons/showcase.php:14
 #@ easel
 msgid "Search Showcases"
-msgstr "Pesquisar Vitrines"
+msgstr ""
 
 #: addons/showcase.php:15
 #@ easel
 msgid "No Showcases found"
-msgstr "Nenhuma Vitrine encontrada"
+msgstr ""
 
 #: addons/showcase.php:16
 #@ easel
 msgid "No howcases found in Trash"
-msgstr "Nenhuma vitrine encontrada na Lixeira"
+msgstr ""
 
 #: addons/showcase.php:38
 #@ easel
 msgid "Genres"
-msgstr "Gêneros"
+msgstr ""
 
 #: addons/showcase.php:39
 #@ easel
 msgid "Genre"
-msgstr "Gênero"
+msgstr ""
 
 #: addons/showcase.php:40
 #@ easel
 msgid "Search Genres"
-msgstr "Pesquisar Gênero"
+msgstr ""
 
 #: addons/showcase.php:41
 #@ easel
 msgid "Popular Genres"
-msgstr "Gêneros Populares"
+msgstr ""
 
 #: addons/showcase.php:42
 #@ easel
 msgid "All Genres"
-msgstr "Todos os Gêneros"
+msgstr ""
 
 #: addons/showcase.php:43
 #@ easel
 msgid "Parent Genre"
-msgstr "Gênero Pai"
+msgstr ""
 
 #: addons/showcase.php:44
 #@ easel
 msgid "Parent Genre:"
-msgstr "Gênero Pai:"
+msgstr ""
 
 #: addons/showcase.php:45
 #@ easel
 msgid "Edit Genre"
-msgstr "Editar Gênero"
+msgstr ""
 
 #: addons/showcase.php:46
 #@ easel
 msgid "Update Genre"
-msgstr "Atualizar Gênero"
+msgstr ""
 
 #: addons/showcase.php:47
 #@ easel
 msgid "Add New Genre"
-msgstr "Adicionar Novo Gênero"
+msgstr ""
 
 #: addons/showcase.php:48
 #@ easel
 msgid "New Genre Name"
-msgstr "Nome do Novo Gênero"
+msgstr ""
 
 #: addons/showcase.php:62
 #@ easel
 msgid "Styles"
-msgstr "Estilos"
+msgstr ""
 
 #: addons/showcase.php:63
 #@ easel
 msgid "Style"
-msgstr "Estilo"
+msgstr ""
 
 #: addons/showcase.php:64
 #@ easel
 msgid "Search Styles"
-msgstr "Pesquisar Estilos"
+msgstr ""
 
 #: addons/showcase.php:65
 #@ easel
 msgid "Popular Styles"
-msgstr "Estilos Populares"
+msgstr ""
 
 #: addons/showcase.php:66
 #@ easel
 msgid "All Styles"
-msgstr "Todos os Estilos"
+msgstr ""
 
 #: addons/showcase.php:67
 #@ easel
 msgid "Parent Style"
-msgstr "Estilo Pai"
+msgstr ""
 
 #: addons/showcase.php:68
 #@ easel
 msgid "Parent Style:"
-msgstr "Estilo Pai:"
+msgstr ""
 
 #: addons/showcase.php:69
 #@ easel
 msgid "Edit Style"
-msgstr "Editar Estilo"
+msgstr ""
 
 #: addons/showcase.php:70
 #@ easel
 msgid "Update Style"
-msgstr "Atualizar Estilo"
+msgstr ""
 
 #: addons/showcase.php:71
 #@ easel
 msgid "Add New Style"
-msgstr "Adicionar Novo Estilo"
+msgstr ""
 
 #: addons/showcase.php:72
 #@ easel
 msgid "New Style Name"
-msgstr "Nome do Novo Estilo"
+msgstr ""
 
 #: addons/showcase.php:86
 #@ easel
 msgid "Authors"
-msgstr "Autores"
+msgstr ""
 
 #: addons/showcase.php:87
 #@ easel
 msgid "Author"
-msgstr "Autor"
+msgstr ""
 
 #: addons/showcase.php:88
 #@ easel
 msgid "Search Authors"
-msgstr "Pesquisar Autor"
+msgstr ""
 
 #: addons/showcase.php:89
 #@ easel
 msgid "Popular Authors"
-msgstr "Autores Populares"
+msgstr ""
 
 #: addons/showcase.php:90
 #@ easel
 msgid "All Authors"
-msgstr "Todos os Autores"
+msgstr ""
 
 #: addons/showcase.php:91
 #@ easel
 msgid "Parent Author"
-msgstr "Autor Pai"
+msgstr ""
 
 #: addons/showcase.php:92
 #@ easel
 msgid "Parent Author:"
-msgstr "Autor Pai:"
+msgstr ""
 
 #: addons/showcase.php:93
 #@ easel
 msgid "Edit Author"
-msgstr "Editar Autor"
+msgstr ""
 
 #: addons/showcase.php:94
 #@ easel
 msgid "Update Author"
-msgstr "Atualizar Autor"
+msgstr ""
 
 #: addons/showcase.php:95
 #@ easel
 msgid "Add New Author"
-msgstr "Adicionar Novo Autor"
+msgstr ""
 
 #: addons/showcase.php:96
 #@ easel
 msgid "New Author Name"
-msgstr "Nome do Novo Autor"
+msgstr ""
 
 #: addons/showcase.php:110
 #@ easel
 msgid "Languages"
-msgstr "Línguas"
+msgstr ""
 
 #: addons/showcase.php:111
 #@ easel
 msgid "Language"
-msgstr "Língua"
+msgstr ""
 
 #: addons/showcase.php:112
 #@ easel
 msgid "Search Languages"
-msgstr "Pesquisar Línguas"
+msgstr ""
 
 #: addons/showcase.php:113
 #@ easel
 msgid "Popular Languages"
-msgstr "Línguas Populares"
+msgstr ""
 
 #: addons/showcase.php:114
 #@ easel
 msgid "All Languages"
-msgstr "Todas as Línguas"
+msgstr ""
 
 #: addons/showcase.php:115
 #@ easel
 msgid "Parent Language"
-msgstr "Língua Pai"
+msgstr ""
 
 #: addons/showcase.php:116
 #@ easel
 msgid "Parent Language:"
-msgstr "Língua Pai:"
+msgstr ""
 
 #: addons/showcase.php:117
 #@ easel
 msgid "Edit Language"
-msgstr "Editar Língua"
+msgstr ""
 
 #: addons/showcase.php:118
 #@ easel
 msgid "Update Language"
-msgstr "Atualizar Língua"
+msgstr ""
 
 #: addons/showcase.php:119
 #@ easel
 msgid "Add New Language"
-msgstr "Adicionar Nova Língua"
+msgstr ""
 
 #: addons/showcase.php:120
 #@ easel
 msgid "New Language"
-msgstr "Nova Língua"
+msgstr ""
 
 #: addons/showcase.php:134
 #@ easel
 msgid "Designers"
-msgstr "Designers"
+msgstr ""
 
 #: addons/showcase.php:135
 #@ easel
 msgid "Designer"
-msgstr "Designer"
+msgstr ""
 
 #: addons/showcase.php:136
 #@ easel
 msgid "Search Designers"
-msgstr "Pesquisar Designers"
+msgstr ""
 
 #: addons/showcase.php:137
 #@ easel
 msgid "Popular Designers"
-msgstr "Designers Populares"
+msgstr ""
 
 #: addons/showcase.php:138
 #@ easel
 msgid "All Designers"
-msgstr "Todos os Designers"
+msgstr ""
 
 #: addons/showcase.php:139
 #@ easel
 msgid "Parent Designer"
-msgstr "Designer Pai"
+msgstr ""
 
 #: addons/showcase.php:140
 #@ easel
 msgid "Parent Designer:"
-msgstr "Designer Pai:"
+msgstr ""
 
 #: addons/showcase.php:141
 #@ easel
 msgid "Edit Designer"
-msgstr "Editar Designer"
+msgstr ""
 
 #: addons/showcase.php:142
 #@ easel
 msgid "Update Designer"
-msgstr "Atualizar Designer"
+msgstr ""
 
 #: addons/showcase.php:143
 #@ easel
 msgid "Add New Designer"
-msgstr "Adicionar Novo Designer"
+msgstr ""
 
 #: addons/showcase.php:144
 #@ easel
 msgid "New Designer Name"
-msgstr "Nome do Novo Designer"
+msgstr ""
 
 #: addons/showcase.php:158
 #@ easel
 msgid "CMS Used"
-msgstr "CMS Usado"
+msgstr ""
 
 #: addons/showcase.php:159
 #@ easel
 msgid "CMS"
-msgstr "CMS"
+msgstr ""
 
 #: addons/showcase.php:160
 #@ easel
 msgid "Search CMS's"
-msgstr "Pesquisar CMS's"
+msgstr ""
 
 #: addons/showcase.php:161
 #@ easel
 msgid "Popular CMS's"
-msgstr "CMS's Populares"
+msgstr ""
 
 #: addons/showcase.php:162
 #@ easel
 msgid "All CMS's"
-msgstr "Todos os CMS's"
+msgstr ""
 
 #: addons/showcase.php:163
 #@ easel
 msgid "Parent CMS"
-msgstr "CMS Pai"
+msgstr ""
 
 #: addons/showcase.php:164
 #@ easel
 msgid "Parent CMS:"
-msgstr "CMS Pai:"
+msgstr ""
 
 #: addons/showcase.php:165
 #@ easel
 msgid "Edit CMS"
-msgstr "Editar CMS"
+msgstr ""
 
 #: addons/showcase.php:166
 #@ easel
 msgid "Update CMS"
-msgstr "Atualizar CMS"
+msgstr ""
 
 #: addons/showcase.php:167
 #@ easel
 msgid "Add New CMS"
-msgstr "Adicionar Novo CMS"
+msgstr ""
 
 #: addons/showcase.php:168
 #@ easel
 msgid "New CMS Name"
-msgstr "Nome do Novo CMS"
+msgstr ""
 
 #: addons/showcase.php:182
 #@ easel
 msgid "Twitter Names"
-msgstr "Nome dos Twitters"
+msgstr ""
 
 #: addons/showcase.php:183
 #@ easel
 msgid "Twitter User"
-msgstr "Usuário do Twitter"
+msgstr ""
 
 #: addons/showcase.php:184
 #@ easel
 msgid "Search Twitter Users"
-msgstr "Pesquisar Usuários do Twitter"
+msgstr ""
 
 #: addons/showcase.php:185
 #@ easel
 msgid "Popular Twitter Users"
-msgstr "Usuários do Twitter Populares"
+msgstr ""
 
 #: addons/showcase.php:186
 #@ easel
 msgid "All Twitter Users"
-msgstr "Todos os Usuários do Twitter"
+msgstr ""
 
 #: addons/showcase.php:187
 #@ easel
 msgid "Parent Twitter"
-msgstr "Twitter Pai"
+msgstr ""
 
 #: addons/showcase.php:188
 #@ easel
 msgid "Parent Twitter:"
-msgstr "Twitter Pai:"
+msgstr ""
 
 #: addons/showcase.php:189
 #@ easel
 msgid "Edit Twitter Name"
-msgstr "Editar Nome do Twitter"
+msgstr ""
 
 #: addons/showcase.php:190
 #@ easel
 msgid "Update Twitter Name"
-msgstr "Atualizar Nome do Twitter"
+msgstr ""
 
 #: addons/showcase.php:191
 #@ easel
 msgid "Add New Twitter Name"
-msgstr "Adicionar Novo Nome de Twitter"
+msgstr ""
 
 #: addons/showcase.php:192
 #@ easel
 msgid "New Twitter Name"
-msgstr "Nome do Novo Twitter"
+msgstr ""
 
 #: addons/showcase.php:249
 #@ easel
 msgid "<br />Edit this showcase."
-msgstr "<br />Editar esta vitrine."
+msgstr ""
 
 #: addons/showcase.php:381
 #: addons/showcase.php:390
 #@ easel
 msgid "Latest Showcase"
-msgstr "Última Vitrine"
+msgstr ""
 
 #: addons/showcase.php:476
 #@ hybrid-news
 msgid "Previous Post"
-msgstr "Post Anterior"
+msgstr ""
 
 #: addons/showcase.php:476
 #@ hybrid-news
 msgid "Previous"
-msgstr "Anterior"
+msgstr ""
 
 #: addons/showcase.php:477
 #@ hybrid-news
 msgid "Pause"
-msgstr "Pausar"
+msgstr ""
 
 #: addons/showcase.php:478
 #@ hybrid-news
 msgid "Next Post"
-msgstr "Próximo Post"
+msgstr ""
 
 #: addons/showcase.php:478
 #@ hybrid-news
 msgid "Next"
-msgstr "Próximo"
+msgstr ""
 
 #: addons/wp-rewrite.php:48
 #@ easel
 msgid "Easel - Rewrite Rules Updated!"
-msgstr "Easel - Regras Regraváveis Atualizadas!"
+msgstr ""
 
 #: archive-year.php:38
 #: archive.php:54
 #: search.php:18
 #@ easel
 msgid "Permanent Link:"
-msgstr "Link Permanente:"
+msgstr ""
 
 #: archive-year.php:43
-#: functions/displaypost.php:203
-#: template.php:24
+#: content-page.php:21
+#: functions/displaypost.php:265
 #@ easel
 msgid "Edit this page."
-msgstr "Editar esta página."
+msgstr ""
 
 #: archive.php:19
 #: archive.php:23
@@ -1053,27 +1054,27 @@ msgstr "Editar esta página."
 #: archive.php:39
 #@ easel
 msgid "Archive for "
-msgstr "Arquivo para "
+msgstr ""
 
 #: archive.php:21
 #@ easel
 msgid "Posts Tagged "
-msgstr "Posts Tagueados "
+msgstr ""
 
 #: archive.php:29
 #@ easel
 msgid "Author Archive "
-msgstr "Arquivo do Autor "
+msgstr ""
 
 #: archive.php:31
 #@ easel
 msgid "Archives"
-msgstr "Arquivos"
+msgstr ""
 
 #: archive.php:41
 #@ easel
 msgid "Archive is unable to be found."
-msgstr "Arquivo não pôde ser encontrado."
+msgstr ""
 
 #: archive.php:45
 #: archive.php:71
@@ -1082,1324 +1083,1549 @@ msgstr "Arquivo não pôde ser encontrado."
 #@ easel
 msgid "%d result."
 msgid_plural "%d results."
-msgstr[0] "%d resultado."
-msgstr[1] "%d resultados."
+msgstr[0] ""
+msgstr[1] ""
 
-#: author.php:10
+#: author.php:11
 #@ easel
 msgid "No such author."
-msgstr "Autor não existe."
-
-#: author.php:31
-#@ easel
-msgid "Registered on"
-msgstr "Registrado"
+msgstr ""
 
 #: author.php:33
 #@ easel
-msgid "Website:"
-msgstr "Website:"
-
-#: author.php:34
-#@ easel
-msgid "AIM:"
-msgstr "AIM:"
+msgid "Registered on"
+msgstr ""
 
 #: author.php:35
 #@ easel
-msgid "Jabber/Google Talk:"
-msgstr "Jabber/Google Talk:"
+msgid "Website:"
+msgstr ""
 
 #: author.php:36
 #@ easel
-msgid "Yahoo IM:"
-msgstr "Yahoo IM:"
+msgid "AIM:"
+msgstr ""
 
 #: author.php:37
 #@ easel
-msgid "Twitter:"
-msgstr "Twitter:"
+msgid "Jabber/Google Talk:"
+msgstr ""
 
 #: author.php:38
 #@ easel
-msgid "Facebook:"
-msgstr "Facebook:"
+msgid "Yahoo IM:"
+msgstr ""
 
 #: author.php:39
 #@ easel
-msgid "MSN:"
-msgstr "MSN:"
+msgid "Twitter:"
+msgstr ""
 
-#: author.php:51
+#: author.php:40
+#@ easel
+msgid "Facebook:"
+msgstr ""
+
+#: author.php:41
+#@ easel
+msgid "MSN:"
+msgstr ""
+
+#: author.php:56
 #@ easel
 msgid "Posts by"
-msgstr "Posts por"
+msgstr ""
 
 #: comments.php:3
 #@ easel
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "Este post está protegido por senha. Entre a senha para ver os comentários."
+msgstr ""
 
 #: comments.php:9
 #@ easel
 msgid "Comments are closed to non-members."
-msgstr "Comentários estão fechados para não-membros."
+msgstr ""
 
 #: comments.php:21
 #@ easel
 msgid "Comments RSS"
-msgstr "Comentários RSS"
+msgstr ""
 
 #: comments.php:22
 #@ easel
 msgid "Discussion &not;"
-msgstr "Discussão &not;"
+msgstr ""
 
 #: comments.php:22
 #@ easel
 msgid "Discussion (%) &not;"
-msgstr "Discussão (%) &not;"
+msgstr ""
 
 #: comments.php:51
 #@ easel
 msgid "Reply &not;"
-msgstr "Responder &not;"
+msgstr ""
 
 #: comments.php:72
 #@ easel
 msgid "Comment Pages"
-msgstr "Páginas de Comentário"
+msgstr ""
 
 #: comments.php:80
 #@ easel
 msgid "Next Comments &uarr;"
-msgstr "Próximos Comentários &uarr;"
+msgstr ""
 
 #: comments.php:81
 #@ easel
 msgid "&darr; Previous Comments"
-msgstr "&darr; Comentários Anteriores"
+msgstr ""
 
 #: comments.php:93
 #@ easel
-msgid "NAME &mdash;"
-msgstr "NOME &mdash;"
-
-#: comments.php:93
-#@ easel
-msgid "Get a Gravatar"
-msgstr "Obtenha um Gravatar"
+msgid "*NAME"
+msgstr ""
 
 #: comments.php:95
 #@ easel
-msgid "EMAIL"
-msgstr "EMAIL"
+msgid "*EMAIL"
+msgstr ""
+
+#: comments.php:95
+#@ easel
+msgid "Get a Gravatar"
+msgstr ""
 
 #: comments.php:97
 #@ easel
 msgid "Website URL"
-msgstr "Website URL"
+msgstr ""
 
 #: comments.php:102
 #@ easel
-msgid "NOTE - You can use these "
-msgstr "NOTA - Você pode usar estes "
+msgid "NOTE - You can use these HTML tags and attributes: "
+msgstr ""
 
 #: comments.php:103
 #@ easel
 msgid "Comment &not;"
-msgstr "Comentário &not;"
+msgstr ""
 
 #: comments.php:104
 #, php-format
 #@ easel
 msgid "Reply to %s &not;"
-msgstr "Responder para %s &not;"
+msgstr ""
 
 #: comments.php:105
 #@ easel
 msgid "Cancel reply"
-msgstr "Cancelar resposta"
+msgstr ""
 
 #: comments.php:106
 #@ easel
 msgid "Post Comment"
-msgstr "Postar Comentário"
+msgstr ""
 
 #: comments.php:112
 #@ easel
 msgid "Comments are closed."
-msgstr "Comentários estão fechados."
+msgstr ""
+
+#: content-aside.php:7
+#: content-link.php:12
+#: content.php:42
+#@ easel
+msgid "Edit this post."
+msgstr ""
+
+#: content-comic.php:38
+#@ easel
+msgid "Edit this comic."
+msgstr ""
 
 #: functions/breadcrumbs.php:6
 #: functions/wp-pagenavi.php:165
-#: functions.php:396
+#: functions.php:350
 #@ easel
 msgid "&raquo;"
-msgstr "&raquo;"
+msgstr ""
 
 #: functions/breadcrumbs.php:7
 #@ easel
 msgid "Home"
-msgstr "Início"
+msgstr ""
 
 #: functions/breadcrumbs.php:26
 #@ easel
 msgid "Archive by category"
-msgstr "Arquivo por categoria"
+msgstr ""
 
 #: functions/breadcrumbs.php:56
 #@ easel
 msgid "No Results"
-msgstr "Nenhum Resultado"
+msgstr ""
 
 #: functions/breadcrumbs.php:83
 #@ easel
 msgid "Search results for"
-msgstr "Pesquisar resultados para"
+msgstr ""
 
 #: functions/breadcrumbs.php:86
 #@ easel
 msgid "Posts tagged"
-msgstr "Posts tagueados"
+msgstr ""
 
 #: functions/breadcrumbs.php:91
 #@ easel
 msgid "Articles posted by"
-msgstr "Artigos postados por"
+msgstr ""
 
 #: functions/breadcrumbs.php:94
 #@ easel
 msgid "Error 404"
-msgstr "Erro 404"
+msgstr ""
 
 #: functions/breadcrumbs.php:99
 #@ easel
 msgid "Page"
-msgstr "Página"
+msgstr ""
 
 #: functions/comment-functions.php:121
 #@ easel
 msgid "l, F jS Y, g:ia"
-msgstr "l, F jS Y, g:ia"
+msgstr ""
 
 #: functions/comment-functions.php:122
 #, php-format
 #@ easel
 msgid "%1$s, %2$s"
-msgstr "%1$s, %2$s"
+msgstr ""
 
 #: functions/comment-functions.php:126
 #@ easel
 msgid "Permalink to comment"
-msgstr "Link Permanente do comentário"
+msgstr ""
 
 #: functions/comment-functions.php:126
 #@ easel
 msgid "#"
-msgstr "#"
+msgstr ""
 
 #: functions/comment-functions.php:132
 #@ easel
 msgid "Reply"
-msgstr "Responder"
+msgstr ""
 
 #: functions/comment-functions.php:133
 #@ easel
 msgid "Login to Reply"
-msgstr "Entre para Responder"
+msgstr ""
 
 #: functions/comment-functions.php:144
 #@ easel
 msgid "Your comment is awaiting moderation."
-msgstr "Seu comentário está aguardado moderação."
+msgstr ""
 
-#: functions/displaypost.php:63
+#: functions/displaypost.php:108
 #@ easel
 msgid "by"
-msgstr "por"
+msgstr ""
 
-#: functions/displaypost.php:73
+#: functions/displaypost.php:118
 #@ easel
 msgid "on&nbsp;"
-msgstr "em&nbsp;"
+msgstr ""
 
-#: functions/displaypost.php:83
+#: functions/displaypost.php:128
 #@ easel
 msgid "at&nbsp;"
-msgstr "no&nbsp;"
+msgstr ""
 
-#: functions/displaypost.php:94
+#: functions/displaypost.php:141
+#@ easel
+msgid "and modified on"
+msgstr ""
+
+#: functions/displaypost.php:142
+#@ easel
+msgid "at"
+msgstr ""
+
+#: functions/displaypost.php:154
 #@ easel
 msgid "Posted In: "
-msgstr "Postado em: "
+msgstr ""
 
-#: functions/displaypost.php:115
+#: functions/displaypost.php:175
 #@ easel
 msgid "Comment&nbsp;"
-msgstr "Comentário&nbsp;"
+msgstr ""
 
-#: functions/displaypost.php:115
+#: functions/displaypost.php:175
 #@ easel
 msgid "Comment "
-msgstr "Comentário "
+msgstr ""
 
-#: functions/displaypost.php:115
+#: functions/displaypost.php:175
 #@ easel
 msgid "Comments "
-msgstr "Comentários "
+msgstr ""
 
-#: functions/displaypost.php:152
-#: functions.php:266
+#: functions/displaypost.php:212
+#: functions.php:203
 #@ easel
 msgid "&darr; Read the rest of this entry..."
-msgstr "&darr; Leia o restante deste post..."
+msgstr ""
 
 #: functions/footer-text.php:8
 #@ easel
 msgid "Powered by"
-msgstr "Produzido por"
+msgstr ""
 
 #: functions/footer-text.php:8
 #@ easel
 msgid "with"
-msgstr "com"
+msgstr ""
 
 #: functions/footer-text.php:17
 #@ easel
 msgid "Back to Top &uarr;"
-msgstr "Volte ao Topo &uarr;"
+msgstr ""
 
 #: functions/footer-text.php:35
 #@ easel
 msgid "Hosted on"
-msgstr "Hospedado em"
+msgstr ""
 
 #: functions/footer-text.php:47
 #@ easel
 msgid "&copy;"
-msgstr "&copy;"
+msgstr ""
 
 #: functions/pagination.php:9
 #@ easel
 msgid "Newer Entries &uarr;"
-msgstr "Novas Entradas &uarr;"
+msgstr ""
 
 #: functions/pagination.php:10
 #@ easel
 msgid "&darr; Previous Entries"
-msgstr "&darr; Entradas Anteriores"
+msgstr ""
 
 #: functions/wp-pagenavi.php:160
 #, php-format
 #@ easel
 msgid "Page %CURRENT_PAGE% of %TOTAL_PAGES%"
-msgstr "Página %CURRENT_PAGE% de %TOTAL_PAGES%"
+msgstr ""
 
 #: functions/wp-pagenavi.php:163
 #@ easel
 msgid "&laquo; First"
-msgstr "&laquo; Primeira"
+msgstr ""
 
 #: functions/wp-pagenavi.php:164
 #@ easel
 msgid "Last &raquo;"
-msgstr "Último &raquo;"
+msgstr ""
 
 #: functions/wp-pagenavi.php:166
 #@ easel
 msgid "&laquo;"
-msgstr "&laquo;"
+msgstr ""
 
 #: functions/wp-pagenavi.php:167
 #: functions/wp-pagenavi.php:168
 #@ easel
 msgid "..."
-msgstr "..."
+msgstr ""
 
-#: functions.php:81
+#: functions.php:79
 #@ easel
 msgid "Primary"
-msgstr "Primário"
+msgstr ""
 
-#: functions.php:82
-#: functions.php:146
-#: options/general.php:302
+#: functions.php:80
+#: functions.php:158
+#: options/general.php:264
 #@ easel
 msgid "Footer"
-msgstr "Rodapé"
+msgstr ""
 
-#: functions.php:139
+#: functions.php:151
 #@ easel
 msgid "Left Sidebar"
-msgstr "Barra Lateral Esquerda"
+msgstr ""
 
-#: functions.php:140
+#: functions.php:151
+#@ easel
+msgid "The sidebar that appears to the left of the content."
+msgstr ""
+
+#: functions.php:152
 #@ easel
 msgid "Right Sidebar"
-msgstr "Barra Lateral Direita"
+msgstr ""
 
-#: functions.php:141
+#: functions.php:152
+#@ easel
+msgid "The sidebar that appears to the right of the content."
+msgstr ""
+
+#: functions.php:153
 #@ easel
 msgid "Above Header"
-msgstr "Acima do Cabeçalho"
+msgstr ""
 
-#: functions.php:142
+#: functions.php:153
+#@ easel
+msgid "This sidebar appears to above all of the site information.  This sidebar is not encased in CSS, you will need to create CSS for it."
+msgstr ""
+
+#: functions.php:154
 #@ easel
 msgid "Header"
-msgstr "Cabeçalho"
+msgstr ""
 
-#: functions.php:143
-#: options/general.php:54
+#: functions.php:154
+#@ easel
+msgid "This sidebar appears inside the #header block."
+msgstr ""
+
+#: functions.php:155
+#: options/menubar.php:10
+#: options.php:211
 #@ easel
 msgid "Menubar"
-msgstr "Barra de Menu"
+msgstr ""
 
-#: functions.php:144
+#: functions.php:155
+#@ easel
+msgid "This sidebar is under the header and above the content-wrapper block"
+msgstr ""
+
+#: functions.php:156
 #@ easel
 msgid "Over Blog"
-msgstr "Acima do Blog"
+msgstr ""
 
-#: functions.php:145
+#: functions.php:156
+#@ easel
+msgid "This sidebar appears over the blog within the #column .narrowcolumn"
+msgstr ""
+
+#: functions.php:157
 #@ easel
 msgid "Under Blog"
-msgstr "Abaixo do Blog"
+msgstr ""
 
-#: functions.php:209
-#: options/addons.php:12
+#: functions.php:157
 #@ easel
-msgid "There is members only content here."
-msgstr "Há apenas conteúdo para membros aqui."
+msgid "This sidebar appears under the blog within the #column .narrowocolumn"
+msgstr ""
 
-#: functions.php:266
+#: functions.php:158
+#@ easel
+msgid "This sidebar is below the #content-wrapper block at the bottom of the page"
+msgstr ""
+
+#: functions.php:159
+#@ easel
+msgid "Jetpack Mobile Sidebar"
+msgstr ""
+
+#: functions.php:159
+#@ easel
+msgid "If the Jetpack Mobile theme is active it will use this sidebar."
+msgstr ""
+
+#: functions.php:203
 #@ easel
 msgid " [&hellip;]"
-msgstr " [&hellip;]"
+msgstr ""
 
-#: functions.php:329
+#: functions.php:270
 #@ easel
-msgid "Follow on Twitter"
-msgstr "Seguir no Twitter"
+msgid " my DeviantART"
+msgstr ""
 
-#: functions.php:329
-#: options/general.php:100
+#: functions.php:270
+#: options/menubar.php:97
 #@ easel
-msgid "Twitter"
-msgstr "Twitter"
+msgid "DeviantART"
+msgstr ""
 
-#: functions.php:330
+#: functions.php:271
+#@ easel
+msgid "Examine my Tumblr"
+msgstr ""
+
+#: functions.php:271
+#: options/menubar.php:94
+#@ easel
+msgid "Tumblr"
+msgstr ""
+
+#: functions.php:272
 #@ easel
 msgid "Friend on Facebook"
-msgstr "Amigo no Facebook"
+msgstr ""
 
-#: functions.php:404
+#: functions.php:272
+#: options/general.php:323
+#: options/menubar.php:77
+#@ easel
+msgid "Facebook"
+msgstr ""
+
+#: functions.php:273
+#@ easel
+msgid "Make use of MySpace"
+msgstr ""
+
+#: functions.php:273
+#: options/menubar.php:100
+#@ easel
+msgid "MySpace"
+msgstr ""
+
+#: functions.php:274
+#@ easel
+msgid "Look at my LinkedIn"
+msgstr ""
+
+#: functions.php:274
+#: options/menubar.php:82
+#@ easel
+msgid "LinkedIn"
+msgstr ""
+
+#: functions.php:275
+#@ easel
+msgid "Follow me on Twitter"
+msgstr ""
+
+#: functions.php:275
+#: options/menubar.php:75
+#@ easel
+msgid "Twitter"
+msgstr ""
+
+#: functions.php:276
+#@ easel
+msgid "Gaze at my Flickr"
+msgstr ""
+
+#: functions.php:276
+#: options/menubar.php:91
+#@ easel
+msgid "Flickr"
+msgstr ""
+
+#: functions.php:277
+#@ easel
+msgid "Email me"
+msgstr ""
+
+#: functions.php:277
+#@ easel
+msgid "Email"
+msgstr ""
+
+#: functions.php:278
+#@ easel
+msgid "Check me out on Google+"
+msgstr ""
+
+#: functions.php:278
+#: options/menubar.php:79
+#@ easel
+msgid "Google+"
+msgstr ""
+
+#: functions.php:279
+#@ easel
+msgid "Peruse my Pinterests"
+msgstr ""
+
+#: functions.php:279
+#: options/menubar.php:85
+#@ easel
+msgid "pinterest"
+msgstr ""
+
+#: functions.php:280
+#@ easel
+msgid "View my YouTube"
+msgstr ""
+
+#: functions.php:280
+#: options/menubar.php:88
+#@ easel
+msgid "YouTube"
+msgstr ""
+
+#: functions.php:281
+#@ easel
+msgid "RSS Feed"
+msgstr ""
+
+#: functions.php:281
+#: options/general.php:306
+#@ easel
+msgid "RSS"
+msgstr ""
+
+#: functions.php:358
 #, php-format
 #@ easel
 msgid "Search Results: %s"
-msgstr "Pesquisar Resultados: %s"
+msgstr ""
 
-#: functions.php:408
+#: functions.php:362
 #, php-format
 #@ easel
 msgid "Page: %s"
-msgstr "Página: %s"
+msgstr ""
+
+#: functions.php:407
+#: options/addons.php:12
+#@ easel
+msgid "There is members only content here."
+msgstr ""
 
 #: image.php:22
 #@ easel
 msgid "&larr; Back to Gallery"
-msgstr "&larr; Voltar à Galeria"
+msgstr ""
 
 #: image.php:39
 #@ easel
 msgid "Click for full size."
-msgstr "Clique para ver em tamanho real."
+msgstr ""
 
 #: image.php:52
 #@ easel
 msgid "Edit this attachment."
-msgstr "Editar este anexo."
+msgstr ""
 
 #: image.php:58
 #@ easel
 msgid "Sorry, no image matched your criteria."
-msgstr "Perdão, nenhuma imagem se encaixa nestes critérios."
+msgstr ""
 
 #: options/addons.php:9
-#: options.php:179
+#: options.php:212
 #@ easel
 msgid "Addons"
-msgstr "Addons"
+msgstr ""
 
 #: options/addons.php:14
 #@ easel
 msgid "Members Only"
-msgstr "Somente Membros"
+msgstr ""
 
 #: options/addons.php:14
 #@ easel
 msgid "Message to give to non-members."
-msgstr "Mensagem para dar a não-membros."
+msgstr ""
 
 #: options/addons.php:19
 #@ easel
 msgid "Enabled the members only shortcode [members]content[/members] - you can configure who is a member in the user editor.  Those with access will be able to see the content."
-msgstr "Habilitado o código curto [members]conteúdo[/members] - você pode configurar quem é um membro no editor de usuário. Aqueles com acesso estarão hábeis para ver este conteúdo."
+msgstr ""
 
 #: options/addons.php:25
 #@ easel
 msgid "Additional Page Options"
-msgstr "Opções de Página Adicionais"
+msgstr ""
 
 #: options/addons.php:30
 #@ easel
 msgid "Extra options for the page-editor which include removal of sidebars for display."
-msgstr "Opções extra para o editor de páginas que incluem a remoção de barras laterais na exibição."
+msgstr ""
 
 #: options/addons.php:34
 #@ easel
 msgid "Playing Now"
-msgstr "Tocando Agora"
+msgstr ""
 
 #: options/addons.php:39
 #@ easel
 msgid "The \"Music\" post type, this post type allows you to seperate music selections and post about music/bands seperate from regular posts; includes a [latest music] widget that lists off the latest posts in the music post type."
-msgstr "O tipo de post \"Música\" habilita você a separar seleções de música e posts sobre música/bandas separado dos posts comuns; inclui um widget [última música] que lista os últimos posts no tipo de post música."
+msgstr ""
 
 #: options/addons.php:43
 #@ easel
 msgid "Comic Showcase"
-msgstr "Vitrine de Quadrinhos"
+msgstr ""
 
 #: options/addons.php:48
 #@ easel
 msgid "The \"Showcase\" post type, this post type is specifically for creating posts that are relevant to comics, and showcasing which comics you read and who makes them and what type of comic they are.  Includes a [latest showcase] widget that lists off the latest posts in the showcase post type."
-msgstr "O tipo de post \"Vitrine\" é especificamente para a criação de posts que são relevantes para os quadrinhos, mostrando quais quadrinhos que você lê e quem os faz e que tipo de quadrinhos que são. Inclui um widget [última vitrine] que lista as últimas postagens no tipo de post vitrine."
+msgstr ""
 
 #: options/addons.php:53
 #@ easel
 msgid "Comic Showcase Slider"
-msgstr "Slides da Vitrine de Quadrinhos"
+msgstr ""
 
 #: options/addons.php:58
 #@ easel
 msgid "Enable a slider on the homepage of a random set of Showcases."
-msgstr "Habilitar um slide na página inicial de um conjunto aleatório de Vitrines."
+msgstr ""
 
 #: options/addons.php:63
 #@ easel
 msgid "CommPress - Casts"
-msgstr "CommPress - Elenco"
+msgstr ""
 
 #: options/addons.php:68
 #@ easel
 msgid "The CommPress MediaCast post type, displays podcast/mediacast posts in a navigational box right above the blog loop that stays static."
-msgstr "O tipo de post MediaCast do CommPress exibe posts de podcast/mediacasts na caixa de navegação da direita, abaixo da repetição de blog que ficam estáticos."
+msgstr ""
 
 #: options/addons.php:69
-#: sidebar-right.php:15
+#: sidebar-right.php:14
 #@ easel
 msgid "Recommended Plugins"
-msgstr "Plugins Recomendados"
+msgstr ""
 
 #: options/addons.php:82
 #@ easel
 msgid "Custom Post Types"
-msgstr "Tipo de Posts Personalizados"
+msgstr ""
 
 #: options/addons.php:87
 #@ easel
 msgid "WP Rewrite Control"
-msgstr "WP Rewrite Control"
+msgstr ""
 
 #: options/addons.php:92
 #@ easel
 msgid "When enabled, Easel will create additional wp-rewrite rules for all of the custom post types that it finds enabled, including plugin based ones.   To initiate the rewrite rules go to the settings -> permalinks screen.  This will only work if you have custom permalinks enabled."
-msgstr "Quando habilitado, Easel irá criar regras adicionais de wp-rewrite para todos os tipos de post personalizados que encontrar habilitado, incluindo os que são baseados em plugin.   Para iniciar a regras de regração, vá a Configurações -> Links Permanentes.  Isto somente irá funcionar se você tiver links permanentes personalizados habilitados."
+msgstr ""
 
 #: options/addons.php:97
 #@ easel
 msgid "Remember with custom post types, you will need to go to settings -> permalinks and click \"save\" to enable them to work properly and reinitilize the permalink structure regardless of using the additional wp-rewrite rules option."
-msgstr "Lembre-se que com tipos de post personalizados, você precisará ir para Configurações -> Links Permanentes e clicar \"salvar\" para habilitá-los para funcionar corretamente e reinicializar a estrutura de links permanentes indiferentemente de usar a opção das regras wp-rewrite."
+msgstr ""
 
 #: options/debug.php:10
-#: options.php:180
+#: options.php:213
 #@ easel
 msgid "Debug"
-msgstr "Debug"
+msgstr ""
 
 #: options/debug.php:14
 #@ easel
 msgid "Enable the debug page load/memory usage at the bottom of each page?"
-msgstr "Habilitar a página de debug de carregamento/uso de memória no fundo de cada página?"
+msgstr ""
 
 #: options/debug.php:19
 #@ easel
 msgid "If enabled will show information on how many queries, memory is used as well as how fast the page loads."
-msgstr "Se ativado irá mostrar informações sobre quantas consultas, memória utilizada, bem como o quão rápido a página é carregada."
+msgstr ""
 
 #: options/debug.php:23
 #@ easel
 msgid "Force MySQL to close the current active connection after page load?"
-msgstr "Forçar MySQL para fechar a atual conexão ativa após o carregamento da página?"
+msgstr ""
 
 #: options/debug.php:28
 #@ easel
 msgid "This option forces mysql to close the connection after each page load - not recommended unless you are requested to enable it."
-msgstr "Esta opção força o mysql a fechar a conexão após cada carregamento de página - não recomendado enquanto você seja solicitado a habilitá-lo."
+msgstr ""
 
 #: options/general.php:10
-#: options.php:178
+#: options.php:210
 #@ easel
 msgid "General"
-msgstr "Geral"
+msgstr ""
 
 #: options/general.php:15
 #@ easel
 msgid "How many blog posts would you like to display on the home page?"
-msgstr "Quantos posts de blog você gostaria de exibir na página inicial?"
+msgstr ""
 
 #: options/general.php:20
 #@ easel
 msgid "How many blog posts you would like displayed on the index page at one time.  This is different then the one in the wp-admin - settings, the one in the settings will control how many show up on search and archive pages."
-msgstr "Quantos posts você gostaria de exibir na página inicial de uma só vez.  Isto é diferente daquele no Painel de Controle -> Configurações, pois este vai controlar quantos irão aparecer em páginas de busca e arquivamento."
+msgstr ""
 
 #: options/general.php:24
 #@ easel
 msgid "Disable Blog Loop"
-msgstr "Desabilitar Repetição de Blog"
+msgstr ""
 
 #: options/general.php:29
 #@ easel
 msgid "Enabling this option, will DISABLE the blog from appearing on the home page AND any pages set as the blog posts page in the settings - reading."
-msgstr "Habilitando esta opção irá DESABILITAR o blog de aparecer na página inicial E quaisquer páginas definidas como páginas de post de blog nas Configurações -> Leitura."
+msgstr ""
 
 #: options/general.php:37
 #@ easel
 msgid "Custom Header"
-msgstr "Cabeçalho Personalizado"
+msgstr ""
 
 #: options/general.php:41
 #@ easel
 msgid "Custom Header Values"
-msgstr "Valores de Cabeçalho Personalizado"
+msgstr ""
 
 #: options/general.php:43
 #@ easel
 msgid "Width:"
-msgstr "Largura:"
+msgstr ""
 
 #: options/general.php:44
 #@ easel
 msgid "Height:"
-msgstr "Altura:"
+msgstr ""
 
 #: options/general.php:45
 #@ easel
 msgid "Modify the height and width of the custom header *if* you use Appearance - Header"
-msgstr "Modifique a altura e largura do cabeçalho personalizado *se* você usa Aparência -> Cabeçalho"
+msgstr ""
 
 #: options/general.php:46
 #@ easel
 msgid "3 Column Layouts are 980px width while 2 Column Layouts are 780px width as default."
-msgstr "Aparências de 3 Colunas tem 980px de largura enquanto os Aparências de 2 Colunas tem 780px de largura por padrão."
+msgstr ""
 
-#: options/general.php:58
+#: options/general.php:47
 #@ easel
-msgid "Disable default Menubar"
-msgstr "Desabilitar a barra de menu padrão"
+msgid "NOTE: This is no longer necessary since Easel 3.1.1, flexible headers will determine your height and width of your image, the available space per layout for width still applies."
+msgstr ""
 
-#: options/general.php:63
+#: options/general.php:55
 #@ easel
-msgid "Allows you to customize the location of the Menubar via Widgets or, just not have it."
-msgstr "Permite personalizar a localização da Barra de Menu através de Widgets ou não utilizá-la."
+msgid "Pages"
+msgstr ""
 
-#: options/general.php:67
+#: options/general.php:59
 #@ easel
-msgid "Enable Search Form"
-msgstr "Habilitar Formulário de Pesquisa"
+msgid "Disable the titles on pages"
+msgstr ""
+
+#: options/general.php:64
+#@ easel
+msgid "Page titles will be turned off.  If you disable the titles no pages you can still add a post-image in the page editor."
+msgstr ""
 
 #: options/general.php:72
 #@ easel
-msgid "Searchforms can be fun when you have something to search for."
-msgstr "Formulários de Pesquisa podem ser legais se você tem algo a se pesquisar."
+msgid "Posts"
+msgstr ""
 
 #: options/general.php:76
 #@ easel
-msgid "Enable RSS Link"
-msgstr "Habilitar Link RSS"
+msgid "Disable the titles on posts"
+msgstr ""
 
 #: options/general.php:81
 #@ easel
-msgid "Adds an RSS link icon to your menubar on the right side."
-msgstr "Adicionar um ícone com link RSS a sua barra de menu do lado direto."
+msgid "Post titles will be turned off.  If you disable the titles on posts can still add a post-image in the post editor."
+msgstr ""
 
 #: options/general.php:85
 #@ easel
-msgid "Disable the menubar jQuery?"
-msgstr "Desabilitar a barra de menu jQuery?"
+msgid "Add graphic calendar to blog posts"
+msgstr ""
 
 #: options/general.php:90
 #@ easel
-msgid "Disable the loading of the menubar jQuery.  If you do not want the ddsmoother menu code to load. (will not do drop downs without it)"
-msgstr "Desabilitar o carregamento da barra de menu jQuery.  Se você não quer o código do menu ddsmoother carregue. (não irá fazer caixas suspensas sem isso)"
+msgid "Enabling this option will display a calendar image on your blog posts. The graphic calendar is an image that has the date of the blog post overlayed on top of it."
+msgstr ""
 
 #: options/general.php:94
 #@ easel
-msgid "Enable Social Icons in Menubar?"
-msgstr "Habilitar Ícones Sociais na Barra de Menu?"
+msgid "Enable Author Gravatar"
+msgstr ""
 
 #: options/general.php:99
 #@ easel
-msgid "Adds additional social icons in the menubar on in the menunav area."
-msgstr "Adiciona ícones sociais extras na barra de menu na área do menu de navegação."
+msgid "Enabling this option will show a gravatar of the post author based on the author email address.  Gravatars are associated by your email address and you can create them at"
+msgstr ""
 
-#: options/general.php:102
+#: options/general.php:103
 #@ easel
-msgid "facebook"
-msgstr "Facebook"
+msgid "Enable Avatar Mod"
+msgstr ""
 
-#: options/general.php:107
+#: options/general.php:108
 #@ easel
-msgid "Enable Breadcrumbs?"
-msgstr "Habilitar Navegação Estrutural?"
+msgid "With this enabled, the avatar's that are displayed will be jquery modified to look like polaroids randomly tilted."
+msgstr ""
 
-#: options/general.php:112
+#: options/general.php:127
 #@ easel
-msgid "This will create a pathable breathcrumbs beneith the menubar underneith the default menubar location."
-msgstr "Isto irá criar navegações estruturais de caminho acima da barra de menu abaixo da localização padrão da barra de menu."
-
-#: options/general.php:120
-#@ easel
-msgid "Pages"
-msgstr "Páginas"
-
-#: options/general.php:124
-#@ easel
-msgid "Disable the titles on pages"
-msgstr "Desabilitar os títulos nas páginas"
-
-#: options/general.php:129
-#@ easel
-msgid "Page titles will be turned off.  If you disable the titles no pages you can still add a post-image in the page editor."
-msgstr "Títulos das páginas serão desligados.  Se você desabilitar os títulos nas páginas você ainda poderá adicionar uma imagem de post no editor de post."
-
-#: options/general.php:137
-#@ easel
-msgid "Posts"
-msgstr "Posts"
+msgid "Avatar Directory"
+msgstr ""
 
 #: options/general.php:141
 #@ easel
-msgid "Disable the titles on posts"
-msgstr "Desabilitar títulos nos posts"
+msgid "Choose a directory to get the avatars for default gravatars if someone does not have one.  You will have to make these images yourself, or download them from avatar providers. Then make a new directory on your site server to upload them to and select that directory here. <strong>Setting this to 'none' will disable it from using any special avatar sets.</strong>"
+msgstr ""
 
-#: options/general.php:146
+#: options/general.php:145
 #@ easel
-msgid "Post titles will be turned off.  If you disable the titles on posts can still add a post-image in the post editor."
-msgstr "Títulos dos posts serão desligados. Se você desabilitar os títulos nos posts você ainda poderá adicionar uma imagem do post no editor de posts."
+msgid "Disable display of <strong>tags</strong> in posts"
+msgstr ""
 
 #: options/general.php:150
 #@ easel
-msgid "Add graphic calendar to blog posts"
-msgstr "Adicionar um calendário gráfico aos posts do blog"
+msgid "Checkmarking this will make it so that tags will not appear in posts."
+msgstr ""
 
-#: options/general.php:155
+#: options/general.php:154
 #@ easel
-msgid "Enabling this option will display a calendar image on your blog posts. The graphic calendar is an image that has the date of the blog post overlayed on top of it."
-msgstr "Habilitando esta opção irá exibir uma imagem de calendário nos seus posts do blog. O calendário gráfico é uma imagem que tem a data do post do blog sobreposta nela."
+msgid "Disable display of <strong>categories</strong> in posts"
+msgstr ""
 
 #: options/general.php:159
 #@ easel
-msgid "Enable Author Gravatar"
-msgstr "Habilitar Gravatar de Autor"
+msgid "Checkmarking this will make it so that categories will not appear in posts."
+msgstr ""
 
-#: options/general.php:164
+#: options/general.php:163
 #@ easel
-msgid "Enabling this option will show a gravatar of the post author based on the author email address.  Gravatars are associated by your email address and you can create them at"
-msgstr "Habilitando esta opção irá exibir um gravatar do autor do post baseado no endereço de email do autor.  Gravatars são associados pelo seu endereço de email e você pode criá-los em"
+msgid "Disable display of <strong>by Author</strong> in post information."
+msgstr ""
 
 #: options/general.php:168
 #@ easel
-msgid "Enable Avatar Mod"
-msgstr "Habilitar Avatar Modificado"
-
-#: options/general.php:173
-#@ easel
-msgid "With this enabled, the avatar's that are displayed will be jquery modified to look like polaroids randomly tilted."
-msgstr "Com isto habilitado, os avatares que são exibidos serão modificados através de jQuery para parecer como polaroids aleatoriamente viradas."
-
-#: options/general.php:192
-#@ easel
-msgid "Avatar Directory"
-msgstr "Diretório de Avatares"
-
-#: options/general.php:206
-#@ easel
-msgid "Choose a directory to get the avatars for default gravatars if someone does not have one.  You will have to make these images yourself, or download them from avatar providers. Then make a new directory on your site server to upload them to and select that directory here. <strong>Setting this to 'none' will disable it from using any special avatar sets.</strong>"
-msgstr "Escolha um diretório para obter os avatares para gravatars padrão, se alguém não tem um.  Você vai ter que fazer essas imagens você mesmo, ou baixá-los de fornecedores de avatar. Em seguida, faça um novo diretório no servidor local para carregá-las e selecionar o diretório aqui. <strong>Configurando isto como 'nenhum' irá desativá-lo de usar quaisquer conjuntos de avatares especiais. </strong>"
-
-#: options/general.php:210
-#@ easel
-msgid "Disable display of <strong>tags</strong> in posts"
-msgstr "Desabilita a exibição de <strong>tags</strong> nos posts"
-
-#: options/general.php:215
-#@ easel
-msgid "Checkmarking this will make it so that tags will not appear in posts."
-msgstr "Marcando isto irá fazer com que as tags não apareçam nos posts."
-
-#: options/general.php:219
-#@ easel
-msgid "Disable display of <strong>categories</strong> in posts"
-msgstr "Desabilitar exibição de <strong>categorias</strong> nos posts"
-
-#: options/general.php:224
-#@ easel
-msgid "Checkmarking this will make it so that categories will not appear in posts."
-msgstr "Marcando isto irá fazer com que as categorias não apareçam nos posts."
-
-#: options/general.php:228
-#@ easel
-msgid "Disable display of <strong>by Author</strong> in post information."
-msgstr "Desabilitar a exibição de <strong>por Autor</strong> na informação do post"
-
-#: options/general.php:233
-#@ easel
 msgid "Checkmarking this will make it so that the by Author information will not appear in posts."
-msgstr "Marcando isto irá fazer com que a informação por Autor não apareça nos posts."
+msgstr ""
 
-#: options/general.php:237
+#: options/general.php:172
 #@ easel
-msgid "Disable display of <strong>on post-Date</strong> in posts"
-msgstr "Desabilitar a exibição de <strong>em Data do Post</strong> nos posts"
+msgid "Disable display of the posted on date in posts"
+msgstr ""
+
+#: options/general.php:177
+#@ easel
+msgid "Checkmarking this will make it so that posted on date information will not appear in posts."
+msgstr ""
+
+#: options/general.php:181
+#@ easel
+msgid "Disable the display of the posted at time in posts"
+msgstr ""
+
+#: options/general.php:186
+#@ easel
+msgid "Checkmarking this will make it so that the information about what time the post was made will not show."
+msgstr ""
+
+#: options/general.php:190
+#@ easel
+msgid "Enable the display of last modified information in posts."
+msgstr ""
+
+#: options/general.php:195
+#@ easel
+msgid "Checkmarking this will make it so that it will show when the last time that the post was modified in the post date information."
+msgstr ""
+
+#: options/general.php:203
+#@ easel
+msgid "Comments"
+msgstr ""
+
+#: options/general.php:207
+#@ easel
+msgid "Disable the comment notes"
+msgstr ""
+
+#: options/general.php:212
+#@ easel
+msgid "Disabling this will remove the note text that displays with more options for adding to comments (html)."
+msgstr ""
+
+#: options/general.php:216
+#@ easel
+msgid "Disable Comment Javascript"
+msgstr ""
+
+#: options/general.php:221
+#@ easel
+msgid "Checkmark this if you want the comment form to not use javascript to appear directly under who is being replied to. (increases pageviews/hits)"
+msgstr ""
+
+#: options/general.php:225
+#@ easel
+msgid "Enable Comments on Home Page"
+msgstr ""
+
+#: options/general.php:230
+#@ easel
+msgid "Checkmarking this option will make it so that the post(s) on the home page will also display the comments under them, This will ONLY work if you have it set to only display 1 post on the home page.  The post count and this must be set to work."
+msgstr ""
+
+#: options/general.php:238
+#@ easel
+msgid "Navigation"
+msgstr ""
 
 #: options/general.php:242
 #@ easel
-msgid "Checkmarking this will make it so that on post-Date will not appear in posts."
-msgstr "Marcando isto irá fazer com que a Data do Post não apareça nos posts."
+msgid "Enable numbered pagination"
+msgstr ""
 
-#: options/general.php:250
+#: options/general.php:247
 #@ easel
-msgid "Comments"
-msgstr "Comentários"
+msgid "Previous Entries and Next Entries buttons are replaced by a bar of numbered pages. Numbered pagination appears on the Home page, the author(s) page, the blog template, and comments/single when there are more then the set number of comments per page. Uses the same styling as the Menubar."
+msgstr ""
 
-#: options/general.php:254
+#: options/general.php:251
 #@ easel
-msgid "Disable the comment notes"
-msgstr "Desabilitar as notas de comentário"
+msgid "Enable the Jetpack Plugin: Infinite Scrolling"
+msgstr ""
 
-#: options/general.php:259
+#: options/general.php:256
 #@ easel
-msgid "Disabling this will remove the note text that displays with more options for adding to comments (html)."
-msgstr "Desabilitando isto irá remover a nota de texto que exibe quais mais opções podem ser adicionadas aos comentários (html)."
-
-#: options/general.php:263
-#@ easel
-msgid "Disable Comment Javascript"
-msgstr "Desabilitar Comentário Javascript"
+msgid "When this option is enabled and the Jetpack plugin is installed with Infinite scrolling activated, it allows the Easel theme to use it.  An additional toggle from the plugin is in the Settings - Reading section of the wp-admin called [ To Infinity and beyond ] when the Jetpack plugin: Infinite Scrolling is enabled."
+msgstr ""
 
 #: options/general.php:268
 #@ easel
-msgid "Checkmark this if you want the comment form to not use javascript to appear directly under who is being replied to. (increases pageviews/hits)"
-msgstr "Marque isto se você deseja que o formulário de comentário não use javascript para aparecer diretamente abaixo de quem se está repondendo. (aumenta visualizações de página)"
+msgid "Disable the default text in the footer"
+msgstr ""
 
-#: options/general.php:272
+#: options/general.php:273
 #@ easel
-msgid "Enable Comments on Home Page"
-msgstr "Habilitar Comentários na Página Inicial"
+msgid "Default text in the footer will not display. Enable this if you do not want any text in the footer. If you wish to add you own custom content, you may do so via Appearance -> Widgets-> Footer."
+msgstr ""
 
 #: options/general.php:277
 #@ easel
-msgid "Checkmarking this option will make it so that the post(s) on the home page will also display the comments under them, This will ONLY work if you have it set to only display 1 post on the home page.  The post count and this must be set to work."
-msgstr "Marcando esta opção fará com que o(s) post(s) na página inicial também exibam os comentários abaixo deles. Isto somente irá funcionar se você tiver definido para exibir apenas 1 post na página inicial.  A contagem de post deve ser configurada para funcionar."
+msgid "Disable the scroll to top link in the footer?"
+msgstr ""
 
-#: options/general.php:285
+#: options/general.php:282
 #@ easel
-msgid "Navigation"
-msgstr "Navegação"
+msgid "When this link is clicked on long pages it will scroll back to the top."
+msgstr ""
 
-#: options/general.php:289
+#: options/general.php:286
 #@ easel
-msgid "Enable numbered pagination"
-msgstr "Habilitar paginação numerada"
+msgid "&copy; Copyright Name"
+msgstr ""
+
+#: options/general.php:290
+#@ easel
+msgid "Set the name to which this site is &copy; Copyright to, leave blank to have the site name."
+msgstr ""
 
 #: options/general.php:294
 #@ easel
-msgid "Previous Entries and Next Entries buttons are replaced by a bar of numbered pages. Numbered pagination appears on the Home page, the author(s) page, the blog template, and comments/single when there are more then the set number of comments per page. Uses the same styling as the Menubar."
-msgstr "Os botões Entrada Anterior e Próxima Entrada são substituídos por uma barra de páginas numeradas. A paginação numerada aparece na página inicial, na(s) página(s) do(s) autor(es), no modelo de blog e nos comentários/único quando há mais do que o número definido de comentários por página. Usa o mesmo estilo da Barra de Menu."
+msgid "Copyright Holder URL"
+msgstr ""
 
-#: options/general.php:306
+#: options/general.php:298
 #@ easel
-msgid "Disable the default text in the footer"
-msgstr "Desabilitar o texto padrão no rodapé"
+msgid "Set the URL to the owner of the &copy; Copyright if different then this website, leave blank for sites link."
+msgstr ""
 
-#: options/general.php:311
+#: options/general.php:310
 #@ easel
-msgid "Default text in the footer will not display. Enable this if you do not want any text in the footer. If you wish to add you own custom content, you may do so via Appearance -> Widgets-> Footer."
-msgstr "Texto padrão no rodapé não será exibido. Ative isto se você não quer nenhum texto no rodapé. Se você deseja adicionar seu próprio conteúdo personalizado, você pode fazê-lo através de Aparência -> Widgets-> Rodapé."
+msgid "Enable the post thumbnails in the RSS feed?"
+msgstr ""
 
 #: options/general.php:315
 #@ easel
-msgid "Disable the scroll to top link in the footer?"
-msgstr "Desabilitar o link para o topo no rodapé?"
+msgid "If enabled will show the post thumbnail of the post in the RSS feed."
+msgstr ""
 
-#: options/general.php:320
+#: options/general.php:327
 #@ easel
-msgid "When this link is clicked on long pages it will scroll back to the top."
-msgstr "Quando este link for clicado em páginas longas ele irá voltar ao topo."
-
-#: options/general.php:324
-#@ easel
-msgid "&copy; Copyright Name"
-msgstr "&copy; Nome de Copyright"
-
-#: options/general.php:328
-#@ easel
-msgid "Set the name to which this site is &copy; Copyright to, leave blank to have the site name."
-msgstr "Defina o nome a qual o site é &copy; Copyright para, deixar em branco para deixar o nome do site."
+msgid "Enable the Facebook Like button in Blog Posts?"
+msgstr ""
 
 #: options/general.php:332
 #@ easel
-msgid "Copyright Holder URL"
-msgstr "URL do Proprietário do Copyright"
+msgid "When enabled this option will allow the Facebook like button to appear at the bottom of regular blog posts."
+msgstr ""
 
 #: options/general.php:336
 #@ easel
-msgid "Set the URL to the owner of the &copy; Copyright if different then this website, leave blank for sites link."
-msgstr "Defina a URL do dono do &copy; Copyright se for diferente deste website, deixe em branco para o link do site."
+msgid "Enable the Facebook Meta?"
+msgstr ""
 
-#: options/general.php:344
+#: options/general.php:341
 #@ easel
-msgid "RSS"
-msgstr "RSS"
+msgid "When setting this option, Easel will add meta information to the head area of each page so that facebook will recognize the content within."
+msgstr ""
 
-#: options/general.php:348
+#: options/general.php:349
 #@ easel
-msgid "Enable the post thumbnails in the RSS feed?"
-msgstr "Habilitar miniaturas de post no feed RSS?"
+msgid "Archive & Search"
+msgstr ""
 
 #: options/general.php:353
 #@ easel
-msgid "If enabled will show the post thumbnail of the post in the RSS feed."
-msgstr "Se habilitado irá exibir a miniatura do post no feed RSS."
+msgid "Display archive results as a list of links?"
+msgstr ""
 
-#: options/general.php:361
+#: options/general.php:358
 #@ easel
-msgid "Facebook"
-msgstr "Facebook"
+msgid "Enabling this will make the archive pages by date/category/term display as a list of links instead of full posts."
+msgstr ""
 
-#: options/general.php:365
+#: options/general.php:363
 #@ easel
-msgid "Enable the Facebook Like button in Blog Posts?"
-msgstr "Habilitar o botão de Curtir do Facebook nos Posts do Blog?"
+msgid "Excerpt or Full Content in archive and search."
+msgstr ""
 
 #: options/general.php:370
 #@ easel
-msgid "When enabled this option will allow the Facebook like button to appear at the bottom of regular blog posts."
-msgstr "Quando esta opção está habilitada irá permitir que o botão Curtir do Facebook apareça no fundo dos posts comuns do blog."
-
-#: options/general.php:374
-#@ easel
-msgid "Enable the Facebook Meta?"
-msgstr "Habilitar Meta do Facebook?"
-
-#: options/general.php:379
-#@ easel
-msgid "When setting this option, Easel will add meta information to the head area of each page so that facebook will recognize the content within."
-msgstr "Quando configurar esta opção, o Easel irá adicionar informação meta ao cabeçalho de cada página, então o Facebook irá reconhecer o conteúdo nelas."
-
-#: options/general.php:387
-#@ easel
-msgid "Archive & Search"
-msgstr "Arquivo & Pesquisa"
-
-#: options/general.php:391
-#@ easel
-msgid "Display archive results as a list of links?"
-msgstr "Exibir resultados de arquivo como uma lista de links?"
-
-#: options/general.php:396
-#@ easel
-msgid "Enabling this will make the archive pages by date/category/term display as a list of links instead of full posts."
-msgstr "Habilitando isto irá fazer com que as páginas de arquivo por data/categoria/termo sejam exibidas como uma lista de links ao invés de posts completos."
-
-#: options/general.php:401
-#@ easel
-msgid "Excerpt or Full Content in archive and search."
-msgstr "Trecho ou Conteúdo Completo no arquivo e pesquisa."
-
-#: options/general.php:408
-#@ easel
 msgid "If Display archives results as list is disabled, decide how much is seen in the archive display. "
-msgstr "Se Exibir resultados dos arquivos como lista estiver desabilitado, decidir o quando será visto na exibição do arquivo "
+msgstr ""
 
-#: options/general.php:413
+#: options/general.php:375
 #@ easel
 msgid "Archive Display Order"
-msgstr "Ordem de Exibição de Arquivo"
+msgstr ""
 
-#: options/general.php:420
+#: options/general.php:382
 #@ easel
 msgid "Sets the display order of your archives. Newest to Oldest will display your posts starting with the most recent. Oldest to Newest will start with the first entry in the category, tag, or date range (e.g., Selecting May 20XX will start with May 1, not May 31st.)"
-msgstr "Define a ordem de exibição dos seus arquivos. Mais Recente para o Mais Antigo exibirá suas mensagens começando com o mais recente. Mais Antigo para Mais Recente vai começar com a primeira entrada na categoria, tag, ou intervalo de datas (por exemplo, selecionando de Maio de 20XX vai começar com 01 de Maio e não 31 de maio)."
+msgstr ""
 
 #: options/layout.php:22
-#: options.php:177
+#: options.php:209
 #@ easel
 msgid "Layout"
-msgstr "Aparência"
+msgstr ""
 
 #: options/layout.php:27
 #@ easel
 msgid "Choose Your Website Layout"
-msgstr "Escolha a Aparência do seu Website"
+msgstr ""
 
 #: options/layout.php:29
 #@ easel
 msgid "3 Column - Standard"
-msgstr "3 Colunas - Padrão"
+msgstr ""
 
 #: options/layout.php:30
 #@ easel
-msgid "3 Column - Sidebar's on left"
-msgstr "3 Colunas - Barra lateral na esquerda"
+msgid "3 Column - Sidebar's on Left"
+msgstr ""
 
 #: options/layout.php:31
 #@ easel
-msgid "3 Column - Sidebar's on right"
-msgstr "3 Colunas - Barra lateral na direita"
+msgid "3 Column - Sidebar's on Right"
+msgstr ""
 
 #: options/layout.php:32
 #@ easel
-msgid "2 Column - Sidebar on left"
-msgstr "2 Colunas - Barra lateral na esquerda"
+msgid "2 Column - Sidebar on Left (780px)"
+msgstr ""
 
 #: options/layout.php:33
 #@ easel
-msgid "2 Column - Sidebar on right"
-msgstr "2 Colunas - Barra lateral na direita"
+msgid "2 Column - Sidebar on Right (780px)"
+msgstr ""
 
-#: options/layout.php:49
+#: options/layout.php:34
+#@ easel
+msgid "2 Column Wide, Sidebar on Left (980px)"
+msgstr ""
+
+#: options/layout.php:35
+#@ easel
+msgid "2 Column Wide - Sidebar on Right (980px)"
+msgstr ""
+
+#: options/layout.php:51
 #@ easel
 msgid "Scheme"
-msgstr "Esquema"
+msgstr ""
 
-#: options/layout.php:53
+#: options/layout.php:55
 #@ easel
 msgid "Disable default design"
-msgstr "Desabilitar design padrão"
+msgstr ""
 
-#: options/layout.php:58
+#: options/layout.php:60
 #@ easel
 msgid "Checking this option will make it so the default scheme does not load.  This makes a completely blank template with no special colors appear."
-msgstr "Checando esta opção fará com que o então esquema padrão não carregue.  Isto faz um template completamente branco com nenhuma cor especial aparecendo."
+msgstr ""
 
-#: options/layout.php:63
+#: options/layout.php:65
 #@ easel
 msgid "Schemes have been removed and replaced with Child Themes. If you wish to recover the look of your site from a previous version of Easel - they are available from the developer - and soon the WordPress repository."
-msgstr "Esquemas foram removidos e substituídos com Temas Filho. Se você deseja recuperar a aparência do seu site de uma versão anterior do Easel - elas estão disponibilizadas pelo desenvolvedor - e em breve do repositório do Wordpress."
+msgstr ""
+
+#: options/menubar.php:14
+#@ easel
+msgid "Disable default Menubar"
+msgstr ""
+
+#: options/menubar.php:19
+#@ easel
+msgid "Allows you to customize the location of the Menubar via Widgets or, just not have it."
+msgstr ""
+
+#: options/menubar.php:23
+#@ easel
+msgid "Enable Search Form"
+msgstr ""
+
+#: options/menubar.php:28
+#@ easel
+msgid "Searchforms can be fun when you have something to search for."
+msgstr ""
+
+#: options/menubar.php:32
+#@ easel
+msgid "Enable RSS Link"
+msgstr ""
+
+#: options/menubar.php:37
+#@ easel
+msgid "Adds an RSS link icon to your menubar on the right side."
+msgstr ""
+
+#: options/menubar.php:41
+#@ easel
+msgid "Disable the menubar jQuery?"
+msgstr ""
+
+#: options/menubar.php:46
+#@ easel
+msgid "Disable the loading of the menubar jQuery.  If you do not want the ddsmoother menu code to load. (will not do drop downs without it)"
+msgstr ""
+
+#: options/menubar.php:51
+#@ easel
+msgid "Enable Breadcrumbs?"
+msgstr ""
+
+#: options/menubar.php:56
+#@ easel
+msgid "This will create a pathable breathcrumbs beneith the menubar underneith the default menubar location."
+msgstr ""
+
+#: options/menubar.php:64
+#@ easel
+msgid "Menubar - Social Icons"
+msgstr ""
+
+#: options/menubar.php:68
+#@ easel
+msgid "Enable Social Icons in Menubar?"
+msgstr ""
+
+#: options/menubar.php:73
+#@ easel
+msgid "Adds additional social icons in the menubar on in the menunav area.  Put the entire http:// url in the input box that leads to your account on those sites.  Leave field empty if you do not have one and it will not show."
+msgstr ""
+
+#: options/menubar.php:103
+#@ easel
+msgid "Email - use mailto://your@email.com"
+msgstr ""
 
 #: options.php:6
 #@ easel
 msgid "Options"
-msgstr "Opções"
+msgstr ""
 
 #: options.php:7
 #: options.php:35
 #@ easel
 msgid "Easel Options"
-msgstr "Opções do Easel"
+msgstr ""
 
 #: options.php:36
 #@ easel
 msgid "Easel is a modular theme that has an abundant of hooks and actions placed in it for additional usability.  Ref: Comic Easel"
-msgstr "Easel é um tema modular que tem um abundante número de ganchos e ações colocadas nele para usabilidade adicional. Ref: Comic Easel"
+msgstr ""
 
 #: options.php:37
 #@ easel
 msgid "While Easel is an excellent stand-alone theme, it can be enhanced in usability with the associated plugins that have been built to utilize it's functionality."
-msgstr "Enquanto Easel é um tema autônomo excelente, ele pode ser melhorado em termos de usabilidade com os plugins associados que foram construídos para utilizar sua funcionalidade."
+msgstr ""
 
 #: options.php:48
 #@ easel
 msgid "Easel Settings RESET!"
-msgstr "Configurações do Easel LIMPAS!"
+msgstr ""
 
-#: options.php:166
+#: options.php:198
 #@ easel
 msgid "Easel Settings SAVED!"
-msgstr "Configurações do Easel SALVAS!"
+msgstr ""
 
-#: options.php:222
+#: options.php:255
 #@ easel
 msgid "Created, Developed and maintained by"
-msgstr "Criado, Desenvolvido e mantido por"
+msgstr ""
 
-#: options.php:223
+#: options.php:256
 #@ easel
 msgid "If you like the Easel theme, please donate.  It will help in developing new features and versions."
-msgstr "Se você gosta do tema Easel, por favor doe. Isso irá ajudar no desenvolvimento de novos recursos e versões."
+msgstr ""
 
 #: search.php:8
 #@ easel
 msgid "Search for &lsquo;"
-msgstr "Pesquisar por &lsquo;"
+msgstr ""
 
 #: search.php:8
 #@ easel
 msgid "&rsquo;"
-msgstr "&rsquo;"
+msgstr ""
 
 #: search.php:36
 #@ easel
 msgid "No results found."
-msgstr "Nenhum resultado encontrado."
+msgstr ""
 
 #: search.php:37
 #@ easel
 msgid "Try another search?"
-msgstr "Tentar outra pesquisa?"
+msgstr ""
 
 #: searchform.php:2
 #@ easel
 msgid "Search..."
-msgstr "Pesquisar..."
+msgstr ""
 
 #: sidebar-left.php:8
 #@ easel
 msgid "There are currently no widgets assigned to the left-sidebar, place some!"
-msgstr "Atualmente não há widgets associados a barra lateral esquerda, coloque alguns!"
+msgstr ""
 
 #: sidebar-left.php:10
 #: sidebar-right.php:10
 #@ easel
 msgid "Once you add widgets to this sidebar, this default information will go away."
-msgstr "Uma vez que você adicione widgets a esta barra lateral, esta informação padrão irá desaparecer."
+msgstr ""
 
 #: sidebar-left.php:12
 #@ easel
 msgid "Widgets can be added by going to your dashboard (wp-admin) -> Appearance -> Widgets, drag a widget you want to see into one of the appropriate sidebars."
-msgstr "Widgets podem ser adicionados através do seu Painel de Controle -> Aparência -> Widgets, arraste um widget que você desejar visualizar em uma das barras laterais apropriadas."
+msgstr ""
 
 #: sidebar-right.php:8
 #@ easel
 msgid "There are currently no widgets assigned to the right-sidebar, place some!"
-msgstr "Atualmente não há widgets associadas com a barra lateral direita, coloque alguns!"
+msgstr ""
 
 #: sidebar-right.php:12
 #@ easel
-msgid ""
-"This theme also uses the WordPress 3.0 Menu system.  You probably see the default stuff you have in the menubar.  Go to Appearance -> Menu in the\n"
-"\t\t\t\twp-admin (dashboard) and create a new menu."
+msgid "This theme also uses the WordPress 3.0 Menu system.  You probably see the default stuff you have in the menubar.  Go to Appearance -> Menu in the wp-admin (dashboard) and create a new menu."
 msgstr ""
-"Este tema também utiliza o Sistema de Menu do Wordpress 3.0.  Você provavelmente verá os itens padrão que você tem na barra de menu. Vá para Aparência -> Menu no the\n"
-"\\\t\\\t\\\t\\\twp-admin (Painel de Controle) e crie um novo menu."
 
-#: single.php:17
+#: single.php:20
 #@ easel
 msgid "Sorry, post is not found."
-msgstr "Perdão, nenhum post encontrado."
+msgstr ""
 
-#. translators: Calendar caption: 1: month name, 2: 4-digit year
+#. translators: Calendar caption: 1: month name, 2: 4-digit year 
 #: widgets/calendar.php:97
 #, php-format
 #@ easel
 msgctxt "calendar caption"
 msgid "%1$s %2$s"
-msgstr "%1$s %2$s"
+msgstr ""
 
 #: widgets/calendar.php:98
 #@ easel
 msgid "Calendar"
-msgstr "Calendário"
+msgstr ""
 
 #: widgets/calendar.php:123
 #: widgets/calendar.php:131
 #, php-format
 #@ easel
 msgid "View posts for %1$s %2$s"
-msgstr "Visualizar posts de %1$s %2$s"
+msgstr ""
 
 #: widgets/calendar.php:247
 #@ easel
 msgid "Display a calendar showing this months posts. (this calendar does not drop lines if there is no title given.)"
-msgstr "Exibe um calendário mostrando os posts deste mês. (este calendário não cria linhas se não foi dado título.)"
+msgstr ""
 
 #: widgets/calendar.php:248
 #@ easel
 msgid "Easel Calendar"
-msgstr "Calendário Easel"
+msgstr ""
 
 #: widgets/calendar.php:270
 #@ easel
 msgid "DOWNLOAD"
-msgstr "DOWNLOAD"
+msgstr ""
 
 #: widgets/calendar.php:273
 #@ easel
 msgid "Download Small"
-msgstr "Download Pequeno"
+msgstr ""
 
 #: widgets/calendar.php:273
 #@ easel
 msgid "S"
-msgstr "S"
+msgstr ""
 
 #: widgets/calendar.php:274
 #@ easel
 msgid "Download Medium"
-msgstr "Download Médio"
+msgstr ""
 
 #: widgets/calendar.php:274
 #@ easel
 msgid "M"
-msgstr "M"
+msgstr ""
 
 #: widgets/calendar.php:275
 #@ easel
 msgid "Download Large"
-msgstr "Download Grande"
+msgstr ""
 
 #: widgets/calendar.php:275
 #@ easel
 msgid "L"
-msgstr "L"
+msgstr ""
 
 #: widgets/calendar.php:314
 #@ easel
 msgid "Thumbnail URL (178px by 130px):"
-msgstr "URL da Miniatura (178px by 130px):"
+msgstr ""
 
 #: widgets/calendar.php:315
 #@ easel
 msgid "Add link on thumbnails:"
-msgstr "Adicionar link nas miniaturas:"
+msgstr ""
 
 #: widgets/calendar.php:316
 #@ easel
 msgid "Wallpaper URL (Small):"
-msgstr "URL do Papel de Parede (Pequeno):"
+msgstr ""
 
 #: widgets/calendar.php:317
 #@ easel
 msgid "Wallpaper URL (Medium):"
-msgstr "URL do Papel de Parede (Médio):"
+msgstr ""
 
 #: widgets/calendar.php:318
 #@ easel
 msgid "Wallpaper URL (Large):"
-msgstr "URL do Papel de Parede (Grande):"
+msgstr ""
 
 #: widgets/classicbookmark.php:40
 #@ easel
 msgid "Tag This Page"
-msgstr "Taguear Esta Página"
+msgstr ""
 
 #: widgets/classicbookmark.php:112
 #@ easel
 msgid "Creates a set of buttons that let the user return to the page they tagged."
-msgstr "Cria um conjunto de botões que permitem ao usuário voltar a uma página que ele marcou."
+msgstr ""
 
 #: widgets/classicbookmark.php:113
 #@ easel
 msgid "Classic Bookmark"
-msgstr "Marca-Página Clássico"
+msgstr ""
 
 #: widgets/controlpanel.php:13
 #@ easel
 msgid "Login/Logoff menu with register/lost password links if not logged on. (use only if registrations are enabled."
-msgstr "Menu de Entrar/Sair com links para registrar/senha perdida se não está conectado. (usar comente se os registros estão habilitados."
+msgstr ""
 
 #: widgets/controlpanel.php:14
 #: widgets/controlpanel.php:51
 #@ easel
 msgid "Control Panel"
-msgstr "Painel de Controle"
+msgstr ""
 
 #: widgets/controlpanel.php:23
 #@ easel
 msgid "Username"
-msgstr "Nome de Usuário"
+msgstr ""
 
 #: widgets/controlpanel.php:24
 #@ easel
 msgid "Password"
-msgstr "Senha"
+msgstr ""
 
 #: widgets/controlpanel.php:30
 #: widgets/controlpanel.php:32
 #@ easel
 msgid "Register"
-msgstr "Registrar"
+msgstr ""
 
 #: widgets/controlpanel.php:34
 #@ easel
 msgid "Recover password"
-msgstr "Recuperar senha"
+msgstr ""
 
 #: widgets/controlpanel.php:38
 #@ easel
 msgid "Logout"
-msgstr "Sair"
+msgstr ""
 
 #: widgets/controlpanel.php:40
 #@ easel
 msgid "Profile"
-msgstr "Perfil"
-
-#: widgets/menubar.php:47
-#@ easel
-msgid "Displays a menubar."
-msgstr "Exibe uma barra de menu"
+msgstr ""
 
 #: widgets/menubar.php:48
 #@ easel
+msgid "Displays a menubar."
+msgstr ""
+
+#: widgets/menubar.php:49
+#@ easel
 msgid "Easel Menubar"
-msgstr "Barra de Menu do Easel"
+msgstr ""
 
 #: widgets/multisite-list.php:15
 #@ easel
 msgid "Display Site List of all sites that have recently updated on this Multisite."
-msgstr "Exibe uma Lista de Site de todos os sites que tiveram sido recentemente atualizados neste Multisite."
+msgstr ""
 
 #: widgets/multisite-list.php:25
 #@ easel
 msgid "Hosted Site List"
-msgstr "Lista de Site Hospedados"
+msgstr ""
 
 #: widgets/randompostlink.php:34
 #@ easel
 msgid "Displays a link to click to trigger a random blog post."
-msgstr "Exibe um link para clicar e direcionar a um post aleatório do blog."
+msgstr ""
 
 #: widgets/randompostlink.php:35
 #@ easel
 msgid "Random Post Link"
-msgstr "Link Aleatório de Post"
+msgstr ""
 
 #: widgets/randompostlink.php:46
 #@ easel
 msgid "Random Post"
-msgstr "Post Aleatório"
+msgstr ""
 
 #: widgets/scheduledposts.php:14
 #@ easel
 msgid "Display a list of posts that are scheduled to be published."
-msgstr "Exibe uma lista de posts que estão agendados para serem publicados."
+msgstr ""
 
 #: widgets/scheduledposts.php:15
 #: widgets/scheduledposts.php:23
 #@ easel
 msgid "Scheduled Posts"
-msgstr "Posts Agendados"
+msgstr ""
 
 #: widgets/translator.php:16
 #@ easel
 msgid "Translate your site with Google."
-msgstr "Traduz seu site com Google."
+msgstr ""
 
 #: widgets/translator.php:17
 #@ easel
 msgid "Google Translator"
-msgstr "Google Tradutor"
+msgstr ""
 
