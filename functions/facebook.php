@@ -29,6 +29,7 @@ function easel_facebook_comic_thumbnail() {
 if (!function_exists('easel_add_facebook_meta')) {
 	function easel_add_facebook_meta() {
 		global $post;
+		if (is_404() || empty($post)) return;
 		if (!is_front_page() && !is_home()) {
 			echo '<meta property="og:url" content="'.get_permalink().'" />'."\r\n";
 		} else {

@@ -1,6 +1,7 @@
 3.3.4
 Two more layouts, 2clw & 2crw  2 column wide at 980px instead of 780px; larger posting area
 CSS tweaks to the featured image of regular posts
+do not let the facebook meta run on 404 pages
 
 3.3.3
 Toggle option now available to disable jetpacks infinite scroll and use the easel pagination

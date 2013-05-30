@@ -25,10 +25,6 @@ if (class_exists('MultiPostThumbnails')) {
 	add_image_size('secondary-image');
 }
 
-global $content_width;
-if ( ! isset( $content_width ) )
-	$content_width = 520;
-
 // load up the addons that it finds, loads before functions just in case we want to rewrite a function
 if (is_dir(easel_themeinfo('themepath') . '/addons')) {
 	if (easel_themeinfo('enable_addon_page_options')) 
@@ -244,12 +240,21 @@ function easel_is_bbpress() {
 if (!function_exists('easel_sidebars_disabled')) {
 	function easel_sidebars_disabled() {
 		global $post;
-		if (is_page() && !empty($post)) {
+		if (!is_404() && is_page() && !empty($post)) {
 			$sidebars_disabled = get_post_meta($post->ID, 'disable-sidebars', true);
 			if ($sidebars_disabled) return true;
 		}
 //		if (easel_is_bbpress()) return true;
 		return false;
+	}
+}
+
+global $content_width;
+if ( ! isset( $content_width ) ) {
+	if (easel_sidebars_disabled()) { 
+		$content_width = 720; 
+	} else {
+		$content_width = 520;
 	}
 }
 
