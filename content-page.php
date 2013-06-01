@@ -1,5 +1,5 @@
+<?php easel_display_post_thumbnail(); ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php easel_display_post_thumbnail(); ?>
 	<div class="post-head"><?php do_action('easel-post-head'); ?></div>
 	<div class="post-content">
 		<div class="post-info">
