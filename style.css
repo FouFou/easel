@@ -62,7 +62,7 @@ img {
 	margin: 0;
 }
 
-.entry img {
+.entry img, .post-content img {
 	max-width: 100%;
 }
 
