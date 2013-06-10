@@ -22,4 +22,3 @@
 	</div>
 	<div class="post-foot"><?php do_action('easel-post-foot'); ?></div>
 </div>
-<?php comments_template('', true);

@@ -45,5 +45,3 @@ if (!is_home() && !is_archive() && !is_search()) { easel_display_post_thumbnail(
 	<div class="post-foot"><?php do_action('easel-post-foot'); ?></div>
 	<div class="clear"></div>
 </div>
-<?php 
-comments_template('', true);

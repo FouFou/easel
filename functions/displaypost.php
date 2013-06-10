@@ -46,11 +46,11 @@ if (!function_exists('easel_display_post_title')) {
 		} else {
 			$post_title = "<h2 class=\"post-title\">";
 		}
-		if (is_home() || is_search() || is_archive() && !is_page()) $post_title .= "<a href=\"".get_permalink()."\">";
+		if (!is_page() && !is_single() || (is_front_page() && is_page_template())) $post_title .= "<a href=\"".get_permalink()."\">";
 		$get_post_title .= get_the_title();
 		if (!$get_post_title) $get_post_title = '( No Title )';
 		$post_title .= $get_post_title;
-		if (is_home() || is_search() || is_archive() && !is_page()) $post_title .= "</a>";
+		if (!is_page() && !is_single() || (is_front_page() && is_page_template())) $post_title .= "</a>";
 		$post_title .= "</h2>\r\n";
 		echo apply_filters('easel_display_post_title',$post_title);
 	}

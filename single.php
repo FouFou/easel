@@ -8,8 +8,11 @@ if (have_posts()) {
 	while (have_posts()) : the_post();
 		if (get_post_type() !== 'post') {
 			get_template_part('content', get_post_type() );
-		} else
+			comments_template('', true);
+		} else {
 			get_template_part('content', get_post_format());
+			comments_template('', true);
+		}
 	endwhile;
 	
 } else { ?>
