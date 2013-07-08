@@ -31,6 +31,7 @@
 			<?php 
 				easel_display_post_tags();
 				do_action('easel-post-extras');
+				do_action('comic-post-extras');
 				easel_display_comment_link(); 
 			?>
 			<div class="clear"></div>

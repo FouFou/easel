@@ -90,7 +90,7 @@ if (comments_open()) { ?>
 	<?php
 	$fields =  array(
 			'author' => '<p class="comment-form-author">' .
-			'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />'. ' <label for="author"><small>' . __( '*NAME','easel' ) .'</label></p>',
+			'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />'. ' <label for="author"><small>' . __( '*NAME','easel' ) .'</small></label></p>',
 			'email'  => '<p class="comment-form-email">' .
 			'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /> <label for="email">' . __( '*EMAIL', 'easel' ) . '<small> &mdash; <a href="http://gravatar.com">'. __('Get a Gravatar','easel') . '</a></small></label></p>',
 			'url'    => '<p class="comment-form-url">' .

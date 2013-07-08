@@ -2,8 +2,8 @@
 Two more layouts, 2clw & 2crw  2 column wide at 980px instead of 780px; larger posting area
 CSS tweaks to the featured image of regular posts
 do not let the facebook meta run on 404 pages
-removed the comments_template('', true); from executing in content-*.php pages and moved <?php 
-comments_template('', true); to the loops
+removed the comments_template('', true); from executing in content-*.php pages and moved it to the loops they came from
+added an || is_page_template() check in the 'linkable' part of displaying post and page titles - might need to add something to check if it's on the home page ;/
 
 3.3.3
 Toggle option now available to disable jetpacks infinite scroll and use the easel pagination

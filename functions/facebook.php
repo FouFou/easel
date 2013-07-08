@@ -12,9 +12,9 @@ function opengraph_make_thumbnail_for_youtube() {
 	}
 }
 
-add_action('wp_head', 'easel_facebook_comic_thumbnail');
+add_action('wp_head', 'easel_facebook_thumbnail');
 
-function easel_facebook_comic_thumbnail() {
+function easel_facebook_thumbnail() {
 	global $post;
 	if (!empty($post) && $post->post_type == 'post') {
 		$post_image_id = get_post_thumbnail_id($post->ID);
