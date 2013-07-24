@@ -85,29 +85,6 @@ function easel_admin_options() { ?>
 			update_option('easel-options', $easel_options);
 		}
 		
-		if ($_REQUEST['action'] == 'easel_save_addons') {
-			foreach (array(
-				'enable_addon_page_options',
-				'enable_addon_membersonly',
-				'enable_addon_showcase',
-				'enable_addon_showcase_slider',
-				'enable_addon_playingnow',
-				'enable_addon_commpress'
-			) as $key) {
-				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
-				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
-			}
-			
-			foreach (array(
-				'non_members_message'
-			) as $key) {
-				if (isset($_REQUEST[$key])) 
-					$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
-			}
-			
-			$tab = 'addons';
-			update_option('easel-options', $easel_options);
-		}
 		if ($_REQUEST['action'] == 'easel_save_menubar') {
 
 			foreach (array(
@@ -209,7 +186,6 @@ function easel_admin_options() { ?>
 				'layout' => __('Layout', 'easel'),
 		  		'general' => __('General', 'easel'),
 				'menubar' => __('Menubar', 'easel'),
-				'addons' => __('Addons', 'easel'),
 				'debug' => __('Debug', 'easel') 
 		  	);
 

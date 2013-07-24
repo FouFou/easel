@@ -25,22 +25,6 @@ if (class_exists('MultiPostThumbnails')) {
 	add_image_size('secondary-image');
 }
 
-// load up the addons that it finds, loads before functions just in case we want to rewrite a function
-if (is_dir(easel_themeinfo('themepath') . '/addons')) {
-	if (easel_themeinfo('enable_addon_page_options')) 
-		@require_once(easel_themeinfo('themepath') . '/addons/page-options.php');
-	if (easel_themeinfo('enable_addon_membersonly'))
-		@require_once(easel_themeinfo('themepath') . '/addons/membersonly.php');
-	if (easel_themeinfo('enable_addon_playingnow'))
-		@require_once(easel_themeinfo('themepath') . '/addons/playingnow.php');
-	if (easel_themeinfo('enable_addon_showcase'))
-		@require_once(easel_themeinfo('themepath') . '/addons/showcase.php');
-	if (easel_themeinfo('enable_addon_commpress'))
-		@require_once(easel_themeinfo('themepath') . '/addons/commpress.php');
-/*	if (easel_themeinfo('enable_wprewrite_posttype_control'))
-		@require_once(easel_themeinfo('themepath') . '/addons/wp-rewrite.php'); */
-}
-
 // These autoload
 foreach (glob(easel_themeinfo('themepath') . "/functions/*.php") as $funcfile) {
 	@require_once($funcfile);
@@ -387,7 +371,7 @@ function easel_load_options() {
 			'disable_scroll_to_top' => false,
 			'enable_avatar_trick' => true,
 			'disable_default_design' => false,
-			'disable_comment_note' => false,
+			'disable_comment_note' => true,
 			'enable_numbered_pagination' => true,
 			'disable_comment_javascript' => false,
 			'enable_post_thumbnail_rss' => true,
@@ -408,13 +392,6 @@ function easel_load_options() {
 			'enable_debug_footer_code' => false,
 			'disable_blog_on_homepage' => false,
 			'enable_comments_on_homepage' => false,
-			'enable_addon_membersonly' => false,
-			'non_members_message' => __('There is members only content here.','easel'),
-			'enable_addon_showcase' => false,
-			'enable_addon_playingnow' => false,
-			'enable_addon_showcase_slider' => false,
-			'enable_addon_commpress' => false,
-			'enable_addon_page_options' => false,
 			'custom_image_header_width' => '980',
 			'custom_image_header_height' => '100',
 			'copyright_name' => '',

@@ -1,4 +1,5 @@
-3.3.4
+3.4
+Fixed a missing /small element that disappeared
 Two more layouts, 2clw & 2crw  2 column wide at 980px instead of 780px; larger posting area
 CSS tweaks to the featured image of regular posts
 do not let the facebook meta run on 404 pages

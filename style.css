@@ -545,6 +545,10 @@ a.post-edit-link {
 
 /* Comments */
 
+#comment-wrapper {
+	padding: 3px;
+}
+
 .comment-link {
 	font-weight: bold;
 	text-align: right;
