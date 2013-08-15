@@ -285,54 +285,6 @@ function easel_clean_filename($filename) {
 	return str_replace("%2F", "/", rawurlencode($filename));
 }
 
-/**
- * Retrieve adjacent post link.
- *
- * Can either be next or previous post link.
- * chapters is for the comic post type
- */
-
-function easel_get_adjacent_post_type($previous = true, $taxonomy = 'post', $in_same_chapter = false) {
-	global $post, $wpdb;
-	
-	if ( empty( $post ) ) return null;
-
-	$current_post_date = $post->post_date;
-
-	$join = '';
-
-	if ( $in_same_chapter ) {
-		$join = " INNER JOIN $wpdb->term_relationships AS tr ON p.ID = tr.object_id INNER JOIN $wpdb->term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id";
-
-		if ( $in_same_chapter ) {
-			$chapt_array = wp_get_object_terms($post->ID, 'chapters', array('fields' => 'ids'));
-			if (!empty($chapt_array))
-				$join .= " AND tt.taxonomy = 'chapters' AND tt.term_id IN (" . implode(',', $chapt_array) . ")";
-		}
-	}
-
-	$adjacent = $previous ? 'previous' : 'next';
-	$op = $previous ? '<' : '>';
-	$order = $previous ? 'DESC' : 'ASC';
-
-	$join  = apply_filters( "get_{$adjacent}_{$taxonomy}_join", $join, $in_same_chapter, $excluded_chapters );
-	$where = apply_filters( "get_{$adjacent}_{$taxonomy}_where", $wpdb->prepare("WHERE p.post_date $op %s AND p.post_type = %s AND p.post_status = 'publish' $posts_in_ex_cats_sql", $current_post_date, $post->post_type), $in_same_chapter, $excluded_chapters );
-	$sort  = apply_filters( "get_{$adjacent}_{$taxonomy}_sort", "ORDER BY p.post_date $order LIMIT 1" );
-
-	$query = "SELECT p.* FROM $wpdb->posts AS p $join $where $sort";
-	$query_key = "adjacent_{$taxonomy}_" . md5($query);
-	$result = wp_cache_get($query_key, 'counts');
-	if ( false !== $result )
-		return $result;
-
-	$result = $wpdb->get_row("SELECT p.* FROM $wpdb->posts AS p $join $where $sort");
-	if ( null === $result )
-		$result = '';
-
-	wp_cache_set($query_key, $result, 'counts');
-	return $result;
-}
-
 function easel_filter_wp_title( $title ) {
 	global $wp_query, $s, $paged, $page;
 	if (!is_feed()) {

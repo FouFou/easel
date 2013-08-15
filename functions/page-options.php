@@ -29,7 +29,7 @@ function easel_save_page_editor_options($post_id) {
 	} 
 	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) 
 		return $post_id;
-	if ( $_POST['post_type'] == 'page' ) {
+	if ( isset($_POST['post_type']) && ($_POST['post_type'] == 'page') ) {
 		if ( !current_user_can( 'edit_page', $post_id ) )
 			return $post_id;
 	} else {
