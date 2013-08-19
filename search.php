@@ -23,7 +23,8 @@ if (have_posts()) :
 	</div>
 	<?php } else {
 		while (have_posts()) : the_post();
-			get_template_part( 'content', get_post_format() );
+			$post_format = ($post->post_type !== 'post') ? $post->post_type : get_post_format();
+			get_template_part( 'content', $post_format );
 		endwhile;
 	} ?>
 	<div class="clear"></div>

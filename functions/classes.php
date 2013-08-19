@@ -9,7 +9,7 @@
 
 add_filter('body_class','easel_body_class');
 
-function easel_body_class($classes = '') {
+function easel_body_class($classes = array()) {
 	global  $current_user, $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone, $post, $wp_query, $easel_is_signup;
 	
 	get_currentuserinfo();

@@ -13,7 +13,6 @@ $blogpage = new WP_Query(); $blogpage->query($blog_query);
 if ($blogpage->have_posts()) {
 	while ($blogpage->have_posts()) : $blogpage->the_post();
 		$withcomment = 0;
-		var_dump($post);
 		get_template_part('content', get_post_format());
 	endwhile;
 	easel_pagination();

@@ -215,7 +215,7 @@ body.layout-2cl #page, body.layout-2cr #page{
 	clear: both;
 	display: block;
 	margin: 0 auto;
-	background: #111;
+	background: #000;
 	text-transform: uppercase;
 	line-height: 25px;
 }
@@ -454,6 +454,10 @@ a.post-edit-link {
 
 .post-image {
 	margin: 0 auto;
+}
+
+.post-image img {
+	max-width: 100%;
 }
 
 .post-content .post-image {
