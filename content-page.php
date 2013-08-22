@@ -1,6 +1,5 @@
 <?php easel_display_post_thumbnail(); ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="post-head"><?php do_action('easel-post-head'); ?></div>
 	<div class="post-content">
 		<div class="post-info">
 			<?php 
@@ -20,5 +19,4 @@
 		<div class="clear"></div>
 		<?php edit_post_link(__('Edit this page.','easel'), '', ''); ?>
 	</div>
-	<div class="post-foot"><?php do_action('easel-post-foot'); ?></div>
 </div>

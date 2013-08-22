@@ -4,16 +4,12 @@
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	<title><?php wp_title(); ?></title>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
-<?php if (!easel_themeinfo('disable_default_design')) { ?>
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style-default.css" type="text/css" media="screen" />
-<?php } ?>
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	<meta name="Easel" content="<?php echo easel_themeinfo('version'); ?>" />
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page-head"><?php do_action('easel-page-head'); ?></div>
 <div id="page-wrap">
 	<div id="page">
 		<?php easel_get_sidebar('above-header'); ?>

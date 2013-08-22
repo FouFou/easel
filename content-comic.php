@@ -1,5 +1,4 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="post-head"><?php do_action('easel-post-head'); ?></div>
 	<div class="post-content">
 		<?php if (!easel_is_bbpress()) easel_display_author_gravatar(); ?>
 		<div class="post-info">
@@ -38,5 +37,4 @@
 		</div>
 		<?php edit_post_link(__('Edit this comic.','easel'), '', ''); ?>
 	</div>
-	<div class="post-foot"><?php do_action('easel-post-foot'); ?></div>
 </div>

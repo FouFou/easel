@@ -44,28 +44,7 @@
 				</tr>
 			</table>
 			<br />
-
-			<table class="widefat nolowermargin" cellspacing="0">
-				<thead>
-					<tr>
-						<th colspan="4"><?php _e('Scheme','easel'); ?></th>
-					</tr>
-				</thead>
-				<tr class="alternate">
-					<th scope="row"><label for="disable_default_design"><?php _e('Disable default design','easel'); ?></label></th>
-					<td>
-						<input id="disable_default_design" name="disable_default_design" type="checkbox" value="1" <?php checked(true, $easel_options['disable_default_design']); ?> />
-					</td>
-					<td>
-						<?php _e('Checking this option will make it so the default scheme does not load.  This makes a completely blank template with no special colors appear.','easel'); ?>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="3">
-						<strong><?php _e('Schemes have been removed and replaced with Child Themes. If you wish to recover the look of your site from a previous version of Easel - they are available from the developer - and soon the WordPress repository.','easel'); ?></strong>
-					</td>
-				</tr>
-			</table>
+			<strong><?php _e('Schemes and customization can be modified in the appearance - customize section of the wp-admin','easel'); ?></strong>
 			<br />
 		</div>
 

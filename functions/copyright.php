@@ -1,11 +1,11 @@
 <?php
 
-if (!function_exists('easel_footer_text')) {
-	function easel_footer_text() {
-		$output = "<p class=\"footer-text\">\r\n";
+if (!function_exists('easel_copyright_text')) {
+	function easel_copyright_text() {
+		$output = "<p class=\"copyright-info\">\r\n";
 		$output .= easel_copyright_info();
 		$output .= "<span class=\"footer-pipe\">|</span> ";
-		$output .= __('Powered by','easel') . " <a href=\"http://wordpress.org/\">WordPress</a> " . __('with','easel'). " <a href=\"http://frumph.net/easel/\">Easel</a>\r\n";
+		$output .= __('Powered by','easel') . " <a href=\"http://wordpress.org/\">WordPress</a> " . __('with','easel'). " <a href=\"http://frumph.net\">Easel</a>\r\n";
 		$output .= easel_hosted_on();
 		$output .= "<span class=\"footer-subscribe\">";
 			$output .= "<span class=\"footer-pipe\">|</span> ";
@@ -18,7 +18,7 @@ if (!function_exists('easel_footer_text')) {
 			$output .="</span>\r\n";
 		}
 		$output .= "</p>\r\n";
-		echo apply_filters('easel_footer_text', $output);
+		echo apply_filters('easel_copyright_text', $output);
 	}
 }
 
@@ -31,7 +31,7 @@ if (!function_exists('easel_hosted_on')) {
 			} else {
 				$site_name = $current_site->site_name;
 			}
-			$output = "<span class=\"footer-pipe\">|</span> ";
+			$output = "<span class=\"copyright-pipe\">|</span> ";
 			$output .= __('Hosted on','easel') . ' <a href="http://'. $current_site->domain. $current_site->path. '">'. $site_name. '</a> ';
 			return apply_filters('easel_hosted_on', $output);
 		}

@@ -9,7 +9,6 @@ if (!comments_open() && !get_comments_number()) {
 	return;
 }
 ?>
-<div id="comment-wrapper-head"></div>
 <div id="comment-wrapper">
 <?php if (comments_open() && (get_comments_number() > 0)) { ?> 
 	<div class="commentsrsslink"><?php post_comments_feed_link(__('Comments RSS', 'easel')); ?></div>
@@ -106,4 +105,3 @@ if (comments_open()) { ?>
 	<p class="closed-comments"><?php _e('Comments are closed.','easel'); ?></p>
 <?php } ?>
 </div>
-<div id="comment-wrapper-foot"></div>

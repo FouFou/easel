@@ -60,7 +60,7 @@ function easel_setup() {
 	));
 	add_theme_support('custom-background');
 	add_theme_support('post-thumbnails');
-	if (easel_themeinfo('enable_jetpack_infinite_scrolling')) {
+	if (class_exists( 'Jetpack' ) && Jetpack::init()->is_module_active('infinite-scroll')) {
 		add_theme_support('infinite-scroll', array(
 		 	'type'           => 'scroll',
 			'container'      => 'content',
@@ -75,19 +75,19 @@ function easel_enqueue_theme_scripts() {
 	if (!is_admin()) {
 		wp_enqueue_script('jquery');
 		if (!easel_themeinfo('disable_jquery_menu_code')) {
-			wp_enqueue_script('ddsmoothmenu_js', easel_themeinfo('themeurl') . '/js/ddsmoothmenu.js'); 
-			wp_enqueue_script('menubar_js', easel_themeinfo('themeurl') . '/js/menubar.js');
+			wp_enqueue_script('ddsmoothmenu_js', easel_themeinfo('themeurl').'/js/ddsmoothmenu.js'); 
+			wp_enqueue_script('menubar_js', easel_themeinfo('themeurl').'/js/menubar.js');
 		}
 		if (!easel_themeinfo('disable_scroll_to_top')) {
-			wp_enqueue_script('easel_scroll', easel_themeinfo('themeurl') . '/js/scroll.js', null, null, true);
+			wp_enqueue_script('easel_scroll', easel_themeinfo('themeurl').'/js/scroll.js', null, null, true);
 		}
 		if (is_active_widget('easel_google_translate_widget', false, 'easel_google_translate_widget', true)) {
 			wp_enqueue_script('google-translate', 'http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit', null, null, true);
 			wp_enqueue_script('google-translate-settings', get_template_directory_uri() . '/js/googletranslate.js');
 		}
 		if (easel_themeinfo('enable_avatar_trick') && !$is_IE) {
-			wp_enqueue_script('themetricks_historic1', easel_themeinfo('themeurl') . '/js/cvi_text_lib.js', null, null, true);
-			wp_enqueue_script('themetricks_historic2', easel_themeinfo('themeurl') . '/js/instant.js', null, null, true);
+			wp_enqueue_script('themetricks_historic1', easel_themeinfo('themeurl').'/js/cvi_text_lib.js', null, null, true);
+			wp_enqueue_script('themetricks_historic2', easel_themeinfo('themeurl').'/js/instant.js', null, null, true);
 		}
 		if (easel_themeinfo('facebook_like_blog_post'))
 			wp_enqueue_script('easel-facebook', 'http://connect.facebook.net/en_US/all.js#xfbml=1'); // force to the header instead of footer
@@ -134,17 +134,21 @@ if (!function_exists('easel_register_sidebars')) {
 			array('id' => 'menubar', 'name' => __('Menubar', 'easel'), 'description' => __('This sidebar is under the header and above the content-wrapper block','easel')),
 			array('id' => 'over-blog', 'name' => __('Over Blog', 'easel'), 'description' => __('This sidebar appears over the blog within the #column .narrowcolumn','easel')),
 			array('id' => 'under-blog', 'name' => __('Under Blog', 'easel'), 'description' => __('This sidebar appears under the blog within the #column .narrowocolumn','easel')),
-			array('id' => 'footer', 'name' => __('Footer', 'easel'), 'description' => __('This sidebar is below the #content-wrapper block at the bottom of the page','easel')),
-			array('id' => '1', 'name' => __('Jetpack Mobile Sidebar', 'easel'), 'description' => __('If the Jetpack Mobile theme is active it will use this sidebar.','easel')),			
+			array('id' => 'footer', 'name' => __('Footer', 'easel'), 'description' => __('This sidebar is at the bottom of the page and is the center of the 3 footer sidebars.','easel')),
+			array('id' => 'footer-left', 'name' => __('Footer Left', 'easel'), 'description' => __('This sidebar is at the bottom of the page, the left one.','easel')),
+			array('id' => 'footer-right', 'name' => __('Footer Right', 'easel'), 'description' => __('This sidebar is at the bottom of the page, the right one.','easel')),
 		);
+		if (class_exists('Jetpack') && Jetpack::init()->is_module_active('minileven')) { 
+			$widgets_list[] = array('id' => '1', 'name' => __('Jetpack Mobile Sidebar', 'easel'), 'description' => __('Jetpack Mobile Sidebar','easel'));
+		}
 		foreach ($widgets_list as $widget_info) {
 			register_sidebar(array(
 						'name'=> $widget_info['name'],
 						'id' => 'sidebar-'.sanitize_title($widget_info['id']),
 						'description' => $widget_info['description'],
-						'before_widget' => "<div id=\"".'%1$s'."\" class=\"widget ".'%2$s'."\">\r\n<div class=\"widget-head\"></div>\r\n<div class=\"widget-content\">\r\n",
-						'after_widget'  => "</div>\r\n<div class=\"clear\"></div>\r\n<div class=\"widget-foot\"></div>\r\n</div>\r\n",
-						'before_title'  => "<h2 class=\"widgettitle\">",
+						'before_widget' => "<div id=\"".'%1$s'."\" class=\"widget ".'%2$s'."\">\r\n<div class=\"widget-content\">\r\n",
+						'after_widget'  => "</div>\r\n<div class=\"clear\"></div>\r\n</div>\r\n",
+						'before_title'  => "<h2 class=\"widget-title\">",
 						'after_title'   => "</h2>\r\n"
 						));
 		}
@@ -152,7 +156,7 @@ if (!function_exists('easel_register_sidebars')) {
 }
 
 function easel_get_sidebar($location = '') {
-	if (empty($location)) { get_sidebar(); return; }
+	if (empty($location)) return;
 	if (file_exists(get_template_directory().'/sidebar-'.$location.'.php') || file_exists(get_stylesheet_directory().'/sidebar-'.$location.'.php')) {
 		get_sidebar($location);
 	} elseif (is_active_sidebar('sidebar-'.$location)) { ?>
@@ -354,7 +358,7 @@ function easel_load_options() {
 			'layout' => '3c',
 			'enable_wprewrite_posttype_control' => false,
 			'force_active_connection_close' => false,
-			'enable_addon_easel_slider' => true,
+			'removed_option' => true,
 			'menubar_social_icons' => false,
 			'menubar_social_twitter' => '',
 			'menubar_social_facebook' => '',
@@ -412,3 +416,9 @@ function easel_themeinfo($whichinfo = null) {
 	return $easel_themeinfo;
 }
 
+function easel_comic_position_in_column() {
+	$option = get_option('easel-customize-select');
+	$checkbox_comic_in_column = (isset($option['comic-in-column'])) ? $option['comic-in-column'] : '';
+	if ($checkbox_comic_in_column) return true;
+	return false;
+}

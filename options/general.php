@@ -247,15 +247,6 @@
 						<?php _e('Previous Entries and Next Entries buttons are replaced by a bar of numbered pages. Numbered pagination appears on the Home page, the author(s) page, the blog template, and comments/single when there are more then the set number of comments per page. Uses the same styling as the Menubar.','easel'); ?>
 					</td>
 				</tr>
-				<tr>
-					<th scope="row"><label for="enable_jetpack_infinite_scrolling"><?php _e('Enable the Jetpack Plugin: Infinite Scrolling','easel'); ?></label></th>
-					<td>
-						<input id="enable_jetpack_infinite_scrolling" name="enable_jetpack_infinite_scrolling" type="checkbox" value="1" <?php checked(true, $easel_options['enable_jetpack_infinite_scrolling']); ?> />
-					</td>
-					<td>
-						<?php _e('When this option is enabled and the Jetpack plugin is installed with Infinite scrolling activated, it allows the Easel theme to use it.  An additional toggle from the plugin is in the Settings - Reading section of the wp-admin called [ To Infinity and beyond ] when the Jetpack plugin: Infinite Scrolling is enabled.','easel'); ?>
-					</td>
-				</tr>
 			</table>
 			
 			<table class="widefat">
