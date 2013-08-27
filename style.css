@@ -60,6 +60,7 @@ p.attachment {
 img {
 	padding: 0;
 	margin: 0;
+	max-width: 100%;
 }
 
 .entry img, .post-content img {
@@ -191,10 +192,10 @@ h4, h4 a {
 	max-width: 980px;
 	margin: 0 auto;
 }
-
+/*
 body.layout-2cl #page, body.layout-2cr #page {
 	max-width: 780px;
-}
+}*/
 
 /* Header */
 
@@ -386,15 +387,15 @@ body.layout-2cl #page, body.layout-2cr #page {
 }
 
 /* This is the wrapper for the #content floats need to be in here */
-#content-column {
+/*#content-column {
 	float: left;
 	max-width: 550px;
 	margin: 0 2px;
-}
+}*/
 
-body.layout-2clw #content-column, body.layout-2cl #content-column, body.layout-3cl #content-column {
+/*body.layout-2clw #content-column, body.layout-2cl #content-column, body.layout-3cl #content-column {
 	float: right;
-}
+}*/
 
 #content {
 	overflow: hidden;
@@ -407,13 +408,13 @@ body.wide #content {
 	max-width: 100%;
 }
 
-body.layout-2cl #content-column, body.layout-2cr #content-column {
+/*body.layout-2cl #content-column, body.layout-2cr #content-column {
 	max-width: 560px;
 }
 
 body.layout-2clw #content-column, body.layout-2crw #content-column {
 	max-width: 660px;
-}
+}*/
 
 body.wide #content-column, body.signup #content-column {
 	width: auto;
@@ -760,7 +761,7 @@ textarea#comment {
 	margin: 0px 2px;
 }
 
-#sidebar-left {
+/*#sidebar-left {
 	float: left;
 	width: 204px;
 }
@@ -768,7 +769,7 @@ textarea#comment {
 #sidebar-right {
 	float: right;
 	width: 204px;
-}
+}*/
 
 body.layout-3cr #sidebar-right {
 	/*	margin-left: 0px; */
@@ -778,9 +779,9 @@ body.layout-3cl #sidebar-right {
 	float: left;
 }
 
-body.layout-2clw #sidebar-left, body.layout-2crw #sidebar-right {
+/*body.layout-2clw #sidebar-left, body.layout-2crw #sidebar-right {
 	width: 308px;
-}
+}*/
 
 .sidebar-basic ul, .sidebar-basic li {
 	margin: 0;
@@ -1626,9 +1627,9 @@ body.scheme-sandy #header, body.scheme-sandy #menubar-wrapper, body.scheme-sandy
 	margin: 0 auto;
 }
 
-body.layout-2cl #header, body.layout-2cl #menubar-wrapper, body.layout-2cl #breadcrumb-wrapper, body.layout-2cl #subcontent-wrapper, body.layout-2cl #footer, body.layout-2cr #header, body.layout-2cr #menubar-wrapper, body.layout-2cr #breadcrumb-wrapper, body.layout-2cr #subcontent-wrapper, body.layout-2cr #footer {
+/*body.layout-2cl #header, body.layout-2cl #menubar-wrapper, body.layout-2cl #breadcrumb-wrapper, body.layout-2cl #subcontent-wrapper, body.layout-2cl #footer, body.layout-2cr #header, body.layout-2cr #menubar-wrapper, body.layout-2cr #breadcrumb-wrapper, body.layout-2cr #subcontent-wrapper, body.layout-2cr #footer {
 	width: 780px;
-}
+}*/
 
 body.scheme-sandy #breadcrumb-wrapper {
 	-moz-box-shadow: 1px 2px 10px #000;
@@ -1658,9 +1659,9 @@ body.scheme-sandy.cnc #comic-wrap {
 	margin-bottom: 0;
 }
 
-body.scheme-sandy.layout-2cl #comic-wrap, body.scheme-sandy.layout-2cr #comic-wrap {
+/*body.scheme-sandy.layout-2cl #comic-wrap, body.scheme-sandy.layout-2cr #comic-wrap {
 	width: 840px;
-}
+}*/
 
 body.scheme-sandy #menubar-wrapper {
 	-moz-box-shadow: 1px 2px 10px #000;

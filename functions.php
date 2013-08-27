@@ -202,6 +202,13 @@ if (!function_exists('easel_is_layout')) {
 	}
 }
 
+if (!function_exists('easel_site_width')) {
+	function easel_site_width() {
+		$choices = explode(",", $choices);
+		return easel_themeinfo('site_width');
+	}
+}
+
 function easel_is_bbpress() {
 	if (function_exists('bbp_is_single_forum') &&
 			(bbp_is_forum()
@@ -359,6 +366,7 @@ function easel_load_options() {
 			'display_archive_as_links' => false,
 			'archive_display_order' => 'DESC',
 			'layout' => '3c',
+			'site_width'  => '980',
 			'enable_wprewrite_posttype_control' => false,
 			'force_active_connection_close' => false,
 			'removed_option' => true,

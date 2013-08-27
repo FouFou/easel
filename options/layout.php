@@ -42,6 +42,18 @@
 					<td style="vertical-align:middle">
 					</td>
 				</tr>
+				<tr>
+					<th scope="row">
+						<label for="site_width" style="text-align:left"><?php _e('Max Width of Your Website','easel'); ?>
+
+						</label>
+					</th>
+					<td>
+						<input type="text" name="site_width" id="site_width" value="<?php echo $easel_options['site_width']; ?>" />px
+
+					</td>
+
+				</tr>
 			</table>
 			<br />
 			<strong><?php _e('Schemes and customization can be modified in the appearance - customize section of the wp-admin','easel'); ?></strong>

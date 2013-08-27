@@ -92,7 +92,7 @@ if (comments_open()) { ?>
 	$args = array(
 			'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" name="comment" class="comment-textarea"></textarea></p>', 
-			'comment_notes_after'  => easel_themeinfo('disable_comment_note') ? '' : '<p class="comment-note"><strong><small>' . __('NOTE - You can use these HTML tags and attributes: ', 'easel') . '<small></strong><br /><small><code>' . allowed_tags() . '</code></small></p>',
+			'comment_notes_after'  => easel_themeinfo('disable_comment_note') ? '' : '<p class="comment-note"><strong><small>' . __('NOTE - You can use these HTML tags and attributes: ', 'easel') . '</small></strong><br /><small><code>' . allowed_tags() . '</code></small></p>',
 			'title_reply'          => __( 'Comment &not;', 'easel' ),
 			'title_reply_to'       => __( 'Reply to %s &not;','easel' ), 
 			'cancel_reply_link'    => __( 'Cancel reply', 'easel' ),

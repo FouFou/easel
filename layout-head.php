@@ -22,7 +22,7 @@ if (!easel_is_signup() && !easel_sidebars_disabled()) {
 		if (easel_is_layout('3cl')) easel_get_sidebar('right');
 }
 ?>
-		<div id="content-column" class="<?php echo (easel_is_layout('2clw,2clr,3c,3cl,3cr')) ? 'span8' : 'span12'; ?>">
+		<div id="content-column" class="<?php echo (easel_is_layout('2clw,2clr,3c,3cl,3cr')) ? 'span6' : 'span8'; ?>">
 			<?php if (easel_comic_position_in_column()) do_action('comic-area'); ?>
 			<div id="content" class="narrowcolumn">
 				<?php do_action('comic-blog-area'); ?>

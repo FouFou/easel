@@ -56,6 +56,7 @@ function easel_admin_options() { ?>
 		if ($_REQUEST['action'] == 'easel_save_layout') {
 			foreach (array(
 				'layout',
+				'site_width',
 				'scheme'
 					) as $key) {
 							if (isset($_REQUEST[$key])) 

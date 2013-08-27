@@ -3,10 +3,20 @@
 <head>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	<title><?php wp_title(); ?></title>
-	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	<meta name="Easel" content="<?php echo easel_themeinfo('version'); ?>" />
 <?php wp_head(); ?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
+
+
+<?php if(easel_site_width()){ ?>
+<style>
+	#page, body.layout-2cl #page, body.layout-2cr #page{
+		max-width: <?php echo easel_site_width(); ?>px;
+	}
+</style>
+<? } ?>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -18,6 +28,7 @@ if(is_active_sidebar('sidebar-header')){
 	$sWidth = "span6";
 }
 ?>
+
 <div id="page-wrap">
 	<div id="page" class="container-fluid">
 		
