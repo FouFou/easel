@@ -95,7 +95,7 @@ function easel_customize_register( $wp_customize ) {
 		$priority_value++;
 	}
 	
-	$wp_customize->add_setting( 'easel-customize[select-scheme]', array('default' => 'mecha'));
+	$wp_customize->add_setting( 'easel-customize[select-scheme]', array('default' => 'none'));
 	$wp_customize->add_control( 'easel-customize-select-scheme' , array(
 				'label' => __('Choose a default scheme.','easel'),
 				'settings' => 'easel-customize[select-scheme]',

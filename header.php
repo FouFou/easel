@@ -10,17 +10,30 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+$hgWidth = 'span12';
+$sWidth = '';
+if(is_active_sidebar('sidebar-header')){
+	$hgWidth = "span6";
+	$sWidth = "span6";
+}
+?>
 <div id="page-wrap">
-	<div id="page">
-		<?php easel_get_sidebar('above-header'); ?>
-		<div id="header">
-			<div class="header-info">
-				<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name') ?></a></h1>
-				<div class="description"><?php bloginfo('description') ?></div>
+	<div id="page" class="container-fluid">
+		
+		<header id="header" class="">
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<hgroup class="header-info <?php echo $hgWidth; ?>">
+						<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name') ?></a></h1>
+						<h3 class="description"><?php bloginfo('description') ?></h2>
+					</hgroup>
+					<aside class="<?php $sWidth ?>">
+						<?php easel_get_sidebar('header'); ?>
+					</aside>
+				</div>
 			</div>
-			<?php easel_get_sidebar('header'); ?>
-			<div class="clear"></div>
-		</div>
+		</header>
 
 <?php 
 if (!easel_themeinfo('disable_default_menubar') && function_exists('easel_menubar')) easel_menubar();

@@ -1,4 +1,4 @@
-<div id="sidebar-left">
+<div id="sidebar-left" class="hidden-phone <?php echo (easel_is_layout('2clw,3c,3cl,3cr')) ? 'span3' : 'span4'; ?>">
 	<div class="sidebar">
 	<?php 
 		do_action('easel-sidebar-left');

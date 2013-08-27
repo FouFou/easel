@@ -74,6 +74,9 @@ function easel_enqueue_theme_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) && !easel_themeinfo('disable_comment_javascript')) wp_enqueue_script('comment-reply');
 	if (!is_admin()) {
 		wp_enqueue_script('jquery');
+		wp_enqueue_script('easel_bootstrap', easel_themeinfo('themeurl') . '/js/bootstrap.min.js', null, null, true);
+//		wp_enqueue_style('easel_bootstrap', easel_themeinfo('themeurl') . '/css/bootstrap.css');
+		wp_enqueue_style('easel_responsive_bootstrap', easel_themeinfo('themeurl') . '/css/bootstrap-responsive.css');
 		if (!easel_themeinfo('disable_jquery_menu_code')) {
 			wp_enqueue_script('ddsmoothmenu_js', easel_themeinfo('themeurl').'/js/ddsmoothmenu.js'); 
 			wp_enqueue_script('menubar_js', easel_themeinfo('themeurl').'/js/menubar.js');
@@ -417,7 +420,7 @@ function easel_themeinfo($whichinfo = null) {
 }
 
 function easel_comic_position_in_column() {
-	$option = get_option('easel-customize-select');
+	$option = get_theme_mod('easel-customize');
 	$checkbox_comic_in_column = (isset($option['comic-in-column'])) ? $option['comic-in-column'] : '';
 	if ($checkbox_comic_in_column) return true;
 	return false;

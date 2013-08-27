@@ -1,7 +1,7 @@
 		<?php get_template_part('layout', 'foot'); ?>
 		<div id="footer">
 			<?php do_action('easel-footer'); ?>
-			<div id="footer-sidebar-wrapper">
+			<div id="footer-sidebar-wrapper" class="hidden-phone span8">
 			<?php 
 				easel_get_sidebar('footer-left');
 				easel_get_sidebar('footer');
