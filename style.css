@@ -1864,6 +1864,6 @@ body.scheme-mecha .footmenu a:hover {
 	color: #f00;
 }
 
-body.scheme-mecha .archiveresults, body.scheme-mecha.archive h2.page-title {
+body.scheme-mecha .archiveresults, body.scheme-mecha .searchresults, body.scheme-mecha.archive h2.page-title, body.scheme-mecha.search h2.page-title {
 	color: #fff;
 }
