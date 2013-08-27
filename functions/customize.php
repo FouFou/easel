@@ -8,7 +8,7 @@ if (!function_exists('easel_sandbox_body_class')) {
 }
 
 function easel_customize_body_class($classes = array()){
-	$option = get_option('easel-customize-select');
+	$option = get_theme_mod('easel-customize');
 	$scheme = (isset($option['select-scheme'])) ? $option['select-scheme'] : '';
 	$checkbox_rounded = (isset($option['checkbox-rounded'])) ? $option['checkbox-rounded'] : '';
 	$checkbox_comic_in_column = (isset($option['comic-in-column'])) ? $option['comic-in-column'] : '';
@@ -130,7 +130,6 @@ function easel_customize_register( $wp_customize ) {
 					'type'     => 'checkbox'
 					));
 	}
-	
 }
 
 function easel_customize_preview_js() {
@@ -141,7 +140,7 @@ function easel_customize_wp_head() {
 	$important = '';
 	$settings_array = array(
 			// background colors
-			array('slug' => 'page_background', 'element' => '#page', 'style' => 'background-color', 'default' => '#ffffff', 'important' => false),
+			array('slug' => 'page_background', 'element' => '#page', 'style' => 'background-color', 'default' => '', 'important' => false),
 			array('slug' => 'header_background', 'element' => '#header', 'style' => 'background-color', 'default' => '',  'important' => false),
 			array('slug' => 'menubar_background', 'element' => '#menubar-wrapper', 'style' => 'background-color', 'default' => '#000000',  'important' => false),
 			array('slug' => 'menubar_submenu_background', 'element' => '.menu ul li ul li a', 'style' => 'background-color', 'default' => '',  'important' => false),
@@ -185,21 +184,19 @@ function easel_customize_wp_head() {
 			array('slug' => 'footer_copyright_hcolor', 'element' => '.footer-text a:hover, .blognav a:hover, #paginav a:hover', 'style' => 'color', 'default' => '',  'important' => false),
 			);
 	if (function_exists('ceo_pluginfo')) {
-		$settings_array[] = array('slug' => 'easel_comic_wrap_background', 'element' => '#comic-wrap', 'style' => 'background-color', 'default' => '',  'important' => true);
-		$settings_array[] = array('slug' => 'easel_comic_wrap_textcolor', 'element' => '#comic-wrap', 'style' => 'color', 'default' => '',  'important' => true);
-		$settings_array[] = array('slug' => 'easel_comic_nav_background', 'element' => 'table#comic-nav-wrapper', 'style' => 'background-color', 'default' => '',  'important' => true);
+		$settings_array[] = array('slug' => 'comic_wrap_background', 'element' => '#comic-wrap', 'style' => 'background-color', 'default' => '',  'important' => true);
+		$settings_array[] = array('slug' => 'comic_wrap_textcolor', 'element' => '#comic-wrap', 'style' => 'color', 'default' => '',  'important' => true);
+		$settings_array[] = array('slug' => 'comic_nav_background', 'element' => 'table#comic-nav-wrapper', 'style' => 'background-color', 'default' => '',  'important' => true);
 	}
 	
 	$output = '';
 	$style_output = '';
-	$test = get_theme_mod('easel-customize[logo]');
-	var_dump($test);
 	foreach ($settings_array as $setting) {
 		$customize = get_theme_mod('easel-customize');
 		if (!empty($customize) && isset($customize[$setting['slug']])) $content = $customize[$setting['slug']];
 		if (empty($content)) $content = $setting['default'];
 		$important = ($setting['important']) ? '!important' : '';
-		if (!empty($content)) $style_output .= $setting['element'].' { '.$setting['style'].': '.$content.$important.'; } ';
+		if (!empty($content)) $style_output .= $setting['element'].' { '.$setting['style'].': #'.$content.$important.'; } ';
 	}
 	if (!empty($style_output)) {
 		$output = '<style type="text/css">'."\r\n";
